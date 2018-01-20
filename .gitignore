@@ -1,0 +1,9 @@
+_minted*/
+*.aux
+*.log
+*.out
+*.pdf
+*.toc
+*.fls
+*.fdb_latexmk
+draftmark.tex

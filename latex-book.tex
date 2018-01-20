@@ -1,0 +1,256 @@
+% Build this document with LuaTeX, a modern Unicode-aware LaTeX engine
+% that uses system TTF and OTF font files.
+% This is needed for the fontspec, microtype, and nolig packages.
+%
+% We're using KOMA Script to hand-tune footnotes and TOC appearance.
+% It should be available in your texlive distribution,
+% which is how most distros package LaTeX.
+\documentclass[fontsize=10pt, numbers=endperiod, openany]{scrbook}
+
+% Margins: see http://practicaltypography.com/page-margins.html and
+% http://practicaltypography.com/line-length.html
+% We're aiming for 80-ish characters per line.
+\usepackage[paperwidth=6.25in, paperheight=9.25in,
+            layoutwidth=6in, layoutheight=9in,
+            layouthoffset=0.125in, layoutvoffset=0.125in,
+            inner=0.5in,outer=0.75in,top=0.5in,bottom=0.5in,
+            includefoot,
+            showcrop
+           ]{geometry}
+
+% Font specification.
+% Use Equity for the body text,
+% Roboto for sans serif,
+% and mononoki for monospace text.
+% Feel free to pick your own fonts or comment these lines out to use TeX's
+% traditional Computer Modern.
+\usepackage[no-math]{fontspec}
+\usepackage[fleqn]{amsmath}
+%\setmainfont[Ligatures=TeX,
+%             Numbers=Lowercase,
+%             SmallCapsFont={Equity Caps A},
+%             SmallCapsFeatures={StylisticSet=10}, % Set everything in \textsc{} as small caps
+%             StylisticSet=01, % Slightly smaller quotes, asterisks, etc.
+%            ]{Equity Text A}
+\setmainfont[Ligatures=TeX, Numbers={Proportional,Lowercase},
+             BoldFont=AGaramond Pro Semibold,
+             BoldItalicFont=AGaramond Pro Semibold Italic
+            ]{Adobe Garamond Pro}
+\setsansfont[Ligatures=TeX,
+             Style=Alternate, % Straight-legged R
+             UprightFont = *-55Rg,
+             ItalicFont = *-56It,
+             BoldFont = *-65Md,
+             BoldItalicFont = *-66MdIt
+             ]{NHaasGroteskTXPro}
+\setmonofont[Scale=MatchLowercase]{mononoki}
+
+\usepackage[italic]{mathastext}
+
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=american]{english}
+
+\usepackage{blindtext}
+
+\usepackage{microtype} % Font expansion, protrusion, and other goodness
+
+% Disable ligatures across grapheme boundaries
+% (see the package manual for details.)
+\usepackage[american]{selnolig}
+
+% Use symbols for footnotes, resetting each page
+\usepackage[perpage,bottom,symbol*]{footmisc}
+
+% Left flush footnotes. See the KOMA Script manual.
+\deffootnote[1em]{1em}{1em}{\thefootnotemark}
+% Set the width of the rule separating body text and footnotes
+\setfootnoterule{0.7\textwidth}
+
+% Like many fonts, Equity's asterisk is already set in a "superscripted" form.
+% Superscripting *that* makes it annoyingly small.
+% To fix this, we have to redefine footnote marks so that they aren't superscript,
+% then raise all the other symbols.
+%
+% Feel free to remove this if your body type doesn't have this peculiarity,
+% but unfortunately many do.
+% See http://tex.stackexchange.com/a/16241
+%
+% We use the Unicode symbols themselves (instead of \dagger, \ddagger, \P, etc.)
+% because the latter fall back to Computer Modern/Latin Modern in some cases,
+% (e.g., if you're using mathastext instead of unicode-math).
+% Alternatively, you could use \textdagger, \textddagger, etc.,
+% but this seems more concise.
+\DefineFNsymbols*{tweaked}{%
+    {*}%
+    {\textsuperscript†}%
+    {\textsuperscript‡}%
+    {\textsuperscript{◊}}%
+    {\textsuperscript{¶}}%
+    {**}%
+    {\textsuperscript{††}}%
+    {\textsuperscript{‡‡}}%
+}
+\setfnsymbol{tweaked}
+\deffootnotemark{\thefootnotemark}
+
+% Use the tocstyle package to give all ToC items sans serif font.
+% Note: tocstyle is currently in alpha, so feel free to tweak this as needed.
+% At time of writing, it seems to be the simplest way to get the intended effect.
+\usepackage{tocstyle}
+\settocfeature{entryhook}{\addfontfeature{Numbers={Tabular,Uppercase}}}
+\settocfeature{entryvskip}{2pt}
+
+% Don't use a sans font for description labels.
+\addtokomafont{descriptionlabel}{\rmfamily\mdseries}
+\setkomafont{disposition}{\rmfamily}
+\addtokomafont{chapter}{\addfontfeature{Numbers=Uppercase}}
+\setkomafont{section}{\large\itshape}
+\renewcommand*\thesection{\upshape\arabic{section}}
+
+% Use uppercase numbers for numbered lists.
+% (We're using lowercase ones for the body text.)
+% See http://tex.stackexchange.com/a/133186
+\usepackage{enumitem}
+\setlist[enumerate]{font=\addfontfeatures{Numbers=LowercaseOff, StylisticSet=02}}
+
+% Custom footer
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\pagestyle{scrheadings}
+\setkomafont{pagefoot}{\upshape}
+\cefoot*{\thepage} % \, is a TeX primitive for a thin space.
+\cofoot*{\thepage} % \, is a TeX primitive for a thin space.
+
+\usepackage{minted} % Syntax highlighting via Pygments
+
+\usepackage{graphicx}
+
+\newcommand{\codesize}{\fontsize{10pt}{12pt}}
+
+\usepackage{changepage} % For adjustwidth
+
+\usepackage{metalogo} % for \LuaLaTeX
+
+\usepackage{endnotes}
+% Endnotes _mostly_ works... with Koma Script, no less.
+% I suppose I can only grumble a little about the hackery below.
+\renewcommand\enoteheading{\chapter{Notes}}
+\renewcommand\enoteformat{\leavevmode\llap{\makeenmark}}
+% OTF goodness...
+\renewcommand\makeenmark{{\addfontfeature{VerticalPosition=Superior}\theenmark}}
+
+\usepackage{setspace}
+
+\title{LaTeX and Modern Typography}
+\author{Matt Kline}
+\date{\today}
+
+% Custom footer
+% Hyperlinks
+\usepackage[unicode,pdfusetitle,hidelinks]{hyperref}
+
+% Use \punckern to overlap periods, commas, and footnote markers
+% for a tighter look.
+% Care should be taken to not make it too tight - f" and the like can overlap
+% if you're not careful.
+\newcommand{\punckern}{\kern-0.4ex}
+% For placing commas close to, or under, quotes they follow.
+% We're programmers, and we blatantly disregard American typographical norms
+% to put the quotes inside, but we can at least make it look a bit nicer.
+\newcommand{\quotekern}{\kern-0.5ex}
+
+
+% Create an unbreakable string of text in a monospaced font.
+% Useful for `command --line --args`
+\newcommand{\monobox}[1]{\mbox{\texttt{#1}}}
+
+\newcommand{\keyword}[1]{\monobox{\color{darkGreen}#1}}
+
+% C++ looks nicer if the ++ is in a monospace font and raised a bit.
+% Also, use uppercase numbers to match the capital C.
+\newcommand{\cpp}[1]{C\kern-0.1ex\raisebox{0.15ex}{\texttt{++}}{\addfontfeature{Numbers=LowercaseOff}#1}}
+\newcommand{\clang}[1]{C{\addfontfeature{Numbers=LowercaseOff}#1}}
+\newcommand{\csharp}{C\raisebox{0.25ex}{\#}}
+
+\newcommand{\fig}[1]{Figure~\ref{#1}}
+
+% Italicize new terms
+\newcommand{\introduce}[1]{\textit{#1}}
+
+\newcommand{\secref}[1]{\hyperref[#1]{\textsc{\S}\ref*{#1}}}
+
+% See http://tex.stackexchange.com/a/68310
+\makeatletter
+\let\runauthor\@author
+\let\rundate\@date
+\let\runtitle\@title
+\makeatother
+
+% Spend a bit more time to get better word spacing.
+% See http://tex.stackexchange.com/a/52855/92465
+\emergencystretch=1em
+
+\begin{document}
+\frontmatter
+\setcounter{secnumdepth}{0}
+\setlength\parindent{0pt}
+
+% Custom title instead of \maketitle
+\pagenumbering{gobble}
+\null
+\vfil
+\begin{center}
+\fontsize{0.5in}{0.7in}\selectfont
+Modern
+
+\fontsize{1in}{1.1in}\selectfont
+\LaTeX
+\end{center}
+\vfil
+\clearpage
+
+\null
+\vfill
+{\addfontfeature{Numbers={Proportional,Uppercase}}
+Copyright © 2018 \\
+by Matthew Kline
+\bigskip
+
+This book is licensed under the \\
+Creative Commons Attribution-ShareAlike~4.0 International License. \\
+The full text of the license is available at \\
+\url{https://creativecommons.org/licenses/by-sa/4.0/legalcode}
+}
+\clearpage
+
+\vspace*{1in}
+{\itshape%
+%\noindent To Donald, Leslie, \\
+%Ellen, Erik, Jost, Matthew, \& Robert
+%\bigskip
+
+To Max, who once told me about a cool program he was using to type up
+his college papers.
+}
+\clearpage
+
+\pagenumbering{roman}
+\tableofcontents
+
+\mainmatter
+\setlength\parindent{1.5em}
+
+\pagenumbering{arabic}
+\setcounter{page}{1} % Restart page numbering after the ToC.
+\cleardoublepage
+\input{why}
+
+\backmatter
+\setcounter{secnumdepth}{0}
+\setkomafont{chapter}{\Large\itshape}
+\setlength\parskip{\baselineskip}
+\setlength\parindent{0pt}
+
+\input{back}
+
+\end{document}
