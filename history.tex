@@ -89,29 +89,11 @@ and on improvements to the \TeX{} typesetting program itself.
 Currently, there are four projects:
 \begin{description}
 \item[\TeX] is the original system by Donald Knuth.
-Knuth stopped adding features to \TeX{} after
-its 3.0 release in March~1990,
+Knuth stopped adding features after version 3.0 in March~1990,
 and all subsequent releases have contained only bug fixes.
 With each release, the version number asymptotically approaches $\pi$
 by adding an additional digit.
 The most recent version, 3.14159265, came out in January~2014.
-
-Building \TeX{} today is an\ldots{} interesting endeavour.
-When it was written in the late 1970s,
-there were no large, well-documented open-source projects for students to study,
-so Knuth set out to make \TeX{} into one.
-As part of this effort, \TeX{} was written in a style he calls
-\introduce{literate programming}: opposite most programs---where
-documentation is interspersed throughout the code---Knuth wrote \TeX{} as a book,
-with the code (in this case, Pascal) interspersed between paragraphs.
-This mix of English and code is called \texttt{WEB},
-and can be broken up into its constituent parts with companion programs
-\texttt{TANGLE} and \texttt{WEAVE}.
-
-Unsurprisingly, most modern systems don't have good tooling for a late 1970s
-dialect of Pascal, so present-day \TeX{} distributions use another program,
-\texttt{web2c}, to convert \TeX{}'s \texttt{WEB} source into C code.
-The resulting C is then built with a system's standard toolchains.
 
 \item[pdf\TeX] is an extension of \TeX{} that provides direct \acronym{pdf}
     output (instead of the \TeX's \acronym{dvi}),
@@ -121,6 +103,27 @@ The resulting C is then built with a system's standard toolchains.
     It was originally developed by Hàn Thê Thành as part of his PhD thesis
     for Masaryk University in Brno, Czech Republic.\punckern\endnote{%
     Hàn Thê Thành,
-    \textit{Micro­typographic extensions to the \TeX{} typesetting system}
+    \textit{Micro-typographic extensions to the \TeX{} typesetting system}
     (Masaryk University Brno, October 2000)}
 \end{description}
+
+Building \TeX{} today is an\ldots{} interesting endeavour.
+When it was written in the late 1970s,
+there were no large, well-documented open-source projects for students to study,
+so Knuth set out to make \TeX{} into one.
+As part of this effort, \TeX{} was written in a style he calls
+\introduce{literate programming}: opposite most programs---where
+documentation is interspersed throughout the code---Knuth wrote \TeX{} as a book,
+with the code interspersed between paragraphs.
+This mix of English and code is called \texttt{WEB}.\punckern\footnote{Knuth
+also released a pair of compainion programs named
+\texttt{TANGLE} and \texttt{WEAVE}.
+The former extracts the book---as \TeX, of course---and the latter
+produces the original Pascal source code.}
+
+Unsurprisingly, most modern systems don't have good tooling for a late 1970s
+dialect of Pascal that \TeX{} was written in,
+so present-day distributions use another program,
+\texttt{web2c}, to convert \TeX{}'s \texttt{WEB} source into C code.
+The resulting C is then built with a system's standard toolchains.
+
