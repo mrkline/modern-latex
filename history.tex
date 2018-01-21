@@ -21,7 +21,7 @@ so publishers had replaced it with phototypesetting,
 which works by projecting characters onto film.
 The new technology, while much cheaper and faster,
 didn't provide the same level of quality he had come to
-expect.\punckern\endnote{Donald E.~Knuth, \textit{Digital Typography}, pp.~3--5}
+expect.\punckern\endnote{Donald E.~Knuth, \textit{Digital Typography} (Stanford, 1999), 3--5.}
 
 The average author would have resigned themselves to the change and moved on,
 but Knuth took great pride in print quality,
@@ -35,8 +35,9 @@ Inspired by this burgeoning tech and frustrated with the current state of affair
 Knuth set off on one of the greatest yak shaves\footnote{Programmers
 often refer to seemingly unrelated tasks needed to solve their main problem
 as ``yak shaving''\quotekern. The phrase is thought to originate from an episode
-of \textit{The Ren~\&~Stimpy Show}.\endnote{\textit{The Jargon File},
-\url{http://www.catb.org/~esr/jargon/html/Y/yak-shaving.html}}}
+of \textit{The Ren~\&~Stimpy Show}.\endnote{``yak shaving''\quotekern,
+\textit{The Jargon File},
+\url{http://www.catb.org/~esr/jargon/html/Y/yak-shaving.html}.}}
 of all time.
 For years, he paused all work on his books to create his own
 digital typesetting system.
@@ -45,9 +46,9 @@ When the dust settled in 1978, Knuth had the first version of
 ``\textbf{tech}nician''\quotekern. It is short for the Greek
 {\fontspec[Scale=MatchLowercase]{Linux Libertine}τέχνη},
 meaning \introduce{art} or \introduce{craft}.\endnote{Knuth,
-\textit{The \TeX book}, p.~1}}
+\textit{The \TeX book} (Addison-Wesley, 1986), 1.}}
 
-It's hard to understand how much of a revolution \TeX\ was,
+It's hard to appreciate how much of a revolution \TeX\ was,
 especially looking back from a time where anybody with a copy
 of Word can be their own desktop publisher.
 Adobe's \acronym{pdf} wouldn't exist for another decade, so Knuth
@@ -72,23 +73,54 @@ Several sources (\url{http://www.tug.org/whatis.html},
 \url{http://www.typophile.com/node/34620})
 mention \TeX's influence on the \textit{hz}-program by Peter Karow
 and Hermann Zapf, thanks to via Knuth's collaborations with Zapf.
-\textit{hz} was later acquried by Adobe and used in part
+\textit{hz} was later acquired by Adobe and used in part
 when creating their paragraph formatting systems for InDesign.}}
 
-\LaTeX{}, short for Lamport~\TeX{}, was developed as a set of \TeX{} macros for
-common document layouts by Leslie Lamport in the 1980s.
+\LaTeX{}, short for Lamport~\TeX{}, was developed as a set of commands
+for common document layouts by Leslie Lamport in the 1980s.
 It was introduced in 1986 with Lamport's guide,
 \textit{\LaTeX: A Document Preparation System}.
 Other typesetting systems based on \TeX{} also exist,
 the other most popular today being Con\TeX{}t.
 
-While Knuth stopped adding features to the original \TeX{} with after
-its 3.0 release in March~1990,\punckern\footnote{All subsequent releases have
-contained only bug fixes.
+Development continues today,
+both in the form of user-provided packages for \TeX{} and \LaTeX{},
+and on improvements to the \TeX{} typesetting program itself.
+Currently, there are four projects:
+\begin{description}
+\item[\TeX] is the original system by Donald Knuth.
+Knuth stopped adding features to \TeX{} after
+its 3.0 release in March~1990,
+and all subsequent releases have contained only bug fixes.
 With each release, the version number asymptotically approaches $\pi$
 by adding an additional digit.
-The most recent version, 3.14159265, came out in January~2014.}
-\TeX{} and \LaTeX{} development continues,
-both in the form of user-built packages, and as improved \TeX{} \emph{engines}.
+The most recent version, 3.14159265, came out in January~2014.
 
-\textit{To Be Continued\ldots}
+Building \TeX{} today is an\ldots{} interesting endeavour.
+When it was written in the late 1970s,
+there were no large, well-documented open-source projects for students to study,
+so Knuth set out to make \TeX{} into one.
+As part of this effort, \TeX{} was written in a style he calls
+\introduce{literate programming}: opposite most programs---where
+documentation is interspersed throughout the code---Knuth wrote \TeX{} as a book,
+with the code (in this case, Pascal) interspersed between paragraphs.
+This mix of English and code is called \texttt{WEB},
+and can be broken up into its constituent parts with companion programs
+\texttt{TANGLE} and \texttt{WEAVE}.
+
+Unsurprisingly, most modern systems don't have good tooling for a late 1970s
+dialect of Pascal, so present-day \TeX{} distributions use another program,
+\texttt{web2c}, to convert \TeX{}'s \texttt{WEB} source into C code.
+The resulting C is then built with a system's standard toolchains.
+
+\item[pdf\TeX] is an extension of \TeX{} that provides direct \acronym{pdf}
+    output (instead of the \TeX's \acronym{dvi}),
+    native support PostScript\footnote{Specifically, PostScript Type 1}
+    and TrueType fonts,
+    and micro-typographic features discussed in this book's Microtype chapter.
+    It was originally developed by Hàn Thê Thành as part of his PhD thesis
+    for Masaryk University in Brno, Czech Republic.\punckern\endnote{%
+    Hàn Thê Thành,
+    \textit{Micro­typographic extensions to the \TeX{} typesetting system}
+    (Masaryk University Brno, October 2000)}
+\end{description}

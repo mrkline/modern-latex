@@ -1,6 +1,9 @@
+\setlength\parskip{\baselineskip}
+\setlength\parindent{0pt}
+
 \chapter{Additional Resources}
 
-For \LaTeX:
+\section{For \texorpdfstring{\LaTeX}{LaTeX}}
 
 \begin{adjustwidth}{1.5em}{0pt}
 The \LaTeX{} Wikibook. \\
@@ -11,7 +14,7 @@ Available at \url{https://www.ctan.org/tex-archive/info/lshort/english/}
 \end{adjustwidth}
 \vspace{0.3in}
 
-For typography:
+\section{For typography}
 
 \begin{adjustwidth}{1.5em}{0pt}
 \textit{Practical Typography}, by Matthew Butterick. \\
@@ -26,8 +29,14 @@ Available at \url{https://practicaltypography.com}
 \textit{Detail in Typography}, by Jost Hochuli
 \end{adjustwidth}
 
+\backmatter
+
+\setkomafont{chapter}{\LARGE\itshape}
+
 {\raggedright
 \renewcommand\makeenmark{\theenmark.\enspace}
+% Chicago Manual of Style, Notes & Bib style, ish.
+% http://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html
 \theendnotes
 }
 
@@ -63,6 +72,11 @@ Futura has found itself almost everywhere,
 from advertising and political campaigns to the moon.
 Douglas Thomas's recent history of the typeface,
 \textit{Never Use Futura}, is a fantastic read.
+
+{\fontspec[Ligatures=TeX,Scale=MatchLowercase]{Linux Libertine O}Linux Libertine},
+a typeface with support for dozens of languages and more than 2,000 characters,
+is used for some Greek in Appendix \ref{history}.
+You have probably seen it as the wordmark for Wikipedia.
 
 Finally,
 Latin Modern---the OpenType version of Knuth's Computer Modern---as well

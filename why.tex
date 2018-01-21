@@ -8,7 +8,7 @@ or even the book you're reading right now.
 In some sense, it's an alternative to the likes of Microsoft Word,
 Apple Pages, Google Docs, or LibreOffice Writer.
 
-All of these other desktop publishing systems are
+All of these other applications are
 \introduce{What You See Is What You Get} \acronym{(wysiwyg)} systems---whatever
 you see on screen is what the final document will look like.
 This is often incredibly convenient, since many changes to your document
@@ -20,22 +20,22 @@ the \emph{content} of your text and its \emph{layout}.
 Keeping the look of a large document consistent is hard---if you increased
 the size of one caption, did you make sure to find all the other
 captions and do the same?\footnote{This isn't to say that it's impossible
-to creat nice-looking documents with these tools.
+to create nice-looking documents with these tools.
 Many of them have gotten much better at automating these sorts of
 tasks in recent years.}
-If the editor formats something in a way you didn't intend,
+If the program formats something in a way you didn't intend,
 how difficult is it to change?%\footnote{I spent far too much of my childhood
 %fighting with Word about how it wrapped text around images.}
 
 \LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tex''} is different.
 Here, you write your document as a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
-When you are ready,
-\LaTeX{} generates your document from this file
-based on the rules you've given it.
+When you are ready, \LaTeX{} generates your document from this file
+based on the rules it was given.
 If you've ever done any web development, this is a familiar process.
 Just as \acronym{html} and \acronym{css} describe the web page you want
-browsers to render, \LaTeX{} describes your document.
+browsers to render, your markup describes the appearance of your document
+to \LaTeX{}.
 
 \begin{figure}[h]
 \centering
@@ -43,14 +43,14 @@ browsers to render, \LaTeX{} describes your document.
 \LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tex''} is different.
 Here, you write your document as a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
-When you are ready,
-\LaTeX{} generates your document from this file
-based on the rules you've given it.
+When you are ready, \LaTeX{} generates your document from this file
+based on the rules it was given.
 If you've ever done any web development, this is a familiar process.
 Just as \acronym{html} and \acronym{css} describe the web page you want
-browsers to render, \LaTeX{} describes your document.
+browsers to render, your markup describes the appearance of your document
+to \LaTeX{}.
 \end{lstlisting}
-\caption{The \LaTeX{} markup that built the above paragraph}
+\caption{The \LaTeX{} markup for the above paragraph}
 \end{figure}
 
 This might seem alien to you if you've never worked with a markup system before.
@@ -61,14 +61,14 @@ However, it comes with a few advantages:
     \LaTeX{} automatically ensures that fonts, sizes, line heights,
     and other layout considerations are consistent according to the rules you set.
 \item You can define your own rules, then tweak them to immediately change
-    every place they're used in your document.
+    everywhere they're used in your document.
     For example, the \verb|\introduce| and \verb|\acronym| commands you saw above
     are my own creations. The former \introduce{italicizes} text, and
-    the latter sets things in \acronym{small caps} with a bit of extra
-    \,\textsc{\addfontfeature{LetterSpace=15}letterspacing}\, so that things don't
-    look \textsc{too crowded}.
-    If I wake up tomorrow and decide that new terms should look
-    \textbf{\itshape like this} and acronyms
+    the latter sets words in \acronym{small caps} with a bit of extra
+    \,\textsc{\addfontfeature{LetterSpace=15}letterspacing}\, so the characters
+    don't look \textsc{too crowded}.
+    If I wake up tomorrow and decide to introduce new terms
+    \textbf{\itshape with this look} and set acronyms
     {\small\addfontfeature{LetterSpace=8} LIKE THIS},
     I just change the two lines that define those commands
     and every single place in the book that uses them takes on those new styles.
@@ -100,15 +100,20 @@ nothing is more important than catching and holding
 the attention of your audience.
 Typography is a tool to do so---a good design doesn't ``look nice''
 only for the sake of art---it draws readers in.\punckern\endnote{Matthew Butterick,
-\textit{Typography for Docs}, Write The Docs Conference, April 8, 2013}
+``Typography for Docs''
+(presented at the Write The Docs Conference, April 8, 2013),
+\url{https://www.youtube.com/watch?v=8J6HuvosP0s}.}
 %Matthew Butterick's \textit{Practical Typography} calls it
 %``the visual component of the written word.\quotekern''
+It sets their expectations, and establishes a subliminal ``brand'' for your
+work.\punckern\endnote{Erik Spiekermann, ``Type is Visible Language''
+(presented at Beyond Tellerrand, Düsseldorf, Germany, May 19--21, 2014), \url{https://www.youtube.com/watch?v=ggQpDu63kk0}.}
 It's the \emph{how} of text.
 
 \begin{adjustwidth}{2em}{0pt}
 \fontspec{TeX Gyre Termes}\fontsize{12pt}{24pt}\selectfont\raggedright
-\noindent Typography is why all the terrible essays you wrote in school
-looked like this.
+\noindent Typography is why this reminds you of all the terrible essays
+you wrote in school.
 Would you prefer to read an entire book this way?
 \end{adjustwidth}
 \bigskip
@@ -121,7 +126,7 @@ Would you prefer to read an entire book this way?
 \end{adjustwidth}
 \bigskip
 
-\noindent might remind you of a certain shoe company's advertising,
+\noindent seems oddly reminiscent of a certain shoe company's advertising,
 or how
 
 \begin{center}
