@@ -1,0 +1,94 @@
+\chapter{A Brief History of \texorpdfstring{\LaTeX}{LaTeX}}
+\label{history}
+
+Most serious programmers have heard of Donald Knuth,
+the man who coined the term \emph{analysis of algorithms} in 1968
+and pioneered many of the computer science fundamentals we use today.
+Knuth is perhaps most famous for his ongoing magnum opus,
+\textit{The Art of Computer Programming}.
+
+When the first volume of \acronym{taocp} was released that same year,
+it was printed the way most books had been since the turn of the century:
+with \introduce{hot metal} type.
+Each individual letter was cast from molten lead,
+then arranged into its line.
+These lines were clamped together to form pages of the book,
+which were finally inked and pressed against paper.
+By March of 1977, Knuth was ready for a second run of \acronym{taocp}, volume~2,
+but he was horrified when he received the proofs.
+Hot metal typesetting was an expensive, complicated, and time-consuming process,
+so publishers had replaced it with phototypesetting,
+which works by projecting characters onto film.
+The new technology, while much cheaper and faster,
+didn't provide the same level of quality he had come to
+expect.\punckern\endnote{Donald E.~Knuth, \textit{Digital Typography}, pp.~3--5}
+
+The average author would have resigned themselves to the change and moved on,
+but Knuth took great pride in print quality,
+especially for the mathematics in his books.
+Around this time, he discovered an exciting new technology:
+digital typesetting.
+Instead of working with metal or film,
+letters and shapes were built from tiny dots,
+often packed together at over 1,000 per inch.
+Inspired by this burgeoning tech and frustrated with the current state of affairs,
+Knuth set off on one of the greatest yak shaves\footnote{Programmers
+often refer to seemingly unrelated tasks needed to solve their main problem
+as ``yak shaving''\quotekern. The phrase is thought to originate from an episode
+of \textit{The Ren~\&~Stimpy Show}.\endnote{\textit{The Jargon File},
+\url{http://www.catb.org/~esr/jargon/html/Y/yak-shaving.html}}}
+of all time.
+For years, he paused all work on his books to create his own
+digital typesetting system.
+When the dust settled in 1978, Knuth had the first version of
+\TeX.\punckern\footnote{\TeX\ is pronounced like the first syllable of
+``\textbf{tech}nician''\quotekern. It is short for the Greek
+{\fontspec[Scale=MatchLowercase]{Linux Libertine}τέχνη},
+meaning \introduce{art} or \introduce{craft}.\endnote{Knuth,
+\textit{The \TeX book}, p.~1}}
+
+It's hard to understand how much of a revolution \TeX\ was,
+especially looking back from a time where anybody with a copy
+of Word can be their own desktop publisher.
+Adobe's \acronym{pdf} wouldn't exist for another decade, so Knuth
+invented a device-independent format, \acronym{dvi}.
+Scalable fonts were uncommon at the time, so Knuth created a system,
+\MF, to rasterize his characters into dots on the
+page.\punckern\footnote{In some ways,
+\MF\ is more impressive than the PostScript system that
+underpins modern TrueType and OpenType font files.
+Instead of constructing characters from lines and curves,
+\MF\ uses strokes of virtual pens.
+By tweaking the parameters of these pens and strokes, one can build entire
+font families from the same base designs.}
+Perhaps most importantly, Knuth and his graduate students designed algorithms
+to automatically hyphenate and justify lines of text into
+beautifully-typeset paragraphs.\footnote{Called the Knuth-Plass and
+Knuth-Liang algorithms,
+these form the basis of \TeX-based layout systems to this day,
+and went on to influence the algorithms Adobe uses in its software.\punckern\endnote{%
+Several sources (\url{http://www.tug.org/whatis.html},
+\url{https://tug.org/interviews/thanh.html},
+\url{http://www.typophile.com/node/34620})
+mention \TeX's influence on the \textit{hz}-program by Peter Karow
+and Hermann Zapf, thanks to via Knuth's collaborations with Zapf.
+\textit{hz} was later acquried by Adobe and used in part
+when creating their paragraph formatting systems for InDesign.}}
+
+\LaTeX{}, short for Lamport~\TeX{}, was developed as a set of \TeX{} macros for
+common document layouts by Leslie Lamport in the 1980s.
+It was introduced in 1986 with Lamport's guide,
+\textit{\LaTeX: A Document Preparation System}.
+Other typesetting systems based on \TeX{} also exist,
+the other most popular today being Con\TeX{}t.
+
+While Knuth stopped adding features to the original \TeX{} with after
+its 3.0 release in March~1990,\punckern\footnote{All subsequent releases have
+contained only bug fixes.
+With each release, the version number asymptotically approaches $\pi$
+by adding an additional digit.
+The most recent version, 3.14159265, came out in January~2014.}
+\TeX{} and \LaTeX{} development continues,
+both in the form of user-built packages, and as improved \TeX{} \emph{engines}.
+
+\textit{To Be Continued\ldots}

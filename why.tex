@@ -5,15 +5,96 @@ and (sort of) a programming language, and a bit of a cult.
 But we'll get to all of that.}
 for creating written documents, such as papers, presentations,
 or even the book you're reading right now.
-You can view it as an alternative to tools like Microsoft Word,
-LiberOffice Writer, Apple Pages, or Google Docs.
+In some sense, it's an alternative to the likes of Microsoft Word,
+Apple Pages, Google Docs, or LibreOffice Writer.
 
-\chapter{Typography?}
+All of these other desktop publishing systems are
+\introduce{What You See Is What You Get} \acronym{(wysiwyg)} systems---whatever
+you see on screen is what the final document will look like.
+This is often incredibly convenient, since many changes to your document
+can be made with a few clicks of the mouse,
+but it isn't without its downsides.
+In a \acronym{wysiwyg} system,
+you must constantly concern yourself with both
+the \emph{content} of your text and its \emph{layout}.
+Keeping the look of a large document consistent is hard---if you increased
+the size of one caption, did you make sure to find all the other
+captions and do the same?\footnote{This isn't to say that it's impossible
+to creat nice-looking documents with these tools.
+Many of them have gotten much better at automating these sorts of
+tasks in recent years.}
+If the editor formats something in a way you didn't intend,
+how difficult is it to change?%\footnote{I spent far too much of my childhood
+%fighting with Word about how it wrapped text around images.}
+
+\LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tex''} is different.
+Here, you write your document as a ``plain'' text file,
+using \introduce{markup} to specify how things should look.
+When you are ready,
+\LaTeX{} generates your document from this file
+based on the rules you've given it.
+If you've ever done any web development, this is a familiar process.
+Just as \acronym{html} and \acronym{css} describe the web page you want
+browsers to render, \LaTeX{} describes your document.
+
+\begin{figure}[h]
+\centering
+\begin{lstlisting}
+\LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tex''} is different.
+Here, you write your document as a ``plain'' text file,
+using \introduce{markup} to specify how things should look.
+When you are ready,
+\LaTeX{} generates your document from this file
+based on the rules you've given it.
+If you've ever done any web development, this is a familiar process.
+Just as \acronym{html} and \acronym{css} describe the web page you want
+browsers to render, \LaTeX{} describes your document.
+\end{lstlisting}
+\caption{The \LaTeX{} markup that built the above paragraph}
+\end{figure}
+
+This might seem alien to you if you've never worked with a markup system before.
+However, it comes with a few advantages:
+\begin{enumerate}
+\item You can think separately about your document's contents and
+    its presentation, how it looks.
+    \LaTeX{} automatically ensures that fonts, sizes, line heights,
+    and other layout considerations are consistent according to the rules you set.
+\item You can define your own rules, and tweak them to immediately change
+    every place they're used in your document.
+    For example, the \verb|\introduce| and \verb|\acronym| commands you saw above
+    are my own creations. The former currently \introduce{italicizes} text, and
+    the latter sets things in \acronym{small caps} with a bit of extra
+    \,\textsc{\addfontfeature{LetterSpace=15}letterspacing}\, so that things don't
+    look \textsc{too crowded}.
+    If I wake up tomorrow and decide that new terms should look
+    \textbf{\itshape like this} and acronyms
+    {\small\addfontfeature{LetterSpace=8} LIKE THIS},
+    I just change the two lines that define those commands,
+    and every single place in the book that uses them takes on those new styles.
+\item In \LaTeX, the document's structure is immediately visible,
+    and can be easily copied.
+    (Compare this to \acronym{wysiwyg} systems, where it is often not obvious
+    how certain formatting was produced,
+    or how to emulate it.)
+\item Since the document source is plain text,
+    \begin{itemize}
+    \item Document sources can be read and understood with any text editor.
+    \item Content can be easily generated programmatically.
+    \item Changes can be easily tracked with version control software.
+    \end{itemize}
+\end{enumerate}
+
+This is all well and good,
+but misses the main selling point of \LaTeX.
+You should try it because you care about\ldots
+
+\chapter{Typography}
 
 Modern life is a constant battle for your attention---every day,
 dozens of ads, apps, emails, sites, and texts fight
 for a few short minutes of your time.
-To put your ideas into the world,
+To put ideas into the world,
 nothing is more important than catching and holding
 the attention of your audience.
 Typography is a tool to do so---a good design doesn't ``look nice''
@@ -21,20 +102,22 @@ only for the sake of art---it draws readers in.\punckern\endnote{Matthew Butteri
 \textit{Typography for Docs}, Write The Docs Conference, April 8, 2013}
 %Matthew Butterick's \textit{Practical Typography} calls it
 %``the visual component of the written word.\quotekern''
-It's the \emph{how} of your text.
+It's the \emph{how} of text.
 
-\begin{adjustwidth}{1.5em}{0pt}
+\begin{adjustwidth}{2em}{0pt}
 \fontspec{TeX Gyre Termes}\fontsize{12pt}{24pt}\selectfont\raggedright
-\noindent Typography is why all the terrible essays you wrote in middle school
-looked just like this.
-Would you enjoy reading a whole book that looked this way?
+\noindent Typography is why all the terrible essays you wrote in school
+looked like this.
+Would you prefer to read an entire book this way?
 \end{adjustwidth}
 \bigskip
 
 \noindent It is why
-\bigskip
 
-{\fontspec{FuturaCon-ExtBol}\Large DO IT LATER}
+\bigskip
+\begin{adjustwidth}{2em}{0pt}
+\noindent\fontspec{FuturaCon-ExtBol}\Large DO IT LATER
+\end{adjustwidth}
 \bigskip
 
 \noindent might remind you of a certain shoe company's advertising,
@@ -47,7 +130,19 @@ FIRST SET FOOT UPON THE MOON \\
 JULY 1969, A.~D.
 \end{center}
 
-\noindent Typography matters: it tells people
+\noindent Typography tells people
 what you have to say before they read a single word.
+
+This is where \LaTeX{} shines: unless you want to give Adobe large sums
+of money for InDesign or InCopy,
+you won't find any better typesetting software.
+By carefully handling subtle details---like how paragraphs are broken into lines,
+or how words are spaced and hyphenated---\LaTeX{} provides high-quality layout
+with almost no effort from you, the author.
+Modern versions can also take advantage of new\footnote{By new,
+I mean ``from the mid-1990s''\quotekern, but other desktop publishing software and web
+browsers are only just starting to catch up.} technologies in computer typography,
+such as OpenType fonts, giving you the same tools available to professional
+designers and publishers.
 
 \chapter{Another Guide?}

@@ -5,7 +5,7 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=10pt, numbers=endperiod, openany]{scrbook}
+\documentclass[fontsize=10pt, numbers=endperiod]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
@@ -37,6 +37,7 @@
              BoldItalicFont=AGaramond Pro Semibold Italic
             ]{Adobe Garamond Pro}
 \setsansfont[Ligatures=TeX,
+             Scale=MatchUppercase,
              Style=Alternate, % Straight-legged R
              UprightFont = *-55Rg,
              ItalicFont = *-56It,
@@ -107,11 +108,17 @@
 \setkomafont{section}{\large\itshape}
 \renewcommand*\thesection{\upshape\arabic{section}}
 
+\setkomafont{caption}{\sffamily\footnotesize}
+\setkomafont{captionlabel}{\sffamily\footnotesize}
+\renewcommand*{\figureformat}{}
+\renewcommand*{\tableformat}{}
+\renewcommand*{\captionformat}{}
+
 % Use uppercase numbers for numbered lists.
 % (We're using lowercase ones for the body text.)
 % See http://tex.stackexchange.com/a/133186
 \usepackage{enumitem}
-\setlist[enumerate]{font=\addfontfeatures{Numbers=LowercaseOff, StylisticSet=02}}
+\setlist[enumerate]{font=\addfontfeatures{Numbers=Uppercase}}
 
 % Custom footer
 \usepackage{scrlayer-scrpage}
@@ -129,6 +136,7 @@
 
 \usepackage{changepage} % For adjustwidth
 
+\usepackage{mflogo} % for METAFONT
 \usepackage{metalogo} % for \LuaLaTeX
 
 \usepackage{endnotes}
@@ -139,7 +147,15 @@
 % OTF goodness...
 \renewcommand\makeenmark{{\addfontfeature{VerticalPosition=Superior}\theenmark}}
 
-\usepackage{setspace}
+\usepackage{listings}
+\lstset
+{
+    language=[LaTeX]TeX,
+    breaklines=true,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\ttfamily\small,
+    xleftmargin=2em
+}
 
 \title{LaTeX and Modern Typography}
 \author{Matt Kline}
@@ -153,7 +169,7 @@
 % for a tighter look.
 % Care should be taken to not make it too tight - f" and the like can overlap
 % if you're not careful.
-\newcommand{\punckern}{\kern-0.4ex}
+\newcommand{\punckern}{\kern-0.2ex}
 % For placing commas close to, or under, quotes they follow.
 % We're programmers, and we blatantly disregard American typographical norms
 % to put the quotes inside, but we can at least make it look a bit nicer.
@@ -163,8 +179,6 @@
 % Create an unbreakable string of text in a monospaced font.
 % Useful for `command --line --args`
 \newcommand{\monobox}[1]{\mbox{\texttt{#1}}}
-
-\newcommand{\keyword}[1]{\monobox{\color{darkGreen}#1}}
 
 % C++ looks nicer if the ++ is in a monospace font and raised a bit.
 % Also, use uppercase numbers to match the capital C.
@@ -177,7 +191,8 @@
 % Italicize new terms
 \newcommand{\introduce}[1]{\textit{#1}}
 
-\newcommand{\secref}[1]{\hyperref[#1]{\textsc{\S}\ref*{#1}}}
+% Letterspace acronyms a bit.
+\newcommand{\acronym}[1]{\textsc{\addfontfeature{LetterSpace=8}#1}}
 
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
@@ -211,6 +226,9 @@ Modern
 
 \null
 \vfill
+Some crappy draft, typeset \today.
+\vspace*{0.5in}
+
 {\addfontfeature{Numbers={Proportional,Uppercase}}
 Copyright © 2018 \\
 by Matthew Kline
@@ -245,9 +263,12 @@ his college papers.
 \cleardoublepage
 \input{why}
 
+\appendix
+
+\input{history}
+
 \backmatter
-\setcounter{secnumdepth}{0}
-\setkomafont{chapter}{\Large\itshape}
+\setkomafont{chapter}{\LARGE\itshape}
 \setlength\parskip{\baselineskip}
 \setlength\parindent{0pt}
 
