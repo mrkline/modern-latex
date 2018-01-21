@@ -57,20 +57,20 @@ This might seem alien to you if you've never worked with a markup system before.
 However, it comes with a few advantages:
 \begin{enumerate}
 \item You can think separately about your document's contents and
-    its presentation, how it looks.
+    its presentation.
     \LaTeX{} automatically ensures that fonts, sizes, line heights,
     and other layout considerations are consistent according to the rules you set.
-\item You can define your own rules, and tweak them to immediately change
+\item You can define your own rules, then tweak them to immediately change
     every place they're used in your document.
     For example, the \verb|\introduce| and \verb|\acronym| commands you saw above
-    are my own creations. The former currently \introduce{italicizes} text, and
+    are my own creations. The former \introduce{italicizes} text, and
     the latter sets things in \acronym{small caps} with a bit of extra
     \,\textsc{\addfontfeature{LetterSpace=15}letterspacing}\, so that things don't
     look \textsc{too crowded}.
     If I wake up tomorrow and decide that new terms should look
     \textbf{\itshape like this} and acronyms
     {\small\addfontfeature{LetterSpace=8} LIKE THIS},
-    I just change the two lines that define those commands,
+    I just change the two lines that define those commands
     and every single place in the book that uses them takes on those new styles.
 \item In \LaTeX, the document's structure is immediately visible,
     and can be easily copied.
@@ -90,6 +90,7 @@ but misses the main selling point of \LaTeX.
 You should try it because you care about\ldots
 
 \chapter{Typography}
+\label{typography}
 
 Modern life is a constant battle for your attention---every day,
 dozens of ads, apps, emails, sites, and texts fight
@@ -141,7 +142,7 @@ or how words are spaced and hyphenated---\LaTeX{} provides high-quality layout
 with almost no effort from you, the author.
 Modern versions can also take advantage of new\footnote{By new,
 I mean ``from the mid-1990s''\quotekern, but other desktop publishing software and web
-browsers are only just starting to catch up.} technologies in computer typography,
+browsers are only just starting to catch up.} advances in computer typography,
 such as OpenType fonts, giving you the same tools available to professional
 designers and publishers.
 
