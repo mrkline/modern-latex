@@ -24,7 +24,7 @@
 % and mononoki for monospace text.
 % Feel free to pick your own fonts or comment these lines out to use TeX's
 % traditional Computer Modern.
-\usepackage[no-math]{fontspec}
+\usepackage{fontspec}
 \usepackage[fleqn]{amsmath}
 %\setmainfont[Ligatures=TeX,
 %             Numbers=Lowercase,
@@ -32,9 +32,27 @@
 %             SmallCapsFeatures={StylisticSet=10}, % Set everything in \textsc{} as small caps
 %             StylisticSet=01, % Slightly smaller quotes, asterisks, etc.
 %            ]{Equity Text A}
+
+% Help, I've fallen down a rabbit hole.
+% Define better kerns following f
+\directlua
+{
+  fonts.handlers.otf.addfeature {
+    name = "morekerns",
+    type = "kern",
+    data = {
+      ["f"] = {
+        ["!"] = 150,
+        ["T"] = 120
+      },
+    },
+  }
+}
+
 \setmainfont[Ligatures=TeX, Numbers={Proportional,Lowercase},
              BoldFont=AGaramond Pro Semibold,
-             BoldItalicFont=AGaramond Pro Semibold Italic
+             BoldItalicFont=AGaramond Pro Semibold Italic,
+             RawFeature=+morekerns
             ]{Adobe Garamond Pro}
 \setsansfont[Ligatures=TeX,
              Scale=MatchUppercase,
@@ -46,7 +64,11 @@
              ]{NHaasGroteskTXPro}
 \setmonofont[Scale=MatchLowercase]{mononoki}
 
-\usepackage[italic]{mathastext}
+% We'll be using this quite a bit:
+\newfontfamily{\lm}[%
+    Ligatures=TeX,
+    SmallCapsFont = * Caps
+]{Latin Modern Roman}
 
 \usepackage{polyglossia}
 \setdefaultlanguage[variant=american]{english}
@@ -109,6 +131,8 @@
 \setkomafont{section}{\Large\itshape}
 \renewcommand*\thesection{\upshape\arabic{section}}
 
+%\setcapwidth[l]{.8\textwidth}
+%\setcapmargin{0pt}
 \setkomafont{caption}{\sffamily\footnotesize}
 \setkomafont{captionlabel}{\sffamily\footnotesize}
 \renewcommand*{\figureformat}{}
@@ -128,8 +152,6 @@
 \setkomafont{pagefoot}{\upshape}
 \cefoot*{\thepage} % \, is a TeX primitive for a thin space.
 \cofoot*{\thepage} % \, is a TeX primitive for a thin space.
-
-\usepackage{minted} % Syntax highlighting via Pygments
 
 \usepackage{graphicx}
 
@@ -152,11 +174,14 @@
 \lstset
 {
     language=[LaTeX]TeX,
-    breaklines=true,
+    breaklines=false,
     basicstyle=\ttfamily\small,
     keywordstyle=\ttfamily\small,
-    xleftmargin=2em
 }
+
+\newenvironment{leftfigure}
+  {\par\vspace{0.5\baselineskip minus 0.25\baselineskip}\begin{adjustwidth}{3em}{0pt}}
+  {\end{adjustwidth}\vspace*{0.3\baselineskip minus 0.2\baselineskip}}
 
 \title{Modern LaTeX}
 \author{Matt Kline}
@@ -280,6 +305,8 @@ his college papers.
 \input{why}
 
 \input{installation}
+
+\input{hello}
 
 \appendix
 

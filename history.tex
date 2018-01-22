@@ -64,10 +64,8 @@ By tweaking the parameters of these pens and strokes, one can build entire
 font families from the same base designs.}
 Perhaps most importantly, Knuth and his graduate students designed algorithms
 to automatically hyphenate and justify lines of text into
-beautifully-typeset paragraphs.\footnote{Called the Knuth-Plass and
-Knuth-Liang algorithms,
-these form the basis of \TeX-based layout systems to this day,
-and went on to influence the algorithms Adobe uses in its software.\punckern\endnote{%
+beautifully-typeset paragraphs.\footnote{These same algorithms went
+on to influence the algorithms Adobe uses in its software.\punckern\endnote{%
 Several sources (\url{http://www.tug.org/whatis.html},
 \url{https://tug.org/interviews/thanh.html},
 \url{http://www.typophile.com/node/34620})
@@ -86,7 +84,7 @@ the other most popular today being Con\TeX{}t.
 Development continues today,
 both in the form of user-provided packages for \TeX{} and \LaTeX{},
 and on improvements to the \TeX{} typesetting program itself.
-Currently, there are four projects:
+Currently, there are four versions, or \introduce{engines}:
 \begin{description}
 \item[\TeX] is the original system by Donald Knuth.
 Knuth stopped adding features after version 3.0 in March~1990,
@@ -96,7 +94,7 @@ by adding an additional digit.
 The most recent version, 3.14159265, came out in January~2014.
 
 \item[pdf\TeX] is an extension of \TeX{} that provides direct \acronym{pdf}
-    output (instead of the \TeX's \acronym{dvi}),
+    output (instead of \TeX's \acronym{dvi}),
     native support for PostScript\footnote{Specifically, PostScript Type 1}
     and TrueType fonts,
     and micro-typographic features discussed in this book's Microtype chapter.
@@ -108,8 +106,8 @@ The most recent version, 3.14159265, came out in January~2014.
     \textit{Micro-typographic extensions to the \TeX{} typesetting system}
     (Masaryk University Brno, October 2000)}
 
-\item[\XeTeX] is a further extension of \TeX{} that adds native Unicode support,
-    as well as built-in handling for modern font files, such as OpenType.
+\item[\XeTeX] is a further extension of \TeX{} that adds native support for
+    Unicode and modern font formats, such as OpenType.
     It was originally developed by Jonathan Kew in the early 2000s,
     and gained full cross-platform support and inclusion in the \TeX{} Live
     distribution in 2007.\punckern\endnote{Jonathan Kew,
@@ -118,7 +116,7 @@ The most recent version, 3.14159265, came out in January~2014.
 \item[\LuaTeX] is similar to \XeTeX{} in its native Unicode and modern font support.
     It also embeds the Lua scripting language into the engine,
     exposing an interface for package and document authors.
-    It also first appeared in 2007, and is developed by a core team of
+    It first appeared in 2007, and is developed by a core team of
     Hans Hagen, Hartmut Henkel, Taco Hoekwater,
     and Luigi Scarso.\punckern\endnote{\url{http://www.luatex.org}}
 \end{description}

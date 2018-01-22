@@ -33,12 +33,11 @@ using \introduce{markup} to specify how things should look.
 When you are ready, \LaTeX{} generates your document from this file
 based on the rules it was given.
 If you've ever done any web development, this is a familiar process.
-Just as \acronym{html} and \acronym{css} describe the web page you want
-browsers to render, your markup describes the appearance of your document
-to \LaTeX{}.
+Just as \acronym{html} and \acronym{css} describe the web page you
+want browsers to render, your markup describes the appearance of your
+document to \LaTeX{}.
 
-\begin{figure}[h]
-\centering
+\begin{leftfigure}
 \begin{lstlisting}
 \LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tex''} is different.
 Here, you write your document as a ``plain'' text file,
@@ -46,12 +45,12 @@ using \introduce{markup} to specify how things should look.
 When you are ready, \LaTeX{} generates your document from this file
 based on the rules it was given.
 If you've ever done any web development, this is a familiar process.
-Just as \acronym{html} and \acronym{css} describe the web page you want
-browsers to render, your markup describes the appearance of your document
-to \LaTeX{}.
+Just as \acronym{html} and \acronym{css} describe the web page you
+want browsers to render, your markup describes the appearance of your
+document to \LaTeX{}.
 \end{lstlisting}
-\caption{The \LaTeX{} markup for the above paragraph}
-\end{figure}
+\captionof{figure}{The \LaTeX{} markup for the above paragraph}
+\end{leftfigure}
 
 This might seem alien to you if you've never worked with a markup system before.
 However, it comes with a few advantages:
@@ -92,9 +91,9 @@ You should try it because you care about\ldots
 \chapter{Typography}
 \label{typography}
 
-Modern life is a constant battle for your attention---every day,
+Modern life is a constant battle for your time---every day,
 dozens of ads, apps, emails, sites, and texts fight
-for a few short minutes of your time.
+for a few short minutes.
 To put ideas into the world,
 nothing is more important than catching and holding
 the attention of your audience.
@@ -109,34 +108,25 @@ It sets their expectations, and establishes a subliminal ``brand'' for your
 work.\punckern\endnote{Erik Spiekermann, ``Type is Visible Language''
 (presented at Beyond Tellerrand, Düsseldorf, Germany, May 19--21, 2014), \url{https://www.youtube.com/watch?v=ggQpDu63kk0}.}
 It's the \emph{how} of text.
-
-\begin{adjustwidth}{2em}{0pt}
+\begin{leftfigure}
 \fontspec{TeX Gyre Termes}\fontsize{12pt}{24pt}\selectfont\raggedright
-\noindent Typography is why this reminds you of all the terrible essays
+Typography is why this reminds you of the terrible essays
 you wrote in school.
-Would you prefer to read an entire book this way?
-\end{adjustwidth}
-\bigskip
-
-\noindent It is why
-
-\bigskip
-\begin{adjustwidth}{2em}{0pt}
+Would you like to read an entire book this way?
+\end{leftfigure}
+It is why
+\begin{leftfigure}
 \noindent\fontspec{FuturaCon-ExtBol}\Large DO IT LATER
-\end{adjustwidth}
-\bigskip
-
-\noindent seems oddly reminiscent of a certain shoe company's advertising,
+\end{leftfigure}
+seems oddly reminiscent of a certain shoe company's advertising,
 or how
-
 \begin{center}
 \fontspec[Ligatures=TeX, Scale=MatchLowercase]{Futura-Med}
 \noindent MEN FROM THE PLANET EARTH \\
 FIRST SET FOOT UPON THE MOON \\
 JULY 1969, A.~D.
 \end{center}
-
-\noindent Typography tells people
+Typography tells people
 what you have to say before they read a single word.
 
 This is where \LaTeX{} shines: unless you want to give Adobe large sums
@@ -144,7 +134,7 @@ of money for InDesign or InCopy,
 you won't find any better typesetting software.
 By carefully handling subtle details---like how paragraphs are broken into lines,
 or how words are spaced and hyphenated---\LaTeX{} provides high-quality layout
-with almost no effort from you, the author.
+with little effort from you, the author.
 Modern versions can also take advantage of new\footnote{By new,
 I mean ``from the mid-1990s''\quotekern, but other desktop publishing software and web
 browsers are only just starting to catch up.} advances in computer typography,
