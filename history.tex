@@ -97,14 +97,30 @@ The most recent version, 3.14159265, came out in January~2014.
 
 \item[pdf\TeX] is an extension of \TeX{} that provides direct \acronym{pdf}
     output (instead of the \TeX's \acronym{dvi}),
-    native support PostScript\footnote{Specifically, PostScript Type 1}
+    native support for PostScript\footnote{Specifically, PostScript Type 1}
     and TrueType fonts,
     and micro-typographic features discussed in this book's Microtype chapter.
-    It was originally developed by Hàn Thê Thành as part of his PhD thesis
+    It was originally developed by
+    Hàn Th\rlap{ê}\raisebox{0.2ex}{\,´} Thành
+    as part of his PhD thesis
     for Masaryk University in Brno, Czech Republic.\punckern\endnote{%
-    Hàn Thê Thành,
+    Hàn Th\rlap{ê}\raisebox{0.2ex}{\,´} Thành,
     \textit{Micro-typographic extensions to the \TeX{} typesetting system}
     (Masaryk University Brno, October 2000)}
+
+\item[\XeTeX] is a further extension of \TeX{} that adds native Unicode support,
+    as well as built-in handling for modern font files, such as OpenType.
+    It was originally developed by Jonathan Kew in the early 2000s,
+    and gained full cross-platform support and inclusion in the \TeX{} Live
+    distribution in 2007.\punckern\endnote{Jonathan Kew,
+    ``\XeTeX{} Live''\quotekern, \textit{TUGboat} 29, no.~1 (2007)}
+
+\item[\LuaTeX] is similar to \XeTeX{} in its native Unicode and modern font support.
+    It also embeds the Lua scripting language into the engine,
+    exposing an interface for package and document authors.
+    It also first appeared in 2007, and is developed by a core team of
+    Hans Hagen, Hartmut Henkel, Taco Hoekwater,
+    and Luigi Scarso.\punckern\endnote{\url{http://www.luatex.org}}
 \end{description}
 
 Building \TeX{} today is an\ldots{} interesting endeavour.
@@ -119,11 +135,17 @@ This mix of English and code is called \texttt{WEB}.\punckern\footnote{Knuth
 also released a pair of compainion programs named
 \texttt{TANGLE} and \texttt{WEAVE}.
 The former extracts the book---as \TeX, of course---and the latter
-produces the original Pascal source code.}
+produces the \TeX's Pascal source code.}
 
-Unsurprisingly, most modern systems don't have good tooling for a late 1970s
+Unsurprisingly, most modern systems don't have good tooling for the late 1970s
 dialect of Pascal that \TeX{} was written in,
 so present-day distributions use another program,
 \texttt{web2c}, to convert \TeX{}'s \texttt{WEB} source into C code.
-The resulting C is then built with a system's standard toolchains.
+pdf\TeX{} and \XeTeX{} are built by combining the result with other C
+and \cpp{} code.
+The \LuaTeX{} authors, on the other hand, hand-translated Knuth's Pascal into C,
+and have been using the resulting code since 2009.\punckern\endnote{
+Taco Hoekwater, \textit{\LuaTeX says goodbye to Pascal} 
+(MAPS 39, Euro\TeX{} 2009),
+\url{https://www.tug.org/TUGboat/tb30-3/tb96hoekwater-pascal.pdf}}
 
