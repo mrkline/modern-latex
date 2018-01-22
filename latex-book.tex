@@ -103,10 +103,10 @@
 ]{tocline}{chapter}
 
 % Don't use a sans font for description labels.
-\addtokomafont{descriptionlabel}{\rmfamily\mdseries}
+\addtokomafont{descriptionlabel}{\rmfamily}
 \setkomafont{disposition}{\rmfamily}
 \addtokomafont{chapter}{\addfontfeature{Numbers=Uppercase}}
-\setkomafont{section}{\large\itshape}
+\setkomafont{section}{\Large\itshape}
 \renewcommand*\thesection{\upshape\arabic{section}}
 
 \setkomafont{caption}{\sffamily\footnotesize}
@@ -183,7 +183,8 @@
 
 % C++ looks nicer if the ++ is in a monospace font and raised a bit.
 % Also, use uppercase numbers to match the capital C.
-\newcommand{\cpp}[1]{C\kern-0.1ex\raisebox{0.3ex}{\texttt{++}}{\addfontfeature{Numbers=LowercaseOff}#1}}
+\newcommand{\plusplus}{\raisebox{0.2ex}{++}}
+\newcommand{\cpp}[1]{C\kern-0.1ex\plusplus{\addfontfeature{Numbers=LowercaseOff}#1}}
 \newcommand{\clang}[1]{C{\addfontfeature{Numbers=LowercaseOff}#1}}
 \newcommand{\csharp}{C\raisebox{0.25ex}{\#}}
 
@@ -207,6 +208,8 @@
 \emergencystretch=1em
 
 \begin{document}
+\fontsize{10pt}{13pt}\selectfont
+
 \frontmatter
 \setcounter{secnumdepth}{0}
 \setlength\parindent{0pt}
@@ -273,7 +276,10 @@ his college papers.
 \pagenumbering{arabic}
 \setcounter{page}{1} % Restart page numbering after the ToC.
 \cleardoublepage
+
 \input{why}
+
+\input{installation}
 
 \appendix
 
