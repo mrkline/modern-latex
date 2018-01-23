@@ -12,25 +12,28 @@ Hello, World!
 \end{document}
 \end{lstlisting}
 \end{leftfigure}
-We now want to run this through a \LaTeX{} program,
-also called an \introduce{engine}, to get our document.
-The installation will have placed several different engines on your
-machine, but for this entire book, we'll always use \LuaLaTeX or \XeLaTeX.
+We then want to run this through \LaTeX{} (the program)\footnote{Not to be
+confused with \LaTeX{} the lunchbox, \LaTeX{} the breakfast cereal,
+or \LaTeX{} the flamethrower. The kids love this stuff!}
+to get our document.
+The installation will have placed several different versions---or
+\introduce{engines}---on your machine,
+but for the entire book, we'll always use \LuaLaTeX or \XeLaTeX.
 These are the newest engines available---see Appendix~\ref{history} for an
-explanation of how the various versions of \LaTeX{} differ.
+explanation of how they differ from the others.
 
 If you are using a \LaTeX{}-specific editor, it may contain a drop-down menu
-or some other configuation to select the version you'd like to use,
-and a button to generate your document.
+or some other configuation to select the engine you'd like to use,
+as well as a button to generate your document.
 Otherwise, from a terminal,\punckern\footnote{How to work a terminal emulator,
-making sure the newly-installed \LaTeX{} programs are in your \texttt{\$PATH},
+making sure the newly-installed \LaTeX{} programs are in your \texttt{PATH},
 and so on are all outside the scope of this book.
 As is tradition, the leading dollar signs in examples just denote a console
 prompt, and shouldn't actually be typed.}
 run the following:
 \begin{leftfigure}
 \begin{lstlisting}
-$ xelatex -halt-on-error hello.tex
+$ xelatex hello.tex
 \end{lstlisting}
 \end{leftfigure}
 Feel free to use \texttt{lualatex} instead---there are a few differences
@@ -42,14 +45,14 @@ Output written on hello.pdf (1 page).
 Transcript written on hello.log.
 \end{lstlisting}
 \end{leftfigure}
-and in the same directory, a newly minted \texttt{hello.pdf}.
+and in your current directory, a newly minted \texttt{hello.pdf}.
 Open it up and you should find a page with this at the top:
 \begin{leftfigure}
 \lm Hello, World!
 \end{leftfigure}
 Congrats!
 You just created your first document with \LaTeX.
-Now let's unpack what we did.
+Let's unpack what we did.
 
 All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
 which picks a style to use.
@@ -58,16 +61,15 @@ ones include \texttt{article}, \texttt{report}, \texttt{book},
 and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
 Kind of an odd name, no?}
 For your average document, \texttt{article} is probably a good choice.
-On our next line, we had \verb|% Say hello|.
+Next, we have \verb|% Say hello|.
 This is a \introduce{comment}---anything placed after a percent symbol on a line
-will be ignored by the engine.
-Like comments in programming,
-you should use these to explain what's going on to anybody reading the
-document.\punckern\footnote{Including, and perhaps most importantly,
-a later version of yourself!}
+is ignored by the engine,
+so use \verb|%| to leave notes about what's going on to anybody reading the
+document's source.\punckern\footnote{Including, perhaps most importantly,
+a confused version of your future self!}
 Finally, we use \verb|\begin{document}| to tell \LaTeX{} that what follows
-is the contents we actually care to typeset, say hello, and tell \LaTeX{}
-we are finished with \verb|\end{document}|.
+is our actual contents.
+We tell \LaTeX{} that we are finished with \verb|\end{document}|.
 
 So far, so good.
 Let's cover some basic rules.
@@ -75,34 +77,145 @@ Let's cover some basic rules.
 \section{Spacing}
 
 \LaTeX{} generally handles inter-word spacing for you, regardless of how many
-spaces you type. For example,
+spaces\footnote{Or tabs} you type. For example,
 \begin{leftfigure}
 \begin{lstlisting}
-The number  of   spaces    between words doesn't   matter. See?
+The number  of   spaces    between words doesn't   matter. The same
+is true for sentences.
 
 An empty line starts a new paragraph.
 \end{lstlisting}
 \end{leftfigure}
 yields
 \begin{leftfigure}
-\lm The number  of   spaces    between words doesn't   matter. See?
+\lm The number  of   spaces    between words doesn't   matter. The same
+is true for sentences.
 
 An empty line  starts a new paragraph.
 \end{leftfigure}
-Notice that \LaTeX{} is also automatically following the normal typographic
-convention of leaving more space after a period than one does between words.
-One quirk to be aware of, though, is that comments ``eat'' all of the leading
+Notice that \LaTeX{} is automatically following typographic
+conventions, such as indenting new paragraphs and  leaving more space after a
+period than one does between words.
+One quirk to be aware of is that comments ``eat'' all of the leading
 space on the subsequent line, such that
 \begin{leftfigure}
 \begin{lstlisting}
 This% weird, right?
-is strange
+  is strange
 \end{lstlisting}
 \end{leftfigure}
 gives
 \begin{leftfigure}
 This% weird, right?
-is strange
+  is strange
 \end{leftfigure}
 
-\section{Special Characters}
+\section{Commands}
+
+\LaTeX{} has various commands to issue instructions to
+the engine, and you can define your own as well.
+Their names always begin with a backslash (\,\texttt{\textbackslash}\,),
+contain only letters, and are case-sensitive.\punckern\footnote{%
+% \verb doesn't play nicely in footnotes, so...
+\texttt{\textbackslash foo}
+is different from \texttt{\textbackslash Foo}, for example.}
+Some commands require parameters, or \introduce{arguments}---\verb|\documentclass|,
+for example, needs to know which document class we want.
+These arguments are enclosed in subsequent pairs of braces,
+so if some command needed two arguments, we would type:
+\begin{leftfigure}
+\begin{lstlisting}
+\somecommand{argument1}{argument2}
+\end{lstlisting}
+\end{leftfigure}
+Some commands also take optional arguments, which are enclosed in brackets.
+Say you want to inform \LaTeX{} that your document will be printed as
+double-sided pages.\punckern\footnote{This introduces commands that only
+make sense in the context of double-sided printing,
+such as ones that skip to the start of the next odd page.
+It also allows you to have different margins for even and odd pages,
+which is useful for things like this book.}
+This is done with an optional argument to \verb|\documentclass|:
+\begin{leftfigure}
+\begin{lstlisting}
+\documentclass[twoside]{article}
+\end{lstlisting}
+\end{leftfigure}
+
+Some commands take no arguments at all, such as the one that prints the \LaTeX{}
+logo, \verb|\LaTeX|.
+An oddity of the system is that these commands consume any space that follows them.
+For example,
+\begin{leftfigure}
+\begin{lstlisting}
+\LaTeX is great, but it can be strange sometimes.
+\end{lstlisting}
+\end{leftfigure}
+will give you
+\begin{leftfigure}
+\lm \LaTeX is great, but it can be strange sometimes.
+\end{leftfigure}
+You can fix this by adding an empty pair of braces to the command.
+Of course, the braces aren't needed if there is no space to preserve:
+\begin{leftfigure}
+\begin{lstlisting}
+Let's learn \LaTeX! \LaTeX{} is a powerful tool,
+but a few of its rules are a little weird.
+\end{lstlisting}
+\end{leftfigure}
+gets us
+\begin{leftfigure}
+\lm Let's learn \LaTeX! \LaTeX{} is a powerful tool,
+but a few of its rules are a little weird.
+\end{leftfigure}
+
+\section{Special characters and line breaks}
+
+Some characters have special meanings in \LaTeX.
+We saw above, for example, that \verb|%| starts a comment
+and \verb|\| marks the start of some command.
+Watch out for the following:
+\begin{leftfigure}
+\begin{lstlisting}
+# $ % ^ & _ { } ~ \
+\end{lstlisting}
+\end{leftfigure}
+All have corresponding commands
+if you want to make them appear in your document.
+\begin{leftfigure}
+\begin{lstlisting}
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+\end{lstlisting}
+\end{leftfigure}
+will produce
+\begin{leftfigure}
+\lm \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+\end{leftfigure}
+Regardless of what comes after them, you must always add braces to
+the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,).
+This is a relic from days when these were used to produce
+\introduce{diacritical marks}:
+once upon a time, \LaTeX{} users had to typeset ``jalapeño'' as
+\verb|jalape\~no|.
+Today, we just type \texttt{ñ} into our source
+file.\punckern\footnote{The ease with which you can do this depends
+on the keyboard you're using, the language settings in your \acronym{os},
+and your editor.
+Later on, we'll talk much more about non-English languages and Unicode fun.}
+
+If you're wondering why \texttt{\textbackslash} is \verb|\textbackslash|
+instead of just \verb|\\|, it's because the latter is the command to force
+a line break.
+\begin{leftfigure}
+\begin{lstlisting}
+Give me \\
+a brand new line!
+\end{lstlisting}
+\end{leftfigure}
+obeys:
+\begin{leftfigure}
+\lm Give me \\
+a brand new line!
+\end{leftfigure}
+Use this power judiciously---deciding how to break paragraphs into lines
+automatically is one of \LaTeX{}'s best skills.

@@ -45,6 +45,19 @@
         ["!"] = 150,
         ["T"] = 120
       },
+      ["ff"] = {
+        ["!"] = 150,
+        ["T"] = 120
+      },
+      ["n"] = {
+        ["T"] = -80
+      },
+      ["a"] = {
+        ["T"] = -70
+      },
+      ["o"] = {
+        ["T"] = -90
+      }
     },
   }
 }
@@ -177,11 +190,12 @@
     breaklines=false,
     basicstyle=\ttfamily\small,
     keywordstyle=\ttfamily\small,
+    commentstyle=\ttfamily\small,
 }
 
 \newenvironment{leftfigure}
   {\par\vspace{0.5\baselineskip minus 0.25\baselineskip}\begin{adjustwidth}{3em}{0pt}}
-  {\end{adjustwidth}\vspace*{0.3\baselineskip minus 0.2\baselineskip}}
+  {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.2\baselineskip}}
 
 \title{Modern LaTeX}
 \author{Matt Kline}
@@ -259,7 +273,7 @@ Matt Kline
 Some crappy draft, typeset \today.
 \vspace*{0.5in}
 
-The author apologizes for typos, misattributions, or any other flubs,
+The author apologizes for any typos, misattributions, or other flubs,
 and welcomes you to point them out on this book's Github
 repository at \\
 \url{https://github.com/mrkline/latex-book}, or via email to \\
