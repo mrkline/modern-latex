@@ -1,0 +1,101 @@
+\chapter{Document Structure}
+
+While every \LaTeX{} document is different,
+all share a few common elements.
+
+\section{Packages and the preamble}
+In the last chapter, you saw:
+\begin{leftfigure}
+\begin{lstlisting}
+\documentclass{article}
+
+\begin{document}
+Hello, World!
+\end{document}
+\end{lstlisting}
+\end{leftfigure}
+The space between the \verb|\documentclass| and \verb|\begin{document}|
+is called the \introduce{preamble}.
+Here, we perform any setup we need---such as importing packages
+and defining commands---to control how the body of our document
+(between \verb|\begin{document}| and \verb|\end{document}|) looks.
+As mentioned briefly in Chapter~\ref{installation},
+\introduce{packages} are bits of code that can modify your document
+in interesting ways.
+They can do all sorts of things, like:
+\begin{multicols}{2}
+\begin{itemize}
+\item Define new commands
+\item Change fonts
+\item Add image files
+\item Draw vector art
+\item Change document layout
+\item Add hyperlinks
+\end{itemize}
+\end{multicols}
+
+To import a package, add the command \verb|\userpackage{name}|
+to the preamble.
+As a simple example, let's make a document with the \texttt{metalogo}
+package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX| commands:
+\begin{leftfigure}
+\begin{lstlisting}
+\documentclass{article}
+
+\usepackage{metalogo}
+
+\begin{document}
+\XeLaTeX{} and \LuaLaTeX{} are neat.
+\end{document}
+\end{lstlisting}
+\end{leftfigure}
+\begin{samepage}
+should build a \textsc{pdf} that reads
+\begin{leftfigure}
+\lm \XeLaTeX{} and \LuaLaTeX{} are neat.
+\end{leftfigure}
+\end{samepage}
+Like other commands, \verb|\usepackage| can take optional arguments.
+The \texttt{geometry} package, for instance,
+takes the desired paper size and margins.
+For \acronym{us} letter paper with one-inch side margins, you could type:
+\begin{leftfigure}
+\begin{lstlisting}
+\usepackage[letterpaper, left=1in, right=1in]{geometry}
+\end{lstlisting}
+\end{leftfigure}
+
+
+Many packages are installed as part of your \LaTeX{} distribution,
+and any you can't find there can be found on the Comprehensive \TeX{}
+Archive Network, or \acronym{ctan}.\punckern\footnote{Curious readers may
+be wondering what \TeX{} is, and how it differs from \LaTeX.
+The short version is that \TeX{} is the typesetting system that \LaTeX{}
+is built on top of---the latter is a framework of commands for the former.
+(For example, \texttt{\textbackslash documentclass} and friends are provided by
+\LaTeX{}, but the \TeX{} engine is what's actually laying out your document.)
+The long version is at the back of the book, under Appendix~\ref{history}.
+We won't discuss how to use plain \TeX{} here---that's for another book.
+The \TeX book.}
+The manuals for every single package can also be found on \acronym{ctan},
+so it should be your first stop when learning how to use a new package.
+
+\section{Titles, sections, and tables of contents}
+
+TBD
+
+\section{What next?}
+
+As promised, this book isn't a comprehensive reference,
+but it \emph{will} point you to places where you can learn more.
+See Appendix~\ref{resources} for good, general \LaTeX{} resources,
+but we'll also wrap up each chapter with some ideas you could look into next.
+
+Consider learning about:
+\begin{itemize}
+\item KOMA~Script, a set of document classes and packages
+that make it easy to customize nearly every aspect of your document,
+from section heading fonts to footnotes.
+\item Including images using the \texttt{graphicsx} package.
+\item Adding hyperlinks to your \acronym{pdf} using the \texttt{hyperref} package.
+\end{itemize}

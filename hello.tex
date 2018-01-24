@@ -23,7 +23,7 @@ These are the newest engines available---see Appendix~\ref{history} for an
 explanation of how they differ from the others.
 
 If you are using a \LaTeX{}-specific editor, it may contain a drop-down menu
-or some other configuation to select the engine you'd like to use,
+or some other configuration to select the engine you'd like to use,
 as well as a button to generate your document.
 Otherwise, from a terminal,\punckern\footnote{How to work a terminal emulator,
 making sure the newly-installed \LaTeX{} programs are in your \texttt{PATH},
@@ -38,7 +38,7 @@ $ xelatex hello.tex
 \end{leftfigure}
 Feel free to use \texttt{lualatex} instead---there are a few differences
 between the two, but either is fine for now.
-With luck, you should see some output, ending in a message similar to:
+With luck, you should see some output that ends in a message like:
 \begin{leftfigure}
 \begin{lstlisting}
 Output written on hello.pdf (1 page).
@@ -50,10 +50,10 @@ Open it up and you should find a page with this at the top:
 \begin{leftfigure}
 \lm Hello, World!
 \end{leftfigure}
-Congrats!
-You just created your first document with \LaTeX.
-Let's unpack what we did.
 
+Congrats!
+You just created your first document.
+Let's unpack what we did.
 All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
 which picks a style to use.
 Many classes are available---and you can even create your own---but common
@@ -61,18 +61,18 @@ ones include \texttt{article}, \texttt{report}, \texttt{book},
 and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
 Kind of an odd name, no?}
 For your average document, \texttt{article} is probably a good choice.
-Next, we have \verb|% Say hello|.
+Next, is \verb|% Say hello|.
 This is a \introduce{comment}---anything placed after a percent symbol on a line
 is ignored by the engine,
-so use \verb|%| to leave notes about what's going on to anybody reading the
-document's source.\punckern\footnote{Including, perhaps most importantly,
+so we can use \verb|%| to leave notes about what's going on to anybody reading
+the document's source.\punckern\footnote{Including, perhaps most importantly,
 a confused version of your future self!}
 Finally, we use \verb|\begin{document}| to tell \LaTeX{} that what follows
-is our actual contents.
-We tell \LaTeX{} that we are finished with \verb|\end{document}|.
+is our actual contents,
+and we use \verb|\end{document}| to state that we are finished.
 
 So far, so good.
-Let's cover some basic rules.
+Let's cover some more basics.
 
 \section{Spacing}
 
@@ -128,10 +128,11 @@ so if some command needed two arguments, we would type:
 \somecommand{argument1}{argument2}
 \end{lstlisting}
 \end{leftfigure}
-Some commands also take optional arguments, which are enclosed in brackets.
+Some commands also take optional arguments, which are enclosed in brackets
+and precede the mandatory ones.
 Say you want to inform \LaTeX{} that your document will be printed as
-double-sided pages.\punckern\footnote{This introduces commands that only
-make sense in the context of double-sided printing,
+double-sided pages.\punckern\footnote{\texttt{twoside} introduces commands
+that only make sense in the context of double-sided printing,
 such as ones that skip to the start of the next odd page.
 It also allows you to have different margins for even and odd pages,
 which is useful for things like this book.}
@@ -142,9 +143,9 @@ This is done with an optional argument to \verb|\documentclass|:
 \end{lstlisting}
 \end{leftfigure}
 
-Some commands take no arguments at all, such as the one that prints the \LaTeX{}
-logo, \verb|\LaTeX|.
-An oddity of the system is that these commands consume any space that follows them.
+Some commands take no arguments at all, such as \verb|\LaTeX|,
+the one that prints the \LaTeX{} logo.
+Know that these commands consume any space that follows them.
 For example,
 \begin{leftfigure}
 \begin{lstlisting}
@@ -174,7 +175,7 @@ but a few of its rules are a little weird.
 Some characters have special meanings in \LaTeX.
 We saw above, for example, that \verb|%| starts a comment
 and \verb|\| marks the start of some command.
-Watch out for the following:
+The full list is:
 \begin{leftfigure}
 \begin{lstlisting}
 # $ % ^ & _ { } ~ \
@@ -193,9 +194,9 @@ will produce
 \end{leftfigure}
 Regardless of what comes after them, you must always add braces to
 the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,).
-This is a relic from days when these were used to produce
+This is a relic from days when these characters were used to produce
 \introduce{diacritical marks}:
-once upon a time, \LaTeX{} users had to typeset ``jalapeño'' as
+once upon a time, users had to typeset ``jalapeño'' as
 \verb|jalape\~no|.
 Today, we just type \texttt{ñ} into our source
 file.\punckern\footnote{The ease with which you can do this depends
@@ -203,9 +204,9 @@ on the keyboard you're using, the language settings in your \acronym{os},
 and your editor.
 Later on, we'll talk much more about non-English languages and Unicode fun.}
 
-If you're wondering why \texttt{\textbackslash} is \verb|\textbackslash|
-instead of just \verb|\\|, it's because the latter is the command to force
-a line break.
+If you're wondering why we print \texttt{\textbackslash} with
+\verb|\textbackslash| instead of just \verb|\\|,
+it's because the latter is the command to force a line break.
 \begin{leftfigure}
 \begin{lstlisting}
 Give me \\
@@ -219,3 +220,74 @@ a brand new line!
 \end{leftfigure}
 Use this power judiciously---deciding how to break paragraphs into lines
 automatically is one of \LaTeX{}'s best skills.
+
+\section{Environments}
+
+We often control our document by organizing text into \introduce{environments}.
+Environments always start with \verb|\begin{name}| and end with \verb|\end{name}|,
+where \texttt{name} is the name of the environment.
+All documents use the \texttt{document} environment to start and end their bodies,
+but there are many others.
+Take \texttt{quote}, which adds additional spacing on both sides of a block
+quotation:
+\begin{leftfigure}
+\begin{lstlisting}
+Donald Knuth once wrote,
+\begin{quote}
+We should forget about small efficiencies,
+say about 97\% of the time:
+premature optimization is the root of all evil.
+Yet we should not pass up our opportunities in that critical 3\%.
+\end{quote}
+\end{lstlisting}
+\end{leftfigure}
+gives us:
+\begin{leftfigure}
+\lm
+Donald Knuth once wrote,
+\begin{quote}
+We should forget about small efficiencies,
+say about 97\% of the time:
+premature optimization is the root of all evil.
+Yet we should not pass up our opportunities in that critical 3\%.
+\end{quote}
+\end{leftfigure}
+
+\section{Groups and command scope}
+Some commands change how \LaTeX{} typesets text.
+\verb|\itshape|, for example, \textit{italicizes} everything that comes after it.
+If we want to limit a command's effect to a certain region, we can surround it
+with braces.
+\begin{leftfigure}
+\begin{lstlisting}
+{\itshape Sometimes we want italics}, but only sometimes.
+\end{lstlisting}
+\end{leftfigure}
+is set as
+\begin{leftfigure}
+\lm {\itshape Sometimes we want italics}, but only sometimes.
+\end{leftfigure}
+The text within the braces forms a \introduce{group},
+and all commands issued inside the group only take effect until it ends.
+Environments also also form implicit groups:
+\begin{leftfigure}
+\begin{lstlisting}
+\begin{quote}
+\itshape If I italicize a quote, the following text will
+use upright type again.
+\end{quote}
+See? Back to normal.
+\end{lstlisting}
+\end{leftfigure}
+produces
+\begin{leftfigure}
+\lm
+\begin{quote}
+\itshape If I italicize a quote, the following text will
+use upright type again.
+\end{quote}
+See? Back to normal.
+\end{leftfigure}
+
+One final use of groups is to get around the spacing oddities of zero-argument
+commands: some prefer \verb|{\LaTeX}| over \verb|\LaTeX{}|.

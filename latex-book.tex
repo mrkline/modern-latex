@@ -87,8 +87,6 @@
 \setdefaultlanguage[variant=american]{english}
 \setotherlanguage{vietnamese}
 
-\usepackage{blindtext}
-
 \usepackage{microtype} % Font expansion, protrusion, and other goodness
 
 % Disable ligatures across grapheme boundaries
@@ -166,14 +164,14 @@
 \cefoot*{\thepage} % \, is a TeX primitive for a thin space.
 \cofoot*{\thepage} % \, is a TeX primitive for a thin space.
 
-\usepackage{graphicx}
-
 \newcommand{\codesize}{\fontsize{10pt}{12pt}}
 
 \usepackage{changepage} % For adjustwidth
 
 \usepackage{mflogo} % for METAFONT
 \usepackage{metalogo} % for \LuaLaTeX
+
+\usepackage{multicol}
 
 \usepackage{endnotes}
 % Endnotes _mostly_ works... with Koma Script, no less.
@@ -194,8 +192,8 @@
 }
 
 \newenvironment{leftfigure}
-  {\par\vspace{0.5\baselineskip minus 0.25\baselineskip}\begin{adjustwidth}{3em}{0pt}}
-  {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.2\baselineskip}}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{2em}{0pt}}
+  {\end{adjustwidth}\vspace*{0.3\baselineskip minus 0.1\baselineskip}}
 
 \title{Modern LaTeX}
 \author{Matt Kline}
@@ -226,8 +224,6 @@
 \newcommand{\cpp}[1]{C\kern-0.1ex\plusplus{\addfontfeature{Numbers=LowercaseOff}#1}}
 \newcommand{\clang}[1]{C{\addfontfeature{Numbers=LowercaseOff}#1}}
 \newcommand{\csharp}{C\raisebox{0.25ex}{\#}}
-
-\newcommand{\fig}[1]{Figure~\ref{#1}}
 
 % Italicize new terms
 \newcommand{\introduce}[1]{\textit{#1}}
@@ -321,6 +317,8 @@ his college papers.
 \input{installation}
 
 \input{hello}
+
+\input{structure}
 
 \appendix
 
