@@ -128,12 +128,14 @@
 \setfnsymbol{tweaked}
 \deffootnotemark{\thefootnotemark}
 
-\DeclareTOCStyleEntry[%
-    beforeskip=5pt,
-    entrynumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
-    pagenumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
-    linefill = \TOCLineLeaderFill
-]{tocline}{chapter}
+\usepackage{tocbasic}
+
+% Use the tocstyle package to give all ToC items sans serif font.
+% Note: tocstyle is currently in alpha, so feel free to tweak this as needed.
+% At time of writing, it seems to be the simplest way to get the intended effect.
+\usepackage{tocstyle}
+\settocfeature{entryhook}{\addfontfeature{Numbers={Tabular,Uppercase}}}
+\settocfeature{entryvskip}{2pt}
 
 % Don't use a sans font for description labels.
 \addtokomafont{descriptionlabel}{\rmfamily}
