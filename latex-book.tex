@@ -148,7 +148,7 @@
 \setkomafont{section}{\Large\itshape}
 \renewcommand*\thesection{\upshape\arabic{section}}
 
-%\setcapwidth[l]{.8\textwidth}
+\setcapwidth[c]{.8\textwidth}
 %\setcapmargin{0pt}
 \setkomafont{caption}{\sffamily\footnotesize}
 \setkomafont{captionlabel}{\sffamily\footnotesize}
@@ -201,6 +201,8 @@
   {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{2em}{0pt}}
   {\end{adjustwidth}\vspace*{0.3\baselineskip minus 0.1\baselineskip}}
 
+\usepackage{graphicx}
+
 \title{Modern LaTeX}
 \author{Matt Kline}
 \date{\today}
@@ -224,6 +226,12 @@
 % Useful for `command --line --args`
 \newcommand{\monobox}[1]{\mbox{\texttt{#1}}}
 
+\newcommand{\otffrac}[2]{\mbox{%
+    {\addfontfeature{VerticalPosition=Superior}#1}%
+    ^^^^2044% Unicode fraction slash
+    {\addfontfeature{VerticalPosition=Inferior}#2}%
+}}
+
 % C++ looks nicer if the ++ is in a monospace font and raised a bit.
 % Also, use uppercase numbers to match the capital C.
 \newcommand{\plusplus}{\raisebox{0.2ex}{++}}
@@ -236,6 +244,10 @@
 
 % Letterspace acronyms a bit.
 \newcommand{\acronym}[1]{\textsc{\addfontfeature{LetterSpace=8}#1}}
+
+\newcommand{\chapref}[1]{%
+    {\addfontfeature{Numbers={Proportional,Uppercase}}Chapter~\ref{#1}}%
+}
 
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
@@ -333,6 +345,8 @@ his college papers.
 \input{pagelayout}
 
 \input{math}
+
+\input{fonts}
 
 \appendix
 
