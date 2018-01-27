@@ -2,9 +2,9 @@
 
 \section{Emphasis}
 
-Occasionally, your text needs some extra punch to get its point across.
+Occasionally your writing needs some extra punch to get its point across.
 \LaTeX{} lets you emphasize text with the \verb|\emph| command.
-By default, this \emph{italicizes} your text:
+By default, this \emph{italicizes} its argument:
 \begin{leftfigure}
 \begin{lstlisting}
 \emph{Oh my!}
@@ -24,9 +24,9 @@ with
 We can use \textbf{boldface} or \textsc{small caps} as well.
 \end{lstlisting}
 \end{leftfigure}
-be judicious in your use of emphasis, especially boldface,
+Be judicious in your use of emphasis, especially boldface,
 which excels at drawing the reader's attention away from everything around it.
-Too much can be distracting.
+Too much is distracting.
 
 \section{Meeting the whole (type) family}
 
@@ -44,18 +44,19 @@ Command & ``Switch'' version & Style \\
 \verb|\textsf{...}| & \verb|{\sffamily ...}| & {\fontspec{Latin Modern Sans}sans serif type} \\
 \verb|\texttt{...}| & \verb|{\ttfamily ...}| & {\fontspec[Ligatures=TeX]{Latin Modern Mono}``teletype'' (monospace)} \\
 \verb|\textit{...}| & \verb|{\itshape ...}| & \textit{italics} \\
-\verb|\textsl{...}| & \verb|{\slshape ...}| & \textit{slanted, or oblique type} \\
+\verb|\textsl{...}| & \verb|{\slshape ...}| & {\fontspec{Latin Modern Roman Slanted}slanted, or oblique type} \\
 \verb|\textsc{...}| & \verb|{\scshape ...}| & \textsc{Small Capitals} \\
 \verb|\textbf{...}| & \verb|{\bfseries ...}| & \textbf{boldface} \\
 \end{tabular}
 \end{leftfigure}
-The command forms---which take the text to format as an argument---should
-usually be preferred over the switch versions---which effect the group
-in which they are issued---because the former automatically handle any
+The command forms (which take the text to format as an argument)
+should usually be preferred over the switch versions
+(which effect the group in which they are issued)
+because the former automatically handle any
 spacing corrections needed around them.\punckern\footnote{For example,
 \textit{italicized text} amidst upright text should be followed
 by a slight amount of extra space, called an ``italic correction''\quotekern.}
-However, there are cases where the switch is the only possible option:
+However, there are cases where the switch is the only option:
 \begin{enumerate}
 \item When formatting multiple paragraphs \\
 (Command arguments cannot contain paragraph breaks.)
