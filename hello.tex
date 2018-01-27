@@ -50,9 +50,9 @@ Open it up and you should find a page with this at the top:
 \begin{leftfigure}
 \lm Hello, World!
 \end{leftfigure}
+Congrats,
+You just created your first document!
 
-Congrats!
-You just created your first document.
 Let's unpack what we did.
 All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
 which picks a style to use.
@@ -61,7 +61,7 @@ ones include \texttt{article}, \texttt{report}, \texttt{book},
 and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
 Kind of an odd name, no?}
 For your average document, \texttt{article} is probably a good choice.
-Next, is \verb|% Say hello|.
+Next is, \verb|% Say hello|.
 This is a \introduce{comment}---anything placed after a percent symbol on a line
 is ignored by the engine,
 so we can use \verb|%| to leave notes about what's going on to anybody reading
@@ -128,7 +128,7 @@ so if some command needed two arguments, we would type:
 \somecommand{argument1}{argument2}
 \end{lstlisting}
 \end{leftfigure}
-Some commands also take optional arguments, which are enclosed in brackets
+Many commands also take optional arguments, which are enclosed in brackets
 and precede the mandatory ones.
 Say you want to inform \LaTeX{} that your document will be printed as
 double-sided pages.\punckern\footnote{\texttt{twoside} introduces commands
@@ -143,8 +143,8 @@ This is done with an optional argument to \verb|\documentclass|:
 \end{lstlisting}
 \end{leftfigure}
 
-Some commands take no arguments at all, such as \verb|\LaTeX|,
-the one that prints the \LaTeX{} logo.
+Other commands take no arguments at all, such as \verb|\LaTeX|,
+which prints the \LaTeX{} logo.
 Know that these commands consume any space that follows them.
 For example,
 \begin{leftfigure}
