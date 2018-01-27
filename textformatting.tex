@@ -5,10 +5,11 @@
 \section{Sizes}
 
 The default text size is controlled by your document class.
-It is usually ten points,\punckern\footnote{In most digital publishing,
-one point is \otffrac{1}{72} of an inch.
-In \LaTeX{}, for historical reasons, it is
-\otffrac{100}{7227} of an inch.}
+It is usually ten points,\punckern\footnote{The standard digital publishing
+point, sometimes called the PostScript point, is \otffrac{1}{72} of an inch.
+\LaTeX{}, for historical reasons, defines its point (\texttt{pt})
+as \otffrac{100}{7227} of an inch
+and the former as a ``big point''\quotekern, or \texttt{bp}.}
 but this can be adjusted by passing additonal arguments to
 \verb|\documentclass|.\punckern\footnote{The standard \LaTeX{} classes accept
 \texttt{10pt}, \texttt{11pt}, or \texttt{12pt}.
@@ -48,28 +49,47 @@ feature.\punckern\footnote{If you are fortunate enough \emph{to} have
 a typeface with multiple optical sizes, \XeLaTeX{}
 and \LuaLaTeX{} can make good use of them! See \chapref{fonts}.}
 
-If you set {\small various} {\scriptsize sizes} {\sffamily\small or fonts}
-on the {\footnotesize same line},
-they will be aligned on the \introduce{baseline}:
-
-\begin{adjustwidth}{2em}{2em}
-\vspace{0.5\baselineskip minus 0.3\baselineskip}
-\centering
+Points don't tell the whole story, however.
+Each font has its own proportions, which can make a huge difference
+in its perceived size.
+Shown below are some common terms:
+\begin{centerfigure}
 \includegraphics[keepaspectratio,width=0.65\textwidth]{heights.png}
 
-\captionof{figure}{Common font metrics used in typography.
-Text sits on the \introduce{baseline},
-extends to the \introduce{ascender height},
-and descends to the \introduce{descender height}.
+\captionof{figure}{Text sits on the \introduce{baseline},
+rises to the \introduce{ascender height},
+and drops to the \introduce{descender height}.
 The \introduce{cap height} refers to the size of uppercase letters,
-and the \introduce{x-height} refers to the size of lowercase letters.
-These values are different for each typeface,
-and two set at the same point size might have very different heights.
-Compare Helvetica to {\rmfamily Garamond}---the former has a much larger x-height.}
-
+and the \introduce{x-height} refers to the size of lowercase letters.}
 % For size reference:
 %{\sffamily\fontsize{8pt}{8pt}\selectfont This is 8-point text.}
-\vspace*{0.3\baselineskip minus 0.1\baselineskip}
-\end{adjustwidth}
+\end{centerfigure}
+Different fonts vary wildly in these metrics,
+resulting in very different looks at the same point size.
+Compare Garamond, {\fontspec{Latin Modern Roman} Latin Modern},
+and {\fontspec{NHaasGroteskTXPro-55RG}Helvetica}, all at 10\,pt.
+%When multiple {\large sizes} {\footnotesize or} {\sffamily\small fonts}
+%are set on the same line, their baselines are aligned.
 
-TODO: Talk about arbitrary sizes and leading.
+If the previous commands aren't enough, you can create custom sizes with
+\verb|\fontsize|, which takes the desired size and distance between baselines.
+\verb|\fontsize| must be followed with \verb|\selectfont| to take effect.
+For example, \verb|\fontsize{30pt}{30pt}\selectfont|
+gives:
+\begin{leftfigure}
+\lm
+\fontsize{30pt}{30pt}\selectfont
+large type with no extra \\
+space between lines
+\end{leftfigure}
+{\fontsize{10pt}{10pt}\selectfont
+Note that without extra spacing,
+or \introduce{leading},\punckern\footnote{This term comes from the days of
+metal type, when strips of lead were inserted
+between lines to give them extra spacing.}
+descenders from one line nearly collide with ascenders and capitals from
+the line below.
+Leading is important---without it, blocks of text become uncomfortable to
+read, especially at normal body sizes.\par}
+Let your type breathe.\punckern\footnote{For a discussion on optimal leading,
+see \textit{Practical Typography}, listed in Appendix~\ref{resources}.}
