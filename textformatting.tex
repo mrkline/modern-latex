@@ -2,6 +2,69 @@
 
 \section{Emphasis}
 
+Occasionally, your text needs some extra punch to get its point across.
+\LaTeX{} lets you emphasize text with the \verb|\emph| command.
+By default, this \emph{italicizes} your text:
+\begin{leftfigure}
+\begin{lstlisting}
+\emph{Oh my!}
+\end{lstlisting}
+\end{leftfigure}
+gives us
+\begin{leftfigure}
+\lm \emph{Oh my!}
+\end{leftfigure}
+There are other tools at our disposal:
+\begin{leftfigure}
+\lm We can use \textbf{boldface} or \textsc{small caps} as well.
+\end{leftfigure}
+with
+\begin{leftfigure}
+\begin{lstlisting}
+We can use \textbf{boldface} or \textsc{small caps} as well.
+\end{lstlisting}
+\end{leftfigure}
+be judicious in your use of emphasis, especially boldface,
+which excels at drawing the reader's attention away from everything around it.
+Too much can be distracting.
+
+\section{Meeting the whole (type) family}
+
+Italics, boldface, and small caps are just a few of the many styles
+available to you.
+A (mostly) complete list follows:
+\begin{leftfigure}
+\lm
+\begin{tabular}{l|l|l}
+Command & ``Switch'' version & Style \\
+\hline
+\verb|\textnormal{...}| & \verb|{\normalfont ...}| & the default \\
+\verb|\emph{...}| & \verb|{\em ...}| & \emph{emphasis, typically italics} \\
+\verb|\textrm{...}| & \verb|{\rmfamily ...}| & Roman (serif) type \\
+\verb|\textsf{...}| & \verb|{\sffamily ...}| & {\fontspec{Latin Modern Sans}sans serif type} \\
+\verb|\texttt{...}| & \verb|{\ttfamily ...}| & {\fontspec[Ligatures=TeX]{Latin Modern Mono}``teletype'' (monospace)} \\
+\verb|\textit{...}| & \verb|{\itshape ...}| & \textit{italics} \\
+\verb|\textsl{...}| & \verb|{\slshape ...}| & \textit{slanted, or oblique type} \\
+\verb|\textsc{...}| & \verb|{\scshape ...}| & \textsc{Small Capitals} \\
+\verb|\textbf{...}| & \verb|{\bfseries ...}| & \textbf{boldface} \\
+\end{tabular}
+\end{leftfigure}
+The command forms---which take the text to format as an argument---should
+usually be preferred over the switch versions---which effect the group
+in which they are issued---because the former automatically handle any
+spacing corrections needed around them.\punckern\footnote{For example,
+\textit{italicized text} amidst upright text should be followed
+by a slight amount of extra space, called an ``italic correction''\quotekern.}
+However, there are cases where the switch is the only possible option:
+\begin{enumerate}
+\item When formatting multiple paragraphs \\
+(Command arguments cannot contain paragraph breaks.)
+\item When using them to redefine the style of other commands.\footnote{%
+For example, this book sets the style of section headers with
+\monobox{\textbackslash setkomafont\{section\}\{\textbackslash Large\textbackslash itshape\}}.}
+
+\end{enumerate}
+
 \section{Sizes}
 
 The default text size is controlled by your document class.
@@ -13,12 +76,12 @@ and the former as a ``big point''\quotekern, or \texttt{bp}.}
 but this can be adjusted by passing additonal arguments to
 \verb|\documentclass|.\punckern\footnote{The standard \LaTeX{} classes accept
 \texttt{10pt}, \texttt{11pt}, or \texttt{12pt}.
-KOMA Script classes accept arbitrary sizes with
+KOMA~Script classes accept arbitrary sizes with
 \monobox{fontsize=<size>}.}
 To scale text relative to this size, use the following commands:
 \begin{leftfigure}
 \lm
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.1}
 \begin{tabular}{l l}
 \verb|\tiny| & \tiny Example Text \\
 \verb|\scriptsize| & \scriptsize Example Text \\
@@ -36,7 +99,8 @@ There is some subtlety here that you may not have noticed.
 \LaTeX's default type family, Latin Modern,\punckern\footnote{Latin Modern is
 an OpenType rendition of \LaTeX's original type family, Computer Modern.}
 comes in multiple \introduce{optical sizes}.
-Smaller fonts have thicker strokes, exaggerated features,
+Smaller fonts aren't just shrunken versions of their big siblings---they
+have thicker strokes, exaggerated features,
 and more generous spacing to improve legibility at their size.
 \begin{leftfigure}
 \fontspec{lmroman5-regular} If you magnify 5 point type
@@ -49,9 +113,9 @@ feature.\punckern\footnote{If you are fortunate enough \emph{to} have
 a typeface with multiple optical sizes, \XeLaTeX{}
 and \LuaLaTeX{} can make good use of them! See \chapref{fonts}.}
 
-Points don't tell the whole story, however.
+Points and optical sizes don't tell the whole story.
 Each font has its own proportions, which can make a huge difference
-in its perceived size.
+in perceived size.
 Shown below are some common terms:
 \begin{centerfigure}
 \includegraphics[keepaspectratio,width=0.65\textwidth]{heights.png}
@@ -87,9 +151,20 @@ Note that without extra spacing,
 or \introduce{leading},\punckern\footnote{This term comes from the days of
 metal type, when strips of lead were inserted
 between lines to give them extra spacing.}
-descenders from one line nearly collide with ascenders and capitals from
+descenders from one line nearly collide with ascenders and capitals on
 the line below.
 Leading is important---without it, blocks of text become uncomfortable to
 read, especially at normal body sizes.\par}
 Let your type breathe.\punckern\footnote{For a discussion on optimal leading,
 see \textit{Practical Typography}, listed in Appendix~\ref{resources}.}
+
+\section{What next?}
+\begin{itemize}
+\item Learn how to underline text using the \texttt{ulem}
+    package.\punckern\footnote{Other typographical tools---like italics,
+    boldface, and small caps---are usually preferable to underlining,
+    but it has its uses.}
+\item Use KOMA~Script to change the size and style of your chapter or section
+    headings.
+\item Learn the difference between italic and oblique type.
+\end{itemize}
