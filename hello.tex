@@ -28,7 +28,7 @@ as well as a button to generate your document.
 Otherwise, from a terminal,\punckern\footnote{How to work a terminal emulator,
 making sure the newly-installed \LaTeX{} programs are in your \texttt{PATH},
 and so on are all outside the scope of this book.
-As is tradition, the leading dollar signs in examples just denote a console
+As is tradition, the leading dollar sign in examples just denotes a console
 prompt, and shouldn't actually be typed.}
 run the following:
 \begin{leftfigure}
@@ -51,7 +51,7 @@ Open it up and you should find a page with this at the top:
 \lm Hello, World!
 \end{leftfigure}
 Congrats,
-You just created your first document!
+you just created your first document!
 
 Let's unpack what we did.
 All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
@@ -128,8 +128,8 @@ so if some command needed two arguments, we would type:
 \somecommand{argument1}{argument2}
 \end{lstlisting}
 \end{leftfigure}
-Many commands also take optional arguments, which are enclosed in brackets
-and precede the mandatory ones.
+Many commands also take optional arguments, which are enclosed in square
+brackets and precede the mandatory ones.
 Say you want to inform \LaTeX{} that your document will be printed as
 double-sided pages.\punckern\footnote{\texttt{twoside} introduces commands
 that only make sense in the context of double-sided printing,
@@ -175,7 +175,7 @@ but a few of its rules are a little weird.
 Some characters have special meanings in \LaTeX.
 We saw above, for example, that \verb|%| starts a comment
 and \verb|\| marks the start of some command.
-The full list is:
+The full list of special characters is:
 \begin{leftfigure}
 \begin{lstlisting}
 # $ % ^ & _ { } ~ \
@@ -225,9 +225,9 @@ automatically is one of \LaTeX{}'s best skills.
 
 We often control our document by organizing text into \introduce{environments}.
 Environments always start with \verb|\begin{name}| and end with \verb|\end{name}|,
-where \texttt{name} is the name of the environment.
-All documents use the \texttt{document} environment to start and end their bodies,
-but there are many others.
+where \texttt{name} is that of the environment.
+All \LaTeX{} files use the \texttt{document} environment to start and end their
+bodies, but there are many others.
 Take \texttt{quote}, which adds additional spacing on both sides of a block
 quotation:
 \begin{leftfigure}

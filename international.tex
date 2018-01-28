@@ -13,7 +13,7 @@ Today, computers usually represent text using Unicode. Briefly,
     each of which can represent a character to be drawn,
     an accent or other diacritical mark to combine with an adjacent character,
     or some non-printing character,
-    such as instruction to print subsequent text right-to-left.
+    such as an instruction to print subsequent text right-to-left.
 \item One or more of these code points combines to represent a
     \introduce{grapheme cluster} or \introduce{glyph},
     the shapes within a font that we informally call ``characters''\quotekern.
@@ -27,7 +27,7 @@ Today, computers usually represent text using Unicode. Briefly,
 How many code points are they built from?}
 \end{centerfigure}
 \item Modern font formats such as TrueType and OpenType contain encoding tables
-    which map these code points to the glyphs the font file contains.
+    which map code points to the glyphs the font file contains.
 \end{itemize}
 \LuaLaTeX{} and \XeLaTeX{} use these tools to render documents
 from Unicode input
