@@ -1,1 +1,37 @@
 \chapter{Mathematics}
+
+\LaTeX is excellent at typesetting mathematics, both inline with body text,
+e.g., $x_n^2+y_n^2=r^2$, and as standalone formulas:
+\[\sum_{n=0}^{\infty} \frac{f^{(n)} (a)}{n!} (x - a)^n\]
+The former can be created with \verb|$...$| or \verb|\(...\)|,
+and the latter with \verb|\[...\]|.
+Inside these environments, the rules of \LaTeX{} change:
+\begin{itemize}
+\item Most spaces and line breaks are ignored completely,
+    and the engine usually makes spacing decisions for you based on
+    typographical conventions for math.
+    \verb|$x+y+z$| and \verb|$x + y + z$| both give you $x+y+z$.
+\item Empty lines are not allowed---each formula must occupy a single
+    ``paragraph''\quotekern.
+\item Letters are automatically italicized, as they are assumed to be variables.
+\end{itemize}
+To return to normal ``text mode'' inside a formula, use the \verb|\text| command.
+Other formatting commands mentioned in \chapref{formatting} work as well.
+From
+\begin{leftfigure}
+\begin{lstlisting}
+\[\text{fake formulas} = \textbf{annoyed mathematicians}\]
+\end{lstlisting}
+\end{leftfigure}
+we get:
+\[\text{fake formulas} = \textbf{annoyed mathematicians}\]
+
+\section{What next?}
+
+This chapter is egregiously short.
+Typesetting mathematics is arguably the raison d'être of
+\LaTeX,\punckern\footnote{Well, \TeX} but the topic is so broad that giving
+it fair coverage would take up half the book.
+Here, more so than anywhere else,
+you owe it to yourself to find some real references and learn what the system
+is capable of.
