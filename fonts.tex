@@ -1,2 +1,35 @@
-\chapter{Modern Digital Fonts}
+\chapter{Fonts}
 \label{fonts}
+
+Digital type has changed almost entirely since \LaTeX{} was released in the
+1980s.
+\LaTeX{} originally used used \MF, a system designed by Donald Knuth specifically
+for \TeX{}.
+As time went on, support for PostScript\footnote{One of
+Adobe's original claims to fame,
+PostScript is a language for defining and drawing computer graphics,
+including type. It remains in use today.} fonts was added
+as they grew in popularity.
+Today, \LuaLaTeX{} and \XeLaTeX{} offer support for the two formats you're
+likely to encounter on your computer:
+TrueType and OpenType.
+
+\begin{description}
+\item[TrueType] was developed by Apple and Microsoft in the late 1980s.
+    Most of the fonts that come pre-installed on your system are likely
+    in this format.
+    TrueType files generally end in a \monobox{.ttf} extension.
+\item[OpenType] was first released in 1996 by Microsoft and Adobe.
+    One of its major improvements over TrueType is the ability to embed
+    multiple versions of glyphs in a single font file.
+    We'll see this feature in action through much of this chapter.
+    OpenType files generally end in an \monobox{.otf} extension.
+\end{description}
+
+\section{Changing typefaces}
+
+By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
+an OpenType rendition of \LaTeX's original type family, Computer Modern.
+While it is a high-quality family of typefaces,
+you may want to use different ones for your document.
+This is done through the \texttt{fontspec} package:
