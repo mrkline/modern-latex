@@ -26,12 +26,62 @@ From
 we get:
 \[\text{fake formulas} = \textbf{annoyed mathematicians}\]
 
-\section{What next?}
+\section{Examples}
 
-This chapter is egregiously short.
 Typesetting mathematics is arguably the raison d'être of
 \LaTeX,\punckern\footnote{Well, \TeX} but the topic is so broad that giving
-it fair coverage would take up half the book.
+it decent coverage would take up half the book.
+Given how wide the field of mathematics is,
+there are \emph{many} different commands and environments.
 Here, more so than anywhere else,
 you owe it to yourself to find some real references and learn what the system
 is capable of.
+Before moving on, though, let's show some examples of what \LaTeX{}
+can do.
+\newpage
+
+\begin{enumerate}
+\item \verb|x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a}|
+    \[x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} \]
+
+\item \verb|e^{j \theta} = \cos(\theta) + j \sin(\theta)|
+    \[e^{j \theta} = \cos(\theta) + j \sin(\theta)\]
+
+\item
+\begin{verbatim}
+\begin{bmatrix}
+x' \\
+y'
+\end{bmatrix} =
+\begin{bmatrix}
+\cos \theta &  -\sin\theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+\end{verbatim}
+\[
+\begin{bmatrix}
+x' \\
+y'
+\end{bmatrix} =
+\begin{bmatrix}
+\cos \theta &  -\sin\theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+\]
+
+\item
+\begin{verbatim}
+\oint_{\partial \Sigma} \mathbf{E} \cdot \mathrm{d}\boldsymbol{\ell}
+    = - \frac{\mathrm{d}}{\mathrm{d}t}
+      \iint_{\Sigma} \mathbf{B} \cdot \mathrm{d}\mathbf{S}
+\end{verbatim}
+    \[\oint_{\partial \Sigma} \mathbf{E} \cdot \mathrm{d}\boldsymbol{\ell}  = - \frac{\mathrm{d}}{\mathrm{d}t} \iint_{\Sigma} \mathbf{B} \cdot \mathrm{d}\mathbf{S}\]
+\end{enumerate}
