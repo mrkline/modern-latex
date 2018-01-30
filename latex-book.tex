@@ -139,8 +139,13 @@
     beforeskip=1pt,
     entrynumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     pagenumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
-    indent=0.4in
+    indent=0.3in
 ]{tocline}{section}
+\DeclareTOCStyleEntry[%
+    entrynumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
+    pagenumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
+    indent=0.5in
+]{tocline}{subsection}
 
 % Don't use a sans font for description labels.
 \addtokomafont{descriptionlabel}{\rmfamily}
