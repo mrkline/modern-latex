@@ -3,13 +3,12 @@
 
 Digital type has changed almost entirely since \LaTeX{} was released in the
 1980s.
-\LaTeX{} originally used used \MF, a system designed by Donald Knuth specifically
+Originally, it used \MF, a system designed by Donald Knuth specifically
 for \TeX{}.
 As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
-including type. It remains in use today.} fonts was added
-as they grew in popularity.
+including type. It remains in use today.} fonts was added.
 Today, \LuaLaTeX{} and \XeLaTeX{} offer support for the two formats you're
 likely to encounter on your computer:
 TrueType and OpenType.
@@ -30,6 +29,168 @@ TrueType and OpenType.
 
 By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
 an OpenType rendition of \LaTeX's original type family, Computer Modern.
-While it is a high-quality family of typefaces,
-you may want to use different ones for your document.
+While Latin Modern is a high-quality family of typefaces,
+you may want to use others for your document.
 This is done through the \texttt{fontspec} package:
+\begin{leftfigure}
+\begin{lstlisting}
+\documentclass{article}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Source Serif Pro}
+\setsansfont[Ligatures=TeX]{Source Sans Pro}
+\setmonofont{Source Code Pro}
+
+\begin{document}
+Hello, Source type family! Neat---no? \\
+\sffamily Let's try sans serif! \\
+\ttfamily Let's try monospaced!
+\end{document}
+\end{lstlisting}
+\end{leftfigure}
+should produce something like:\footnote{Assuming, of course,
+that you have Adobe's open-source fonts installed.\punckern\endnote{Adobe's
+open-source type can be found freely at \url{https://github.com/adobe-fonts}.}}
+\begin{leftfigure}
+\fontspec[Ligatures=TeX]{Source Serif Pro} Hello, Source type family! Neat---no? \\
+\fontspec[Ligatures=TeX]{Source Sans Pro} Let's try sans serif! \\
+\fontspec{Source Code Pro} Let's try monospaced!
+\end{leftfigure}
+The \verb|Ligatures=TeX| option allows you to use the standard ligatures
+mentioned in \chapref{punctuation} instead of characters that are
+unlikely to be on your keyboard.
+% No need repeating ourselves here?
+%For example, \verb|---| can be used to create em dashes (—),
+%quotes can be typed \verb|``like this''| instead of \verb|“like this”|,
+%and so on.
+You probably don't want this for your monospaced type, however,
+since things set in it---such as code---are usually meant to be displayed
+verbatim. You don't want, for example, \verb|"Hello!"| to turn into
+\verb|“Hello!“|
+
+\section{Selecting font files}
+
+A typical typeface might come packaged as four files to represent its
+weights and styles:
+normal,
+\textit{italics},
+\textbf{bold}, and
+\textit{\textbf{bold italics}}.
+Given a typefaces's name,
+\texttt{fontspec} can generally deduce the appropriate file
+names.\punckern\footnote{This is one of the places \XeLaTeX{} and \LuaLaTeX{}
+differ in a way that's noticeable to the casual user.
+The former gernally uses system libraries---such as FontConfig on Linux---to
+locate files, given a typeface's name.
+The latter has its own font loader,
+based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
+(February 2017, Version 1.0.4), 10}
+The expected name of a font might differ between the two engines---refer
+to the \texttt{fontspec} manual for details.}
+However, many typefaces come in more than two weights---some versions of Futura,
+for example, come in
+{\fontspec[Scale=MatchLowercase]{Futura-Lig}light},
+{\fontspec[Scale=MatchLowercase]{Futura-Boo}book},
+{\fontspec[Scale=MatchLowercase]{Futura-Med}medium},
+{\fontspec[Scale=MatchLowercase]{Futura-Dem}demi},
+{\fontspec[Scale=MatchLowercase]{Futura-Bol}bold}, and
+{\fontspec[Scale=MatchLowercase]{Futura-ExtBol}extra bold}.
+Sometimes
+{\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}\textsc{small caps}}
+are stored as separate files as well.
+
+We might want to hand-pick weights to achieve a certain look or better match the
+weights of other fonts in our document.\punckern\footnote{Consider how much
+better the {\fontspec[Scale=MatchLowercase]{Futura-Boo}book weight} of Futura
+blends in with the surrounding text compared to
+{\fontspec[Scale=MatchLowercase]{Futura-Lig}light}
+or
+{\fontspec[Scale=MatchLowercase]{Futura-Med}medium}.}
+Continuing to use Futura as an example,
+say we want to use the ``book'' weight for our default weight,
+``demi'' for bold,
+and the font files are named:
+\begin{itemize}
+\item \monobox{Futura-Boo} for our
+    {\fontspec[Scale=MatchLowercase]{Futura-Boo}upright book weight}
+\item \monobox{Futura-BooObl} for our
+    {\fontspec[Scale=MatchLowercase]{Futura-BooObl}oblique book weight}
+\item \monobox{FuturaSC-Boo} for
+    {\fontspec[Scale=MatchLowercase]{FuturaSC-Boo}small caps, book weight}
+\item \monobox{Futura-Dem} for
+    {\fontspec[Scale=MatchLowercase]{Futura-Dem}upright demi(bold)}
+\item \monobox{Futura-DemObl} for
+    {\fontspec[Scale=MatchLowercase]{Futura-DemObl}oblique demibold}
+\end{itemize}
+
+Our font setup might resemble:
+\begin{leftfigure}
+\begin{lstlisting}
+\usepackage{fontspec}
+\setmainfont[
+    Ligatures=TeX,
+    UprightFont = *-Boo,
+    ItalicFont = *-BooObl,
+    SmallCapsFont = *SC-Boo,
+    BoldFont = *-Dem,
+    BoldItalicFont = *-DemObl
+]{Futura}
+\end{lstlisting}
+\end{leftfigure}
+Note that instead of typing out \monobox{Futura-Boo},
+\monobox{Futura-BooObl}, and so on, we can use \texttt{*} to insert the base name.
+
+\section{Scaling}
+
+Using different typefaces to create a cohesive experience is tricky,
+especially since---as mentioned in \chapref{formatting}---different typefaces
+might look completely different at the same point size.
+\texttt{fontspec} can help a bit here by scaling fonts to match either the
+x-height or the cap height of your main font with
+\verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
+respectively.\footnote{A useful way to sidestep this issue is to user fewer
+typefaces in your design. Even just one or two typefaces,
+with sufficient features, can produce amazing results.}
+
+
+\section{OpenType features}
+
+As mentioned above, one of OpenType's defining features is the ability to store
+multiple variations of a typeface's glyphs in a single file and allow users
+to switch between them.
+All of these features can be specified as an option to \verb|\setmainfont|
+and friends, or enabled for the current group with
+\verb|\addfontfeature|.
+
+\subsection{Ligatures}
+
+Many typefaces use \introduce{ligatures}, where multiple characters are combined
+into a single glyph.\punckern\footnote{Trivia: glyphs such as the ampersand
+(\,\&\,) and the German Eszett (\,ß\,) evolved
+from ligatures.}
+While the practice has historical roots,\punckern\footnote{Ligatures fell out
+of style somewhat during the 20{\addfontfeature{VerticalPosition=Superior}th}
+century due to limitations of printing technology---including early
+computer typesetting---and the increased popularity of sans serif typefaces,
+which often lack them.
+Today they are making a comeback,
+thanks in no small part to their support in OpenType.}
+OpenType groups ligatures into three categories:
+\begin{description}
+\item[Standard] TODO
+fi, ff, ffi, fl, and ffl.
+\item[Discretionary] TODO
+\item[Historic] TODO
+\end{description}
+
+Mention \texttt{selnolig}!
+
+\subsection{Figures}
+
+Lining, oldstyle, tabular, proportional, oh my!
+
+\subsection{Superiors and inferiors}
+
+Not about a trip to HR
+
+\subsection{Stylistic alternates}
