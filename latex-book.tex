@@ -241,6 +241,10 @@
     ^^^^2044% Unicode fraction slash
     {\addfontfeature{VerticalPosition=Inferior}#2}%
 }}
+\newcommand{\otford}[2]{\mbox{%
+    {\addfontfeature{Numbers=LowercaseOff}#1}%
+    {\addfontfeature{VerticalPosition=Superior}#2}%
+}}
 
 % C++ looks nicer if the ++ is in a monospace font and raised a bit.
 % Also, use uppercase numbers to match the capital C.
@@ -334,7 +338,7 @@ his college papers.
 \tableofcontents
 
 \mainmatter
-\setlength\parindent{1.5em}
+\setlength\parindent{1em}
 
 \pagenumbering{arabic}
 \setcounter{page}{1} % Restart page numbering after the ToC.

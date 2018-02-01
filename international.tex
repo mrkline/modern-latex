@@ -1,13 +1,13 @@
 \chapter{Typographie Internationale}
 
-Surprisingly, many languages besides English exist,
-and we might want to write things with them.
-Digitising human language is a complicated topic that has evolved significantly
-since \LaTeX's inception.
+Surprisingly, many languages besides English exist.
+You might want to write with them.
 
 \section{Unicode}
 
-Today, computers usually represent text using Unicode. Briefly,
+Digitising human language is a complicated topic that has evolved significantly
+since \LaTeX's inception, but today,
+computers usually represent text using Unicode. Briefly,
 \begin{itemize}
 \item A Unicode text file is made of a series of \introduce{code points},
     each of which can represent a character to be drawn,
@@ -26,13 +26,13 @@ Today, computers usually represent text using Unicode. Briefly,
 \captionof{figure}{How many characters do you see?
 How many code points are they built from?}
 \end{centerfigure}
-\item Modern font formats such as TrueType and OpenType contain encoding tables
-    which map code points to the glyphs the font file contains.
+\item Modern font formats contain encoding tables
+    which map code points to the glyphs the file contains.
 \end{itemize}
 \LuaLaTeX{} and \XeLaTeX{} use these tools to render documents
 from Unicode input
 files.\punckern\footnote{LuaLaTeX accepts \mbox{\acronym{utf}-8} files,
-while \XeLaTeX is a bit more flexible and also
+while \XeLaTeX{} is a bit more flexible and also
 accepts \mbox{\acronym{utf}-16} and
 \mbox{\acronym{utf}-32}.}
 Make sure that the fonts you select contain the needed glyphs---many
@@ -51,12 +51,13 @@ It will automatically:
     like ``chapter''\quotekern, ``section''\quotekern, and so on.
 \item Format dates according to language-specific conventions.
 \item Format numbers in languages that have their own numbering system
-\item Use the \texttt{bidi} package for documents that languages written
+\item Use the \texttt{bidi} package for documents with languages written
     right to left.
 \item Set the script and language tags of the current font, if applicable.
 \end{itemize}
 When using the package, specify the main language of your document,
-along with any other languages you use:
+along with any other languages you use.
+Some languages also take regional dialects as an optional argument:
 \begin{leftfigure}
 \begin{lstlisting}
 \usepackage{polyglossia}
@@ -64,9 +65,8 @@ along with any other languages you use:
 \setotherlanguage{french}
 \end{lstlisting}
 \end{leftfigure}
-\texttt{polyglossia} will define environments for the loaded languages
-which automatically apply that language's conventions to the text
-within.
+\texttt{polyglossia} will define an environment for each loaded language.
+These automatically apply that language's conventions to the text within.
 French, for example, places extra space around punctuation, so
 \begin{leftfigure}
 \begin{lstlisting}
@@ -93,11 +93,10 @@ Dexter cried,
 \item See the \texttt{polyglossia} manual for language-specific commands.
 \item Look into the \texttt{babel} package as an alternative to
     \texttt{polyglossia}.\punckern\footnote{\texttt{polyglossia} has better
-    support for font features via \texttt{fontspec}.
-    However, if you run into issues with it,
+    support for OpenType font features via \texttt{fontspec}.
+    However, \texttt{babel} is a fine substitute if you run into trouble.}
     %as I did in
     %\LuaLaTeX{} (see \url{https://github.com/reutenauer/polyglossia/issues/68}),
-    \texttt{babel} is a fine substitute.}
 \item Try typesetting Japanese or Chinese with the \texttt{xeCJK} or
     \monobox{luatex-ja} packages.
 \end{itemize}
