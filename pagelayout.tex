@@ -2,12 +2,56 @@
 
 \section{Justification and alignment}
 
-\mbox{Talk about badness, and intentionally run off the right of the page with an mbox.
-It's hilarious and instructive!}
+\LaTeX{} is extraordinarily good at justifying text\footnote{Its
+only rival here is professional typesetting software like Adobe's.}
+for two main reasons:
+\begin{itemize}
+\item It automatically hyphenates words, allowing lines to be broken
+    in many more places besides the spaces between
+    words.\punckern\endnote{Franklin Mark Liang,
+    \textit{Word Hy-phen-a-tion by Com-put-er} (Standford, 1983),
+    \url{http://www.tug.org/docs/liang/}.}
+
+\item Instead of considering each line individually,
+    \LaTeX{} considers all possible line breaks for a given paragraph,
+    then chooses the one that will give the best spacing according to its
+    rules.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
+    \textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
+\end{itemize}
+
+\mbox{However, if \LaTeX{} cannot make a line fit, it sometimes gives up,
+overflowing text into the margin.}
+This can be remedied somewhat by adding
+\verb|\emergencystretch=<width>| to the document's preamble.
+If a paragraph can't be broken to \LaTeX's satisfaction,
+this command allows it to try one last time,
+stretching or shrinking the space in each line by up to the provided
+width.\punckern\footnote{\LaTeX{} has pretty sane default limits to how much
+it stretches and shrinks spacing in a paragraph.
+You probably don't want to make \texttt{<width>} larger than an em or two.}
+
+TODO: Sometimes, you just have to give up and rewrite to make it fit better.
+
+TODO: Left and right jusitfy
 
 \section{Lists}
+
+\section{Columns}
 
 \section{Page breaks}
 
 Talk about how \TeX{} goes page at a time.
 Whine a bit.
+
+\section{What next?}
+\begin{itemize}
+\item Control paragraph spacing, either using the relevant
+KOMA~Script options, or with the standalone \texttt{parskip} package.
+\item Set the page size and margins with the \texttt{geometry} package.
+\item Insert horizontal and vertical space with commands like
+    \verb|\vspace|, \verb|\hspace|, \verb|\vfill|, \verb|\hfill|,
+    \verb|\enspace|, \verb|\quad|, and \verb|\,|\,.
+\item Learn what units \LaTeX{} provides for specifying spacing.
+    (We've already mentioned a few here, such as
+    \texttt{pt}, \texttt{bp}, \texttt{mm}, and \texttt{in}.)
+\end{itemize}

@@ -98,7 +98,13 @@ for example, come in
 {\fontspec[Scale=MatchLowercase]{Futura-ExtBol}extra bold}.
 Sometimes
 {\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}\textsc{small caps}}
-are stored as separate files as well.
+are stored as separate files as well.\punckern\footnote{OpenType allows
+small caps to be placed in the same file(s) as the other glyphs.
+If your font supports this, you don't need to do anything---\texttt{fontspec}
+will dutifully switch to them whenever you use
+\monobox{\textbackslash textsc} or \monobox{\textbackslash scshape}.
+But for TrueType, and for OpenType fonts that don't take advantage of this
+feature, you'll have to load a separate file as shown here.}
 
 We might want to hand-pick weights to achieve a certain look or better match the
 weights of other fonts in our document.\punckern\footnote{Consider how much
@@ -124,7 +130,8 @@ Assuming the font files are named:
     {\fontspec[Scale=MatchLowercase]{Futura-DemObl}oblique demibold}
 \end{itemize}
 
-Our font setup might resemble:
+\newpage
+\noindent Our font setup might resemble:
 \begin{leftfigure}
 \begin{lstlisting}
 \usepackage{fontspec}
@@ -214,7 +221,7 @@ options. If you wanted to temporarily disable discretionary ligatures,
 would do the trick.
 
 Some words are arguably typeset better without ligatures---a classic example
-is shelfful.\punckern\endnote{Donald E.~Knuth, \textit{The \TeX book},
+is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
 (Addison-Wesley, 1986), 19.}
 You can manually prevent the insertion of ligatures with an empty group,
 e.g., \verb|shelf{}ful|,
