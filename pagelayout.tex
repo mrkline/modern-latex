@@ -2,37 +2,25 @@
 
 \section{Justification and alignment}
 
-\LaTeX{} is extraordinarily good at justifying text\footnote{Its
-only rival here is professional typesetting software like Adobe's.}
-for two main reasons:
-\begin{itemize}
-\item It automatically hyphenates words, allowing lines to be broken
-    in many more places besides the spaces between
-    words.\punckern\endnote{Franklin Mark Liang,
-    \textit{Word Hy-phen-a-tion by Com-put-er} (Standford, 1983),
-    \url{http://www.tug.org/docs/liang/}.}
+\LaTeX{} is extraordinarily good at justifying text.
+Instead of considering each line individually---as most word processors and
+web browsers do---it examines all possible line breaks for a given paragraph,
+then chooses ones that will give the best overall
+spacing.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
+\textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
+Combined with its ability to automatically hyphenate words,
+which allows line breaks in many more places,\punckern\endnote{%
+Franklin Mark Liang,
+\textit{Word Hy-phen-a-tion by Com-put-er} (Standford, 1983),
+\url{http://www.tug.org/docs/liang/}.}
+this produces some of the best paragraph layout available.
 
-\item Instead of considering each line individually,
-    \LaTeX{} considers all possible line breaks for a given paragraph,
-    then chooses the one that will give the best spacing according to its
-    rules.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
-    \textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
-\end{itemize}
-
-\mbox{However, if \LaTeX{} cannot make a line fit, it sometimes gives up,
-overflowing text into the margin.}
-This can be remedied somewhat by adding
-\verb|\emergencystretch=<width>| to the document's preamble.
-If a paragraph can't be broken to \LaTeX's satisfaction,
-this command allows it to try one last time,
-stretching or shrinking the space in each line by up to the provided
-width.\punckern\footnote{\LaTeX{} has pretty sane default limits to how much
-it stretches and shrinks spacing in a paragraph.
-You probably don't want to make \texttt{<width>} larger than an em or two.}
-
-TODO: Sometimes, you just have to give up and rewrite to make it fit better.
-
-TODO: Left and right jusitfy
+\begin{flushleft}
+Sometimes, though, you would prefer text be ``flush left''\quotekern,
+with a ragged right side. This can be done by placing text in a
+\texttt{flushleft} environment, or adding \verb|\raggedright| to the current
+group.
+\end{flushleft}
 
 \section{Lists}
 

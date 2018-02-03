@@ -1,0 +1,47 @@
+\chapter{When Good Typesetting Goes Bad}
+
+Hopefully this book gets you off to a good start with \LaTeX,
+but as with any software, you'll eventually run into a bit of trouble.
+Here are a few common problems and what you can try to fix them.
+
+\section{Fixing overflow}
+
+\mbox{When \LaTeX{} cannot fit a line into a paragraph with good spacing,
+it gives up, overflowing that line}
+into the margin.
+You can sometimes remedy this by adding
+\verb|\emergencystretch=<width>| to the document's preamble.
+When a paragraph can't be broken to \LaTeX's satisfaction,
+this command has it try one last time,
+stretching or shrinking the space in each line by up to the provided
+width.\punckern\footnote{\LaTeX{} has pretty sane default limits to how much
+it stretches and shrinks spacing in a paragraph.
+You probably don't want to make \texttt{<width>} larger than an em or two.}
+If that doesn't work, try tweaking the paragraph's wording.
+This can be frustrating, but the alternative is for \LaTeX{} to create spacing
+that is too loose---where\enspace
+words\enspace have\enspace large\quad gaps\enspace bewtween\enspace
+them---or too tight, where\! words\! are\! uncomfortably\! crammed\! together.
+
+\section{Handling syntax errors}
+If you confuse \LaTeX{}---say, by issuing commands that don't exist or
+forgetting to end a group or environment---it will print an
+error message,\punckern\footnote{Usually this contains a succinct summary of
+the problem and the number of the line(s) it occurred on. Occasionally,
+\LaTeX{} gets \emph{really} confused and emits something so cryptic it gives
+\cpp{} template metaprogramming errors a run for their money.
+As you continue to use \LaTeX, you'll start to get a feel for what sorts of
+mistakes cause these rare, but enigmatic messages.}
+then drop into an interactive prompt starting with \texttt{?}\,.
+Here you can enter various instructions for how to proceed.
+Once upon a time, when computers were thousands of times slower and
+\LaTeX{} took that much longer to re-run, this was probably more useful.
+Today, we likely just want to quit and try again once we've fixed our document.
+You do so by typing \texttt{X}, then pressing Enter.
+Better yet, you can tell \LaTeX{} to give up as soon as it finds trouble
+by running your engine with the \monobox{-halt-on-error} flag:
+\begin{leftfigure}
+\begin{lstlisting}
+$ lualatex -halt-on-error myDocument.tex
+\end{lstlisting}
+\end{leftfigure}
