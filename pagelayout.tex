@@ -15,15 +15,140 @@ Franklin Mark Liang,
 \url{http://www.tug.org/docs/liang/}.}
 this produces some of the best paragraph layout available.
 
+Sometimes we don't want to justify our text, though.
+If you would prefer it be ``flush left''\quotekern,
+with a ragged right side, place it in a \texttt{flushleft} environment,
+or add \verb|\raggedright| to the current group.
+To center it, place it in a
+\texttt{center} environment, or add \verb|\centering| to the current group.
+And to flush it against the right margin,
+use a \texttt{flushright} environment or \verb|\raggedleft|.
+
+\begin{leftfigure}
+\begin{lstlisting}
 \begin{flushleft}
-Sometimes, though, you would prefer text be ``flush left''\quotekern,
-with a ragged right side. This can be done by placing text in a
-\texttt{flushleft} environment, or adding \verb|\raggedright| to the current
-group.
+This text is flush left with a ragged right edge.
+Some prefer this layout since inter-word spacing
+is more consistent than it is in justified text.
 \end{flushleft}
+
+\begin{center}
+This text is centered.
+\end{center}
+
+\begin{flushright}
+And this text is flush right.
+\end{flushright}
+\end{lstlisting}
+\end{leftfigure}
+sets
+\begin{leftfigure}
+\fbox{%
+\begin{minipage}{0.7\textwidth}
+\lm%
+\begin{flushleft}
+This text is flush left with a ragged right edge.
+Some prefer this layout since inter-word spacing
+is more consistent than it is in justified text.
+\end{flushleft}
+
+\begin{center}
+This text is centered.
+\end{center}
+
+\begin{flushright}
+And this text is flush right.
+\end{flushright}
+\end{minipage}
+}
+\end{leftfigure}
 
 \section{Lists}
 
+\LaTeX{} provides three environments for lists:
+\texttt{itemize}, \texttt{enumerate}, and \texttt{description}.
+In all three, each item starts with an \verb|\item| command.
+The \texttt{itemize} environment uses bullets.
+With:
+\begin{leftfigure}
+\begin{lstlisting}
+\begin{itemize}
+\item 5.56 millimeter
+\item 9 millimeter
+\item 7.62 millimeter
+\end{itemize}
+\end{lstlisting}
+\end{leftfigure}
+you get
+\begin{leftfigure}
+\lm%
+\begin{itemize}[leftmargin=*]
+\item 5.56 millimeter
+\item 9 millimeter
+\item 7.62 millimeter
+\end{itemize}
+\end{leftfigure}
+
+\bigskip
+\noindent The \texttt{enumerate} environment numbers your list:
+\begin{leftfigure}
+\begin{lstlisting}
+\begin{enumerate}
+\item Collect underpants
+\item ?
+\item Profit
+\end{enumerate}
+\end{lstlisting}
+\end{leftfigure}
+produces
+\begin{leftfigure}
+\lm%
+\begin{enumerate}[leftmargin=*]
+\item Collect underpants
+\item ?
+\item Profit
+\end{enumerate}
+\end{leftfigure}
+
+\bigskip
+\noindent The \texttt{description} environment starts each item with some
+emphasized text, or \introduce{label}:
+\begin{leftfigure}
+\begin{lstlisting}
+\begin{description}
+\item[Alan Turing] was a British mathematician who laid much
+    of the groundwork for the field of computer science.
+    He is perhaps most remembered for his model of
+    general-purpose computing, the Turing machine.
+\item[Edsger Dijkstra] was a Dutch computer scientist.
+    His contributions in many subdomains---such as concurrency
+    and graph theory---are still in wide use today.
+\item[Leslie Lamport] is an American computer scientist.
+    He defined the concept of sequential consistency,
+    which is used to safely communicate between tasks
+    running in parallel on multiple processors.
+\end{description}
+\end{lstlisting}
+\end{leftfigure}
+gives us
+\begin{leftfigure}
+\begin{minipage}{0.8\textwidth}
+\lm%
+\begin{description}[leftmargin=*]
+\item[Alan Turing] was a British mathematician who laid much
+    of the groundwork for the field of computer science.
+    He is perhaps most remembered for his model of
+    general-purpose computing, the Turing machine.
+\item[Edsger Dijkstra] was a Dutch computer scientist.
+    His contributions in many subdomains---such as concurrency
+    and graph theory---are still in wide use today.
+\item[Leslie Lamport] is an American computer scientist.
+    He defined the concept of sequential consistency,
+    which is used to safely communicate between tasks
+    running in parallel on multiple processors.
+\end{description}
+\end{minipage}
+\end{leftfigure}
 \section{Columns}
 
 \section{Page breaks}
@@ -34,8 +159,9 @@ Whine a bit.
 \section{What next?}
 \begin{itemize}
 \item Control paragraph spacing, either using the relevant
-KOMA~Script options, or with the standalone \texttt{parskip} package.
+KOMA~Script options, or with the \texttt{parskip} package.
 \item Set the page size and margins with the \texttt{geometry} package.
+\item Customize list formatting with the \texttt{enumitem} package.
 \item Insert horizontal and vertical space with commands like
     \verb|\vspace|, \verb|\hspace|, \verb|\vfill|, \verb|\hfill|,
     \verb|\enspace|, \verb|\quad|, and \verb|\,|\,.
