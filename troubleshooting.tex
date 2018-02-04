@@ -23,6 +23,40 @@ that is too loose---where\enspace
 words\enspace have\enspace large\quad gaps\enspace between\enspace
 them---or too tight, where\! words\! are\! uncomfortably\! crammed\! together.
 
+\section{Avoiding widows and orphans}
+
+Typesetters do their best to avoid \introduce{widow} lines---which appear
+separated from the rest of their paragraph at the start of the following
+page.
+They also avoid \introduce{orphan}, or \introduce{club} lines,
+which are ``left behind'' on the previous page while the rest of the paragraph
+begins the next.
+\LaTeX{} makes some effort to avoid these, but unfortunately, the algorithm it
+uses to split pages is much more simplistic than the one it uses
+to split paragraphs into lines.\punckern\footnote{This is because
+1980s computers didn't have enough \acronym{ram} to do so. Seriously:
+``The computer doesn’t have enough high-speed memory capacity to remember the
+contents of several pages,
+so \TeX{} simply chooses each page break as best it can, by a process of
+`local' rather than `global' optimization.\quotekern''\,\endnote{Ibid, 110}}
+You can try to increase the ``penalty'' for doing so in order to make \LaTeX{}
+try harder to avoid it with:\footnote{When considering a given layout,
+\LaTeX{} assigns penalties, or ``badness''\quotekern,
+to anything that arguably makes a document look worse.
+Examples include stretching or shrinking spacing, or leaving orphans and widows.
+It then chooses the whichever layout it generated that has the least badness.}
+\begin{leftfigure}
+\begin{lstlisting}
+\widowpenalty=<penalty>
+\clubpenalty=<penalty>
+\end{lstlisting}
+\end{leftfigure}
+\verb|<penalty>| is a value between 1 and 10000.
+Be sure not to set these penalties \emph{too} high---at their maximum,
+\LaTeX{} is never allowed to leave orphans and widows, at \emph{any} cost.
+This can cause some odd layouts to be chosen.
+300 is probably a sane starting point.
+
 \section{Handling syntax errors}
 If you confuse \LaTeX{}---say, by issuing commands that don't exist or
 forgetting to end a group or environment---it will print an
