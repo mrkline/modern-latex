@@ -51,7 +51,7 @@ Hello, Source type family! Neat---no? \\
 \end{leftfigure}
 should produce something like:\footnote{Assuming, of course,
 that you have Adobe's open-source fonts installed.\punckern\endnote{Adobe's
-open-source type is freely available at \url{https://github.com/adobe-fonts}.}}
+open-source type is freely available at \url{https://github.com/adobe-fonts}}}
 \begin{leftfigure}
 \fontspec[Ligatures=TeX]{Source Serif Pro} Hello, Source type family! Neat---no? \\
 \fontspec[Ligatures=TeX]{Source Sans Pro} Let's try sans serif! \\
@@ -85,7 +85,7 @@ The former gernally uses system libraries---such as FontConfig on Linux---to
 locate files, given a typeface's name.
 The latter has its own font loader,
 based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
-(February 2017, Version 1.0.4), 10.}
+(February 2017, Version 1.0.4), 10}
 The expected name of a font might differ between the two engines---refer
 to the \texttt{fontspec} manual for details.}
 However, many typefaces come in more than two weights---some versions of Futura,
@@ -222,7 +222,7 @@ would do the trick.
 
 Some words are arguably typeset better without ligatures---a classic example
 is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
-(Addison-Wesley, 1986), 19.}
+(Addison-Wesley, 1986), 19}
 You can manually prevent the insertion of ligatures with an empty group,
 e.g., \verb|shelf{}ful|,
 or use the \texttt{selnolig} package to handle most of these cases automatically.

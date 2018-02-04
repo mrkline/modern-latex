@@ -41,7 +41,9 @@ Available at \url{https://practicaltypography.com}
 \theendnotes
 }
 
-\chapter{Colophon}
+% Redefine cleardoublepage so the Colophon doesn't demand a front page.
+% From https://tex.stackexchange.com/a/24068/92465
+{\let\cleardoublepage\clearpage \chapter{Colophon}}
 
 This guide was typeset using \LuaLaTeX{} in Adobe Garamond Pro by
 Robert Slimbach,
