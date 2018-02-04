@@ -41,7 +41,7 @@ And this text is flush right.
 \end{flushright}
 \end{lstlisting}
 \end{leftfigure}
-sets
+sets:
 \begin{leftfigure}
 \fbox{%
 \begin{minipage}{0.7\textwidth}
@@ -79,7 +79,7 @@ With:
 \end{itemize}
 \end{lstlisting}
 \end{leftfigure}
-you get
+you get:
 \begin{leftfigure}
 \lm%
 \begin{itemize}[leftmargin=*]
@@ -100,7 +100,7 @@ you get
 \end{enumerate}
 \end{lstlisting}
 \end{leftfigure}
-produces
+produces:
 \begin{leftfigure}
 \lm%
 \begin{enumerate}[leftmargin=*]
@@ -130,7 +130,7 @@ emphasized text, or \introduce{label}:
 \end{description}
 \end{lstlisting}
 \end{leftfigure}
-gives us
+gives us:
 \begin{leftfigure}
 \begin{minipage}{0.8\textwidth}
 \lm%
@@ -149,12 +149,52 @@ gives us
 \end{description}
 \end{minipage}
 \end{leftfigure}
+
 \section{Columns}
+
+We often split documents---or parts of them---into multiple columns.
+This is especially common when printing on \acronym{a4} or \acronym{us} letter
+paper, since it allows a much more comfortable line widths at standard
+8--12\,pt text sizes.\punckern\footnote{You'll see different advice depending
+on where you look, but a general rule of thumb is to choose layouts that give
+fewer than 90 characters per line (including spaces).
+Shorter lines keep readers from having to scan very far to begin the next line,
+which produces a more comfortable experience.}
+You can either add the \texttt{twocolumn} option to your document class,
+which splits everything into two columns, or you can use the \texttt{multicols}
+environment from the \texttt{multicol} package:
+\begin{leftfigure}
+\begin{lstlisting}
+One nice feature of \texttt{multicol} is that you can
+combine arbitrary layouts.
+\begin{multicols}{2}
+In this example we start with one column,
+then create a short section with two.
+The package will ensure that the text inside is split
+so each column is about the same height.
+\end{multicols}
+\end{lstlisting}
+\end{leftfigure}
+is split into:
+\begin{leftfigure}
+\lm%
+One nice feature of \texttt{multicol} is that you can
+combine arbitrary layouts.
+\begin{multicols}{2}
+In this example we start with one column,
+then create a short section with two.
+The package will ensure that the text inside is split
+so each column is about the same height.
+\end{multicols}
+\end{leftfigure}
 
 \section{Page breaks}
 
-Talk about how \TeX{} goes page at a time.
-Whine a bit.
+Some commands, like \verb|\chapter| in a book, add their own page breaks.
+You can insert your own with \verb|\clearpage|.
+If you are using the \texttt{twoside} document class option for double-sided
+printing, you can break to to the front of the next page with
+\verb|\cleardoublepage|
 
 \section{What next?}
 \begin{itemize}
