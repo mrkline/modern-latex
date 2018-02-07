@@ -49,7 +49,7 @@ Hello, Source type family! Neat---no? \\
 \end{document}
 \end{lstlisting}
 \end{leftfigure}
-should produce something like:\footnote{Assuming, of course,
+should produce something like\footnote{Assuming, of course,
 that you have Adobe's open-source fonts installed.\punckern\endnote{Adobe's
 open-source type is freely available at \url{https://github.com/adobe-fonts}}}
 \begin{leftfigure}
@@ -247,11 +247,9 @@ share more similarities with lowercase letters:
 \begin{leftfigure}
 Sitting cross-legged on the floor\ldots{} 25 or 6 to 4?
 \end{leftfigure}
-For body text, either is a fine choice, but oldstyle figures shouldn't
-be combined with capital letters:
-\begin{leftfigure}
+For body text, either choice is fine, but oldstyle figures shouldn't
+be combined with capital letters.
 ``F-15C'' looks odd, as does ``Version 2.3 Release''\quotekern.
-\end{leftfigure}
 
 {\addfontfeature{Numbers=LowercaseOff}
 The terms \introduce{proportional} and \introduce{tabular} refer to spacing.
@@ -270,11 +268,11 @@ Widgets & 18 & \$12.76 \\
 \end{leftfigure}
 Proportional figures are the opposite---their spacing is, well\ldots{}
 \emph{proportional} to the width of the figure.
-They are usually preferable in body text, where 1837
+They are usually preferred in body text, where 1837
 looks a bit nicer than
 {\addfontfeature{Numbers=Tabular}1837}.
 
-You can select your figures with \verb|Numbers=| and the following options:
+You can select your figures with the following options:
 \begin{leftfigure}
 \begin{tabular}{l l}
 \texttt{Numbers=} & \texttt{Lining / Uppercase} \\
@@ -290,10 +288,10 @@ or tabular oldstyle ones with \verb|Numbers={Tabular,OldStyle}|.
 And, like ligatures, each option has a corresponding \verb|*Off|
 variant.\punckern\footnote{This is especially useful since fonts
 select figures in different ways.
-Consider an example where the default figures are lining
+In some, the default figures are lining
 and oldstyle figures are enabled with
 \monobox{Numbers=OldStyle}.
-To return to lining figures in this example,
+To return to lining figures,
 \monobox{Numbers=Lining}
 doesn't work, but
 \monobox{Numbers=OldStyleOff}
@@ -304,7 +302,7 @@ which can be used for ordinals
 (\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \ldots),
 fractions (\,\otffrac{25}{624}\,), and so on.
 These have the same weight as their full-sized counterparts,
-which yields a much better result than shrinking normal figures for use as
+which looks much better result than shrinking normal figures for use as
 subscripts and superscripts.
 (Notice how
 {\addfontfeature{Numbers=LowercaseOff}%

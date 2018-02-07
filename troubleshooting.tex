@@ -1,7 +1,7 @@
 \chapter{When Good Typesetting Goes Bad}
 
 Hopefully this book gets you off to a good start with \LaTeX,
-but as with any software, you'll eventually run into a bit of trouble.
+but as with any complicated tool, you'll eventually run into a bit of trouble.
 Here are a few common problems and what you can try to fix them.
 
 \section{Fixing overflow}
@@ -12,7 +12,7 @@ into the margin.
 You can sometimes remedy this by adding
 \verb|\emergencystretch=<width>| to the document's preamble.
 When a paragraph can't be broken to \LaTeX's satisfaction,
-this command has it try one last time,
+this command makes it try one last time,
 stretching or shrinking the space in each line by up to the provided
 width.\punckern\footnote{\LaTeX{} has pretty sane default limits to how much
 it stretches and shrinks spacing in a paragraph.
@@ -31,20 +31,21 @@ page.
 They also avoid \introduce{orphan}, or \introduce{club} lines,
 which are ``left behind'' on the previous page while the rest of the paragraph
 begins the next.
-\LaTeX{} makes some effort to avoid these, but unfortunately, the algorithm it
+\LaTeX{} takes some effort to avoid these, but unfortunately, the algorithm it
 uses to split pages is much more simplistic than the one it uses
 to split paragraphs into lines.\punckern\footnote{This is because
 1980s computers didn't have enough \acronym{ram} to do so. Seriously:
-``The computer doesn’t have enough high-speed memory capacity to remember the
+``The computer doesn't have enough high-speed memory capacity to remember the
 contents of several pages,
 so \TeX{} simply chooses each page break as best it can, by a process of
 `local' rather than `global' optimization.\quotekern''\,\endnote{Ibid, 110}}
-You can try to increase the ``penalty'' for doing so in order to make \LaTeX{}
-try harder to avoid it with:\footnote{When considering a given layout,
+You can increase the ``penalty'' for doing so in order to make \LaTeX{}
+try harder to avoid it\footnote{When considering a given layout,
 \LaTeX{} assigns penalties, or ``badness''\quotekern,
 to anything that arguably makes a document look worse.
-Examples include stretching or shrinking spacing, or leaving orphans and widows.
-It then chooses the whichever layout it generated that has the least badness.}
+Examples include stretching spacing and leaving orphans and widows.
+It chooses whichever layout it can find with the least badness.}
+with:
 \begin{leftfigure}
 \begin{lstlisting}
 \widowpenalty=<penalty>
