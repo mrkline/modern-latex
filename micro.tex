@@ -1,0 +1,70 @@
+\chapter{Microtypography}
+
+\introduce{Microtypography} is the use of small, subliminal tweaks to improve
+the legibility of a document. It is
+\begin{quote}
+[\ldots]the art of enhancing the appearance and readability of a
+document while exhibiting a minimum degree of visual obtrusion.
+It is concerned with what happens between or at the margins of characters,
+words or lines. Whereas the macro-typographical aspects of a document
+(i.e., its layout) are clearly visible even to the untrained eye,
+micro-typographical refinements should ideally not even be recognisable.
+That is, you may think that a document looks beautiful, but you
+might not be able to tell exactly why: good micro-typographic practice tries to
+reduce all potential irritations that might disturb a reader.\punckern\endnote{%
+R Schlicht,
+\textit{The microtype package}
+(v2.7a, January 14, 2018), 4}
+\end{quote}
+
+In \LaTeX{}, microtypography is enabled and controlled via the
+\texttt{microtype} package.
+Its use is automatic---for the vast majority of documents, you add
+\begin{leftfigure}
+\begin{lstlisting}
+\usepackage{microtype}
+\end{lstlisting}
+\end{leftfigure}
+to your preamble and carry on---but let's take a brief look at what the package
+actually does.
+
+\section{Character protrusion}
+
+By default, \LaTeX{} justifies lines between perfectly straight
+left and right margins.
+This is the obvious choice,
+but falls victim to an annoying optical illusion:
+lines ending in small punctuation---like a period or a
+comma---seem shorter than lines that
+don't.\punckern\footnote{Many other optical illusions are
+relevant to typography. For example, if a circle, a square, and a triangle
+of equal heights are placed next to each other,
+the circle and triangle look smaller than the square.
+For this reason, circular or pointed characters (like O and A) must
+be made slightly taller than ``flat'' ones (such as H and T) for all
+to appear the same height.\punckern\endnote{%
+Jost Hochuli, \textit{Detail in typography} (Éditions~B42, 2015), 18--19}}
+\texttt{microtype} \introduce{protrudes} punctuation and other smaller
+characters into the margins slightly to compensate.
+
+\section{Font expansion}
+
+To assist \LaTeX's justification algorithm,
+\texttt{microtype} can
+stretch or shrink characters horizontally if
+this helps produce a better layout, e.g.,
+one with more even spacing, or fewer lines which end in hyphens.
+You might think that distorting character shapes this way would be immediately
+noticeable to the reader,
+but you're reading an entire book that is justified this way!
+\texttt{microtype} applies font expansion \emph{very} slightly---by default,
+character widths are changed by no more than 2\%.\punckern\footnote{Of course,
+you can use package options to change this limit,
+or disable the feature entirely.}
+
+Note that this feature isn't currently available with \XeLaTeX{}.
+You'll need to use \LuaLaTeX{} if you want to take advantage of it.
+
+\section{Other stuff}
+
+TODO other features and why you don't need them

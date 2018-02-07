@@ -213,6 +213,8 @@
 
 \usepackage{graphicx}
 
+\usepackage{lipsum}
+
 \title{Modern LaTeX}
 \author{Matt Kline}
 \date{\today}
@@ -225,7 +227,7 @@
 % for a tighter look.
 % Care should be taken to not make it too tight - f" and the like can overlap
 % if you're not careful.
-\newcommand{\punckern}{\kern-0.3ex}
+\newcommand{\punckern}{\kern-0.2ex}
 % For placing commas close to, or under, quotes they follow.
 % We're programmers, and we blatantly disregard American typographical norms
 % to put the quotes inside, but we can at least make it look a bit nicer.
@@ -262,6 +264,8 @@
 \newcommand{\chapref}[1]{%
     {\addfontfeature{Numbers={Proportional,Uppercase}}Chapter~\ref{#1}}%
 }
+
+\newcommand{\htt}{Hàn Th\rlap{ê}\raisebox{0.4ex}{\,´} Thành}
 
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
@@ -361,6 +365,8 @@ his college papers.
 \input{math}
 
 \input{fonts}
+
+\input{micro}
 
 \input{international}
 
