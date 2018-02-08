@@ -1,8 +1,140 @@
 \chapter{Punctuation}
 \label{punctuation}
 
-END WITH WHAT'S NEXT CHAPTER?
+You would much rather encounter a panda that eats
+shoots and leaves than one that eats, shoots,
+and leaves.\punckern\endnote{Lynne Truss,
+\textit{Eats, Shoots \& Leaves} (New York, 2003)}
+The only difference is punctuation,
+and there's more to it than your keyboard suggests.
 
-Quotes, hyphens, dashes, ellipses, oh my!
+\section{Quotation marks}
 
-While we're at it, explain em and en spaces.
+\LaTeX{} doesn't automatically convert ``straight'' quotes
+into correctly-facing ``curly'' ones:
+\begin{leftfigure}
+\begin{lstlisting}
+"This isn't right."
+\end{lstlisting}
+\end{leftfigure}
+will get you
+\begin{leftfigure}
+\lm%
+"This isn't right."
+\end{leftfigure}
+Instead, use \texttt{`} for opening quotes and \texttt{'} for closing
+quotes:\footnote{Don't use \texttt{"} for closing double quotes.
+Not only does \texttt{``example"} look a bit unbalanced,
+but \texttt{"} is used as a formatting command when typesetting certain
+languages, like German. (See \chapref{i18n} for more on international
+typesetting.)}
+\begin{leftfigure}
+\begin{lstlisting}
+``It depends on what the meaning of the word `is' is.''
+\end{lstlisting}
+\end{leftfigure}
+quotes a former \acronym{us} president as,
+\begin{leftfigure}
+\lm%
+``It depends on what the meaning of the word `is' is.''
+\end{leftfigure}
+
+\section{Hyphens and dahes}
+
+Though they look similar,
+hyphens (\,-\,), en dashes (\,--\,),
+em dashes (\,---\,), and minus signs (\,$-$\,)
+have different uses:
+\begin{description}
+\item[Hyphens] have a few uses:\endnote{Butterick,
+    ``Hyphens and dashes''\quotekern,
+    \textit{Practical Typography},
+    \url{https://practicaltypography.com/hyphens-and-dashes.html}}
+    \begin{itemize}[leftmargin=*]
+    \item They allow a word to be split between the end of one line and the
+        start of another.
+        \LaTeX{} handles this automatically,
+        so you don't have to worry about manually inserting hyphens for this
+        reason.
+    \item Some compound words use hyphens, like \emph{long-range},
+        and \emph{field-effect}.
+    \item They are used in phrasal adjectives.
+        If I ask for ``five dollar bills''\punckern,
+        do I want five \$1 bills, or several \$5 bills?
+        It's clearer that I mean the latter when set as
+        \emph{five-dollar bills}.
+    \end{itemize}
+
+\item[En dashes] indicate ranges such as ``pages 4--12''\quotekern,
+    or separations such as the ``US--Canada border''\quotekern.
+
+\item[Em dashes] can be used to separate clauses of a sentence.
+    Other punctuation marks---like parenthesis or commas---can play a similar
+    role.
+
+\item[Minus signs] are used exclusively in mathematical expressions.
+    They are often similar in length to an en dash,
+    but sit at a different height.
+\end{description}
+
+\section{Ellipses}
+
+The three dots used to indicate pauses or omissions are called
+\introduce{ellipses}.
+They are set using \verb|\ldots|.
+\begin{leftfigure}
+\begin{lstlisting}
+I'm\ldots{} not sure.
+\end{lstlisting}
+\end{leftfigure}
+sets
+\begin{leftfigure}
+\lm%
+I'm\ldots{} not sure.
+\end{leftfigure}
+
+\section{Spacing}
+
+As we discovered in our first example,
+\LaTeX{} automatically inserts extra space between periods and whatever
+follows them---presumably the start of the next sentence.
+Sometimes, this isn't what we want!
+Consider honorifics like Mr.\ and Ms., for example.
+In situations like these, we also want to keep \LaTeX{} from starting a new line
+after the period.
+This calls for a \introduce{non-breaking space}, which we set with a tilde.
+\begin{leftfigure}
+\begin{lstlisting}
+Please call Ms.~Shrdlu.
+\end{lstlisting}
+\end{leftfigure}
+produces proper spacing:
+\begin{leftfigure}
+\lm%
+Please call Ms.~Shrdlu.
+\end{leftfigure}
+
+In other occasions, such as when we abbreviate units of measurement,
+we want spaces that are thinner than usual inter-word ones.
+For these, we use \verb|\,|:
+\begin{leftfigure}
+\begin{lstlisting}
+Launch in 2\,h 10\,m.
+\end{lstlisting}
+\end{leftfigure}
+produces
+\begin{leftfigure}
+\lm%
+Launch in 2\,h 10\,m.
+\end{leftfigure}
+
+
+\section{What next?}
+\begin{itemize}
+\item Learn other commands for spacing, such as \verb|\:|, \verb|\;|,
+    \verb|\enspace|, and \verb|\quad|.
+\item Discover the typographical origins of terms like \introduce{en},
+    \introduce{em}, and \introduce{quad}.
+\item Familiarize yourself with the difference between \texttt{/} and
+    \verb|\slash|.
+\end{itemize}

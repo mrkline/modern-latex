@@ -196,15 +196,28 @@ If you are using the \texttt{twoside} document class option for double-sided
 printing, you can break to to the front of the next page with
 \verb|\cleardoublepage|
 
+\section{Footnotes}
+
+Footnotes are a great tool for comments and asides which readers might
+find useful, but aren't crucial to the main text.
+Using the \verb|\footnote| command will cause the argument to be placed
+in a footnote at the bottom of the current page:
+\begin{leftfigure}
+\begin{lstlisting}
+I love footnotes!\footnote{Perhaps a bit too much\ldots}
+\end{lstlisting}
+\end{leftfigure}
+
 \section{What next?}
 \begin{itemize}
 \item Control paragraph spacing, either using the relevant
 KOMA~Script options, or with the \texttt{parskip} package.
 \item Set the page size and margins with the \texttt{geometry} package.
 \item Customize list formatting with the \texttt{enumitem} package.
+\item Choose footnote symbols and layout with KOMA~Script and the
+    \texttt{footmisc} package.
 \item Insert horizontal and vertical space with commands like
-    \verb|\vspace|, \verb|\hspace|, \verb|\vfill|, \verb|\hfill|,
-    \verb|\enspace|, \verb|\quad|, and \verb|\,|\,.
+    \verb|\vspace|, \verb|\hspace|, \verb|\vfill|, and \verb|\hfill|.
 \item Learn what units \LaTeX{} provides for specifying spacing.
     (We've already mentioned a few here, such as
     \texttt{pt}, \texttt{bp}, \texttt{mm}, and \texttt{in}.)
