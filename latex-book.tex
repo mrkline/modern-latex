@@ -33,40 +33,43 @@
 %             StylisticSet=01, % Slightly smaller quotes, asterisks, etc.
 %            ]{Equity Text A}
 
-% Help, I've fallen down a rabbit hole.
-% Define better kerns following f
-\directlua
-{
-  fonts.handlers.otf.addfeature {
-    name = "morekerns",
-    type = "kern",
-    data = {
-      ["f"] = {
-        ["!"] = 150,
-        ["T"] = 120
-      },
-      ["ff"] = {
-        ["!"] = 150,
-        ["T"] = 120
-      },
-      ["n"] = {
-        ["T"] = -80
-      },
-      ["a"] = {
-        ["T"] = -70
-      },
-      ["o"] = {
-        ["T"] = -90
-      }
+\setmainfont[
+    Ligatures=TeX,
+    Numbers={Proportional,Lowercase},
+    WordSpace=1.3,
+    UprightFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-capt},
+            {Size={9-15},Font=garamondpremrpro},
+            {Size={15-23},Font=garamondpremrpro-subh},
+            {Size={23-},Font=garamondpremrpro-disp}
+        },
     },
-  }
-}
-
-\setmainfont[Ligatures=TeX, Numbers={Proportional,Lowercase},
-             BoldFont=AGaramond Pro Semibold,
-             BoldItalicFont=AGaramond Pro Semibold Italic,
-             RawFeature=+morekerns
-            ]{Adobe Garamond Pro}
+    BoldFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-smbdcapt},
+            {Size={9-15},Font=garamondpremrpro-smbd},
+            {Size={15-23},Font=garamondpremrpro-smbdsubh},
+            {Size={23-},Font=garamondpremrpro-smbddisp}
+        },
+    },
+    ItalicFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-itcapt},
+            {Size={9-15},Font=garamondpremrpro-it},
+            {Size={15-23},Font=garamondpremrpro-itsubh},
+            {Size={23-},Font=garamondpremrpro-itdisp}
+            },
+    },
+    BoldItalicFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-smbditcapt},
+            {Size={9-15},Font=garamondpremrpro-smbdit},
+            {Size={15-23},Font=garamondpremrpro-smbditsubh},
+            {Size={23-},Font=garamondpremrpro-smbditdisp}
+        },
+    },
+]{Garamond Premier Pro}
 \setsansfont[Ligatures=TeX,
              Scale=MatchUppercase,
              Style=Alternate, % Straight-legged R
@@ -177,8 +180,6 @@
 \cefoot*{\thepage} % \, is a TeX primitive for a thin space.
 \cofoot*{\thepage} % \, is a TeX primitive for a thin space.
 
-\newcommand{\codesize}{\fontsize{10pt}{12pt}}
-
 \usepackage{changepage} % For adjustwidth
 
 \usepackage{mflogo} % for METAFONT
@@ -265,8 +266,6 @@
 \newcommand{\chapref}[1]{%
     {\addfontfeature{Numbers={Proportional,Uppercase}}Chapter~\ref{#1}}%
 }
-
-\newcommand{\htt}{Hàn Th\rlap{ê}\raisebox{0.4ex}{\,´} Thành}
 
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
