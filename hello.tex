@@ -1,6 +1,6 @@
 \chapter{Hello, \texorpdfstring{\LaTeX}{LaTeX}!}
 
-Now that you have a \LaTeX{} distribution successfully installed,
+Now that you have a \LaTeX{} distribution installed,
 let's try it out.
 Open up your editor of choice and save the following as \texttt{hello.tex}:
 \begin{leftfigure}
@@ -12,13 +12,13 @@ Hello, World!
 \end{document}
 \end{lstlisting}
 \end{leftfigure}
-We then want to run this through \LaTeX{} (the program)\footnote{Not to be
+We then run this file through \LaTeX{} (the program)\footnote{Not to be
 confused with \LaTeX{} the lunchbox, \LaTeX{} the breakfast cereal,
 or \LaTeX{} the flamethrower. The kids love this stuff!}
 to get our document.
-The installation will have placed several different versions---or
+The installation placed several different versions---or
 \introduce{engines}---on your machine,
-but for the entire book, we'll always use \LuaLaTeX or \XeLaTeX.
+but for the entire book, we'll always use \LuaLaTeX{} or \XeLaTeX.
 These are the newest engines available---see Appendix~\ref{history} for an
 explanation of how they differ from the others.
 
@@ -95,7 +95,7 @@ An empty line  starts a new paragraph.
 \end{leftfigure}
 Notice that \LaTeX{} is automatically following typographic
 conventions, such as indenting new paragraphs and leaving more space after a
-period than one does between words.
+period than it leaves between words.
 One quirk to be aware of is that comments ``eat'' all of the leading
 space on the subsequent line, such that
 \begin{leftfigure}
@@ -135,7 +135,7 @@ double-sided pages.\punckern\footnote{\texttt{twoside} introduces commands
 that only make sense in the context of double-sided printing,
 such as ones that skip to the start of the next odd page.
 It also allows you to have different margins for even and odd pages,
-which is useful for things like this book.}
+which is useful for texts like this book.}
 This is done with an optional argument to \verb|\documentclass|:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -224,7 +224,7 @@ automatically is one of \LaTeX{}'s best skills.
 \section{Environments}
 
 We often control our document by organizing text into \introduce{environments}.
-Environments always start with \verb|\begin{name}| and end with \verb|\end{name}|,
+These always start with \verb|\begin{name}| and conclude with \verb|\end{name}|,
 where \texttt{name} is that of the environment.
 All \LaTeX{} files use the \texttt{document} environment to start and end their
 bodies, but there are many others.
@@ -254,7 +254,7 @@ Yet we should not pass up our opportunities in that critical 3\%.
 \end{leftfigure}
 
 \section{Groups and command scope}
-Some commands change how \LaTeX{} typesets text.
+Some commands change how \LaTeX{} typesets the following text.
 \verb|\itshape|, for example, \textit{italicizes} everything that comes after it.
 If we want to limit a command's effect to a certain region, we can surround it
 with braces.

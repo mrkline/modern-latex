@@ -35,8 +35,8 @@ They can do all sorts of things, like:
 \end{itemize}
 \end{multicols}
 
-To import a package, add the command \verb|\userpackage{name}|
-to the preamble.
+To import a package, add a \verb|\usepackage| command to the preamble,
+with the package's name as the argument.
 As a simple example, let's make a document with the \texttt{metalogo}
 package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX| commands:
 \begin{leftfigure}
@@ -58,8 +58,8 @@ should get you a \textsc{pdf} that reads
 \end{samepage}
 Like other commands, \verb|\usepackage| can take optional arguments.
 The \texttt{geometry} package, for instance,
-takes the desired paper size and margins.
-For \acronym{us} letter paper with one-inch margins, you would type:
+can take your desired paper size and margins.
+For \acronym{us} letter paper with one-inch margins, you type:
 \begin{leftfigure}
 \begin{lstlisting}
 \usepackage[letterpaper,
@@ -82,7 +82,7 @@ We won't discuss how to use plain \TeX{} here. That's for another book---the
 \TeX book.}
 at \url{https://ctan.org}.
 The manuals for every single package can also be found there,
-so it should be your first stop when learning how to use a new package.
+so it should be your first stop when learning how to use a new one.
 
 \section{Titles, sections, and tables of contents}
 
@@ -128,7 +128,8 @@ by placing \verb|\tableofcontents| at the start of the document body.
 As promised, this book isn't a comprehensive reference,
 but it \emph{will} point you to places where you can learn more.
 See Appendix~\ref{resources} for additional resources.
-We'll also wrap up most chapters with a list of things you could look into next.
+We'll also wrap up most chapters with a list of related topics you could
+explore next.
 
 Consider learning how to:
 \begin{itemize}

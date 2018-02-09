@@ -2,24 +2,25 @@
 
 \LaTeX{} is a program\footnote{And a markup language,
 and (sort of) a programming language, and a bit of a cult.
-But we'll get to all of that.}
+But that's all for later.}
 for creating written documents, such as papers, presentations,
 or even the book you're reading right now.
 In some sense, it's an alternative to the likes of Microsoft Word,
 Apple Pages, Google Docs, or LibreOffice Writer.
 
-All of these other applications are
-\introduce{What You See Is What You Get} \acronym{(wysiwyg)} systems---whatever
+These other applications are
+\introduce{What You See Is What You Get} \acronym{(wysiwyg)} systems: whatever
 you see on screen is what the final document will look like.
-This is often incredibly convenient, since many changes can be made
-with a few clicks of the mouse,
-but it isn't without its downsides.
-In a \acronym{wysiwyg} system,
+This is often incredibly convenient---especially for small projects----since
+many changes can be made with a few clicks of the mouse.
+But it isn't without its downsides.
+In \acronym{wysiwyg} environments,
 you must constantly concern yourself with both
 the \emph{content} of your text and its \emph{layout}.
-Keeping the look of a large document consistent is hard---if you increased
-the size of one caption, did you make sure to find all the other
-captions and do the same?\footnote{This isn't to say that it's impossible
+As a document grows, it becomes more and more difficult to keep its look consistent.
+If you increased the size of one caption,
+did you make sure to find all the other captions and do the
+same?\footnote{This isn't to say that it's impossible
 to create nice-looking documents with these tools.
 Many of them have gotten much better at automating these sorts of
 tasks in recent years.}
@@ -32,8 +33,8 @@ Here, you write your document as a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
 When you are ready, \LaTeX{} generates your document from this file
 based on the rules it was given.
-If you've ever done any web development, this is a familiar process.
-Just as \acronym{html} and \acronym{css} describe the web page you
+If you've done any web development, this is a familiar process.
+Just as \acronym{html} and \acronym{css} describe the page you
 want browsers to render, your markup describes the appearance of your
 document to \LaTeX{}.
 
@@ -44,8 +45,8 @@ Here, you write your document as a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
 When you are ready, \LaTeX{} generates your document from this file
 based on the rules it was given.
-If you've ever done any web development, this is a familiar process.
-Just as \acronym{html} and \acronym{css} describe the web page you
+If you've done any web development, this is a familiar process.
+Just as \acronym{html} and \acronym{css} describe the page you
 want browsers to render, your markup describes the appearance of your
 document to \LaTeX{}.
 \end{lstlisting}
@@ -58,7 +59,8 @@ However, it comes with a few advantages:
 \item You can think separately about your document's contents and
     its presentation.
     \LaTeX{} automatically ensures that fonts, sizes, line heights,
-    and other layout considerations are consistent according to the rules you set.
+    and other layout considerations remain consistent according to the rules
+    you set.
 \item You can define your own rules, then tweak them to immediately change
     everywhere they're used in your document.
     For example, the \verb|\introduce| and \verb|\acronym| commands you saw above
@@ -69,16 +71,16 @@ However, it comes with a few advantages:
     If I wake up tomorrow and decide to introduce new terms
     \textbf{\itshape with this look} and set acronyms
     {\small\addfontfeature{LetterSpace=8} LIKE THIS},
-    I just change the two lines that define those commands
-    and every single place in the book that uses them takes on those new styles.
+    I can change the two lines that define those commands
+    to update every place in the book that uses them.
 \item In \LaTeX, the document's structure is immediately visible
     and can be easily copied.
-    (Compare this to \acronym{wysiwyg} systems, where it is often not obvious
+    (Compare this to \acronym{wysiwyg} systems, where it is often unobvious
     how certain formatting was produced
     or how to emulate it.)
 \item Since the document source is plain text,
     \begin{itemize}
-    \item Document sources can be read and understood with any text editor.
+    \item It can be read and understood with any text editor.
     \item Content can be easily generated programmatically.
     \item Changes are easily tracked with version control software.
     \end{itemize}
@@ -127,14 +129,15 @@ or how
 FIRST SET FOOT UPON THE MOON \\
 JULY 1969, A.~D.
 \end{center}
-Typography tells people
+Typography shows people
 what you have to say before they read a single word.
 
-This is where \LaTeX{} shines: unless you want to give Adobe large sums
+This is where \LaTeX{} shines, and
+unless you want to give Adobe large sums
 of money for InDesign or InCopy,
 you won't find any better typesetting software.
-By carefully handling subtle details---like how paragraphs are broken into lines,
-or how words are spaced and hyphenated---\LaTeX{} provides high-quality layout
+By carefully handling subtle details---like how words are spaced,
+hyphenated, and arranged into lines---\LaTeX{} provides high-quality layout
 with relatively little effort from you, the author.
 Modern versions can also take advantage of new\footnote{By new,
 I mean ``from the mid-1990s''\quotekern, but web browsers and desktop publishing
@@ -148,7 +151,7 @@ After all, it's been out for more than 30 years.
 A quick Amazon search finds nearly a dozen books on the topic.
 There are plenty of great resources online.
 
-Unfortunately, most other guides have two fatal flaws: they are long,
+Unfortunately, most guides have two fatal flaws: they are long,
 and they are old.
 The first is anathema to newcomers---if somebody asks about \LaTeX{},
 throwing a 200+ page book at them isn't an encouraging start.
@@ -169,17 +172,17 @@ Take all criticisms of \LaTeX's past here with a grain of
 salt. After all, the fact that all of the technology around it became
 obsolete---multiple times---is a testament to its staying power.}
 
-The good news is that  \LaTeX{} has improved by leaps and bounds in recent years,
-and it's time for a guide that doesn't weigh you down with decades of legacy.
-It's also time for a guide that doesn't try to be some comprehensive reference.
+The good news is that  \LaTeX{} has improved by leaps and bounds in recent years.
+It's time for a guide that doesn't weigh you down with decades of legacy.
+It's also time for one that doesn't try to be some comprehensive reference.
 After all, you're a smart, resourceful individual who knows how to use a search
 engine.
 This book will:
-\begin{itemize}
+\begin{enumerate}
 \item Teach you the very basics of using \LaTeX.
 \item Point you to places where you can learn more.
-\item Show you how to use modern technologies like OpenType and micro-typography
+\item Show you how to use modern technologies like OpenType and microtypography
     to create professional-quality documents.
 \item End promptly thereafter.
-\end{itemize}
+\end{enumerate}
 Let's begin.
