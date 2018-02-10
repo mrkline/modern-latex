@@ -1,4 +1,5 @@
 \chapter{Microtypography}
+\label{microtype}
 
 \introduce{Microtypography} is the use of small, subliminal tweaks to improve
 a document's legibility.
@@ -27,7 +28,7 @@ Its use is automatic---for the vast majority of documents, you should add
 \end{lstlisting}
 \end{leftfigure}
 to your preamble and carry on---but let's take a brief look at what the package
-actually does.
+does.
 
 \section{Character protrusion}
 
@@ -52,11 +53,11 @@ characters into the margins to compensate.
 
 To assist \LaTeX's justification algorithm,
 \texttt{microtype} can
-stretch or shrink characters horizontally to produce a better layout,
-e.g., one with more even spacing, or fewer hyphenated lines.
+stretch or shrink characters horizontally to produce a layout
+with more even spacing or fewer hyphenated lines.
 You might think that distorting character shapes this way would be immediately
 noticeable to the reader,
-but you're reading an book that does this on every page!
+but you're reading a book that does this on every page!
 Font expansion is applied \emph{very} slightly---by default,
 character widths are changed by no more than 2\%.\punckern\footnote{Of course,
 you can use package options to change this limit,
@@ -69,6 +70,6 @@ You'll need to use \LuaLaTeX{} if you want to take advantage of it.
 
 As always, see the package manual for ways these features can be tweaked.
 \texttt{microtype} is capable of a few other tricks,
-but many only work on older \LaTeX{} engines.\punckern\footnote{i.e., pdf\TeX}
-Those we do care about----such as letterspacing---can be handled with
+but several only work on older \LaTeX{} engines.\punckern\footnote{i.e., pdf\TeX}
+Those we do care about---such as letterspacing---can be handled with
 \texttt{fontspec} or other packages.

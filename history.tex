@@ -81,7 +81,7 @@ It was introduced in 1986 with Lamport's guide,
 Other typesetting systems based on \TeX{} also exist,
 the other most popular today being Con\TeX{}t.
 
-Development continues today,
+Development continues,
 both in the form of user-provided packages for \TeX{} and \LaTeX{},
 and on improvements to the \TeX{} typesetting program itself.
 Currently, there are four versions, or \introduce{engines}:
@@ -98,7 +98,7 @@ The most recent version, 3.14159265, came out in January~2014.
     native support for PostScript\footnote{%
     \addfontfeature{Numbers=Uppercase}Specifically, PostScript Type 1}
     and TrueType fonts,
-    and micro-typographic features discussed in this book's Microtype chapter.
+    and micro-typographic features discussed in \chapref{microtype}.
     It was originally developed by
     Hàn Thế Thành
     as part of his PhD thesis
@@ -108,7 +108,7 @@ The most recent version, 3.14159265, came out in January~2014.
     (Masaryk University Brno, October 2000)}
 
 \item[\XeTeX] is a further extension of \TeX{} that adds native support for
-    Unicode and modern font formats, such as OpenType.
+    Unicode and OpenType.
     It was originally developed by Jonathan Kew in the early 2000s,
     and gained full cross-platform support and inclusion in the \TeX{} Live
     distribution in 2007.\punckern\endnote{Jonathan Kew,
@@ -134,15 +134,16 @@ This mix of English and code is called \texttt{WEB}.\punckern\footnote{Knuth
 also released a pair of compainion programs named
 \texttt{TANGLE} and \texttt{WEAVE}.
 The former extracts the book---as \TeX, of course---and the latter
-produces the \TeX's Pascal source code.}
+produces \TeX's Pascal source code.}
 
 Unsurprisingly, most modern systems don't have good tooling for the late 1970s
 dialect of Pascal that \TeX{} was written in,
 so present-day distributions use another program,
-\texttt{web2c}, to convert \TeX{}'s \texttt{WEB} source into C code.
+\texttt{web2c}, to convert its \texttt{WEB} source into C code.
 pdf\TeX{} and \XeTeX{} are built by combining the result with other C
-and \cpp{} code.
-The \LuaTeX{} authors, on the other hand, hand-translated Knuth's Pascal into C,
+and \cpp{} sources.
+Instead of following this complicated process,
+the \LuaTeX{} authors hand-translated Knuth's Pascal into C
 and have been using the resulting code since 2009.\punckern\endnote{%
 Taco Hoekwater, \textit{\LuaTeX says goodbye to Pascal}
 (MAPS 39, Euro\TeX{} 2009),

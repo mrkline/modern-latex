@@ -1,7 +1,7 @@
 \chapter{Fonts}
 \label{fonts}
 
-Digital type has changed almost entirely in the past thirty years.
+Digital typography has changed almost entirely in the past thirty years.
 Originally, \LaTeX{} used \MF,
 a system designed by Donald Knuth specifically for \TeX{}.
 As time went on, support for PostScript\footnote{One of
@@ -32,7 +32,7 @@ By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
 an OpenType rendition of \LaTeX's original type family, Computer Modern.
 While Latin Modern is a high-quality set of fonts,
 you may want to use others for your document.
-This is done through the \texttt{fontspec} package:
+Fonts are handled with the \texttt{fontspec} package:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
@@ -58,23 +58,20 @@ open-source typefaces are freely available at
 \fontspec[Ligatures=TeX]{Source Sans Pro} Let's try sans serif! \\
 \fontspec{Source Code Pro} Let's try monospaced!
 \end{leftfigure}
-The \verb|Ligatures=TeX| option allows you to use the standard ligatures
-mentioned in \chapref{punctuation} instead of characters that are
-unlikely to be on your keyboard.
-% No need repeating ourselves here?
-%For example, \verb|---| can be used to create em dashes (—),
-%quotes can be typed \verb|``like this''| instead of \verb|“like this”|,
-%and so on.
-You probably don't want this for your monospaced type, though,
-since things set in it---such as code---are usually meant to be displayed
+The \verb|Ligatures=TeX| option allows you to use the standard punctuation
+shortcuts mentioned in \chapref{punctuation} (e.g., creating en dashes with
+\texttt{--} or curly quotes with \texttt{``}) instead of having
+to type the the corresponding characters, which probably aren't on your keyboard.
+You often don't want this for monospaced type, though,
+since the text you set in it---such as code---is usually meant to be displayed
 verbatim. You don't want \verb|"Hello!"| to turn into
 \verb|“Hello!“|
 
 \section{Selecting font files}
 
 A typical typeface might come packaged as four files to represent its
-weights and styles, usually
-normal,
+weights and styles.
+A typical set includes upright,
 \textit{italics},
 \textbf{bold}, and
 \textit{\textbf{bold italics}}.
@@ -175,7 +172,7 @@ Lets's touch on a few common ones.
 
 \subsection{Ligatures}
 
-Many typefaces use \introduce{ligatures}, where multiple characters are combined
+Many typefaces use \introduce{ligatures}, which combine multiple characters
 into a single glyph.\punckern\footnote{Ligatures fell out
 of style somewhat during the 20{\addfontfeature{VerticalPosition=Superior}th}
 century due to limitations of printing technology---including early
@@ -192,9 +189,9 @@ OpenType groups ligatures into three categories:
     a typeface might otherwise have. Consider the lowercase letters f
     and i.
     In many serif typefaces, these combine
-    to form the ligature fi, which avoids awkward spacing between the
-    ascender of f and the dot of i
-    {\addfontfeature{Ligatures=CommonOff} (\,fi\,).}
+    to form the ligature fi, which avoids awkward spacing between f's ascender
+    i's dot
+    {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
     Other common examples in English writing include ff,
     ffi, fl, and ffl.
 \item[Discretionary] ligatures, such as
@@ -218,7 +215,7 @@ options. If you wanted to temporarily disable discretionary ligatures,
 {\addfontfeature{Ligatures=DiscretionaryOff}...}
 \end{lstlisting}
 \end{leftfigure}
-would do the trick.
+does the trick.
 
 Some words are arguably typeset better without ligatures---a classic example
 is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
@@ -249,7 +246,7 @@ Sitting cross-legged on the floor\ldots{} 25 or 6 to 4?
 \end{leftfigure}
 For body text, either choice is fine, but oldstyle figures shouldn't
 be combined with capital letters.
-``F-15C'' looks odd, as does ``Version 2.3 Release''\quotekern.
+``F-15C'' looks odd, as does ``V2.3 Release''\quotekern.
 
 {\addfontfeature{Numbers=LowercaseOff}
 The terms \introduce{proportional} and \introduce{tabular} refer to spacing.
@@ -281,10 +278,10 @@ You can select your figures with the following options:
  & \texttt{Tabular / Monospaced}
 \end{tabular}
 \end{leftfigure}
-As you may have noticed, these traits can be mixed and matched.
-You can have proportional lining figures
-with \verb|Numbers={Proportional,Lining}|,
-or tabular oldstyle ones with \verb|Numbers={Tabular,OldStyle}|.
+These traits can be mixed and matched:
+you can get proportional lining figures
+with \texttt{Numbers=\{Proportional,\allowbreak Lining\}},
+or tabular oldstyle ones with \texttt{Numbers=\{Tabular,\allowbreak OldStyle\}}.
 And, like ligatures, each option has a corresponding \verb|*Off|
 variant.\punckern\footnote{This is especially useful since fonts
 select figures in different ways.
@@ -302,22 +299,24 @@ which can be used for ordinals
 (\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \ldots),
 fractions (\,\otffrac{25}{624}\,), and so on.
 These have the same weight as their full-sized counterparts,
-which looks much better result than shrinking normal figures for use as
-subscripts and superscripts.
-(Notice how
-{\addfontfeature{Numbers=LowercaseOff}%
+which looks much better than shrinking the font's normal figures.
+(Compare the above to
+{\fontspec[OpticalSize=0]{garamondpremrpro}%
 \mbox{1\textsuperscript{st}},
 \mbox{2\textsuperscript{nd}},
 \mbox{3\textsuperscript{rd}},
 and
 \,\mbox{\textsuperscript{25}^^^^2044\textsubscript{624}}%
-\,}
-are too light and narrow compared to the surrounding type.)
+\,}.
+Notice how this second set is too light and narrow compared to the surrounding
+type.)
 
 \section{What Next?}
 \begin{itemize}
 \item Learn about more OpenType features supported through \texttt{fontspec},
 such as stylistic sets and alternatives.
+\item See how \texttt{fontspec} chooses fonts with multiple optical sizes,
+    either automatically via OpenType, or manually using \texttt{SizeFeatures}.
 \item Experiment with letter spacing---or \introduce{tracking}---with
     the \texttt{LetterSpace} option.
     Extra tracking is unnecessary in most cases,

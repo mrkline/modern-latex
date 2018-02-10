@@ -16,7 +16,7 @@ We then run this file through \LaTeX{} (the program)\footnote{Not to be
 confused with \LaTeX{} the lunchbox, \LaTeX{} the breakfast cereal,
 or \LaTeX{} the flamethrower. The kids love this stuff!}
 to get our document.
-The installation placed several different versions---or
+The installation places several different versions---or
 \introduce{engines}---on your machine,
 but for the entire book, we'll always use \LuaLaTeX{} or \XeLaTeX.
 These are the newest engines available---see Appendix~\ref{history} for an
@@ -174,7 +174,7 @@ but a few of its rules are a little weird.
 
 Some characters have special meanings in \LaTeX.
 We saw above, for example, that \verb|%| starts a comment
-and \verb|\| marks the start of some command.
+and \verb|\| starts a command.
 The full list of special characters is:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -226,8 +226,6 @@ automatically is one of \LaTeX{}'s best skills.
 We often control our document by organizing text into \introduce{environments}.
 These always start with \verb|\begin{name}| and conclude with \verb|\end{name}|,
 where \texttt{name} is that of the environment.
-All \LaTeX{} files use the \texttt{document} environment to start and end their
-bodies, but there are many others.
 Take \texttt{quote}, which adds additional spacing on both sides of a block
 quotation:
 \begin{leftfigure}

@@ -15,16 +15,17 @@ This is often incredibly convenient---especially for small projects----since
 many changes can be made with a few clicks of the mouse.
 But it isn't without its downsides.
 In \acronym{wysiwyg} environments,
-you must constantly concern yourself with both
-the \emph{content} of your text and its \emph{layout}.
-As a document grows, it becomes more and more difficult to keep its look consistent.
+you must constantly concern yourself with the
+\emph{layout} of your work as you write its \emph{contents}.
+The more a document grows, the more difficult it becomes keep its appearance
+consistent.
 If you increased the size of one caption,
 did you make sure to find all the other captions and do the
 same?\footnote{This isn't to say that it's impossible
 to create nice-looking documents with these tools.
 Many of them have gotten much better at automating these sorts of
 tasks in recent years.}
-If the program formats something in a way you didn't intend,
+If the program formats something in a way you don't like,
 how difficult is it to change?%\footnote{I spent far too much of my childhood
 %fighting with Word about how it wrapped text around images.}
 
@@ -56,11 +57,13 @@ document to \LaTeX{}.
 This might seem alien to you if you've never worked with a markup system before.
 However, it comes with a few advantages:
 \begin{enumerate}
-\item You can think separately about your document's contents and
+\item You can think separately about a document's contents and
     its presentation.
-    \LaTeX{} automatically ensures that fonts, sizes, line heights,
-    and other layout considerations remain consistent according to the rules
-    you set.
+    At the beginning of each document,
+    you describe the design you want.
+    From there, \LaTeX{} handles the rest for you,
+    keeping fonts, sizes, line heights,
+    and other layout considerations consistent across your whole text.
 \item You can define your own rules, then tweak them to immediately change
     everywhere they're used in your document.
     For example, the \verb|\introduce| and \verb|\acronym| commands you saw above
@@ -71,7 +74,7 @@ However, it comes with a few advantages:
     If I wake up tomorrow and decide to introduce new terms
     \textbf{\itshape with this look} and set acronyms
     {\small\addfontfeature{LetterSpace=8} LIKE THIS},
-    I can change the two lines that define those commands
+    I just change the two lines that define those commands
     to update every place in the book that uses them.
 \item In \LaTeX, the document's structure is immediately visible
     and can be easily copied.

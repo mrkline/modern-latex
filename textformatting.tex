@@ -3,9 +3,9 @@
 
 \section{Emphasis}
 
-Writing sometimes needs some extra punch to get its point across.
-\LaTeX{} provides emphasis with the \verb|\emph| command.
-By default, this \emph{italicizes} its argument:
+Sometimes you need some extra punch to get your point across.
+The simplest way to emphasize text in \LaTeX{} is with the \verb|\emph| command,
+which \emph{italicizes} its argument by default:
 \begin{leftfigure}
 \begin{lstlisting}
 \emph{Oh my!}
@@ -37,7 +37,7 @@ A (mostly) complete list follows:
 \begin{leftfigure}
 \lm
 \begin{tabular}{l|l|l}
-Command & ``Switch'' version & Style \\
+{\normalfont Command} & {\normalfont ``Switch'' version} & {\normalfont Style} \\
 \hline
 \verb|\textnormal{...}| & \verb|{\normalfont ...}| & the default \\
 \verb|\emph{...}| & \verb|{\em ...}| & \emph{emphasis, typically italics} \\
@@ -61,7 +61,8 @@ However, there are cases where the switch is the only option:
 \begin{enumerate}
 \item When formatting multiple paragraphs \\
 (Command arguments cannot contain paragraph breaks.)
-\item When using them to redefine the style of other commands.\footnote{%
+\item When using them to redefine the style of other
+commands.\punckern\footnote{%
 For example, this book sets the style of section headers with
 \monobox{\textbackslash setkomafont\{section\}\{\textbackslash Large\textbackslash itshape\}}.}
 
@@ -98,8 +99,7 @@ To scale text relative to this size, use the following commands:
 \end{tabular}
 \end{leftfigure}
 There is some subtlety here that you may not have noticed.
-\LaTeX's default type family, Latin Modern,\punckern\footnote{Latin Modern is
-an OpenType rendition of \LaTeX's original type family, Computer Modern.}
+\LaTeX's default type family, Latin Modern,
 comes in multiple \introduce{optical sizes}.
 Smaller fonts aren't just shrunken versions of their big siblings---they
 have thicker strokes, exaggerated features,
@@ -114,7 +114,7 @@ many digital typefaces---even professional ones---lack this
 feature.\punckern\footnote{If you are fortunate enough \emph{to} have
 a typeface with multiple optical sizes, \XeLaTeX{}
 and \LuaLaTeX{} can make good use of them! See \chapref{fonts}
-for more on font selection.}
+for more on font selection and OpenType features.}
 
 Points and optical sizes don't tell the whole story.
 Each font has its own proportions, which can make a huge difference

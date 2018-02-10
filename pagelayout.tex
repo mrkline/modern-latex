@@ -15,8 +15,8 @@ Franklin Mark Liang,
 \url{http://www.tug.org/docs/liang/}}
 this produces some of the best paragraph layout available.
 
-Sometimes we don't want to justify our text, though.
-If you would prefer it be ``flush left''\quotekern,
+Sometimes we don't want to justify our text.
+If you want it to be ``flush left''\quotekern,
 with a ragged right side, place it in a \texttt{flushleft} environment,
 or add \verb|\raggedright| to the current group.
 To center it, place it in a
@@ -154,11 +154,12 @@ gives us
 
 We often split documents---or parts of them---into multiple columns.
 This is especially common when printing on \textsc{a4} or \acronym{us} letter
-paper, since it allows a much more comfortable line widths at standard
+paper, since it allows more comfortable line widths at standard
 8--12\,pt text sizes.\punckern\footnote{You'll see different advice depending
-on where you look, but a general rule of thumb is to choose layouts that give
-fewer than 90 characters per line (including spaces).
-Shorter lines keep readers from having to scan very far to begin the next line,
+on where you look, but a general rule of thumb is to design layouts to give
+fewer than 90 characters (including spaces) per line.
+Shorter lines keep readers from having to scan very far to find the start of
+the next line,
 which produces a more comfortable experience.}
 You can either add the \texttt{twocolumn} option to your document class,
 which splits everything into two columns, or you can use the \texttt{multicols}
@@ -170,7 +171,7 @@ combine arbitrary layouts.
 \begin{multicols}{2}
 In this example we start with one column,
 then create a short section with two.
-The package will ensure that the text inside is split
+The package ensures that the text inside is split
 so each column is about the same height.
 \end{multicols}
 \end{lstlisting}
@@ -183,15 +184,15 @@ combine arbitrary layouts.
 \begin{multicols}{2}
 In this example we start with one column,
 then create a short section with two.
-The package will ensure that the text inside is split
+The package ensures that the text inside is split
 so each column is about the same height.
 \end{multicols}
 \end{leftfigure}
 
 \section{Page breaks}
 
-Some commands, like \verb|\chapter| in a book, add their own page breaks.
-You can insert your own with \verb|\clearpage|.
+Some commands, like a book's \verb|\chapter|, insert page breaks.
+You can add your own with \verb|\clearpage|.
 If you are using the \texttt{twoside} document class option for double-sided
 printing, you can break to to the front of the next page with
 \verb|\cleardoublepage|
@@ -200,12 +201,18 @@ printing, you can break to to the front of the next page with
 
 Footnotes are a great tool for comments and asides which readers might
 find useful, but aren't crucial to the main text.
-Using the \verb|\footnote| command will cause the argument to be placed
-in a footnote at the bottom of the current page:
+The \verb|\footnote| command places a footnote marker at its location in the
+body text, then inserts argument as a footnote at the bottom of the current
+page:
 \begin{leftfigure}
 \begin{lstlisting}
 I love footnotes!\footnote{Perhaps a bit too much\ldots}
 \end{lstlisting}
+\end{leftfigure}
+proclaims
+\begin{leftfigure}
+\lm%
+I love footnotes!\footnote{Perhaps a bit too much\ldots}
 \end{leftfigure}
 
 \section{What next?}
@@ -214,6 +221,8 @@ I love footnotes!\footnote{Perhaps a bit too much\ldots}
 KOMA~Script options, or with the \texttt{parskip} package.
 \item Set the page size and margins with the \texttt{geometry} package.
 \item Customize list formatting with the \texttt{enumitem} package.
+\item Create tables with the \texttt{tabular} environment.
+\item Align text with tab stops using the \texttt{tabbing} environment.
 \item Choose footnote symbols and layout with KOMA~Script and the
     \texttt{footmisc} package.
 \item Insert horizontal and vertical space with commands like

@@ -56,12 +56,12 @@ with:
 \verb|<penalty>| is a value between 1 and 10000.
 Be sure not to set these penalties \emph{too} high---at their maximum,
 \LaTeX{} is never allowed to leave orphans and widows, at \emph{any} cost.
-This can cause some odd layouts to be chosen.
+This can cause odd layouts to be chosen.
 300 is probably a sane starting point.
 
 \section{Handling syntax errors}
-If you confuse \LaTeX{}---say, by issuing commands that don't exist or
-forgetting to end a group or environment---it will print an
+If you confuse \LaTeX{}---say, by issuing commands that don't exist,
+or forgetting to end a group or environment---it will print an
 error message,\punckern\footnote{Usually this contains a succinct summary of
 the problem and the number of the line(s) it occurred on. Occasionally,
 \LaTeX{} gets \emph{really} confused and emits something so cryptic it gives
@@ -71,7 +71,7 @@ mistakes cause these rare, but enigmatic messages.}
 then drop into an interactive prompt starting with \texttt{?}\,.
 Here you can enter various instructions for how to proceed.
 Once upon a time, when computers were thousands of times slower and
-\LaTeX{} took that much longer to re-run, this was probably more useful.
+\LaTeX{} took that much longer to re-run, this was more useful.
 Today, we likely just want to quit and try again once we've fixed our document.
 You do so by typing \texttt{X}, then pressing Enter.
 Better yet, you can tell \LaTeX{} to give up as soon as it finds trouble
