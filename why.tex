@@ -3,53 +3,34 @@
 \LaTeX{} is a program\footnote{And a markup language,
 and (sort of) a programming language, and a bit of a cult.
 But that's all for later.}
-for creating written documents, such as papers, presentations,
+for crafting written documents, like papers, presentations,
 or even the book you're reading right now.
 In some sense, it's an alternative to the likes of Microsoft Word,
 Apple Pages, Google Docs, or LibreOffice Writer.
 
-These other applications are
-\introduce{What You See Is What You Get} \acronym{(wysiwyg)} systems: whatever
-you see on screen is what the final document will look like.
-This is often incredibly convenient---especially for small projects----since
-many changes can be made with a few clicks of the mouse.
-But it isn't without its downsides.
-In \acronym{wysiwyg} environments,
-you must constantly concern yourself with the
-\emph{layout} of your work as you write its \emph{contents}.
-The more a document grows, the more difficult it becomes keep its appearance
-consistent.
-If you increased the size of one caption,
-did you make sure to find all the other captions and do the
-same?\footnote{This isn't to say that it's impossible
-to create nice-looking documents with these tools.
-Many of them have gotten much better at automating these sorts of
-tasks in recent years.}
-If the program formats something in a way you don't like,
-how difficult is it to change?%\footnote{I spent far too much of my childhood
-%fighting with Word about how it wrapped text around images.}
-
-\LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tech''} is different.
-Here, you write your document as a ``plain'' text file,
+Unlike these other applications, which work on the principle of
+\introduce{What You See Is What You Get} \acronym{(wysiwyg)},
+\LaTeX{} documents are built from a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
 When you are ready, \LaTeX{} generates your document from this file
-based on the rules it was given.
-If you've done any web development, this is a familiar process.
-Just as \acronym{html} and \acronym{css} describe the page you
-want browsers to render, your markup describes the appearance of your
-document to \LaTeX{}.
+based on the formatting rules you gave it.
+If you've done any web development, this is a similar process---just
+as \acronym{html} and \acronym{css} describe the page you want
+browsers to render, your markup describes the appearance of your
+document to \LaTeX.
 
 \begin{leftfigure}
 \begin{lstlisting}
-\LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tech''} is different.
-Here, you write your document as a ``plain'' text file,
+Unlike these other applications, which work on the principle of
+\introduce{What You See Is What You Get} \acronym{(wysiwyg)},
+\LaTeX{} documents are built from a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
 When you are ready, \LaTeX{} generates your document from this file
-based on the rules it was given.
-If you've done any web development, this is a familiar process.
-Just as \acronym{html} and \acronym{css} describe the page you
-want browsers to render, your markup describes the appearance of your
-document to \LaTeX{}.
+based on the formatting rules you gave it.
+If you've done any web development, this is a similar process---just
+as \acronym{html} and \acronym{css} describe the page you want
+browsers to render, your markup describes the appearance of your
+document to \LaTeX.
 \end{lstlisting}
 \captionof{figure}{The \LaTeX{} markup for the above paragraph}
 \end{leftfigure}
@@ -57,13 +38,25 @@ document to \LaTeX{}.
 This might seem alien to you if you've never worked with a markup system before.
 However, it comes with a few advantages:
 \begin{enumerate}
-\item You can think separately about a document's contents and
-    its presentation.
+\item You can handle a document's contents and its presentation separately.
     At the beginning of each document,
     you describe the design you want.
     From there, \LaTeX{} handles the rest for you,
     keeping fonts, sizes, line heights,
     and other layout considerations consistent across your whole text.
+    Compare this to a \acronym{wysiwyg} system,
+    where you must constantly concern yourself with your work's appearance
+    as you write.
+    If you changed the look of a caption,
+    did you make sure to find all the other captions and do the
+    same?\footnote{This isn't to say that it's impossible
+    to create nice, consistent documents with \acronym{wysiwyg} tools.
+    Many of them have gotten much better at automating these sorts of
+    tasks in recent years.}
+    If the program formats something in a way you don't like,
+    how hard is it to fix?%\footnote{I spent far too much of my childhood
+    %fighting with Word about how it wrapped text around images.}
+
 \item You can define your own rules, then tweak them to immediately change
     everywhere they're used in your document.
     For example, the \verb|\introduce| and \verb|\acronym| commands you saw above
@@ -78,9 +71,9 @@ However, it comes with a few advantages:
     to update every place in the book that uses them.
 \item In \LaTeX, the document's structure is immediately visible
     and can be easily copied.
-    (Compare this to \acronym{wysiwyg} systems, where it is often unobvious
+    In \acronym{wysiwyg} systems, it is often unobvious
     how certain formatting was produced
-    or how to emulate it.)
+    or how to replicate it.
 \item Since the document source is plain text,
     \begin{itemize}
     \item It can be read and understood with any text editor.
