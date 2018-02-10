@@ -1,13 +1,65 @@
-\chapter{\texorpdfstring{\LaTeX}{LaTeX}?}
+\chapter{Typography and You}
+\label{typography}
 
-\LaTeX{} is a program\footnote{And a markup language,
+Modern life is a constant battle for your time---every day,
+dozens of ads, apps, emails, sites, and texts fight
+for a few short minutes of it.
+To put ideas into the world,
+nothing is more important than catching and holding
+the attention of your audience.
+Typography is a tool to do so---a good design doesn't ``look nice''
+only for the sake of art---it draws readers in.\punckern\endnote{Matthew Butterick,
+``Typography for Docs''
+(presented at the Write The Docs Conference, April 8, 2013),
+\url{https://www.youtube.com/watch?v=8J6HuvosP0s}}
+%Matthew Butterick's \textit{Practical Typography} calls it
+%``the visual component of the written word.\quotekern''
+It sets their expectations and establishes a subliminal ``brand'' for your
+work.\punckern\endnote{Erik Spiekermann, ``Type is Visible Language''
+(presented at Beyond Tellerrand, Düsseldorf, Germany, May 19--21, 2014),
+\url{https://www.youtube.com/watch?v=ggQpDu63kk0}}
+It's the \emph{how} of text.
+\begin{leftfigure}
+\fontspec{TeX Gyre Termes}\fontsize{12pt}{24pt}\selectfont\raggedright
+Typography is why this reminds you of the terrible essays
+you wrote in school.
+Would you like to read an entire book this way?
+\end{leftfigure}
+It is why
+\begin{leftfigure}
+\noindent\fontspec{FuturaCon-ExtBol}\Large DO IT LATER
+\end{leftfigure}
+seems oddly reminiscent of a certain shoe company's advertising,
+or how
+\begin{center}
+\fontspec[Ligatures=TeX, Scale=MatchLowercase]{Futura-Med}
+\noindent MEN FROM THE PLANET EARTH \\
+FIRST SET FOOT UPON THE MOON \\
+JULY 1969, A.~D.
+\end{center}
+Typography shows people
+what you have to say before they read a single word.
+
+If you're serious about this sort of stuff, you should try \LaTeX,
+a program\footnote{And a markup language,
 and (sort of) a programming language, and a bit of a cult.
 But that's all for later.}
 for crafting written documents, like papers, presentations,
 or even the book you're reading right now.
-In some sense, it's an alternative to the likes of Microsoft Word,
-Apple Pages, Google Docs, or LibreOffice Writer.
+Unless you want to give Adobe large sums
+of money for InDesign or InCopy,
+you won't find any better typesetting software.
+By carefully handling subtle details,
+\LaTeX{} provides high-quality layout
+with relatively little effort from you, the author.
+Modern versions can also take advantage of new\footnote{By new,
+I mean ``from the mid-1990s''\quotekern, but web browsers and desktop publishing
+software are only just starting to catch up.} advances in computer typography,
+giving you the same tools used by professional designers and publishers.
 
+\chapter{\texorpdfstring{\LaTeX}{LaTeX}?}
+\LaTeX{} is an alternative to ``word processors'' like
+Microsoft Word, Apple Pages, Google Docs, and LibreOffice Writer.
 Unlike these other applications, which work on the principle of
 \introduce{What You See Is What You Get} \acronym{(wysiwyg)},
 a \LaTeX{} document is written as a ``plain'' text file,
@@ -21,6 +73,8 @@ document to \LaTeX.
 
 \begin{leftfigure}
 \begin{lstlisting}
+\LaTeX{} is an alternative to ``word processors'' like
+Microsoft Word, Apple Pages, Google Docs, and LibreOffice Writer.
 Unlike these other applications, which work on the principle of
 \introduce{What You See Is What You Get} \acronym{(wysiwyg)},
 a \LaTeX{} document is written as a ``plain'' text file,
@@ -70,78 +124,19 @@ However, it comes with a few advantages:
     {\small\addfontfeature{LetterSpace=8} LIKE THIS},
     I just change the two lines that define those commands
     to update every place in the book that uses them.
-\item In \LaTeX, the document's structure is immediately visible
-    and can be easily copied.
-    In \acronym{wysiwyg} systems, it is often unobvious
-    how certain formatting was produced
-    or how to replicate it.
 \item Since the document source is plain text,
     \begin{itemize}
     \item It can be read and understood with any text editor.
+    \item A document's structure is immediately visible
+        and can be easily replicated.\footnote{Compare this to
+        \acronym{wysiwyg} systems, where it is often unobvious
+        how certain formatting was produced or how to replicate it.}
     \item Content can be easily generated programmatically.
     \item Changes are easily tracked with version control software.
     \end{itemize}
 \end{enumerate}
 
-This is all well and good,
-but misses the main selling point of \LaTeX.
-You should try it because you care about\ldots
-
-\chapter{Typography}
-\label{typography}
-
-Modern life is a constant battle for your time---every day,
-dozens of ads, apps, emails, sites, and texts fight
-for a few short minutes of it.
-To put ideas into the world,
-nothing is more important than catching and holding
-the attention of your audience.
-Typography is a tool to do so---a good design doesn't ``look nice''
-only for the sake of art---it draws readers in.\punckern\endnote{Matthew Butterick,
-``Typography for Docs''
-(presented at the Write The Docs Conference, April 8, 2013),
-\url{https://www.youtube.com/watch?v=8J6HuvosP0s}}
-%Matthew Butterick's \textit{Practical Typography} calls it
-%``the visual component of the written word.\quotekern''
-It sets their expectations and establishes a subliminal ``brand'' for your
-work.\punckern\endnote{Erik Spiekermann, ``Type is Visible Language''
-(presented at Beyond Tellerrand, Düsseldorf, Germany, May 19--21, 2014),
-\url{https://www.youtube.com/watch?v=ggQpDu63kk0}}
-It's the \emph{how} of text.
-\begin{leftfigure}
-\fontspec{TeX Gyre Termes}\fontsize{12pt}{24pt}\selectfont\raggedright
-Typography is why this reminds you of the terrible essays
-you wrote in school.
-Would you like to read an entire book this way?
-\end{leftfigure}
-It is why
-\begin{leftfigure}
-\noindent\fontspec{FuturaCon-ExtBol}\Large DO IT LATER
-\end{leftfigure}
-seems oddly reminiscent of a certain shoe company's advertising,
-or how
-\begin{center}
-\fontspec[Ligatures=TeX, Scale=MatchLowercase]{Futura-Med}
-\noindent MEN FROM THE PLANET EARTH \\
-FIRST SET FOOT UPON THE MOON \\
-JULY 1969, A.~D.
-\end{center}
-Typography shows people
-what you have to say before they read a single word.
-
-This is where \LaTeX{} shines, and
-unless you want to give Adobe large sums
-of money for InDesign or InCopy,
-you won't find any better typesetting software.
-By carefully handling subtle details---like how words are spaced,
-hyphenated, and arranged into lines---\LaTeX{} provides high-quality layout
-with relatively little effort from you, the author.
-Modern versions can also take advantage of new\footnote{By new,
-I mean ``from the mid-1990s''\quotekern, but web browsers and desktop publishing
-software are only just starting to catch up.} advances in computer typography,
-giving you the same tools available to professional designers and publishers.
-
-\chapter{Another Guide?}
+\section{Another Guide?}
 
 One might wonder why the world needs another \LaTeX{} guide.
 After all, it's been out for more than 30 years.
@@ -157,8 +152,7 @@ changed since 1986.
 
 When \LaTeX{} was first released that year, none of the publishing technologies
 we use today existed.
-Adobe wouldn't introduce their Portable Document Format for another seven years,
-and home computers wouldn't support it ubiquitously for several more.
+Adobe wouldn't introduce their Portable Document Format for another seven years.
 Digital typography was a new field, and desktop publishing was \emph{just}
 getting off the ground.\punckern\endnote{\textit{Graphic Means:
 A History of Graphic Design Production}, directed by Briar Levit (2017)}
@@ -170,8 +164,8 @@ salt. After all, the fact that all of the technology around it became
 obsolete---multiple times---is a testament to its staying power.}
 
 The good news is that  \LaTeX{} has improved by leaps and bounds in recent years.
-It's time for a guide that doesn't weigh you down with decades of legacy.
-It's also time for one that doesn't try to be some comprehensive reference.
+It's time for a guide that doesn't weigh you down with decades of legacy
+or try to be some comprehensive reference.
 After all, you're a smart, resourceful individual who knows how to use a search
 engine.
 This book will:
