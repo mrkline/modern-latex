@@ -116,9 +116,11 @@ a typeface with multiple optical sizes, \XeLaTeX{}
 and \LuaLaTeX{} can make good use of them! See \chapref{fonts}
 for more on font selection and OpenType features.}
 
-Points and optical sizes don't tell the whole story.
-Each font has its own proportions, which can make a huge difference
+But points and optical sizes don't tell the whole story.
+Each typeface has its own proportions, which make a huge difference
 in perceived size.
+(Compare Garamond, {\fontspec{Latin Modern Roman} Latin Modern},
+and {\fontspec{NHaasGroteskTXPro-55RG}Helvetica}, all at 10\,pt.)
 Shown below are some common terms:
 \begin{centerfigure}
 \includegraphics[keepaspectratio,width=0.65\textwidth]{heights.png}
@@ -131,12 +133,6 @@ and the \introduce{x-height} refers to the size of lowercase letters.}
 % For size reference:
 %{\sffamily\fontsize{8pt}{8pt}\selectfont This is 8-point text.}
 \end{centerfigure}
-Different fonts vary wildly in these metrics,
-resulting in very different looks at the same point size.
-Compare Garamond, {\fontspec{Latin Modern Roman} Latin Modern},
-and {\fontspec{NHaasGroteskTXPro-55RG}Helvetica}, all at 10\,pt.
-%When multiple {\large sizes} {\footnotesize or} {\sffamily\small fonts}
-%are set on the same line, their baselines are aligned.
 
 If the previous commands aren't enough, you can create custom sizes with
 \verb|\fontsize|, which takes the desired size and distance between baselines.

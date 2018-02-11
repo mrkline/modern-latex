@@ -26,13 +26,13 @@ formats.}
     OpenType files generally end in an \monobox{.otf} extension.
 \end{description}
 
-\section{Changing typefaces}
+\section{Changing fonts}
 
 By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
 an OpenType rendition of \LaTeX's original type family, Computer Modern.
-While Latin Modern is a high-quality set of fonts,
+While these are high-quality fonts,
 you may want to use others for your document.
-Fonts are handled with the \texttt{fontspec} package:
+For this, we turn to the \texttt{fontspec} package:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
@@ -129,7 +129,7 @@ Assuming the font files are named:
 \end{itemize}
 
 \newpage
-\noindent Our font setup might resemble:
+\noindent Our setup might resemble:
 \begin{leftfigure}
 \begin{lstlisting}
 \usepackage{fontspec}
@@ -315,8 +315,9 @@ type.)
 \begin{itemize}
 \item Learn about more OpenType features supported through \texttt{fontspec},
 such as stylistic sets and alternatives.
-\item See how \texttt{fontspec} chooses fonts with multiple optical sizes,
-    either automatically via OpenType, or manually using \texttt{SizeFeatures}.
+\item See how \texttt{fontspec} chooses fonts based on point size when multiple
+    optical sizes are available, either automatically via OpenType,
+    or manually using \texttt{SizeFeatures}.
 \item Experiment with letter spacing---or \introduce{tracking}---with
     the \texttt{LetterSpace} option.
     Extra tracking is unnecessary in most cases,
