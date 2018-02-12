@@ -23,17 +23,6 @@ should look.
 As mentioned briefly in \chapref{installation},
 \introduce{packages} are bits of code that can modify your document
 in interesting ways.
-They can do all sorts of things, like:
-\begin{multicols}{2}
-\begin{itemize}
-\item Define new commands
-\item Change fonts
-\item Add image files
-\item Draw vector art
-\item Change document layout
-\item Add hyperlinks
-\end{itemize}
-\end{multicols}
 
 To import a package, add a \verb|\usepackage| command to the preamble,
 with the package's name as the argument.
@@ -79,7 +68,7 @@ The short version is that \TeX{} is the typesetting system that \LaTeX{}
 is built on top of---the latter is a framework of commands for the former.
 (For example, \texttt{\textbackslash documentclass} and friends are provided by
 \LaTeX{}, but the \TeX{} engine is what's actually laying out your document.)
-The long version is at the back of the book, under Appendix~\ref{history}.
+The long version is at the back of the book as Appendix~\ref{history}.
 We won't discuss how to use plain \TeX{} here. That's for another book---the
 \TeX book.}
 at \url{https://ctan.org}.
@@ -119,11 +108,13 @@ you've chosen. Parts and chapters, for example, only appear in books.
 And don't go too crazy with these commands.
 Most works only need a few levels of hierarchy.
 
-Sections are automatically numbered---for example,
+Sections\footnote{By this I mean all levels, not just
+\texttt{\textbackslash section}.}
+are automatically numbered---for example,
 the title of this chapter was produced with \verb|\chapter{Document Structure}|,
-and \LaTeX{} automatically determined that it was chapter number \ref{structure}.
+and \LaTeX{} automatically determined that it was chapter \ref{structure}.
 You can also have \LaTeX{} automatically generate a table of contents for you
-by placing \verb|\tableofcontents| at the start of the document body.
+with the \verb|\tableofcontents| command.
 
 \section{What next?}
 

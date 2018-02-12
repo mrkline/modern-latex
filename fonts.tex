@@ -11,8 +11,8 @@ including type. It remains in use today.} fonts was added.
 Today, \LuaLaTeX{} and \XeLaTeX{} offer support for the two formats you're
 likely to encounter on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
-Apple's \acronym{aat}, but we'll limit ourselves here to the more ubiquitous
-formats.}
+Apple's \acronym{aat}, but we'll limit ourselves here to a discussion of
+the more ubiquitous formats.}
 
 \begin{description}
 \item[TrueType] was developed by Apple and Microsoft in the late 1980s.
@@ -69,7 +69,7 @@ verbatim. You don't want \verb|"Hello!"| to turn into
 
 \section{Selecting font files}
 
-A typical typeface might come packaged as four files to represent its
+A typical typeface might come packaged as multiple files for its various
 weights and styles.
 A typical set includes upright,
 \textit{italics},
@@ -80,7 +80,7 @@ names given the name of the typeface.\punckern\footnote{This is
 one of the places \XeLaTeX{} and \LuaLaTeX{}
 differ in a way that's noticeable to the casual user.
 The former gernally uses system libraries---such as FontConfig on Linux---to
-locate files, given a typeface's name.
+locate files from a typeface's name.
 The latter has its own font loader,
 based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
 (Version 1.0.4, February 2017), 10}
@@ -154,7 +154,7 @@ might look completely different at the same point size.
 \texttt{fontspec} can help a bit here by scaling fonts to match either the
 x-height or the cap height of your main font with
 \verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
-respectively.\footnote{Another way to sidestep this issue is to user fewer
+respectively.\footnote{One way to sidestep this issue is to user fewer
 typefaces in your design. Even just one or two typefaces,
 used carefully, can produce amazing results.}
 
@@ -164,7 +164,7 @@ used carefully, can produce amazing results.}
 As mentioned above, one of OpenType's defining features is the ability to store
 multiple variations of a typeface's glyphs in a single file and allow users
 to switch between them.
-All of these features can be specified as an optional argument to
+All of these features are specified as optional arguments to
 \verb|\setmainfont| and friends.
 They can also be set for the current group with
 \verb|\addfontfeature|.

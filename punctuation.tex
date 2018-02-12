@@ -23,7 +23,7 @@ will get you
 "This isn't right."
 \end{leftfigure}
 Instead, use \texttt{`} for opening quotes and \texttt{'} for closing
-quotes:\footnote{Don't use \texttt{"} for closing double quotes.
+quotes.\punckern\footnote{Don't use \texttt{"} for closing double quotes.
 Not only does \texttt{``example"} look a bit unbalanced,
 but \texttt{"} is used as a formatting command when typesetting certain
 languages, like German. (See \chapref{i18n} for more on international
@@ -52,10 +52,9 @@ serve different purposes:
     \url{https://practicaltypography.com/hyphens-and-dashes.html}}
     \begin{itemize}[leftmargin=*]
     \item They allow a word to be split between the end of one line and the
-        start of another.
+        start of the next.
         \LaTeX{} handles this automatically,
-        so you don't have to worry about manually inserting hyphens for this
-        reason.
+        so you don't have to worry about manually hyphenating your lines.
     \item Some compound words use hyphens, like \emph{long-range}
         and \emph{field-effect}.
     \item They are used in phrasal adjectives.
@@ -64,22 +63,28 @@ serve different purposes:
         It's clearer that I mean the latter when set as
         \emph{five-dollar bills}.
     \end{itemize}
+    In \LaTeX{}, they are produced with the hyphen key (\,\texttt{-}\,).
 
 \item[En dashes] indicate ranges such as ``pages 4--12''\quotekern,
-    or separations such as the ``US--Canada border''\quotekern.
+    or separations like the ``US--Canada border''\quotekern.
+    They are set with two adjacent hyphens (\,\texttt{--}\,).
 
 \item[Em dashes] can be used to separate clauses of a sentence.
     Other punctuation marks---like parenthesis or commas---play a similar
     role.
+    They are set with three adjacent hyphens (\,\texttt{---}\,).
 
-\item[Minus signs] are used exclusively in mathematical expressions.
+\item[Minus signs] are used exclusively for negative quantities and
+    mathematical expressions.
     They are often similar in length to an en dash,
     but sit at a different height.
+    They are set with the hyphen key when in a math environment
+    (see \chapref{math}), or with \verb|\textminus|.
 \end{description}
 
 \section{Ellipses}
 
-The three dots used to indicate pauses or omissions are called
+The three dots used to indicate a pause or omission are called
 \introduce{ellipses}.
 They are set using \verb|\ldots|.
 \begin{leftfigure}
@@ -114,7 +119,9 @@ produces proper spacing:
 Please call Ms.~Shrdlu.
 \end{leftfigure}
 
-In other occasions, such as when we abbreviate units of measurement,
+In other occasions, such as when we abbreviate units of
+measurement,\punckern\footnote{There are also dedicated packages for doing so,
+like \texttt{siunitx}.}
 we want spaces that are thinner than usual inter-word ones.
 For these, we use \verb|\,|:
 \begin{leftfigure}

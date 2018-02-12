@@ -8,7 +8,7 @@ You may want to write with them.
 
 Digitising human language is a complicated topic that has evolved significantly
 since \LaTeX's inception, but today,
-computers usually represent text using Unicode. Briefly,
+computers usually represent text with Unicode. Briefly,
 \begin{itemize}
 \item A Unicode text file is made of a series of \introduce{code points},
     each of which can represent a character to be drawn,
@@ -51,7 +51,7 @@ It will automatically:
 \item Translate document labels,
     like ``chapter''\quotekern, ``section''\quotekern, and so on.
 \item Format dates according to language-specific conventions.
-\item Format numbers in languages that have their own numbering system
+\item Format numbers in languages that have their own numbering system.
 \item Use the \texttt{bidi} package for documents with languages written
     right to left.
 \item Set the script and language tags of the current font, if applicable.
@@ -97,7 +97,8 @@ Dexter cried,
 \item Look into the \texttt{babel} package as an alternative to
     \texttt{polyglossia}.\punckern\footnote{\texttt{polyglossia} has better
     support for OpenType font features via \texttt{fontspec}.
-    However, \texttt{babel} is a fine substitute if you run into trouble.}
+    However, it is newer and has a few known bugs.
+    \texttt{babel} is a fine substitute if you run into trouble.}
     %as I did in
     %\LuaLaTeX{} (see \url{https://github.com/reutenauer/polyglossia/issues/68}),
 \item Try typesetting Japanese or Chinese with the \texttt{xeCJK} or

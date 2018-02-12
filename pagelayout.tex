@@ -4,7 +4,7 @@
 
 \LaTeX{} is extraordinarily good at justifying text.
 Instead of considering each line individually---as most word processors and
-web browsers do---it examines all possible line breaks for a given paragraph,
+web browsers do---it examines all possible line breaks in a given paragraph,
 then chooses ones that will give the best overall
 spacing.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
 \textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
@@ -16,11 +16,11 @@ Franklin Mark Liang,
 this produces some of the best paragraph layout available.
 
 Sometimes we don't want to justify our text.
-If you want it to be ``flush left''\quotekern,
-with a ragged right side, place it in a \texttt{flushleft} environment,
+If you want it to be ``flush left''
+with a ragged right side, place it in a \texttt{flushleft} environment
 or add \verb|\raggedright| to the current group.
 To center it, place it in a
-\texttt{center} environment, or add \verb|\centering| to the current group.
+\texttt{center} environment or add \verb|\centering| to the current group.
 And to flush it against the right margin,
 use a \texttt{flushright} environment or \verb|\raggedleft|.
 
@@ -172,7 +172,7 @@ combine arbitrary layouts.
 In this example we start with one column,
 then create a short section with two.
 The package ensures that the text inside is split
-so each column is about the same height.
+so that each column is about the same height.
 \end{multicols}
 \end{lstlisting}
 \end{leftfigure}
@@ -185,7 +185,7 @@ combine arbitrary layouts.
 In this example we start with one column,
 then create a short section with two.
 The package ensures that the text inside is split
-so each column is about the same height.
+so that each column is about the same height.
 \end{multicols}
 \end{leftfigure}
 
@@ -201,8 +201,8 @@ printing, you can break to to the front of the next page with
 
 Footnotes are a great tool for comments and asides which readers might
 find useful, but aren't crucial to the main text.
-The \verb|\footnote| command places a footnote marker at its location in the
-body text, then inserts argument as a footnote at the bottom of the current
+The \verb|\footnote| command places a marker at its location in the
+body text, then inserts its argument as a footnote at the bottom of the current
 page:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -229,5 +229,5 @@ KOMA~Script options, or with the \texttt{parskip} package.
     \verb|\vspace|, \verb|\hspace|, \verb|\vfill|, and \verb|\hfill|.
 \item Learn what units \LaTeX{} provides for specifying spacing.
     (We've already mentioned a few here, such as
-    \texttt{pt}, \texttt{bp}, \texttt{mm}, and \texttt{in}.)
+    \texttt{pt}, \texttt{bp}, and \texttt{in}.)
 \end{itemize}
