@@ -64,8 +64,9 @@ However, there are cases where the switch is the only option:
 (Command arguments cannot contain paragraph breaks.)
 \item When using them to redefine the style of other
 commands.\punckern\footnote{%
-For example, this book sets the style of section headers with
-\monobox{\textbackslash setkomafont\{section\}\{\textbackslash Large\textbackslash itshape\}}.}
+For example, this book's section headers are styled with
+\texttt{\textbackslash setkomafont\{section\}\allowbreak%
+\{\textbackslash Large\textbackslash itshape\}}.}
 
 \end{enumerate}
 
@@ -162,7 +163,7 @@ see \textit{Practical Typography}, listed in Appendix~\ref{resources}.}
 \begin{itemize}
 \item Learn how to underline text using the \texttt{ulem}
     package.\punckern\footnote{Other typographical tools---like italics,
-    boldface, and small caps---are usually preferable to underlining,
+    boldface, and small caps---are generally preferable to underlining,
     but it has its uses.}
 \item Use KOMA~Script to change the size and style of your chapter or section
     headings.
