@@ -38,7 +38,7 @@ A (mostly) complete list follows:
 \begin{leftfigure}
 \lm
 \begin{tabular}{l|l|l}
-{\normalfont Command} & {\normalfont ``Switch'' version} & {\normalfont Style} \\
+{\normalfont Command} & {\normalfont Alternative} & {\normalfont Style} \\
 \hline
 \verb|\textnormal{...}| & \verb|{\normalfont ...}| & the default \\
 \verb|\emph{...}| & \verb|{\em ...}| & \emph{emphasis, typically italics} \\
@@ -51,19 +51,18 @@ A (mostly) complete list follows:
 \verb|\textbf{...}| & \verb|{\bfseries ...}| & \textbf{boldface} \\
 \end{tabular}
 \end{leftfigure}
-The command forms (which take the text to format as an argument)
-should usually be preferred over the switch versions
+The first form (which takes the text to format as an argument)
+should usually be preferred over the second
 (which affect the group in which they are issued),
-since the former automatically handles any
+since the former automatically handle any
 spacing corrections needed around them.\punckern\footnote{For example,
 \textit{italicized text} amidst upright text should be followed
 by a slight amount of extra space, called an ``italic correction''\quotekern.}
-However, there are cases where the switch is the only option:
+However, there are cases where the second variety is the only option:
 \begin{enumerate}
 \item When formatting multiple paragraphs. \\
 (Command arguments cannot contain paragraph breaks.)
-\item When using them to redefine the style of other
-commands.\punckern\footnote{%
+\item When defining the style of other commands.\punckern\footnote{%
 For example, this book's section headers are styled with
 \texttt{\textbackslash setkomafont\{section\}\allowbreak%
 \{\textbackslash Large\textbackslash itshape\}}.}
