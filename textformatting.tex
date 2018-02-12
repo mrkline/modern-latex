@@ -17,13 +17,14 @@ gives us
 \end{leftfigure}
 There are other tools at our disposal:
 \begin{leftfigure}
-\lm We can use \textbf{boldface} or \textsc{small caps} as well.
-\end{leftfigure}
-with
-\begin{leftfigure}
 \begin{lstlisting}
 We can use \textbf{boldface} or \textsc{small caps} as well.
 \end{lstlisting}
+\end{leftfigure}
+with
+\begin{leftfigure}
+\lm%
+We can use \textbf{boldface} or \textsc{small caps} as well.
 \end{leftfigure}
 Be judicious in your use of emphasis, especially boldface.
 It excels at drawing the reader's attention away from everything around it,
@@ -52,14 +53,14 @@ A (mostly) complete list follows:
 \end{leftfigure}
 The command forms (which take the text to format as an argument)
 should usually be preferred over the switch versions
-(which affect the group in which they are issued)
+(which affect the group in which they are issued),
 since the former automatically handles any
 spacing corrections needed around them.\punckern\footnote{For example,
 \textit{italicized text} amidst upright text should be followed
 by a slight amount of extra space, called an ``italic correction''\quotekern.}
 However, there are cases where the switch is the only option:
 \begin{enumerate}
-\item When formatting multiple paragraphs \\
+\item When formatting multiple paragraphs. \\
 (Command arguments cannot contain paragraph breaks.)
 \item When using them to redefine the style of other
 commands.\punckern\footnote{%
@@ -111,7 +112,7 @@ the differences are immediately noticeable.
 \end{leftfigure}
 Since this requires much more work from the type designer,
 many digital typefaces---even professional ones---lack this
-feature.\punckern\footnote{If you are fortunate enough \emph{to} have
+feature.\punckern\footnote{If you are fortunate enough to have
 a typeface with multiple optical sizes, \XeLaTeX{}
 and \LuaLaTeX{} can make good use of them! See \chapref{fonts}
 for more on font selection and OpenType features.}

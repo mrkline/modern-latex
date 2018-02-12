@@ -154,8 +154,8 @@ might look completely different at the same point size.
 \texttt{fontspec} can help a bit here by scaling fonts to match either the
 x-height or the cap height of your main font with
 \verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
-respectively.\footnote{One way to sidestep this issue is to user fewer
-typefaces in your design. Even just one or two typefaces,
+respectively.\footnote{One way to sidestep this issue is to have fewer
+typefaces in your design. Even just one or two,
 used carefully, can produce amazing results.}
 
 
@@ -168,7 +168,7 @@ All of these features are specified as optional arguments to
 \verb|\setmainfont| and friends.
 They can also be set for the current group with
 \verb|\addfontfeature|.
-Lets's touch on a few common ones.
+Let's touch on a few common ones.
 
 \subsection{Ligatures}
 
@@ -190,7 +190,7 @@ OpenType groups ligatures into three categories:
     and i.
     In many serif typefaces, these combine
     to form the ligature fi, which avoids awkward spacing between f's ascender
-    i's dot
+    and i's dot
     {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
     Other common examples in English writing include ff,
     ffi, fl, and ffl.
@@ -234,7 +234,7 @@ you have two
 choices to make: lining versus oldstyle,
 and proportional versus tabular.
 \introduce{Lining} figures, sometimes called \introduce{titling} figures,
-have a similar heights to capital letters:
+have similar heights as capital letters:
 \begin{leftfigure}
 \addfontfeature{Numbers=LowercaseOff}
 A B C D 1 2 3 4
@@ -311,7 +311,7 @@ and
 Notice how this second set is too light and narrow compared to the surrounding
 type.)
 
-\section{What Next?}
+\section{What next?}
 \begin{itemize}
 \item Learn about more OpenType features supported through \texttt{fontspec},
 such as stylistic sets and alternatives.

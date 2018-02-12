@@ -39,7 +39,7 @@ quotes a former \acronym{us} president as,
 ``It depends on what the meaning of the word `is' is.''
 \end{leftfigure}
 
-\section{Hyphens and dahes}
+\section{Hyphens and dashes}
 
 Though they look similar,
 hyphens (\,-\,), en dashes (\,--\,),
@@ -84,7 +84,7 @@ serve different purposes:
 
 \section{Ellipses}
 
-The three dots used to indicate a pause or omission are called
+A set of three dots used to indicate a pause or omission is called an
 \introduce{ellipses}.
 They are set using \verb|\ldots|.
 \begin{leftfigure}
@@ -134,22 +134,18 @@ announces
 \lm%
 Launch in 2\,h 10\,m.
 \end{leftfigure}
-Thin spaces are also useful when separating single and double quotation marks.
-\begin{leftfigure}
-\begin{lstlisting}
-``She exclaimed, `I can't believe it!'\,''
-\end{lstlisting}
-\end{leftfigure}
-gives us the quote:
-\begin{leftfigure}
-\lm%
-``She exclaimed, `I can't believe it!'\,''
-\end{leftfigure}
 
 \section{What next?}
 \begin{itemize}
+\item Add hyphenations for uncommon words using \verb|\hyphenate|
+    or \verb|\-|.\punckern\footnote{\LaTeX{} usually does a good
+    job of automatically hyphenating words, based on a dictionary of patterns
+    stored for each language. You should rarely need these tools.}
 \item Learn other commands for spacing, such as \verb|\:|, \verb|\;|,
     \verb|\enspace|, and \verb|\quad|.
+\item Use the \texttt{csquotes} package's \verb|\enquote| to simplify
+    nested quotations, e.g., \\
+    \enquote{She exclaimed, \enquote{I can't believe it!}}
 \item Discover the typographical origins of terms like \introduce{en},
     \introduce{em}, and \introduce{quad}.
 \item Familiarize yourself with the difference between \texttt{/} and
