@@ -64,14 +64,13 @@ For your average document, \texttt{article} is probably a good choice.
 The next line, \verb|% Say hello|,
 is a \introduce{comment}---anything placed after a percent symbol on a line
 is ignored by the engine,
-so we can use \verb|%| to leave notes about what's going on to anybody reading
+so we use \verb|%| to leave notes about what's going on to anybody reading
 the document's source.\punckern\footnote{Including, perhaps most importantly,
 a confused version of your future self!}
 Finally, we use \verb|\begin{document}| to tell \LaTeX{} that what follows
 is our actual contents,
 and we use \verb|\end{document}| to state that we are finished.
 
-So far, so good.
 Let's cover some more basics.
 
 \section{Spacing}
@@ -112,7 +111,7 @@ This% weird, right?
 
 \section{Commands}
 
-\LaTeX{} has various commands to issue instructions to
+\LaTeX{} provides various commands to issue instructions to
 the engine, and you can define your own as well.
 Their names always begin with a backslash (\,\texttt{\textbackslash}\,),
 contain only letters, and are case-sensitive.\punckern\footnote{%
@@ -120,7 +119,7 @@ contain only letters, and are case-sensitive.\punckern\footnote{%
 \texttt{\textbackslash foo}
 is different from \texttt{\textbackslash Foo}, for example.}
 Some commands require parameters, or \introduce{arguments}---\verb|\documentclass|,
-for example, needs to know which document class we want.
+for example, needs to know which class we want.
 Arguments are enclosed in subsequent pairs of braces,
 so if some command needed two arguments, we would type:
 \begin{leftfigure}
@@ -182,7 +181,7 @@ The full list of special characters is:
 \end{lstlisting}
 \end{leftfigure}
 Each has a corresponding command
-to produce it in your document:
+to print it in your document:
 \begin{leftfigure}
 \begin{lstlisting}
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
@@ -239,7 +238,7 @@ Yet we should not pass up our opportunities in that critical 3\%.
 \end{quote}
 \end{lstlisting}
 \end{leftfigure}
-gives us
+quotes
 \begin{leftfigure}
 \lm
 Donald Knuth once wrote,
@@ -254,8 +253,7 @@ Yet we should not pass up our opportunities in that critical 3\%.
 \section{Groups and command scope}
 Some commands change how \LaTeX{} typesets the following text.
 \verb|\itshape|, for example, \textit{italicizes} everything that comes after it.
-If we want to limit a command's effect to a certain region, we can surround it
-with braces.
+To limit a command's effect to a certain region, we surround with braces.
 \begin{leftfigure}
 \begin{lstlisting}
 {\itshape Sometimes we want italics}, but only sometimes.
@@ -286,5 +284,5 @@ use upright type again.
 \end{quote}
 See? Back to normal.
 \end{leftfigure}
-One final use of groups is to get around the spacing oddities of zero-argument
+One other use of groups is to get around the spacing oddities of zero-argument
 commands: some prefer \verb|{\LaTeX}| over \verb|\LaTeX{}|.

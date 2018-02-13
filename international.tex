@@ -32,7 +32,7 @@ How many code points are they built from?}
 \end{itemize}
 \LuaLaTeX{} and \XeLaTeX{} use these tools to render documents
 from Unicode input
-files.\punckern\footnote{LuaLaTeX accepts \mbox{\acronym{utf}-8} files,
+files.\punckern\footnote{\LuaLaTeX{} accepts \mbox{\acronym{utf}-8} files,
 while \XeLaTeX{} is a bit more flexible and also
 accepts \mbox{\acronym{utf}-16} and
 \mbox{\acronym{utf}-32}.}
@@ -42,12 +42,12 @@ only contain ones for Latin languages.
 \section{The polyglossia package}
 
 If your document contains anything besides English,
-you should use the \texttt{polyglossia} package.
+you should try the \texttt{polyglossia} package.
 It will automatically:
 \begin{itemize}
 \item Load language-specific hyphenation patterns and other typographical
     conventions.
-\item Switch between fonts for each language, as specified by the user.
+\item Switch between user-specified fonts for each language.
 \item Translate document labels,
     like ``chapter''\quotekern, ``section''\quotekern, and so on.
 \item Format dates according to language-specific conventions.

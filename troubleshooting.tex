@@ -40,11 +40,10 @@ contents of several pages,
 so \TeX{} simply chooses each page break as best it can, by a process of
 `local' rather than `global' optimization.\quotekern''\,\endnote{Knuth,
 \textit{The \TeX book}, 110}}
-You can increase the ``penalty'' for doing so in order to make \LaTeX{}
+You increase the ``penalty'' for doing so in order to make \LaTeX{}
 try harder to avoid it\footnote{When considering a given layout,
 \LaTeX{} assigns penalties, or ``badness''\quotekern,
 to anything that arguably makes a document look worse.
-Examples include stretching spacing and leaving orphans and widows.
 It chooses whichever layout it can find with the least badness.}
 with:
 \begin{leftfigure}
@@ -56,7 +55,7 @@ with:
 \verb|<penalty>| is a value between 0 and 10000.
 Be sure not to set these penalties \emph{too} high---at their maximum,
 \LaTeX{} is never allowed to leave orphans and widows, at \emph{any} cost.
-This can cause odd layouts to be chosen.
+This may cause odd layouts to be chosen.
 300 is probably a sane starting point.
 
 \section{Handling syntax errors}

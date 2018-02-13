@@ -8,7 +8,7 @@ To put ideas into the world,
 nothing is more important than catching and holding
 the attention of your audience.
 When we write, we don't just reach readers with the words we use.
-We reach them with \introduce{typography}: how those words look.
+We reach them with \introduce{typography}: how those words appear.
 Good design doesn't ``look nice''
 only for the sake of art---it draws readers
 in.\punckern\endnote{Matthew Butterick, ``Typography for Docs''
@@ -59,8 +59,8 @@ Modern versions can also take advantage of new\footnote{By new,
 I mean ``from the mid-1990s''\quotekern, but web browsers and desktop publishing
 software are only just starting to catch up.} advances in computer typography,
 giving you the same tools used by professional designers and publishers.
-\clearpage
 
+\section{\texorpdfstring{\LaTeX}{LaTeX}?}
 \LaTeX{} is an alternative to ``word processors'' like
 Microsoft Word, Apple Pages, Google Docs, and LibreOffice Writer.
 Unlike these other applications, which work on the principle of
@@ -91,6 +91,7 @@ document to \LaTeX.
 \end{lstlisting}
 \captionof{figure}{The \LaTeX{} markup for the above paragraph}
 \end{leftfigure}
+\vfill
 
 This might seem alien to you if you've never worked with a markup system before.
 However, it comes with a few advantages:
@@ -107,10 +108,7 @@ However, it comes with a few advantages:
     as you write.
     If you changed the look of a caption,
     did you make sure to find all the other captions and do the
-    same?\footnote{This isn't to say that it's impossible
-    to create nice, consistent documents with \acronym{wysiwyg} tools.
-    Many of them have gotten much better at automating these sorts of
-    tasks in recent years.}
+    same?
     If the program formats something in a way you don't like,
     how hard is it to fix?%\footnote{I spent far too much of my childhood
     %fighting with Word about how it wrapped text around images.}
@@ -127,6 +125,8 @@ However, it comes with a few advantages:
     {\small\addfontfeature{LetterSpace=8} LIKE THIS},
     I just change the two lines that define those commands
     to update every place in the book that uses them.
+
+\clearpage
 \item Since the document source is plain text,
     \begin{itemize}
     \item It can be read and understood with any text editor.

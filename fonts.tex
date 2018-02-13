@@ -62,16 +62,15 @@ The \verb|Ligatures=TeX| option allows you to use the standard punctuation
 shortcuts mentioned in \chapref{punctuation} (e.g., creating en dashes with
 \texttt{--} or curly quotes with \texttt{``}) instead of having
 to type the the corresponding characters, which probably aren't on your keyboard.
-You often don't want this for monospaced type, though,
+You often don't want these for monospaced type, though,
 since the text you set in it---such as code---is usually meant to be displayed
 verbatim. You don't want \verb|"Hello!"| to turn into
-\verb|“Hello!“|
+\verb|“Hello!“|.
 
 \section{Selecting font files}
 
-A typical typeface might come packaged as multiple files for its various
-weights and styles.
-A typical set includes upright,
+Typefaces come packaged as multiple files for their various
+weights and styles---a typical set includes upright,
 \textit{italics},
 \textbf{bold}, and
 \textit{\textbf{bold italics}}.
@@ -105,12 +104,11 @@ But for TrueType, and for OpenType fonts that don't take advantage of this
 feature, you'll have to load a separate file as shown here.}
 
 We might want to hand-pick weights to achieve a certain look or better match the
-weights of other fonts in our document.\punckern\footnote{Consider how much
-better {\fontspec[Scale=MatchLowercase]{Futura-Boo}the book weight} of Futura
-blends in with the surrounding text compared to
-{\fontspec[Scale=MatchLowercase]{Futura-Lig}light}
-or
-{\fontspec[Scale=MatchLowercase]{Futura-Med}medium}.}
+weights of other fonts in our document.\punckern\footnote{Compare how
+{\fontspec[Scale=MatchLowercase]{Futura-Lig}the light,}
+{\fontspec[Scale=MatchLowercase]{Futura-Boo}book,}
+{\fontspec[Scale=MatchLowercase]{Futura-Med}and medium weights}
+of Futura look compared to surrounding type on this page.}
 Continuing to use Futura as an example,
 say we want to use the ``book'' weight as our default
 and ``demi'' for bold.
@@ -269,7 +267,7 @@ They are usually preferred in body text, where 1837
 looks a bit nicer than
 {\addfontfeature{Numbers=Tabular}1837}.
 
-You can select your figures with the following options:
+You select figures with the following options:
 \begin{leftfigure}
 \begin{tabular}{l l}
 \texttt{Numbers=} & \texttt{Lining / Uppercase} \\
@@ -279,9 +277,9 @@ You can select your figures with the following options:
 \end{tabular}
 \end{leftfigure}
 These traits can be mixed and matched:
-you can get proportional lining figures
+you get proportional lining figures
 with \texttt{Numbers=\{Proportional,\allowbreak Lining\}},
-or tabular oldstyle ones with \texttt{Numbers=\{Tabular,\allowbreak OldStyle\}}.
+and tabular oldstyle ones with \texttt{Numbers=\{Tabular,\allowbreak OldStyle\}}.
 And, like ligatures, each option has a corresponding \verb|*Off|
 variant.\punckern\footnote{This is especially useful since fonts
 select figures in different ways.
@@ -295,7 +293,7 @@ doesn't work, but
 does.}
 
 Finally, some fonts provide \introduce{superior and inferior} figures,
-which can be used for ordinals
+which are useful for ordinals
 (\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \ldots),
 fractions (\,\otffrac{25}{624}\,), and so on.
 These have the same weight as their full-sized counterparts,
@@ -308,7 +306,7 @@ which looks much better than shrinking the font's normal figures.
 and
 \,\mbox{\textsuperscript{25}^^^^2044\textsubscript{624}}%
 \,}.
-Notice how this second set is too light and narrow compared to the surrounding
+Notice how this second set is too light compared to the surrounding
 type.)
 
 \section{What next?}

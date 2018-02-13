@@ -53,8 +53,7 @@ serve different purposes:
     \begin{itemize}[leftmargin=*]
     \item They allow a word to be split between the end of one line and the
         start of the next.
-        \LaTeX{} handles this automatically,
-        so you don't have to worry about manually hyphenating your lines.
+        \LaTeX{} usually handles this automatically.
     \item Some compound words use hyphens, like \emph{long-range}
         and \emph{field-effect}.
     \item They are used in phrasal adjectives.
@@ -85,8 +84,8 @@ serve different purposes:
 \section{Ellipses}
 
 A set of three dots used to indicate a pause or omission is called an
-\introduce{ellipses}.
-They are set using \verb|\ldots|.
+\introduce{ellipsis}.
+It is set using \verb|\ldots|.
 \begin{leftfigure}
 \begin{lstlisting}
 I'm\ldots{} not sure.
@@ -105,8 +104,8 @@ As we discovered in our first example,
 follows them---presumably the start of the next sentence.
 Sometimes, this isn't what we want!
 Consider honorifics like Mr.\ and Ms., for example.
-In situations like these, we also want to keep \LaTeX{} from starting a new line
-after the period.
+In situations like these, we also need to prevent \LaTeX{} from starting a
+new line after the period.
 This calls for a \introduce{non-breaking space}, which we set with a tilde.
 \begin{leftfigure}
 \begin{lstlisting}
@@ -123,7 +122,7 @@ In other occasions, such as when we abbreviate units of
 measurement,\punckern\footnote{There are also dedicated packages for doing so,
 like \texttt{siunitx}.}
 we want spaces that are thinner than usual inter-word ones.
-For these, we use \verb|\,|:
+For these, we use \verb|\,|\,:
 \begin{leftfigure}
 \begin{lstlisting}
 Launch in 2\,h 10\,m.
