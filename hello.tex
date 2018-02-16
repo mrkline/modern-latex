@@ -37,7 +37,7 @@ $ xelatex hello.tex
 \end{lstlisting}
 \end{leftfigure}
 Feel free to use \texttt{lualatex} instead---there are a few differences
-between the two, but either is fine for now.
+between the two that we'll discuss later, but either is fine for now.
 With luck, you should see some output that ends in a message like:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -45,15 +45,15 @@ Output written on hello.pdf (1 page).
 Transcript written on hello.log.
 \end{lstlisting}
 \end{leftfigure}
-and in your current directory, a newly minted \texttt{hello.pdf}.
-Open it up and you should find a page with this at the top:
+And in your current directory, you should find a newly minted \texttt{hello.pdf}.
+Open it up and you should see a page with this at the top:
 \begin{leftfigure}
 \lm Hello, World!
 \end{leftfigure}
 Congrats,
 you just created your first document!
-
 Let's unpack what we did.
+
 All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
 which picks a base ``style'' to use.
 Many classes are available---and you can even create your own---but common
@@ -64,7 +64,7 @@ For your average document, \texttt{article} is probably a good choice.
 The next line, \verb|% Say hello|,
 is a \introduce{comment}---anything placed after a percent symbol on a line
 is ignored by the engine,
-so we use \verb|%| to leave notes about what's going on to anybody reading
+so we can use \texttt{\%} to leave notes for anybody reading
 the document's source.\punckern\footnote{Including, perhaps most importantly,
 a confused version of your future self!}
 Finally, we use \verb|\begin{document}| to tell \LaTeX{} that what follows

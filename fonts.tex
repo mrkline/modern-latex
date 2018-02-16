@@ -8,8 +8,8 @@ As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
 including type. It remains in use today.} fonts was added.
-Today, \LuaLaTeX{} and \XeLaTeX{} offer support for the two formats you're
-likely to encounter on your computer:
+Today, \LuaLaTeX{} and \XeLaTeX{} offer support for the formats you're
+most likely to encounter on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
 Apple's \acronym{aat}, but let's limit this discussion to
 more ubiquitous formats.}
@@ -22,7 +22,7 @@ more ubiquitous formats.}
 \item[OpenType] was first released in 1996 by Microsoft and Adobe.
     One major improvement over TrueType is its ability to embed
     multiple versions of glyphs in a single font file.
-    We'll see this feature in action through much of this chapter.
+    We'll see this feature in action throughout much of this chapter.
     OpenType files generally end in an \monobox{.otf} extension.
 \end{description}
 
@@ -31,7 +31,7 @@ more ubiquitous formats.}
 By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
 an OpenType rendition of \LaTeX's original type family, Computer Modern.
 While these are high-quality fonts,
-you may want to use others for your document.
+you may want to use others for your documents.
 For this, we turn to the \texttt{fontspec} package:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -64,7 +64,7 @@ shortcuts mentioned in \chapref{punctuation} (e.g., creating en dashes with
 to type the the corresponding characters, which probably aren't on your keyboard.
 You often don't want these for monospaced type, though,
 since the text you set in it---such as code---is usually meant to be displayed
-verbatim. You don't want \verb|"Hello!"| to turn into
+verbatim. \verb|"Hello!"| shouldn't turn into
 \verb|“Hello!“|.
 
 \section{Selecting font files}
@@ -207,7 +207,7 @@ In the likely event that you also want to use \verb|Ligatures=TeX|,
 multiple options can be grouped together, e.g.,
 \verb|Ligatures={TeX,Discretionary}|.
 Ligatures can also be disabled using corresponding \verb|*Off|
-options. If you wanted to temporarily disable discretionary ligatures,
+options. If you want to temporarily disable discretionary ligatures,
 \begin{leftfigure}
 \begin{lstlisting}
 {\addfontfeature{Ligatures=DiscretionaryOff}...}
@@ -251,7 +251,7 @@ The terms \introduce{proportional} and \introduce{tabular} refer to spacing.
 Tabular figures are set with a uniform width, such that 1 takes up
 the same space as 8.
 As their name suggests, this is great for tables and other scenarios
-where figures must line up with the ones above and below them:}
+where figures must line up in columns:}
 \begin{leftfigure}
 \addfontfeature{Numbers={Tabular,LowercaseOff}}
 \begin{tabular}{l|c r}
