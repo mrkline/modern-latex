@@ -1,31 +1,25 @@
 \chapter{Typography and You}
 \label{typography}
 
-Modern life is a constant battle for your time---every day,
-dozens of ads, apps, clips, emails, sites, shows, and texts fight
-for a few short minutes of it.
-To put ideas into the world,
-nothing is more important than catching and holding
-the attention of your audience.
-When we write, we don't just reach readers with the words we use.
-We reach them with \introduce{typography}: how those words appear.
-Good design doesn't ``look nice''
-only for the sake of art---it draws readers
-in.\punckern\endnote{Matthew Butterick, ``Typography for Docs''
-(presented at the Write The Docs Conference, April 8, 2013),
-\url{https://www.youtube.com/watch?v=8J6HuvosP0s}}
-%Matthew Butterick's \textit{Practical Typography} calls it
-%``the visual component of the written word.\quotekern''
-It sets their expectations and establishes a subliminal brand for your
+Modern life is a constant battle for your time,
+fought by endless hordes of ads, apps, clips, emails, sites, shows, and texts.
+To put ideas into the world amidst this din,
+nothing is more important than seizing
+your audience's attention.
+And when we write, we don't just reach readers with our words.
+We grab them with \introduce{typography}: how those words appear.
+Good design isn't mere art---it's function.
+It draws readers in,
+informs their expectations, and builds a subliminal brand for your
 work.\punckern\endnote{Erik Spiekermann, ``Type is Visible Language''
 (presented at Beyond Tellerrand, Düsseldorf, Germany, May 19--21, 2014),
 \url{https://www.youtube.com/watch?v=ggQpDu63kk0}}
 \begin{leftfigure}
 \fontspec{TeX Gyre Termes}\fontsize{12pt}{24pt}\selectfont\raggedright
-Typography is why this reminds you of terrible essays
+Typography is why this evokes the terrible essays
 you wrote in school.
-Do you see many books that look like this?
-Why do you think that might be?
+Do you see many books that look this way?
+Why is that?
 \end{leftfigure}
 \medskip
 
@@ -34,19 +28,20 @@ Why do you think that might be?
 \fontspec{FuturaCon-ExtBol}\Large DO IT LATER
 \end{leftfigure}
 seems oddly reminiscent of a certain shoe company's advertising.
-It is, in part,\punckern\endnote{Douglas Thomas,
+With its help,\punckern\endnote{Douglas Thomas,
 ``Over the Moon for Futura''\quotekern,
 \textit{Never Use Futura}
 (New York, 2017)}
-how
+two men landed on a dusty alien plain, carrying a plaque that read:
 \begin{center}
 \fontspec[Ligatures=TeX, Scale=MatchLowercase]{Futura-Med}
-MEN FROM THE PLANET EARTH \\
+HERE MEN FROM THE PLANET EARTH \\
 FIRST SET FOOT UPON THE MOON \\
-JULY 1969, A.~D.
+JULY 1969, A.~D. \\
+WE CAME IN PEACE FOR ALL MANKIND
 \end{center}
 
-If you care not only about \emph{what} you tell your readers, but also \emph{how}
+If you care not only about \emph{what} you tell your readers, but \emph{how}
 you tell them, you should try \LaTeX.\punckern\footnote{Pronounced ``lay-tech''
 or ``lah-tech''}
 It's a program\footnote{And a markup language,
@@ -72,7 +67,7 @@ Unlike these other applications, which work on the principle of
 \introduce{What You See Is What You Get} \acronym{(wysiwyg)},
 a \LaTeX{} document is written as a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
-\LaTeX{} then takes this source file and builds your document
+\LaTeX{} then builds your document from this source file,
 based on the formatting rules you give it.
 If you've done any web development, this is a similar process---just
 as \acronym{html} and \acronym{css} describe the page you want
@@ -87,7 +82,7 @@ Unlike these other applications, which work on the principle of
 \introduce{What You See Is What You Get} \acronym{(wysiwyg)},
 a \LaTeX{} document is written as a ``plain'' text file,
 using \introduce{markup} to specify how things should look.
-\LaTeX{} then takes this source file and builds your document
+\LaTeX{} then builds your document from this source file,
 based on the formatting rules you give it.
 If you've done any web development, this is a similar process---just
 as \acronym{html} and \acronym{css} describe the page you want
@@ -151,7 +146,7 @@ After all, it's been out for decades.
 A quick Amazon search finds nearly a dozen books on the topic.
 There are plenty of great resources online.
 
-Unfortunately, most guides have two fatal flaws: they are long,
+Unfortunately, most of these introductions have two fatal flaws: they are long,
 and they are old.
 The first is anathema to newcomers---if somebody asks about \LaTeX{},
 throwing a 200+ page book at them isn't an encouraging start.
@@ -160,20 +155,20 @@ changed since 1986.
 
 When \LaTeX{} was first released that year, none of the publishing technologies
 we use today existed.
-Adobe wouldn't introduce their Portable Document Format for another seven years.
+Adobe wouldn't debut their Portable Document Format for another seven years.
 Digital typography was a new field, and desktop publishing was \emph{just}
 getting off the ground.\punckern\endnote{\textit{Graphic Means:
 A History of Graphic Design Production}, directed by Briar Levit (2017)}
 This shows---badly---in most \LaTeX{} guides.
 If you look for instructions to change your document's font,
-you'll likely get swamped with bespoke nonsense.\punckern\footnote{%
+you'll probably get swamped with bespoke nonsense.\punckern\footnote{%
 Take all criticisms of \LaTeX's past here with a grain of
 salt. After all, the fact that all of the technology around it became
 obsolete---multiple times---is a testament to its staying power.}
 
 The good news is that  \LaTeX{} has improved by leaps and bounds in recent years.
 It's time for a guide that doesn't weigh you down with decades of legacy
-or try to be a comprehensive reference.
+or try (in vain) to be a comprehensive reference.
 After all, you're a smart, resourceful individual who knows how to use a search
 engine.
 This book will:
