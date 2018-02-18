@@ -2,7 +2,7 @@
 
 With luck, you're off to a good start with \LaTeX.
 But as with any complicated tool, you'll eventually run into trouble.
-Here are a few common problems and what you can try to fix them.
+Here are some common problems and what you can try to fix them.
 
 \section{Fixing overflow}
 
@@ -53,18 +53,18 @@ with:
 \end{lstlisting}
 \end{leftfigure}
 \verb|<penalty>| is a value between 0 and 10000.
-Be sure not to set these penalties \emph{too} high---at their maximum,
-\LaTeX{} is never allowed to leave orphans and widows, at \emph{any} cost.
-This may cause odd layouts to be chosen.
-300 is probably a sane starting point.
+At their maximum, \LaTeX{} is never allowed to leave orphans or widows,
+at \emph{any} cost.
+This may cause odd layouts to be chosen,
+so be sure to review your final layout when picking large penalties.
 
 \section{Handling syntax errors}
 If you confuse \LaTeX{}---say, by issuing commands that don't exist,
-or forgetting to end a group or environment---it will print an
+or forgetting to end an environment---it will print an
 error message,\punckern\footnote{Usually this contains a succinct summary of
 the problem and the number of the line(s) it occurred on. Occasionally,
 \LaTeX{} gets \emph{really} confused and emits something so cryptic it gives
-\cpp{} template metaprogramming errors a run for their money.
+\cpp{} template errors a run for their money.
 As you continue to use \LaTeX, you'll start to get a feel for what sorts of
 mistakes cause these rare, but enigmatic messages.}
 then drop into an interactive prompt starting with \texttt{?}\,.

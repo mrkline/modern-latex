@@ -1,7 +1,8 @@
 \chapter{A Brief History of \texorpdfstring{\LaTeX}{LaTeX}}
+
 \label{history}
 
-Most programmers should be familiar with Donald Knuth,
+Donald Knuth is celebrated among programmers as
 the man who coined the term \emph{analysis of algorithms} in 1968
 and pioneered many of the computer science fundamentals we use today.
 Knuth is perhaps most famous for his ongoing magnum opus,
@@ -14,6 +15,7 @@ Each individual letter was cast from molten lead,
 then arranged into its line.
 These lines were clamped together to form pages of the book,
 which were finally inked and pressed against paper.
+
 By March of 1977, Knuth was ready for a second run of \acronym{taocp}, volume~2,
 but he was horrified when he received the proofs.
 Hot metal typesetting was an expensive, complicated, and time-consuming process,
@@ -29,7 +31,7 @@ especially for the mathematics in his books.
 Around this time, he discovered an exciting new technology:
 digital typesetting.
 Instead of working with metal or film,
-letters and shapes were built from tiny dots,
+glyphs were built from tiny dots,
 often packed together at over 1,000 per inch.
 Inspired by this burgeoning tech and frustrated with the current state of affairs,
 Knuth set off on one of the greatest yak shaves\footnote{Programmers
@@ -40,7 +42,7 @@ of \textit{The Ren~\&~Stimpy Show}.\punckern\endnote{``yak shaving''\quotekern,
 \url{http://www.catb.org/~esr/jargon/html/Y/yak-shaving.html}}}
 of all time.
 For years, he paused all work on his books to create his own
-digital typesetting system.
+typesetting system.
 When the dust settled in 1978, Knuth had the first version of
 \TeX.\punckern\footnote{\TeX{} is pronounced like the first syllable of
 ``\textbf{tech}nician''\quotekern. It is from the Greek
@@ -63,7 +65,7 @@ as most TrueType and OpenType fonts do,
 By tweaking the parameters of these pens and strokes, one can build entire
 font families from the same base designs.}
 Perhaps most importantly, Knuth and his students designed algorithms
-to automatically hyphenate and justify lines of text into
+to automatically hyphenate and justify text into
 beautifully-typeset paragraphs.\punckern\footnote{These same algorithms went
 on to influence the ones Adobe uses in its software today.\punckern\endnote{%
 Several sources (\url{http://www.tug.org/whatis.html},
@@ -71,13 +73,13 @@ Several sources (\url{http://www.tug.org/whatis.html},
 \url{http://www.typophile.com/node/34620})
 mention \TeX's influence on the \textit{hz}-program by Peter Karow
 and Hermann Zapf, thanks to via Knuth's collaborations with Zapf.
-\textit{hz} was later acquired by Adobe and used in part
-when creating their paragraph formatting systems for InDesign.}}
+\textit{hz} was later acquired by Adobe and used
+when creating InDesign's paragraph formatting systems.}}
 
-\LaTeX{}, short for Lamport~\TeX{}, was developed by Leslie Lamport in the 1980s
+\LaTeX{}, short for Lamport~\TeX{}, was later developed by Leslie Lamport
 as a set of commands for common document layouts.
-It was introduced in 1986 with Lamport's guide,
-\textit{\LaTeX: A Document Preparation System}.
+It was introduced in 1986 with his guide,
+\textit{\LaTeX: A~Document Preparation System}.
 Other typesetting systems based on \TeX{} also exist,
 the other most popular today being Con\TeX{}t.
 
@@ -117,7 +119,7 @@ The most recent version, 3.14159265, came out in January~2014.
 \item[\LuaTeX] is similar to \XeTeX{} in its native Unicode and modern font support.
     It also embeds the Lua scripting language into the engine,
     exposing an interface for package and document authors.
-    It first appeared in 2007, and is developed by a core team of
+    It first appeared in 2007 and is developed by a core team of
     Hans Hagen, Hartmut Henkel, Taco Hoekwater,
     and Luigi Scarso.\punckern\endnote{\url{http://www.luatex.org}}
 \end{description}

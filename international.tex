@@ -10,14 +10,14 @@ Digitizing human language is a complicated topic that has evolved significantly
 since \LaTeX's inception, but today,
 computers usually represent text with Unicode. Briefly,
 \begin{itemize}
-\item A Unicode text file is made of a series of \introduce{code points},
+\item A Unicode text file is made from a series of \introduce{code points},
     each of which can represent a character to be drawn,
     an accent or other diacritical mark to combine with an adjacent character,
     or some non-printing character,
     such as an instruction to print subsequent text right-to-left.
 \item One or more of these code points combines to represent a
     \introduce{grapheme cluster} or \introduce{glyph},
-    the shapes within a font that we informally call ``characters''\quotekern.
+    the shapes within fonts that we informally call ``characters''\quotekern.
 \begin{centerfigure}
 \large%
 \fontspec[Ligatures=TeX]{NotoSerif}%
@@ -54,7 +54,7 @@ It will automatically:
 \item Format numbers in languages that have their own numbering system.
 \item Use the \texttt{bidi} package for documents with languages written
     right to left.
-\item Set the script and language tags of the current font, if applicable.
+\item Set the script and language tags of OpenType fonts that have them.
 \end{itemize}
 When using the package, specify the main language of your document,
 along with any other languages you use.
@@ -66,7 +66,7 @@ Some languages also take regional dialects as an optional argument:
 \setotherlanguage{french}
 \end{lstlisting}
 \end{leftfigure}
-\texttt{polyglossia} will define an environment for each loaded language.
+\texttt{polyglossia} will define an environment for each language.
 These automatically apply that language's conventions to the text within.
 French, for example, places extra space around punctuation, so
 \begin{leftfigure}
