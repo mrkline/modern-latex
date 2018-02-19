@@ -63,8 +63,7 @@ However, there are cases where the second variety is the only option:
 (Command arguments cannot contain paragraph breaks.)
 \item When defining the style of other commands.\punckern\footnote{%
 For example, this book's section headers are styled with
-\texttt{\textbackslash setkomafont\{section\}\allowbreak%
-\{\textbackslash Large\textbackslash itshape\}}.}
+\texttt{\textbackslash Large\allowbreak\textbackslash itshape}.}
 
 \end{enumerate}
 
@@ -98,7 +97,7 @@ To scale text relative to this size, use the following commands:
 \verb|\Huge| & \Huge Example Text \\
 \end{tabular}
 \end{leftfigure}
-There is some subtlety here that you may not have noticed.
+There are some subtleties at play here.
 \LaTeX's default type family, Latin Modern,
 comes in multiple \introduce{optical sizes}.
 Smaller fonts aren't just shrunken versions of their big siblings---they
@@ -106,12 +105,13 @@ have thicker strokes, exaggerated features,
 and more generous spacing to improve legibility at their size.
 \begin{leftfigure}
 \fontspec{lmroman5-regular} If you magnify 5 point type
-\fontspec{lmroman10-regular} and place the result next to normal 10 point type,
+\fontspec{lmroman10-regular} and place the result next to 11 point type,
 the differences are immediately noticeable.
 \end{leftfigure}
-Since this requires much more work from the type designer,
-many digital typefaces---even professional ones---lack this
-feature.\punckern\footnote{If you are fortunate enough to have
+In the days of metal type, optical sizes were standard, but
+many digital typefaces lack them,
+given how much more work it demands from the type
+designer.\punckern\footnote{If you are fortunate enough to have
 a typeface with multiple optical sizes, \XeLaTeX{}
 and \LuaLaTeX{} can make good use of them! See \chapref{fonts}
 for more on font selection and OpenType features.}
@@ -120,7 +120,7 @@ But points and optical sizes don't tell the whole story.
 Each typeface has its own proportions, which make a huge difference
 in perceived size.
 (Compare Garamond, {\fontspec{Latin Modern Roman} Latin Modern},
-and {\fontspec{NHaasGroteskTXPro-55RG}Helvetica}, all at 10\,pt.)
+and {\fontspec{NHaasGroteskTXPro-55RG}Helvetica}, all at 11\,pt.)
 Shown below are some common terms:
 \begin{centerfigure}
 \includegraphics[keepaspectratio,width=0.65\textwidth]{heights.png}

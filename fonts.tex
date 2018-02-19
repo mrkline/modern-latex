@@ -21,8 +21,8 @@ more ubiquitous formats.}
     TrueType files generally end in a \monobox{.ttf} extension.
 \item[OpenType] was first released in 1996 by Microsoft and Adobe.
     One major improvement over TrueType is its ability to embed
-    multiple versions of glyphs in a single font file---we'll
-    see this feature in action throughout much of this chapter.
+    various ``features''\punckern, such as alternative glyphs
+    and spacing options, in a single font file.
     OpenType files generally end in an \monobox{.otf} extension.
 \end{description}
 
@@ -158,10 +158,9 @@ used carefully, can produce amazing results.}
 
 \section{OpenType features}
 
-As mentioned above, one of OpenType's defining features is the ability to store
-multiple variations of a typeface's glyphs in a single file and allow users
-to switch between them.
-These \introduce{font features} are enabled with optional arguments to
+As mentioned above, OpenType fonts provide various features that can be turned
+on and off.
+In \LaTeX{}, these are controlled with optional arguments to
 \verb|\setmainfont| and friends.
 They can also be set for the current group with
 \verb|\addfontfeature|.
@@ -171,15 +170,11 @@ Let's touch on a few common ones.
 
 Many typefaces use \introduce{ligatures}, which combine multiple characters
 into a single glyph.\punckern\footnote{Ligatures fell out
-of style somewhat during the 20{\addfontfeature{VerticalPosition=Superior}th}
-century due to limitations of printing technology---including early
-computer typesetting---and the increased popularity of sans serif typefaces,
-which often lack them.
+of style during the 20{\addfontfeature{VerticalPosition=Superior}th}
+century due to limitations of printing technology and the increased popularity
+of sans serif typefaces, which often lack them.
 Today they are making a comeback,
-thanks in no small part to their support in OpenType.
-\textbf{Trivia:} glyphs such as the ampersand
-(\,\&\,) and the German Eszett (\,ß\,) evolved
-from ligatures.}
+thanks in no small part to their support in OpenType.}
 OpenType groups ligatures into three categories:
 \begin{description}
 \item[Standard] ligatures are enabled by default, and remedy spacing problems
@@ -225,7 +220,7 @@ or use the \texttt{selnolig} package to handle most of these cases automatically
 
 When setting figures,\punckern\footnote{\introduce{Figure}
 here refers to what some might call a \introduce{numeral} or
-\introduce{digit}---i.e., 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+\introduce{digit}---i.e., 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
 Typographers generally prefer the first term to the other two.}
 you have two
 choices to make: lining versus oldstyle,

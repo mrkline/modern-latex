@@ -13,7 +13,7 @@ it was printed the way most books had been since the turn of the century:
 with \introduce{hot metal} type.
 Each individual letter was cast from molten lead,
 then arranged into its line.
-These lines were clamped together to form pages of the book,
+These lines were clamped together to form pages,
 which were finally inked and pressed against paper.
 
 By March of 1977, Knuth was ready for a second run of \acronym{taocp}, volume~2,
@@ -22,8 +22,8 @@ Hot metal typesetting was an expensive, complicated, and time-consuming process,
 so publishers had replaced it with phototypesetting,
 which works by projecting images of characters onto film.
 The new technology, while much cheaper and faster,
-didn't provide the same level of quality Knuth had come to
-expect.\punckern\endnote{Knuth, \textit{Digital Typography} (Stanford, 1999), 3--5}
+didn't provide the same level of quality Knuth
+expected.\punckern\endnote{Knuth, \textit{Digital Typography} (Stanford, 1999), 3--5}
 
 The average author would have resigned themselves to this change and moved on,
 but Knuth took great pride in print quality,
@@ -39,15 +39,14 @@ call seemingly unrelated work needed to solve their main problem
 ``yak shaving''\quotekern. The phrase is thought to originate from an episode
 of \textit{The Ren~\&~Stimpy Show}.\punckern\endnote{``yak shaving''\quotekern,
 \textit{The Jargon File},
-\url{http://www.catb.org/~esr/jargon/html/Y/yak-shaving.html}}}
+\http{www.catb.org/~esr/jargon/html/Y/yak-shaving.html}}}
 of all time.
 For years, he paused all work on his books to create his own
 typesetting system.
 When the dust settled in 1978, Knuth had the first version of
-\TeX.\punckern\footnote{\TeX{} is pronounced like the first syllable of
-``\textbf{tech}nician''\quotekern. It is from the Greek
+\TeX.\punckern\footnote{The name ``\TeX{}'' comes from the Greek
 {\fontspec[Scale=MatchLowercase]{NotoSerif-Medium}τέχνη},
-for \introduce{art} or \introduce{craft}.\punckern\endnote{Knuth,
+meaning \introduce{art} or \introduce{craft}.\punckern\endnote{Knuth,
 \textit{The \TeX book}, 1}}
 
 It's hard to appreciate how much of a revolution \TeX{} was,
@@ -56,14 +55,8 @@ of Word can be their own desktop publisher.
 Adobe's \acronym{pdf} wouldn't exist for another decade, so Knuth
 and his graduate students devised their own device-independent format,
 \acronym{dvi}.
-Scalable fonts were uncommon at the time, so he created a system,
-\MF, to rasterize his characters into dots on the
-page.\punckern\footnote{%
-Instead of constructing characters from lines and curves,
-as most TrueType and OpenType fonts do,
-\MF{} uses strokes of virtual pens.
-By tweaking the parameters of these pens and strokes, one can build entire
-font families from the same base designs.}
+Scalable fonts were uncommon, so he created \MF{} to rasterize his glyphs
+into dots on the page.
 Perhaps most importantly, Knuth and his students designed algorithms
 to automatically hyphenate and justify text into
 beautifully-typeset paragraphs.\punckern\footnote{These same algorithms went

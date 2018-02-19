@@ -5,7 +5,7 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=10bp, numbers=endperiod]{scrbook}
+\documentclass[fontsize=11pt, numbers=endperiod]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
@@ -30,32 +30,32 @@
     WordSpace={1.3,1.3,1},
     UprightFeatures={
         SizeFeatures={
-            {Size={-9},Font=garamondpremrpro-capt},
-            {Size={9-15},Font=garamondpremrpro},
+            {Size={-10},Font=garamondpremrpro-capt},
+            {Size={10-15},Font=garamondpremrpro},
             {Size={15-23},Font=garamondpremrpro-subh},
             {Size={23-},Font=garamondpremrpro-disp}
         },
     },
     BoldFeatures={
         SizeFeatures={
-            {Size={-9},Font=garamondpremrpro-smbdcapt},
-            {Size={9-15},Font=garamondpremrpro-smbd},
+            {Size={-10},Font=garamondpremrpro-smbdcapt},
+            {Size={10-15},Font=garamondpremrpro-smbd},
             {Size={15-23},Font=garamondpremrpro-smbdsubh},
             {Size={23-},Font=garamondpremrpro-smbddisp}
         },
     },
     ItalicFeatures={
         SizeFeatures={
-            {Size={-9},Font=garamondpremrpro-itcapt},
-            {Size={9-15},Font=garamondpremrpro-it},
+            {Size={-10},Font=garamondpremrpro-itcapt},
+            {Size={10-15},Font=garamondpremrpro-it},
             {Size={15-23},Font=garamondpremrpro-itsubh},
             {Size={23-},Font=garamondpremrpro-itdisp}
             },
     },
     BoldItalicFeatures={
         SizeFeatures={
-            {Size={-9},Font=garamondpremrpro-smbditcapt},
-            {Size={9-15},Font=garamondpremrpro-smbdit},
+            {Size={-10},Font=garamondpremrpro-smbditcapt},
+            {Size={10-15},Font=garamondpremrpro-smbdit},
             {Size={15-23},Font=garamondpremrpro-smbditsubh},
             {Size={23-},Font=garamondpremrpro-smbditdisp}
         },
@@ -144,10 +144,15 @@
 
 % Don't use a sans font for description labels.
 \addtokomafont{descriptionlabel}{\rmfamily}
+% Sections and such use serif type.
 \setkomafont{disposition}{\rmfamily}
+% Uppercase numbers for chapters.
 \addtokomafont{chapter}{\addfontfeature{Numbers=Uppercase}}
+% Set size and style of section and subsections
 \setkomafont{section}{\Large\itshape}
 \setkomafont{subsection}{\large\itshape}
+% Don't put big spaces before chapter headings
+\RedeclareSectionCommand[beforeskip=0.15in]{chapter}
 
 \setcapwidth[c]{.8\textwidth}
 %\setcapmargin{0pt}
@@ -162,6 +167,7 @@
 % See http://tex.stackexchange.com/a/133186
 \usepackage{enumitem}
 \setlist[enumerate]{font=\addfontfeatures{Numbers=Uppercase}}
+\setlist[description]{leftmargin=1em}
 
 % Custom footer
 \usepackage{scrlayer-scrpage}
@@ -197,11 +203,11 @@
 }
 
 \newenvironment{leftfigure}
-  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{2em}{0pt}}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{1.5em}{0pt}}
   {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
 
 \newenvironment{centerfigure}
-  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{2em}{2em}\centering}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{1.5em}{1.5em}\centering}
   {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
 
 \usepackage{graphicx}
@@ -252,6 +258,7 @@
 % Letterspace acronyms a bit.
 \newcommand{\acronym}[1]{\textsc{\addfontfeature{LetterSpace=6}#1}}
 
+% "Chapter <num>" references
 \newcommand{\chapref}[1]{%
     {\addfontfeature{Numbers={Proportional,Uppercase}}Chapter~\ref{#1}}%
 }
@@ -276,7 +283,7 @@
 \clubpenalty=10000
 
 \begin{document}
-\fontsize{10bp}{13bp}\selectfont
+\fontsize{11pt}{13pt}\selectfont
 
 \frontmatter
 \setcounter{secnumdepth}{0}
@@ -331,8 +338,8 @@ The license's full text is available at \\
 %\noindent To Donald, Leslie, \\
 %Ellen, Erik, Jost, Matthew, \& Robert
 %\bigskip
-
-To Max, who once told me about a cool program he was using to type up
+%
+To Max, who once told me about a cool program he used to type up
 his college papers.
 }
 \cleardoublepage

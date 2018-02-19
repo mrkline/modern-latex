@@ -4,7 +4,7 @@
 You install \LaTeX{} on your computer by downloading a \introduce{distribution},
 which comes with:
 \begin{enumerate}
-\item \LaTeX, the program---the thing that turns text files into nicely-typeset
+\item \LaTeX, the program---the thing that turns text files into typeset
     documents.\footnote{We'll actually be installing multiple \LaTeX{} programs,
     but we're getting to that.}
 \item A common set of \LaTeX{} \introduce{packages}.
@@ -15,23 +15,24 @@ which comes with:
 \end{enumerate}
 Each major operating system has its own \LaTeX{} distribution:
 \begin{description}
-\item[Mac OS] has Mac\TeX. Grab it from \url{http://www.tug.org/mactex}
+\item[Mac OS] has Mac\TeX. Grab it from \http{www.tug.org/mactex}
     and follow the instructions there to install it.
 
 \item[Windows] has Mik\TeX.
-    Install it from \url{https://miktex.org/download}
-    as described by the tutorial.
+    Install it from \https{miktex.org/download},
+    per the instructions there.
     Mik\TeX{} offers the unique ability to automatically download
     additional packages if your document uses one that it can't find
     on your computer.
 
 \item[Linux and BSD] use \TeX{} Live.
-    Like most software, this is often provided through your
+    Like most software, this is provided through your
     \acronym{os}'s package manager.
-    Use yours to install \monobox{texlive-core},
-    \monobox{texlive-luatex} and \monobox{texlive-xetex}.\punckern\footnote{%
+    Use yours to install \texttt{texlive-\allowbreak core},
+    \texttt{texlive-\allowbreak luatex}
+    and \texttt{texlive-\allowbreak xetex}.\punckern\footnote{%
     Some Linux distributions (like Arch) package all three into a
-    single \monobox{texlive-core} package.}
+    single \texttt{texlive-core} package.}
     As you work with \LaTeX, you may need less-common packages,
     which are usually found in distro packages with names like
     \texttt{texlive-latexextra}, \texttt{texlive-science},
@@ -43,10 +44,10 @@ Each major operating system has its own \LaTeX{} distribution:
 
 \section{Editors}
 
-\LaTeX{} source files are regular text files,
-so you're free to create them with the usual choices of Vim, Emacs, Gedit,
+Since \LaTeX{} source files are regular text files,
+you're free to create them with the usual choices of Vim, Emacs,
 Sublime, Notepad\plusplus, and so on.\punckern\footnote{If you have never used
-any of these, you owe it to yourself to try a few.
+any of these, try a few.
 They're popular among programmers and other folks who shuffle text around
 screens all day. Just don't use Notepad. Life is too short.}
 However, there are also editors designed specifically for \LaTeX{},

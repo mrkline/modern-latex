@@ -7,10 +7,10 @@ Here are some common problems and what you can try to fix them.
 \section{Fixing overflow}
 
 \mbox{When \LaTeX{} cannot fit a line into a paragraph with good spacing,
-it gives up, overflowing that line}
-into the margin.
-You can sometimes remedy this by adding
-\verb|\emergencystretch=<width>| to the document's preamble.
+it gives up, overflowing} the line into the margin.
+You can sometimes fix this by adding
+\texttt{\textbackslash emergencystretch=\allowbreak<width>}
+to the document's preamble.
 When a paragraph can't be broken to \LaTeX's satisfaction,
 this command makes it try one last time,
 stretching or shrinking the space in each line by up to the provided
