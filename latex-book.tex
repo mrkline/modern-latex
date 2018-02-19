@@ -256,6 +256,10 @@
     {\addfontfeature{Numbers={Proportional,Uppercase}}Chapter~\ref{#1}}%
 }
 
+% monospace URLs (without setting the http://...)
+\newcommand{\http}[1]{\href{http://#1}{\texttt{#1}}}
+\newcommand{\https}[1]{\href{https://#1}{\texttt{#1}}}
+
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
 \let\runauthor\@author
@@ -301,9 +305,8 @@ Some crappy draft, typeset \today.
 The author apologizes for any typos, misattributions, and other flubs.
 He welcomes you to point them out on this book's Github
 repository at \\
-\url{https://github.com/mrkline/latex-book} \\
-Questions, comments, concerns, and diatribes relating to this book 
-can also be sent to \\
+\https{github.com/mrkline/latex-book} \\
+Questions, comments, concerns, and diatribes can also be sent to \\
 \texttt{matt <at> bitbashing.io}
 
 The author does not have a checking account with the Bank of San Serriffe,
@@ -319,7 +322,7 @@ by \runauthor
 This book is licensed under the \\
 Creative Commons Attribution-ShareAlike~4.0 International License. \\
 The license's full text is available at \\
-\url{https://creativecommons.org/licenses/by-sa/4.0/legalcode}
+\https{creativecommons.org/licenses/by-sa/4.0/legalcode}
 }
 \clearpage
 
