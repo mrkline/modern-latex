@@ -5,7 +5,9 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11pt, numbers=endperiod]{scrbook}
+\documentclass[fontsize=11pt, numbers=endperiod, draft=off]{scrbook}
+% Don't draw rulers in draft mode.
+\usepackage[draft=false]{scrlayer-scrpage}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
@@ -169,6 +171,8 @@
 \setlist[enumerate]{font=\addfontfeatures{Numbers=Uppercase}}
 \setlist[description]{leftmargin=1em}
 
+\usepackage{tabularx}
+
 % Custom footer
 \usepackage{scrlayer-scrpage}
 \clearpairofpagestyles
@@ -276,7 +280,7 @@
 
 % Spend a bit more time to get better word spacing.
 % See http://tex.stackexchange.com/a/52855/92465
-\emergencystretch=1em
+\emergencystretch=1ex
 
 % Do as I say, not as I do.
 \widowpenalty=10000

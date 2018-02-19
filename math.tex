@@ -12,7 +12,7 @@ Inside these math environments, the rules of \LaTeX{} change:
     and the engine usually makes spacing decisions for you based on
     typographical conventions for mathematics.
     \verb|$x+y+z$| and \verb|$x + y + z$| both give you $x+y+z$.
-\item Empty lines are not allowed---each formula must occupy a single
+\item Empty lines are not allowed---each formula occupies a single
     ``paragraph''\quotekern.
 \item Letters are automatically italicized, as they are assumed to be variables.
 \end{itemize}
@@ -80,9 +80,10 @@ y
 
 \item
 \begin{verbatim}
-\oint_{\partial \Sigma} \mathbf{E} \cdot \mathrm{d}\boldsymbol{\ell}
+\oint_{\partial \Sigma} \mathbf{E} \cdot
+        \mathrm{d}\boldsymbol{\ell}
     = - \frac{\mathrm{d}}{\mathrm{d}t}
-      \iint_{\Sigma} \mathbf{B} \cdot \mathrm{d}\mathbf{S}
+        \iint_{\Sigma} \mathbf{B} \cdot \mathrm{d}\mathbf{S}
 \end{verbatim}
     \[\oint_{\partial \Sigma} \mathbf{E} \cdot \mathrm{d}\boldsymbol{\ell}  = - \frac{\mathrm{d}}{\mathrm{d}t} \iint_{\Sigma} \mathbf{B} \cdot \mathrm{d}\mathbf{S}\]
 \end{enumerate}

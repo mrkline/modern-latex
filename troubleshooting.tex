@@ -8,19 +8,18 @@ Here are some common problems and what you can try to fix them.
 
 \mbox{When \LaTeX{} cannot fit a line into a paragraph with good spacing,
 it gives up, overflowing} the line into the margin.
-You can sometimes fix this by adding
-\texttt{\textbackslash emergencystretch=\allowbreak<width>}
-to the document's preamble.
-When a paragraph can't be broken to \LaTeX's satisfaction,
-this command makes it try one last time,
+You can sometimes fix this with some ``emergency stretch''\quotekern.
+When you add \texttt{\textbackslash emergencystretch=\allowbreak<width>}
+to the document's preamble,
+\LaTeX{} will try to set troublesome paragraphs a second time,
 stretching or shrinking the space in each line by up to the provided
 width.\punckern\footnote{\LaTeX{} has pretty sane default limits to how much
 it stretches and shrinks spacing in a paragraph.
 You probably don't want to make \texttt{<width>} larger than an em or two.}
-If that doesn't work, try tweaking the paragraph's wording.
+If that still doesn't help, try tweaking the paragraph's wording.
 This can be frustrating, but the alternative is for \LaTeX{} to create spacing
-that is too loose---where\enspace
-words\enspace have\enspace large\quad gaps\quad between\enspace
+that is too loose---where\quad
+words\quad have\quad large\quad gaps\quad between\quad
 them---or too tight, where\! words\! are\! uncomfortably\! crammed\! together.
 
 \section{Avoiding widows and orphans}
