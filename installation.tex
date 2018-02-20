@@ -28,18 +28,18 @@ Each major operating system has its own \LaTeX{} distribution:
 \item[Linux and BSD] use \TeX{} Live.
     Like most software, this is provided through your
     \acronym{os}'s package manager.
-    Use yours to install \texttt{texlive-\allowbreak core},
-    \texttt{texlive-\allowbreak luatex}
-    and \texttt{texlive-\allowbreak xetex}.\punckern\footnote{%
-    Some Linux distributions (like Arch) package all three into a
-    single \texttt{texlive-core} package.}
+    Linux distributions usually contain a \texttt{texlive-\allowbreak full}
+    or \texttt{texlive-\allowbreak most} package that installs everything
+    you need.\punckern\footnote{%
+    If you'd rather keep the install size down,
+    Linux distributions usually break \TeX{} Live into multiple distro packages.
+    Look for ones with names like
+    \texttt{texlive-\allowbreak core}, \texttt{texlive-\allowbreak luatex}
+    and \texttt{texlive-\allowbreak xetex}.
     As you work with \LaTeX, you may need less-common packages,
-    which are usually found in distro packages with names like
-    \texttt{texlive-latexextra}, \texttt{texlive-science},
-    and so on.\punckern\footnote{Of
-    course, package names, and how \LaTeX{} packages are split between
-    distro packages, may vary from one Linux distribution to another.
-    These names are some of the most common.}
+    which usually have names like \texttt{texlive-\allowbreak latexextra},
+    \texttt{texlive-\allowbreak science}, and so on.
+    Of course, all of this may vary from one Linux distribution to another.}
 \end{description}
 
 \section{Editors}
@@ -54,3 +54,12 @@ However, there are also editors designed specifically for \LaTeX{},
 which often come with their own built-in \acronym{pdf} viewer.
 You can find a fairly comprehensive list on the \LaTeX{} Wikibook,
 in its installation chapter. (See Appendix~\ref{resources}.)
+
+\section{Online options}
+
+If you'd rather not install \LaTeX{} on your computer,
+you can try online editors such as Share\LaTeX{} and Overleaf.
+This book won't focus on these web-based tools,
+but almost all of the same basics apply.
+(Of course, you have less control over certain aspects of online versions,
+such as the available fonts, the version of \LaTeX{} that's used, and so on.)

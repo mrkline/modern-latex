@@ -59,7 +59,7 @@ which picks a base ``style'' to use.
 Many classes are available---and you can even create your own---but common
 ones include \texttt{article}, \texttt{report}, \texttt{book},
 and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
-Kind of an odd name, no?}
+The name is the German term for a projector.}
 For your average document, \texttt{article} is probably a good choice.
 The next line, \verb|% Say hello|,
 is a \introduce{comment}---anything placed after a percent symbol on a line
@@ -83,7 +83,7 @@ For example,
 The number  of   spaces    between words doesn't   matter. The same
 is true for sentences.
 
-An empty line starts a new paragraph.
+An empty line ends the previous paragraph and starts a new one.
 \end{lstlisting}
 \end{leftfigure}
 yields
@@ -91,7 +91,7 @@ yields
 \lm The number  of   spaces    between words doesn't   matter. The same
 is true for sentences.
 
-An empty line  starts a new paragraph.
+An empty line ends the previous paragraph and starts a new one.
 \end{leftfigure}
 Notice that \LaTeX{} automatically follows typographic
 conventions, such as indenting new paragraphs and leaving more space after a
