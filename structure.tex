@@ -20,11 +20,24 @@ The space between the \verb|\documentclass| command and the start of the
 Here, we perform any setup we need---such as importing packages
 and defining commands---to control how our document
 will look.
-As mentioned briefly in \chapref{installation},
+As mentioned in \chapref{installation},
 \introduce{packages} are bits of code that modify your document
 in interesting ways.
+The ones in your \LaTeX{} distribution come from the Comprehensive \TeX{}
+Archive Network, or \acronym{ctan},\punckern\footnote{Curious readers may
+be wondering what \TeX{} is, and how it differs from \LaTeX.
+The short version is that \TeX{} is the typesetting system that \LaTeX{}
+is built on top of---the latter is a framework of commands for the former.
+(For example, \texttt{\textbackslash documentclass} and friends are provided by
+\LaTeX{}, but the \TeX{} engine is what's actually laying out your document.)
+The long version is at the back of this book as Appendix~\ref{history}.
+We won't discuss how to use plain \TeX{} here. That's for another book---the
+\TeX book.}
+at \https{ctan.org}.
+Package manuals are also found there,
+so it should be your first stop when learning how to use one.
 
-To import a package, add a \verb|\usepackage| command to the preamble,
+To import a package, add a \verb|\usepackage| command,
 with the package's name as the argument.
 As a simple example, let's make a document with the \texttt{metalogo}
 package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX| commands.
@@ -59,21 +72,6 @@ so long as there are no empty lines between arguments.}
 \end{lstlisting}
 \end{leftfigure}
 
-
-The packages in your \LaTeX{} distribution come from the Comprehensive \TeX{}
-Archive Network, or \acronym{ctan},\punckern\footnote{Curious readers may
-be wondering what \TeX{} is, and how it differs from \LaTeX.
-The short version is that \TeX{} is the typesetting system that \LaTeX{}
-is built on top of---the latter is a framework of commands for the former.
-(For example, \texttt{\textbackslash documentclass} and friends are provided by
-\LaTeX{}, but the \TeX{} engine is what's actually laying out your document.)
-The long version is at the back of this book as Appendix~\ref{history}.
-We won't discuss how to use plain \TeX{} here. That's for another book---the
-\TeX book.}
-at \https{ctan.org}.
-The manuals for packages are also found there,
-so it should be your first stop when learning how to use one.
-
 \section{Titles, sections, and tables of contents}
 
 Authors often create hierarchy to help readers navigate their work.
@@ -81,7 +79,7 @@ Authors often create hierarchy to help readers navigate their work.
 \verb|\part|, \verb|\chapter|, \verb|\section|, \verb|\subsection|,
 \verb|\subsubsection|, \verb|\paragraph|, and \verb|\subparagraph|.
 To use one, issue the command where you want that section to start,
-using the section's name as the argument.
+providing its name as the argument.
 For example,
 \begin{leftfigure}
 \begin{lstlisting}
@@ -105,7 +103,7 @@ Goodbye!
 Some levels may not be available depending on the document class
 you've chosen. Parts and chapters, for example, only appear in books.
 And don't go too crazy with these commands.
-Most works only need a few levels of hierarchy.
+Most works only benefit a few levels of hierarchy.
 
 Sections\footnote{By this I mean all levels, not just
 \texttt{\textbackslash section}.}
@@ -132,7 +130,7 @@ and ``starred'' section commands, e.g., \verb|\subsection*{foo}|.
 \item Use KOMA~Script, a set of document classes and packages
 that make it easy to customize nearly every aspect of your document,
 from section heading fonts to footnotes.
-\item Include images using the \texttt{graphicx} package.
-\item Add hyperlinks to your \acronym{pdf} using the \texttt{hyperref} package.
+\item Include images with the \texttt{graphicx} package.
+\item Add hyperlinks to your \acronym{pdf} with the \texttt{hyperref} package.
 \item Split large documents into multiple files using \verb|\input|.
 \end{itemize}

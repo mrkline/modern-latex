@@ -5,11 +5,11 @@
 \LaTeX{} is extraordinarily good at justifying text.
 Instead of considering each line individually---as most word processors and
 web browsers do---it examines all possible line breaks in a given paragraph,
-then chooses ones that will give the best overall
+then chooses ones that give the best overall
 spacing.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
 \textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
 Combined with its ability to automatically hyphenate words,
-which allows line breaks in many more places,\punckern\endnote{%
+which permits line breaks in many more places,\punckern\endnote{%
 Franklin Mark Liang,
 \textit{Word Hy-phen-a-tion by Com-put-er} (Stanford, 1983),
 \http{www.tug.org/docs/liang/}}
@@ -67,7 +67,7 @@ And this text is flush right.
 
 \LaTeX{} provides three environments for lists:
 \texttt{itemize}, \texttt{enumerate}, and \texttt{description}.
-In all three, each item starts with an \verb|\item| command.
+In all three, items starts with \verb|\item| commands.
 The \texttt{itemize} environment uses bullets.
 With:
 \begin{leftfigure}
@@ -112,7 +112,8 @@ produces
 
 \bigskip
 \noindent The \texttt{description} environment starts each item with some
-emphasized text, or \introduce{label}:
+emphasized \introduce{label},
+then indents following lines:
 \begin{leftfigure}
 \begin{lstlisting}
 \begin{description}
@@ -162,7 +163,7 @@ Shorter lines keep readers from needing to scan very far to find the start of
 the next line,
 which produces a more comfortable experience.}
 You can either add the \texttt{twocolumn} option to your document class,
-which splits everything into two columns, or you can use the \texttt{multicols}
+which splits everything in two, or you can use the \texttt{multicols}
 environment from the \texttt{multicol} package:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -199,10 +200,10 @@ printing, you can break to the front of the next page with
 
 \section{Footnotes}
 
-Footnotes are a great tool for comments and asides which readers might
+Footnotes can be used to insert remarks which readers might
 find useful, but aren't crucial to the main text.
 The \verb|\footnote| command places a marker at its location in the
-body text, then inserts its argument as a footnote at the bottom of the current
+body text, then sets its argument as a footnote at the bottom of the current
 page:
 \begin{leftfigure}
 \begin{lstlisting}

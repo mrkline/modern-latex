@@ -21,7 +21,7 @@ more ubiquitous formats.}
     TrueType files generally end in a \monobox{.ttf} extension.
 \item[OpenType] was first released in 1996 by Microsoft and Adobe.
     One major improvement over TrueType is its ability to embed
-    various ``features''\punckern, such as alternative glyphs
+    various ``features''\quotekern, such as alternative glyphs
     and spacing options, in a single font file.
     OpenType files generally end in an \monobox{.otf} extension.
 \end{description}
@@ -63,7 +63,7 @@ shortcuts discussed in \chapref{punctuation} (e.g., creating en dashes with
 \texttt{--} or curly quotes with \texttt{``}) instead of forcing you
 to type the the corresponding characters, which probably aren't on your keyboard.
 You often don't want these for monospaced type, though,
-since the text you set in it---such as code---is usually meant to be displayed
+since the text you set in it---such as code---is meant to be displayed
 verbatim. \verb|"Hello!"| shouldn't turn into
 \verb|“Hello!“|.
 
@@ -145,7 +145,7 @@ Note that instead of typing out \monobox{Futura-Boo},
 
 \section{Scaling}
 
-Using different typefaces to create a cohesive experience is tricky,
+Creating a cohesive look with multiple fonts is tricky,
 especially since typefaces might look completely different
 at the same point size.
 \texttt{fontspec} can help a bit here by scaling fonts to match either the
@@ -197,11 +197,13 @@ OpenType groups ligatures into three categories:
     These are also disabled by default
     but can be enabled with \verb|Ligatures=Historic|.
 \end{description}
-In the likely event that you also want to use \verb|Ligatures=TeX|,
-multiple options can be grouped together, e.g.,
+Multiple options can be grouped together.
+Say you want discretionary ligatures.
+In the likely event that you also want \verb|Ligatures=TeX|,
+you would enable both with
 \verb|Ligatures={TeX,Discretionary}|.
-Ligatures can also be disabled using corresponding \verb|*Off|
-options. If you want to temporarily disable discretionary ligatures,
+Ligatures can also be disabled with corresponding \verb|*Off|
+options. If you want to stop using discretionary ligatures for some passage,
 \begin{leftfigure}
 \begin{lstlisting}
 {\addfontfeature{Ligatures=DiscretionaryOff}...}
@@ -212,8 +214,8 @@ does the trick.
 Some words are arguably typeset better without ligatures---a classic example
 is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
 (Addison-Wesley, 1986), 19}
-You can manually prevent the insertion of ligatures with an empty group,
-e.g., \verb|shelf{}ful|,
+You can manually prevent the insertion of ligatures with a zero-width space,
+e.g., \verb|shelf\hspace{0pt}ful|,
 or use the \texttt{selnolig} package to handle most of these cases automatically.
 
 \subsection{Figures}
@@ -270,11 +272,12 @@ You select figures with the following options:
  & \texttt{Tabular / Monospaced}
 \end{tabular}
 \end{leftfigure}
-These traits can be mixed and matched:
+As with ligatures, traits can be combined:
 you get proportional lining figures
-with \texttt{Numbers=\{Proportional,\allowbreak Lining\}},
-and tabular oldstyle with \texttt{Numbers=\{Tabular,\allowbreak OldStyle\}}.
-And, like ligatures, each option has a corresponding \verb|*Off|
+with \texttt{Numbers=\allowbreak\{Proportional,\allowbreak Lining\}},
+or tabular oldstyle figures with
+\texttt{Numbers=\allowbreak\{Tabular,\allowbreak OldStyle\}}.
+Each option also has a corresponding \verb|*Off|
 variant.\punckern\footnote{This is especially useful since fonts
 select figures in different ways.
 In some, the default figures are lining
@@ -302,11 +305,15 @@ and
 \,}.
 Notice how this second set is too light compared to the surrounding
 type.)
+They are selected with:
+\begin{leftfigure}
+\begin{tabular}{l l}
+\texttt{VerticalPosition=} & \texttt{Superior / Inferior}
+\end{tabular}
+\end{leftfigure}
 
 \section{What next?}
 \begin{itemize}
-\item Learn about more OpenType features supported through \texttt{fontspec},
-such as stylistic sets and alternatives.
 \item See how \texttt{fontspec} chooses fonts based on point size when multiple
     optical sizes are available, either automatically via OpenType,
     or manually using \texttt{SizeFeatures}.

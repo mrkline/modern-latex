@@ -23,7 +23,7 @@ These are the newest engines available---see Appendix~\ref{history} for an
 explanation of how they differ from the others.
 
 If you are using a \LaTeX{}-specific editor, it probably contains a drop-down
-menu or some other configuration to select the engine you'd like to use,
+menu or some other means to select the engine you'd like to use,
 as well as a button to generate your document.
 Otherwise, from a terminal,\punckern\footnote{How to work a terminal emulator,
 making sure the newly-installed \LaTeX{} programs are in your \texttt{PATH},
@@ -112,7 +112,7 @@ This% weird, right?
 
 \section{Commands}
 
-\LaTeX{} provides various commands to issue instructions to
+\LaTeX{} provides various commands to issue layout instructions to
 the engine, and you can define your own as well.
 Their names always begin with a backslash (\,\texttt{\textbackslash}\,),
 contain only letters, and are case-sensitive.\punckern\footnote{%
@@ -128,18 +128,21 @@ so if some command needed two arguments, we would type:
 \somecommand{argument1}{argument2}
 \end{lstlisting}
 \end{leftfigure}
-Many commands also take optional arguments, which are enclosed in square
-brackets and precede the mandatory ones.
-Say you want to inform \LaTeX{} that your document will be printed as
-double-sided pages.\punckern\footnote{\texttt{twoside} introduces commands
+Many commands also take optional arguments, which precede the mandatory ones,
+are enclosed in square brackets, and are separated by commas.
+Say you want to inform \LaTeX{} that your document will printed as double-sided
+pages\footnote{\texttt{twoside} introduces commands
 that only make sense in the context of double-sided printing,
 such as ones that skip to the start of the next odd page.
 It also allows you to have different margins for even and odd pages,
 which is useful for texts like this book.}
-This is done with an optional argument to \verb|\documentclass|:
+in 11~point
+type.\punckern\footnote{We'll discuss font sizes and much more in
+\chapref{formatting}.}
+This is done with optional arguments to \verb|\documentclass|:
 \begin{leftfigure}
 \begin{lstlisting}
-\documentclass[twoside]{article}
+\documentclass[11pt, twoside]{article}
 \end{lstlisting}
 \end{leftfigure}
 
@@ -265,7 +268,7 @@ is set as
 \lm {\itshape Sometimes we want italics}, but only sometimes.
 \end{leftfigure}
 The text within the braces forms a \introduce{group},
-and all commands issued inside the group only take effect until it ends.
+and commands issued inside the group only take effect until it ends.
 Environments also form implicit groups:
 \begin{leftfigure}
 \begin{lstlisting}

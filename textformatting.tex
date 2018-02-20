@@ -105,10 +105,10 @@ have thicker strokes, exaggerated features,
 and more generous spacing to improve legibility at their size.
 \begin{leftfigure}
 \fontspec{lmroman5-regular} If you magnify 5 point type
-\fontspec{lmroman10-regular} and place the result next to 11 point type,
+\lm and place the result next to 11 point type,
 the differences are immediately noticeable.
 \end{leftfigure}
-In the days of metal type, optical sizes were standard, but
+Optical sizes were standard in the days of metal type, but
 many digital typefaces lack them,
 given how much more work it demands from the type
 designer.\punckern\footnote{If you are fortunate enough to have
@@ -134,8 +134,9 @@ and the \introduce{x-height} refers to the size of lowercase letters.}
 %{\sffamily\fontsize{8pt}{8pt}\selectfont This is 8-point text.}
 \end{centerfigure}
 
-If the previous commands aren't enough, you can create custom sizes with
-\verb|\fontsize|, which takes both the desired point size and the
+If the previous commands don't give you a size you need,
+you can create custom ones with \verb|\fontsize|,
+which takes both the desired point size and the
 distance between baselines.
 This must be followed with \verb|\selectfont| to take effect.
 For example, \texttt{\textbackslash fontsize\{30pt\}\allowbreak\{30pt\}%
@@ -161,7 +162,7 @@ see \textit{Practical Typography}, listed in Appendix~\ref{resources}.}
 
 \section{What next?}
 \begin{itemize}
-\item Learn how to underline text using the \texttt{ulem}
+\item Learn how to underline text with the \texttt{ulem}
     package.\punckern\footnote{Other typographical tools---like italics,
     boldface, and small caps---are generally preferable to underlining,
     but it has its uses.}
