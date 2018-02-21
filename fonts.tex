@@ -74,8 +74,9 @@ weights and styles---a typical set includes upright,
 \textit{italics},
 \textbf{bold}, and
 \textit{\textbf{bold italics}}.
-\texttt{fontspec} can generally deduce the appropriate file
-names given the name of the typeface.\punckern\footnote{This is
+Given the name of the typeface,
+\texttt{fontspec} can generally deduce the names of these
+files.\punckern\footnote{This is
 one of the places \XeLaTeX{} and \LuaLaTeX{}
 differ in a way that's noticeable to the casual user.
 The former generally uses system libraries---such as FontConfig on Linux---to
@@ -85,7 +86,7 @@ based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
 (Version 1.0.4, February 2017), 10}
 The expected name of a font might differ between the two engines---refer
 to the \texttt{fontspec} manual for details.
-If you're having trouble getting \LaTeX{} to find your fonts,
+If you have trouble getting \LaTeX{} to find your fonts,
 try rebuilding your system's font cache.
 (Figuring out how to do so is left as a web search for the reader.)}
 However, many typefaces come in more than two weights---some versions of Futura,
@@ -99,7 +100,8 @@ for example, come in
 Sometimes
 {\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}\textsc{small caps}}
 are stored in separate files as well.\punckern\footnote{OpenType allows
-small caps to be placed in the same file(s) as the other glyphs.
+small caps to be placed in the same file(s) as the other glyphs for a given
+weight.
 If your font supports this, you don't need to do anything---\texttt{fontspec}
 will dutifully switch to them whenever you use
 \monobox{\textbackslash textsc} or \monobox{\textbackslash scshape}.
@@ -180,15 +182,14 @@ Today they are making a comeback,
 thanks in no small part to their support in OpenType.}
 OpenType groups ligatures into three categories:
 \begin{description}
-\item[Standard] ligatures are enabled by default, and remedy spacing problems
-    a typeface might otherwise have. Consider the lowercase letters f
-    and i.
-    In many serif typefaces, these combine
-    to form the ligature fi, which avoids awkward spacing between f's ascender
-    and i's dot
+\item[Standard] ligatures remedy spacing problems a typeface might otherwise have.
+    Consider the lowercase letters f and i: in many serif typefaces,
+    these combine to form the ligature fi,
+    which avoids awkward spacing between f's ascender and i's dot
     {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
     Other common examples in English writing include ff,
     ffi, fl, and ffl.
+    Standard ligatures are enabled by default.
 \item[Discretionary] ligatures, such as
     {\addfontfeature{Ligatures=Discretionary}ct},
     are offered by some fonts.
@@ -217,8 +218,8 @@ does the trick.
 Some words are arguably typeset better without ligatures---a classic example
 is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
 (Addison-Wesley, 1986), 19}
-You can manually prevent the insertion of ligatures with a zero-width space,
-e.g., \verb|shelf\hspace{0pt}ful|,
+You can either manually prevent ligatures with a zero-width
+space, e.g., \verb|shelf\hspace{0pt}ful|,
 or use the \texttt{selnolig} package to handle most of these cases automatically.
 
 \subsection{Figures}
@@ -278,26 +279,22 @@ You select figures with the following options:
 As with ligatures, traits can be combined:
 you get proportional lining figures
 with \texttt{Numbers=\allowbreak\{Proportional,\allowbreak Lining\}},
-or tabular oldstyle figures with
+or tabular oldstyle ones via
 \texttt{Numbers=\allowbreak\{Tabular,\allowbreak OldStyle\}}.
 Each option also has a corresponding \verb|*Off|
 variant.\punckern\footnote{This is especially useful since fonts
 select figures in different ways.
-In some, the default figures are lining
-and oldstyle figures are enabled with
-\monobox{Numbers=OldStyle}.
-To return to lining figures,
-\monobox{Numbers=Lining}
-doesn't work, but
-\monobox{Numbers=OldStyleOff}
-does.}
+In some, \texttt{Numbers=\allowbreak Lining} doesn't work,
+so you enable oldstyle figures with \monobox{Numbers=OldStyle}
+and return to lining figures (the defaults) with
+\texttt{Numbers=\allowbreak OldStyleOff}.}
 
 Finally, some fonts provide \introduce{superior and inferior} figures,
-which are useful for ordinals
+which are used for ordinals
 (\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \ldots),
 fractions (\,\otffrac{25}{624}\,), and so on.
-These have the same weight as their full-sized counterparts,
-which looks much better than shrinking the font's normal figures.
+These have the same weight as the rest of the font's characters,
+offering a more consistent look than shrunken versions of full-sized figures.
 (Compare the above to
 {\fontspec[OpticalSize=0]{garamondpremrpro}%
 \mbox{1\textsuperscript{st}},
@@ -308,17 +305,14 @@ and
 \,}.
 Notice how this second set is too light compared to the surrounding
 type.)
-They are selected with:
-\begin{leftfigure}
-\begin{tabular}{l l}
-\texttt{VerticalPosition=} & \texttt{Superior / Inferior}
-\end{tabular}
-\end{leftfigure}
+Superior figures are typeset with
+\texttt{VerticalPosition=\allowbreak Superior},
+and inferiors are set with \texttt{VerticalPosition=\allowbreak Inferior}.
 
 \section{What next?}
 \begin{itemize}
-\item See how \texttt{fontspec} chooses fonts based on point size when multiple
-    optical sizes are available, either automatically via OpenType,
+\item Learn how \texttt{fontspec} can choose between optical sizes based on
+    point size, either automatically via OpenType,
     or manually using \texttt{SizeFeatures}.
 \item Experiment with letter spacing---or \introduce{tracking}---with
     the \texttt{LetterSpace} option.

@@ -148,7 +148,7 @@ This is done with optional arguments to \verb|\documentclass|:
 
 Other commands take no arguments at all, such as \verb|\LaTeX|,
 which prints the \LaTeX{} logo.
-Know that these commands consume any space that follows them.
+These commands consume any space that follows them.
 For example,
 \begin{leftfigure}
 \begin{lstlisting}
@@ -197,7 +197,7 @@ will produce
 \end{leftfigure}
 Regardless of what comes after them, you must always add braces to
 the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,).
-This is a relic from days when these commands were also used to produce
+This is a relic from the days when these commands were used to produce
 \introduce{diacritical marks}:
 once upon a time, users had to typeset ``jalapeño'' as
 \verb|jalape\~no|.
@@ -208,7 +208,7 @@ and your editor.
 Later on, we'll talk much more about non-English languages and Unicode fun.}
 
 If you're wondering why we print \texttt{\textbackslash} with
-\verb|\textbackslash| instead of just \verb|\\|,
+\verb|\textbackslash| instead of \verb|\\|,
 it's because the latter is the command to force a line break.
 \begin{leftfigure}
 \begin{lstlisting}
@@ -229,8 +229,8 @@ is one of \LaTeX{}'s greatest skills.
 We often format text in \LaTeX{} by placing it into \introduce{environments}.
 These always start with \verb|\begin{name}| and conclude with \verb|\end{name}|,
 where \texttt{name} is that of the desired environment.
-Take \texttt{quote}, which adds additional spacing on both sides of a block
-quotation:
+Take the \texttt{quote} environment,
+which adds additional space on both sides of a block quotation:
 \begin{leftfigure}
 \begin{lstlisting}
 Donald Knuth once wrote,
@@ -257,7 +257,7 @@ Yet we should not pass up our opportunities in that critical 3\%.
 \section{Groups and command scope}
 Some commands change how \LaTeX{} typesets the following text.
 \verb|\itshape|, for example, \textit{italicizes} everything that comes after it.
-To limit a command's effect to a certain region, we surround with braces.
+To limit a command's influence to a certain region, we surround it with braces.
 \begin{leftfigure}
 \begin{lstlisting}
 {\itshape Sometimes we want italics}, but only sometimes.
@@ -288,5 +288,5 @@ use upright type again.
 \end{quote}
 See? Back to normal.
 \end{leftfigure}
-One other use of groups is to get around the spacing oddities of zero-argument
+Another use of groups is to address the spacing oddities of zero-argument
 commands: some prefer \verb|{\LaTeX}| over \verb|\LaTeX{}|.

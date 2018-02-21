@@ -51,12 +51,12 @@ A (mostly) complete list follows:
 \end{tabularx}
 \end{leftfigure}
 The first form (which takes the text to format as an argument)
-should usually be preferred over the second
+should be preferred over the second
 (which affect the group in which they are issued),
 since the former automatically handle any
 spacing corrections needed around them.\punckern\footnote{For example,
 \textit{italic type} amidst upright type should be followed
-by a slight amount of extra space, called an ``italic correction''\quotekern.}
+by a slight amount of additional space, called an ``italic correction''\quotekern.}
 However, there are cases where the second variety is the only option:
 \begin{enumerate}
 \item When formatting multiple paragraphs. \\
@@ -136,7 +136,7 @@ and the \introduce{x-height} refers to the size of lowercase letters.}
 
 If the previous commands don't give you a size you need,
 you can create custom ones with \verb|\fontsize|,
-which takes both the desired point size and the
+which takes both a text size and a
 distance between baselines.
 This must be followed with \verb|\selectfont| to take effect.
 For example, \texttt{\textbackslash fontsize\{30pt\}\allowbreak\{30pt\}%
@@ -145,14 +145,15 @@ gives:
 \begin{leftfigure}
 \lm
 \fontsize{30pt}{30pt}\selectfont
-large type with no extra \\
-space between lines
+large type with no \\
+additional space \\
+between lines
 \end{leftfigure}
 {\fontsize{10pt}{10pt}\selectfont
-Note that without extra spacing,
+Note that without additional spacing,
 or \introduce{leading},\punckern\footnote{This term comes from the days of
 metal type, when strips of lead were inserted
-between lines to give them extra spacing.}
+between lines to space them out.}
 descenders from one line nearly collide with ascenders and capitals on
 the line below.
 Leading is important---without it, blocks of text become uncomfortable to

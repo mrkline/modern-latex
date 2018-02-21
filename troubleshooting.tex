@@ -16,7 +16,7 @@ stretching or shrinking the space in each line by up to the provided
 width.\punckern\footnote{\LaTeX{} has pretty sane default limits to how much
 it stretches and shrinks spacing in a paragraph.
 You probably don't want to make \texttt{<width>} larger than an em or two.}
-If that still doesn't help, try tweaking the paragraph's wording.
+If that still doesn't help, try tweaking the wording of guilty paragraphs.
 This can be frustrating, but the alternative is for \LaTeX{} to create spacing
 that is too loose---where\quad
 words\quad have\quad large\quad gaps\quad between\quad
@@ -39,12 +39,7 @@ contents of several pages,
 so \TeX{} simply chooses each page break as best it can, by a process of
 `local' rather than `global' optimization.\quotekern''\,\endnote{Knuth,
 \textit{The \TeX book}, 110}}
-You can increase the ``penalty'' for doing so in order to make \LaTeX{}
-try harder to avoid it\footnote{When considering a given layout,
-\LaTeX{} assigns penalties, or ``badness''\quotekern,
-to anything that arguably makes a document look worse.
-It chooses whichever layout it can find with the least badness.}
-with:
+You can make \LaTeX{} try harder to avoid orphans and widows with:
 \begin{leftfigure}
 \begin{lstlisting}
 \widowpenalty=<penalty>
@@ -52,10 +47,14 @@ with:
 \end{lstlisting}
 \end{leftfigure}
 \verb|<penalty>| is a value between 0 and 10000.
-At their maximum, \LaTeX{} is never allowed to leave orphans or widows,
-at \emph{any} cost.
+When these values are maximized,
+\LaTeX{} is never allowed to leave orphans or widows,
+at \emph{any} cost.\punckern\footnote{When considering a given layout,
+\LaTeX{} assigns penalties, or ``badness''\quotekern,
+to anything that arguably makes a document look worse.
+It chooses whichever layout it can find with the least badness.}
 This may cause odd layouts to be chosen,
-so be sure to review your final layout when picking large penalties.
+so be sure to review your pages if you choose large penalties.
 
 \section{Handling syntax errors}
 If you confuse \LaTeX{}---say, by issuing commands that don't exist,

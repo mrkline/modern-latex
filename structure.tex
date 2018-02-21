@@ -15,7 +15,7 @@ Hello, World!
 \end{document}
 \end{lstlisting}
 \end{leftfigure}
-The space between the \verb|\documentclass| command and the start of the
+The area between the \verb|\documentclass| command and the beginning of the
 \texttt{document} environment is called the \introduce{preamble}.
 Here, we perform any setup we need---such as importing packages
 and defining commands---to control how our document
@@ -23,7 +23,7 @@ will look.
 As mentioned in \chapref{installation},
 \introduce{packages} are bits of code that modify your document
 in interesting ways.
-The ones in your \LaTeX{} distribution come from the Comprehensive \TeX{}
+The ones found in your \LaTeX{} distribution come from the Comprehensive \TeX{}
 Archive Network, or \acronym{ctan},\punckern\footnote{Curious readers may
 be wondering what \TeX{} is, and how it differs from \LaTeX.
 The short version is that \TeX{} is the typesetting system that \LaTeX{}
@@ -38,9 +38,9 @@ Package manuals are also found there,
 so it should be your first stop when learning how to use one.
 
 To import a package, add a \verb|\usepackage| command,
-with the package's name as the argument.
-As a simple example, let's make a document with the \texttt{metalogo}
-package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX| commands.
+with the package's name as its argument.
+As a simple example, let's write a document with the \texttt{metalogo}
+package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX|:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
@@ -61,7 +61,8 @@ should get you a \textsc{pdf} that reads
 Like other commands, \verb|\usepackage| accepts optional arguments.
 The \texttt{geometry} package, for instance,
 takes your desired paper size and margins.
-For \acronym{us} letter paper with one-inch margins, you type:\footnote{Notice
+For \acronym{us}~\textsc{l}etter paper with one-inch margins,
+you type:\footnote{Notice
 that command arguments can be spaced in whatever way is most convenient to you,
 so long as there are no empty lines between arguments.}
 \begin{leftfigure}
