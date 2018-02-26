@@ -23,7 +23,7 @@ more ubiquitous formats.}
     One major improvement over TrueType is its ability to embed
     various ``features''\quotekern, such as alternative glyphs
     and spacing options, in a single font file.
-    OpenType files generally end in an \monobox{.otf} extension.
+    OpenType files usually end in an \monobox{.otf} extension.
 \end{description}
 
 \section{Changing fonts}
@@ -74,10 +74,10 @@ weights and styles---a typical set includes upright,
 \textit{italics},
 \textbf{bold}, and
 \textit{\textbf{bold italics}}.
-Given the name of the typeface,
-\texttt{fontspec} can generally deduce the names of these
+Given a typeface's name,
+\texttt{fontspec} can usually deduce the names of its
 files.\punckern\footnote{This is
-one of the places \XeLaTeX{} and \LuaLaTeX{}
+one of the places where \XeLaTeX{} and \LuaLaTeX{}
 differ in a way that's noticeable to the casual user.
 The former generally uses system libraries---such as FontConfig on Linux---to
 locate files from a typeface's name.
@@ -89,7 +89,8 @@ to the \texttt{fontspec} manual for details.
 If you have trouble getting \LaTeX{} to find your fonts,
 try rebuilding your system's font cache.
 (Figuring out how to do so is left as a web search for the reader.)}
-However, many typefaces come in more than two weights---some versions of Futura,
+
+However, many typefaces come in more than two weights---some cuts of Futura,
 for example, come in
 {\fontspec[Scale=MatchLowercase]{Futura-Lig}light},
 {\fontspec[Scale=MatchLowercase]{Futura-Boo}book},
@@ -107,7 +108,6 @@ will dutifully switch to them whenever you use
 \monobox{\textbackslash textsc} or \monobox{\textbackslash scshape}.
 But for TrueType, and for OpenType fonts that don't take advantage of this
 feature, you'll have to load a separate file as shown here.}
-
 We might want to hand-pick weights to achieve a certain look or better match the
 weights of other fonts in our document.\punckern\footnote{Compare how
 {\fontspec[Scale=MatchLowercase]{Futura-Lig}the light,}
@@ -165,11 +165,11 @@ used carefully, can produce amazing results.}
 
 As mentioned at the start of the chapter,
 OpenType fonts provide various features that can be turned on and off.
-In \LaTeX{}, these are controlled with optional arguments to
-\verb|\setmainfont| and friends.
+In \LaTeX{}, these are controlled through \texttt{fontspec}
+with optional arguments to \verb|\setmainfont| and friends.
 They can also be set for the current group with
 \verb|\addfontfeature|.
-Let's touch on a few common ones.
+Let's examine a few common ones.
 
 \subsection{Ligatures}
 
@@ -227,7 +227,7 @@ or use the \texttt{selnolig} package to handle most of these cases automatically
 When setting figures,\punckern\footnote{\introduce{Figure}
 here refers to what some might call a \introduce{numeral} or
 \introduce{digit}---i.e., 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
-Typographers generally prefer the first term to the other two.}
+Typographers generally prefer the first term over the other two.}
 you have two
 choices to make: lining versus oldstyle,
 and proportional versus tabular.
@@ -240,7 +240,7 @@ A B C D 1 2 3 4
 \introduce{Oldstyle}, or \introduce{text} figures,
 share more similarities with lowercase letters:
 \begin{leftfigure}
-Sitting cross-legged on the floor\ldots{} 25 or 6 to 4?
+Sitting cross-legged on the floor\dots{} 25 or 6 to 4?
 \end{leftfigure}
 For body text, either choice is fine, but oldstyle figures shouldn't
 be combined with capital letters.
@@ -261,7 +261,7 @@ Gadgets & 42 & \$5.37 \\
 Widgets & 18 & \$12.76 \\
 \end{tabular}
 \end{leftfigure}
-Proportional figures are the opposite---their spacing is, well\ldots{}
+Proportional figures are the opposite---their spacing is, well\dots{}
 \emph{proportional} to the width of the figure.
 They are usually preferred in body text, where 1837
 looks a bit nicer than
@@ -276,10 +276,10 @@ You select figures with the following options:
  & \texttt{Tabular / Monospaced}
 \end{tabular}
 \end{leftfigure}
-As with ligatures, traits can be combined:
-you get proportional lining figures
+As with ligature options, these can be combined:
+proportional lining figures are set
 with \texttt{Numbers=\allowbreak\{Proportional,\allowbreak Lining\}},
-or tabular oldstyle ones via
+and tabular oldstyle ones are set with
 \texttt{Numbers=\allowbreak\{Tabular,\allowbreak OldStyle\}}.
 Each option also has a corresponding \verb|*Off|
 variant.\punckern\footnote{This is especially useful since fonts
@@ -291,7 +291,7 @@ and return to lining figures (the defaults) with
 
 Finally, some fonts provide \introduce{superior and inferior} figures,
 which are used for ordinals
-(\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \ldots),
+(\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \dots),
 fractions (\,\otffrac{25}{624}\,), and so on.
 These have the same weight as the rest of the font's characters,
 offering a more consistent look than shrunken versions of full-sized figures.
@@ -312,7 +312,7 @@ and inferiors are set with \texttt{VerticalPosition=\allowbreak Inferior}.
 \section{What next?}
 \begin{itemize}
 \item Learn how \texttt{fontspec} can choose between optical sizes based on
-    point size, either automatically via OpenType,
+    point size, either automatically from ranges embedded in OpenType fonts,
     or manually using \texttt{SizeFeatures}.
 \item Experiment with letter spacing---or \introduce{tracking}---with
     the \texttt{LetterSpace} option.

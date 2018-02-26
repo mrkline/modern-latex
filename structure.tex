@@ -76,7 +76,7 @@ so long as there are no empty lines between arguments.}
 \section{Titles, sections, and tables of contents}
 
 Authors often create hierarchy to help readers navigate their work.
-\LaTeX{} provides seven different commands to break apart your document:
+\LaTeX{} provides seven different commands to break up your document:
 \verb|\part|, \verb|\chapter|, \verb|\section|, \verb|\subsection|,
 \verb|\subsubsection|, \verb|\paragraph|, and \verb|\subparagraph|.
 To use one, issue the command where you want that section to start,
@@ -104,15 +104,13 @@ Goodbye!
 Some levels may not be available depending on the document class
 you've chosen. Chapters, for example, only appear in books.
 And don't go too crazy with these commands.
-Most works only benefit a few levels of hierarchy.
+Most works only benefit from a few levels of hierarchy.
 
 Sections\footnote{By this I mean all levels, not just
 \texttt{\textbackslash section}.}
 are automatically numbered---for example,
 the title of this chapter was produced with \verb|\chapter{Document Structure}|,
 and \LaTeX{} figured out that it was chapter~\ref{structure}.
-You can also have \LaTeX{} build you a table of contents
-with the \verb|\tableofcontents| command.
 
 \section{What next?}
 
@@ -125,6 +123,8 @@ Consider learning how to:
 \begin{itemize}
 \item Automatically start your document with its title, the author's name,
     and the date using \verb|\maketitle|.
+\item Have \LaTeX{} build you a table of contents
+    with \verb|\tableofcontents|.
 \item Control section numbering with \verb|\setcounter{secnumdepth}|
 and ``starred'' section commands, e.g., \verb|\subsection*{foo}|.
 \item Create auto-updating cross-references with \verb|\label| and \verb|\ref|.

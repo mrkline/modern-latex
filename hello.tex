@@ -67,9 +67,9 @@ is ignored by the engine,
 so we can use \texttt{\%} to leave notes for anybody reading
 the document's source.\punckern\footnote{Including, perhaps most importantly,
 a confused version of your future self!}
-Finally, we use \verb|\begin{document}| to tell \LaTeX{} that what follows
+Finally, \verb|\begin{document}| tells \LaTeX{} that what follows
 is our actual contents,
-and we use \verb|\end{document}| to state that we are finished.
+and \verb|\end{document}| states that we are finished.
 
 Let's cover some more basics.
 
@@ -130,7 +130,7 @@ so if some command needed two arguments, we would type:
 \end{leftfigure}
 Many commands also take optional arguments, which precede the mandatory ones,
 are enclosed in square brackets, and are separated by commas.
-Say you want to inform \LaTeX{} that your document will printed as double-sided
+Say you want to inform \LaTeX{} that your document should be printed as double-sided
 pages\footnote{\texttt{twoside} introduces commands
 that only make sense in the context of double-sided printing,
 such as ones that skip to the start of the next odd page.
@@ -205,7 +205,8 @@ Today, we just type \texttt{ñ} into our source
 file.\punckern\footnote{The ease with which you can do this depends
 on the keyboard you're using, the language settings in your \acronym{os},
 and your editor.
-Later on, we'll talk much more about non-English languages and Unicode fun.}
+We'll talk much more about non-English languages and Unicode fun
+in \chapref{i18n}.}
 
 If you're wondering why we print \texttt{\textbackslash} with
 \verb|\textbackslash| instead of \verb|\\|,
@@ -226,7 +227,7 @@ is one of \LaTeX{}'s greatest skills.
 
 \section{Environments}
 
-We often format text in \LaTeX{} by placing it into \introduce{environments}.
+We often format text in \LaTeX{} by placing it in \introduce{environments}.
 These always start with \verb|\begin{name}| and conclude with \verb|\end{name}|,
 where \texttt{name} is that of the desired environment.
 Take the \texttt{quote} environment,
@@ -263,7 +264,7 @@ To limit a command's influence to a certain region, we surround it with braces.
 {\itshape Sometimes we want italics}, but only sometimes.
 \end{lstlisting}
 \end{leftfigure}
-is set as
+becomes
 \begin{leftfigure}
 \lm {\itshape Sometimes we want italics}, but only sometimes.
 \end{leftfigure}
