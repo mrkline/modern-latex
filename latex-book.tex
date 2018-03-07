@@ -5,9 +5,7 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11pt, numbers=endperiod, draft=off]{scrbook}
-% Don't draw rulers in draft mode.
-\usepackage[draft=false]{scrlayer-scrpage}
+\documentclass[fontsize=11pt, numbers=endperiod, draft=on]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
@@ -15,7 +13,7 @@
 \usepackage[paperwidth=6.25in, paperheight=9.25in,
             layoutwidth=6in, layoutheight=9in,
             layouthoffset=0.125in, layoutvoffset=0.125in,
-            inner=0.7in,outer=0.5in,top=0.5in,bottom=0.5in,
+            inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
             includefoot,
            ]{geometry}
 
@@ -133,7 +131,7 @@
     linefill = \TOCLineLeaderFill
 ]{tocline}{chapter}
 \DeclareTOCStyleEntry[%
-    beforeskip=1pt,
+    beforeskip=0pt,
     entrynumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     pagenumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     indent=0.4in
@@ -175,7 +173,7 @@
 \usepackage{tabularx}
 
 % Custom footer
-\usepackage{scrlayer-scrpage}
+\usepackage[draft=false]{scrlayer-scrpage}
 \clearpairofpagestyles
 \pagestyle{scrheadings}
 \setkomafont{pagefoot}{\upshape}
@@ -202,9 +200,9 @@
 {
     language=[LaTeX]TeX,
     breaklines=false,
-    basicstyle=\ttfamily\small,
-    keywordstyle=\ttfamily\small,
-    commentstyle=\ttfamily\small,
+    basicstyle=\ttfamily,
+    keywordstyle=\ttfamily,
+    commentstyle=\ttfamily,
 }
 
 \newenvironment{leftfigure}
@@ -219,7 +217,7 @@
 
 \usepackage{csquotes}
 
-\title{Modern LaTeX}
+\title{Modern \texorpdfstring{\LaTeX}{LaTeX}}
 \author{Matt Kline}
 \date{\today}
 
@@ -312,7 +310,17 @@ Matt Kline
 \null
 \vfill
 Some crappy draft, typeset \today.
-\vspace*{0.5in}
+
+Changes since the last proof include:
+\begin{itemize}
+\item The top margin was increased to \otffrac{3}{4}\,in.
+\item The outer margin was increased by \otffrac{1}{20}\,in,
+    and the inner margin was decreased by the same amount.
+\item Monospaced code listings were grown to match the body text size
+    (11\,pt).
+\item Minor spacing tweaks were made to the table of contents.
+\end{itemize}
+\vfill
 
 The author apologizes for any typos, misattributions, and other flubs.
 He welcomes you to point them out on this book's Github
