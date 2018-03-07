@@ -3,9 +3,9 @@
 \section{Justification and alignment}
 
 \LaTeX{} justifies text outstandingly well.
-Instead of considering each line individually---as most word processors and
+Instead of considering lines individually---as most word processors and
 web browsers do---it examines all possible line breaks in a given paragraph,
-then chooses those that give the best overall
+then picks those that give the best overall
 spacing.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
 \textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
 Combined with its ability to automatically hyphenate words,
@@ -65,7 +65,7 @@ And this text is flush right.
 
 \section{Lists}
 
-\LaTeX{} provides three environments for lists:
+\LaTeX{} provides three list environments:
 \texttt{itemize}, \texttt{enumerate}, and \texttt{description}.
 In all three, items starts with \verb|\item| commands.
 The \texttt{itemize} environment uses bullets.
@@ -122,8 +122,8 @@ then indents lines that follow:
     He is perhaps most remembered for his model of
     computation, the Turing machine.
 \item[Edsger Dijkstra] was a Dutch computer scientist.
-    His contributions in many subdomains---such as concurrency
-    and graph theory---are still in wide use today.
+    His contributions in many subdomains---such as
+    concurrency and graph theory---are still in wide use.
 \item[Leslie Lamport] is an American computer scientist.
     He defined the concept of sequential consistency,
     which is used to safely communicate between tasks
@@ -134,21 +134,19 @@ then indents lines that follow:
 gives us
 \begin{leftfigure}
 \lm%
-\begin{minipage}{0.9\textwidth}
 \begin{description}[leftmargin=*]
 \item[\lm Alan Turing] was a British mathematician who laid much
     of the groundwork for the field of computer science.
     He is perhaps most remembered for his model of computation,
     the Turing machine.
 \item[\lm Edsger Dijkstra] was a Dutch computer scientist.
-    His contributions in many subdomains---such as concurrency
-    and graph theory---are still in wide use today.
+    His contributions in many subdomains---such as
+    concurrency and graph theory---are still in wide use.
 \item[\lm Leslie Lamport] is an American computer scientist.
     He defined the concept of sequential consistency,
     which is used to safely communicate between tasks
     running in parallel on multiple processors.
 \end{description}
-\end{minipage}
 \end{leftfigure}
 
 \section{Columns}
@@ -172,7 +170,7 @@ combine arbitrary layouts.
 \begin{multicols}{2}
 In this example we start with one column,
 then create a short section with two.
-The package ensures that the text inside is split
+The \texttt{multicols} environment splits the text
 so that each column is about the same height.
 \end{multicols}
 \end{lstlisting}
@@ -185,7 +183,7 @@ combine arbitrary layouts.
 \begin{multicols}{2}
 In this example we start with one column,
 then create a short section with two.
-The package ensures that the text inside is split
+The \texttt{multicols} environment splits the text
 so that each column is about the same height.
 \end{multicols}
 \end{leftfigure}
@@ -224,8 +222,8 @@ KOMA~Script options, or with the \texttt{parskip} package.
 \item Customize list formatting with the \texttt{enumitem} package.
 \item Create tables with the \texttt{tabular} environment.
 \item Align text with tab stops using the \texttt{tabbing} environment.
-\item Choose footnote symbols and layout with KOMA~Script and the
-    \texttt{footmisc} package.
+\item Customize footnote symbols and layout with the
+    \texttt{footmisc} package and KOMA~Script.
 \item Insert horizontal and vertical space with commands like
     \verb|\vspace|, \verb|\hspace|, \verb|\vfill|, and \verb|\hfill|.
 \item Learn what units \LaTeX{} provides for specifying spacing. \\

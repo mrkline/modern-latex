@@ -19,10 +19,10 @@ more ubiquitous formats.}
     Most of the fonts that come pre-installed on your system are likely
     in this format.
     TrueType files generally end in a \monobox{.ttf} extension.
-\item[OpenType] was first released in 1996 by Microsoft and Adobe.
-    One major improvement over TrueType is its ability to embed
+\item[OpenType] was first released by Microsoft and Adobe in 1996.
+    Improvements over TrueType include its ability to embed
     various ``features''\quotekern, such as alternative glyphs
-    and spacing options, in a single font file.
+    and spacing options, into a single font file.
     OpenType files usually end in an \monobox{.otf} extension.
 \end{description}
 
@@ -279,7 +279,7 @@ You select figures with the following options:
 As with ligature options, these can be combined:
 proportional lining figures are set
 with \texttt{Numbers=\allowbreak\{Proportional,\allowbreak Lining\}},
-and tabular oldstyle ones are set with
+and tabular oldstyle figures are set with
 \texttt{Numbers=\allowbreak\{Tabular,\allowbreak OldStyle\}}.
 Each option also has a corresponding \verb|*Off|
 variant.\punckern\footnote{This is especially useful since fonts
@@ -290,12 +290,12 @@ and return to lining figures (the defaults) with
 \texttt{Numbers=\allowbreak OldStyleOff}.}
 
 Finally, some fonts provide \introduce{superior and inferior} figures,
-which are used for ordinals
+which are used to set ordinals
 (\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \dots),
 fractions (\,\otffrac{25}{624}\,), and so on.
-These have the same weight as the rest of the font's characters,
+They have the same weight as the rest of the font's characters,
 offering a more consistent look than shrunken versions of full-sized figures.
-(Compare the above to
+(Compare the examples above to
 {\fontspec[OpticalSize=0]{garamondpremrpro}%
 \mbox{1\textsuperscript{st}},
 \mbox{2\textsuperscript{nd}},

@@ -15,7 +15,7 @@ Hello, World!
 \end{document}
 \end{lstlisting}
 \end{leftfigure}
-The area between the \verb|\documentclass| command and the beginning of the
+The area between the \verb|\documentclass| command and the start of the
 \texttt{document} environment is called the \introduce{preamble}.
 Here, we perform any setup we need---such as importing packages
 and defining commands---to control how our document
@@ -73,10 +73,10 @@ so long as there are no empty lines between arguments.}
 \end{lstlisting}
 \end{leftfigure}
 
-\section{Titles, sections, and tables of contents}
+\section{Titles, sections, and other hierarchy}
 
-Authors often create hierarchy to help readers navigate their work.
-\LaTeX{} provides seven different commands to break up your document:
+Authors often split their works into sections to help readers navigate them.
+\LaTeX{} offers seven different commands to break up your documents:
 \verb|\part|, \verb|\chapter|, \verb|\section|, \verb|\subsection|,
 \verb|\subsubsection|, \verb|\paragraph|, and \verb|\subparagraph|.
 To use one, issue the command where you want that section to start,
@@ -126,11 +126,11 @@ Consider learning how to:
 \item Have \LaTeX{} build you a table of contents
     with \verb|\tableofcontents|.
 \item Control section numbering with \verb|\setcounter{secnumdepth}|
-and ``starred'' section commands, e.g., \verb|\subsection*{foo}|.
+and starred section commands, e.g., \verb|\subsection*{foo}|.
 \item Create auto-updating cross-references with \verb|\label| and \verb|\ref|.
 \item Use KOMA~Script, a set of document classes and packages
 that make it easy to customize nearly every aspect of your document,
-from section heading fonts to footnotes.
+from heading fonts to footnotes.
 \item Include images with the \texttt{graphicx} package.
 \item Add hyperlinks to your \acronym{pdf} with the \texttt{hyperref} package.
 \item Split large documents into multiple files using \verb|\input|.

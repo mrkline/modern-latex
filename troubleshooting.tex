@@ -20,7 +20,7 @@ If that still doesn't help, try tweaking the wording of guilty paragraphs.
 This can be frustrating, but the alternative is for \LaTeX{} to create spacing
 that is too loose---where\quad
 words\quad have\quad large\quad gaps\quad between\quad
-them---or too tight, where\! words\! are\! uncomfortably\! crammed\! together.
+them---or too tight, where\! words\! are\! awkwardly\! crammed\! together.
 
 \section{Avoiding widows and orphans}
 
@@ -30,8 +30,8 @@ page.
 They also avoid \introduce{orphan}, or \introduce{club} lines,
 which are ``left behind'' on the previous page while the rest of the paragraph
 begins the next.
-\LaTeX{} takes some effort to avoid these, but unfortunately, the algorithm it
-uses to split pages is much more simplistic than the one it uses
+\LaTeX{} tries to avoid these, but unfortunately, its page-splitting algorithm
+is much more simplistic than the one it uses
 to split paragraphs into lines.\punckern\footnote{This is because
 1980s computers didn't have enough \acronym{ram} to do so. Seriously:
 ``The computer doesn't have enough high-speed memory capacity to remember the
@@ -65,7 +65,7 @@ the problem and the number of the line(s) it occurred on. Occasionally,
 \cpp{} template errors a run for their money.
 As you continue to use \LaTeX, you'll start to get a feel for what sorts of
 mistakes cause these rare, but enigmatic messages.}
-then drop into an interactive prompt starting with \texttt{?}\,.
+then display an interactive prompt starting with \texttt{?}\,.
 Here you can enter various instructions for how to proceed.
 Once upon a time, when computers were thousands of times slower and
 \LaTeX{} took that much longer to re-run, this was more useful.

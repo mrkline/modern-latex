@@ -34,8 +34,8 @@ so too much is distracting.
 
 The styles shown above are just a few of the many available to you.
 A (mostly) complete list follows:
-\begin{leftfigure}
-\lm
+\begin{flushleftfigure}
+\lm%
 \begin{tabularx}{0.9\textwidth}{l|l|l}
 {\normalfont Command} & {\normalfont Alternative} & {\normalfont Style} \\
 \hline
@@ -49,7 +49,7 @@ A (mostly) complete list follows:
 \verb|\textsc{...}| & \verb|{\scshape ...}| & \textsc{Small Capitals} \\
 \verb|\textbf{...}| & \verb|{\bfseries ...}| & \textbf{boldface} \\
 \end{tabularx}
-\end{leftfigure}
+\end{flushleftfigure}
 The first form (which takes the text to format as an argument)
 should be preferred over the second
 (which affect the group in which they are issued),
@@ -57,15 +57,11 @@ since the former automatically handle any
 spacing corrections needed around them.\punckern\footnote{For example,
 \textit{italic type} amidst upright type should be followed
 by a slight amount of additional space, called an ``italic correction''\quotekern.}
-However, there are cases where the second variety is the only option:
-\begin{enumerate}
-\item When formatting multiple paragraphs. \\
-(Command arguments cannot contain paragraph breaks.)
-\item When defining the style of other commands.\punckern\footnote{%
+However, when formatting multiple paragraphs,
+or when defining the style of other commands,\punckern\footnote{%
 For example, this book's section headers are styled with
 \texttt{\textbackslash Large\allowbreak\textbackslash itshape}.}
-
-\end{enumerate}
+the second variety is the only option.
 
 \section{Sizes}
 
@@ -81,10 +77,11 @@ but this can be adjusted by passing additional arguments to
 KOMA~Script classes accept arbitrary sizes with
 \monobox{fontsize=<size>}.}
 To scale text relative to this size, use the following commands:
-\begin{leftfigure}
-\lm
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{l l}
+\begin{flushleftfigure}
+\lm%
+\renewcommand{\arraystretch}{1.1}%
+% Use longtable so that we can stretch multiple pages.
+\begin{longtable}[l]{l l}
 \verb|\tiny| & \tiny Example Text \\
 \verb|\scriptsize| & \scriptsize Example Text \\
 \verb|\footnotesize| & \footnotesize Example Text \\
@@ -95,9 +92,9 @@ To scale text relative to this size, use the following commands:
 \verb|\LARGE| & \LARGE Example Text \\
 \verb|\huge| & \huge Example Text \\
 \verb|\Huge| & \Huge Example Text \\
-\end{tabular}
-\end{leftfigure}
-There are some subtleties at play here.
+\end{longtable}
+\end{flushleftfigure}
+Some subtleties are at play here.
 \LaTeX's default type family, Latin Modern,
 comes in multiple \introduce{optical sizes}.
 Smaller fonts aren't just shrunken versions of their big siblings---they

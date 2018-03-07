@@ -5,15 +5,13 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11pt, numbers=endperiod, draft=on]{scrbook}
+\documentclass[fontsize=11pt, numbers=endperiod, draft=off]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
 % We're aiming for 80-ish characters per line.
-\usepackage[paperwidth=6.25in, paperheight=9.25in,
-            layoutwidth=6in, layoutheight=9in,
-            layouthoffset=0.125in, layoutvoffset=0.125in,
-            inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
+\usepackage[a5paper,
+            inner=0.65in,outer=0.55in,top=0.7in,bottom=0.5in,
             includefoot,
            ]{geometry}
 
@@ -201,9 +199,15 @@
     commentstyle=\ttfamily,
 }
 
+
 \newenvironment{leftfigure}
   {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{1.5em}{0pt}}
   {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
+
+% Like the above, but with no adjustwidth
+\newenvironment{flushleftfigure}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}}
+  {\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
 
 \newenvironment{centerfigure}
   {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{1.5em}{1.5em}\centering}
@@ -212,6 +216,8 @@
 \usepackage{graphicx}
 
 \usepackage{csquotes}
+
+\usepackage{longtable}
 
 \title{Modern \texorpdfstring{\LaTeX}{LaTeX}}
 \author{Matt Kline}
@@ -290,6 +296,7 @@
 
 % Custom title instead of \maketitle
 \pagenumbering{gobble}
+{\raggedright%For the page
 \vspace*{1.5in}
 \begin{center}
 \fontsize{0.5in}{0.7in}\selectfont
@@ -309,7 +316,10 @@ Some crappy draft, typeset \today.
 
 Changes since the last proof include:
 \begin{itemize}
-\item The top margin was increased to \otffrac{3}{4}\,in.
+\item The book is now designed for \textsc{a5} paper instead of
+    \textsc{us}~\textsc{t}rade.
+\item The top margin was increased to \otffrac{3}{4}\,in. \\
+    (Forgive this silly American for using \textsc{a5} paper with margins in inches.)
 \item The outer margin was increased by \otffrac{1}{20}\,in,
     and the inner margin was decreased by the same amount.
 \item Monospaced code listings were grown to match the body text size
@@ -340,6 +350,7 @@ Creative Commons Attribution-ShareAlike~4.0 International License. \\
 The license's full text is available at \\
 \https{creativecommons.org/licenses/by-sa/4.0/legalcode}
 }
+} % end ragged right
 \clearpage
 
 \vspace*{1in}
