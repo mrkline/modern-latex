@@ -47,12 +47,34 @@ Available (for free!) at \https{practicaltypography.com}
 
 \setkomafont{chapter}{\Huge\itshape}
 
-{\raggedright
-\renewcommand\makeenmark{\theenmark.\enspace}
 % Chicago Manual of Style, Notes & Bib style, ish.
 % http://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html
+\chapter{Notes}
+
+% Endnotes _mostly_ works... with Koma Script, no less.
+% I suppose I can only grumble a little about the hackery below.
+
+% The \llap in \enoteformat throws the endnote number into the margin.
+% To compensate, measure about the width of our widest endnote mark
+% (see \makeenmark)...
+\newlength{\enotewidth}
+\settowidth{\enotewidth}{00.\enspace}
+
+% We slapped down our own endnotes heading above with \chapter{Notes},
+% so make the package do nothing when it tries.
+\renewcommand\enoteheading{}
+% Use our normal figures here instead of the superiors we marked endnotes with
+% in the body text.
+\renewcommand\makeenmark{\theenmark.\enspace}
+% TeX hackery lifted from endnotes.sty
+% See https://www.tutorialspoint.com/tex_commands/llap.htm
+% https://tex.stackexchange.com/q/22852/92465
+\renewcommand\enoteformat{\leavevmode\llap{\makeenmark}}
+% Indent the whole section by our measured amount much.
+\begin{adjustwidth}{\enotewidth}{0pt}
+\raggedright
 \theendnotes
-}
+\end{adjustwidth}
 
 % Redefine cleardoublepage so the Colophon doesn't demand a front page.
 % From https://tex.stackexchange.com/a/24068/92465
