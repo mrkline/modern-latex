@@ -11,7 +11,8 @@
 % http://practicaltypography.com/line-length.html
 % We're aiming for 80-ish characters per line.
 \usepackage[a5paper,
-            inner=0.65in,outer=0.55in,top=0.7in,bottom=0.5in,
+            inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
+            footskip=3em,
             includefoot,
            ]{geometry}
 
@@ -129,7 +130,7 @@
     linefill = \TOCLineLeaderFill
 ]{tocline}{chapter}
 \DeclareTOCStyleEntry[%
-    beforeskip=0pt,
+    beforeskip=1pt,
     entrynumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     pagenumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     indent=0.4in
