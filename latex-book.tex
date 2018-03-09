@@ -59,6 +59,7 @@
         },
     },
 ]{Garamond Premier Pro}
+
 \setsansfont[Ligatures=TeX,
              Scale=MatchUppercase,
              Style=Alternate, % Straight-legged R
@@ -67,7 +68,24 @@
              BoldFont = *-65Md,
              BoldItalicFont = *-66MdIt
              ]{NHaasGroteskTXPro}
-\setmonofont[Scale=MatchLowercase]{mononoki}
+
+\setmonofont[
+    Numbers=SlashedZero,
+    % Scaling Fira to the lowercase size of body text makes it a _touch_
+    % too thin. That scale is about 0.74, so bump it a few percent and try that.
+    UprightFeatures={
+        SizeFeatures={
+            {Size={-10},Scale=MatchLowercase, Font=FiraMono-Medium},
+            {Size={10-},Scale=0.78, Font=FiraMono-Regular},
+        },
+    },
+    BoldFeatures={
+        SizeFeatures={
+            {Size={-10},Scale=MatchLowercase, Font=FiraMono-Bold},
+            {Size={10-},Scale=0.78, Font=FiraMono-Bold},
+        },
+    },
+]{Fira Mono}
 
 % We'll be using this quite a bit:
 \newfontfamily{\lm}[%
