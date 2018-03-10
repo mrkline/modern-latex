@@ -1,14 +1,14 @@
 \chapter{Typographie Internationale}
 \label{i18n}
 
-Surprisingly, many languages besides English exist.
+Surprisingly, languages besides English exist.
 You may want to use them.
 
 \section{Unicode}
 
 Digitizing human language is a complicated topic that has evolved significantly
-since \LaTeX's inception, but today,
-computers usually represent text with Unicode. Briefly,
+since \LaTeX's inception.
+Today, computers usually represent text with Unicode. Briefly,
 \begin{itemize}
 \item A Unicode text file is made from a series of \introduce{code points},
     each of which can represent a character to be drawn,
@@ -31,18 +31,18 @@ How many code points are they built from?}
 \item Modern font formats contain encoding tables
     which map code points to the glyphs the file contains.
 \end{itemize}
-\LuaLaTeX{} and \XeLaTeX{} use these tools to render documents
+\LuaLaTeX{} and \XeLaTeX{} use these tools to build documents
 from Unicode input
 files.\punckern\footnote{\LuaLaTeX{} accepts \mbox{\acronym{utf}-8} files,
 while \XeLaTeX{} is a bit more flexible and also
 accepts \mbox{\acronym{utf}-16} and
 \mbox{\acronym{utf}-32}.}
 Make sure that the fonts you select contain the glyphs you need---many
-only contain ones for Latin languages.
+only support Latin languages.
 
 \section{The polyglossia package}
 
-When your document contains any languages besides English,
+When your document contains languages besides English,
 consider using the \texttt{polyglossia} package.
 It will automatically:
 \begin{itemize}

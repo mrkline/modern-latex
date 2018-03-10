@@ -117,7 +117,7 @@ But points and optical sizes don't tell the whole story.
 Each typeface has its own proportions, which make a huge difference
 in perceived size.
 (Compare Garamond, {\fontspec{Latin Modern Roman} Latin Modern},
-and {\fontspec{NHaasGroteskDSPro-55Rg}Helvetica}, all at 11\,pt.)
+and {\fontspec{NHaasGroteskDSPro-45Lt}Helvetica}, all at 11\,pt.)
 Shown below are some common terms:
 \begin{centerfigure}
 \includegraphics[keepaspectratio,width=0.7\textwidth]{heights.png}
@@ -138,7 +138,7 @@ distance between baselines.
 This must be followed with \verb|\selectfont| to take effect.
 For example, \texttt{\textbackslash fontsize\{30pt\}\allowbreak\{30pt\}%
 \allowbreak\textbackslash selectfont}
-gives:
+produces
 \begin{leftfigure}
 \lm
 \fontsize{30pt}{30pt}\selectfont
@@ -166,4 +166,7 @@ see \textit{Practical Typography}, listed in Appendix~\ref{resources}.}
     but it has its uses.}
 \item Use KOMA~Script to change the size and style of your section headings.
 \item Learn the difference between italic and oblique type.
+\item Change the default text style
+    (used by \verb|\textnormal| and \verb|\normalfont|) by redefining
+    \verb|\familydefault|.
 \end{itemize}

@@ -63,6 +63,8 @@ Available (for free!) at \https{practicaltypography.com}
 % Use our normal figures here instead of the superiors we marked endnotes with
 % in the body text.
 \renewcommand\makeenmark{\theenmark.\enspace}
+% Normal size
+\renewcommand\enotesize{\normalsize}
 % TeX hackery lifted from endnotes.sty
 % See https://www.tutorialspoint.com/tex_commands/llap.htm
 % https://tex.stackexchange.com/q/22852/92465
@@ -77,7 +79,7 @@ Available (for free!) at \https{practicaltypography.com}
 % From https://tex.stackexchange.com/a/24068/92465
 {\let\cleardoublepage\clearpage \chapter{Colophon}}
 
-This guide was typeset with \LuaLaTeX{} in Garamond Premier by Robert Slimbach.
+This guide was typeset with \LuaLaTeX{} in Robert Slimbach's Garamond Premier.
 His revival is based on roman type by
 \otford{16}{th} century French
 punchcutter Claude Garamond.

@@ -79,7 +79,7 @@ Given a typeface's name,
 files.\punckern\footnote{This is
 one of the places where \XeLaTeX{} and \LuaLaTeX{}
 differ in a way that's noticeable to the casual user.
-The former generally uses system libraries---such as FontConfig on Linux---to
+The former uses system libraries---such as FontConfig on Linux---to
 locate files from a typeface's name.
 The latter has its own font loader,
 based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
@@ -153,7 +153,7 @@ Note that instead of typing out \monobox{Futura-Boo},
 Creating a cohesive design with multiple fonts is tricky,
 especially since typefaces might look completely different
 at the same point size.
-\texttt{fontspec} can help a bit here by scaling fonts to match either the
+\texttt{fontspec} can help here by scaling fonts to match either the
 x-height or the cap height of your main font with
 \verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
 respectively.\footnote{One way to sidestep this issue is to have fewer
@@ -218,9 +218,10 @@ does the trick.
 Some words are arguably typeset better without ligatures---a classic example
 is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
 (Addison-Wesley, 1986), 19}
-You can either manually prevent ligatures with a zero-width
-space, e.g., \verb|shelf\hspace{0pt}ful|,
-or use the \texttt{selnolig} package to handle most of these cases automatically.
+You can manually prevent ligatures with a zero-width
+space, e.g., \verb|shelf\hspace{0pt}ful|.
+You can also use the \texttt{selnolig} package to handle most of these cases
+automatically.
 
 \subsection{Figures}
 
@@ -286,7 +287,7 @@ variant.\punckern\footnote{This is especially useful since fonts
 select figures in different ways.
 In some, \texttt{Numbers=\allowbreak Lining} doesn't work,
 so you enable oldstyle figures with \monobox{Numbers=OldStyle}
-and return to lining figures (the defaults) with
+and return to lining figures (the default) with
 \texttt{Numbers=\allowbreak OldStyleOff}.}
 
 Finally, some fonts provide \introduce{superior and inferior} figures,
@@ -311,12 +312,12 @@ and inferiors are set with \texttt{VerticalPosition=\allowbreak Inferior}.
 
 \section{What next?}
 \begin{itemize}
-\item Learn how \texttt{fontspec} can choose between optical sizes based on
+\item Learn how \texttt{fontspec} can choose optical sizes based on
     point size, either automatically from ranges embedded in OpenType fonts,
     or manually using \texttt{SizeFeatures}.
 \item Experiment with letter spacing---or \introduce{tracking}---with
     the \texttt{LetterSpace} option.
     Extra tracking is unnecessary in most cases,
     but can be useful to make \textsc{small caps}
-    a bit more \acronym{readable}.
+    a little more \acronym{readable}.
 \end{itemize}

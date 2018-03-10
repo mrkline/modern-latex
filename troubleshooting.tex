@@ -8,7 +8,7 @@ Here are some common problems and what you can try to fix them.
 
 \mbox{When \LaTeX{} cannot fit a line into a paragraph with good spacing,
 it gives up, overflowing} the line into the margin.
-You can sometimes fix this with some ``emergency stretch''\quotekern.
+You can sometimes remedy this with some ``emergency stretch''\quotekern.
 When you add \texttt{\textbackslash emergencystretch=\allowbreak<width>}
 to the document's preamble,
 \LaTeX{} will try to set troublesome paragraphs a second time,
@@ -24,9 +24,9 @@ them---or too tight, where\! words\! are\! awkwardly\! crammed\! together.
 
 \section{Avoiding widows and orphans}
 
-Typesetters do their best to avoid \introduce{widow} lines---which appear
-separated from the rest of their paragraph at the start of the following
-page.
+Typesetters do their best to avoid \introduce{widow} lines,
+which appear separated from the rest of their paragraph at the start of the
+following page.
 They also avoid \introduce{orphan}, or \introduce{club} lines,
 which are ``left behind'' on the previous page while the rest of the paragraph
 begins the next.
@@ -66,11 +66,12 @@ the problem and the number of the line(s) it occurred on. Occasionally,
 As you continue to use \LaTeX, you'll start to get a feel for what sorts of
 mistakes cause these rare, but enigmatic messages.}
 then display an interactive prompt starting with \texttt{?}\,.
-Here you can enter various instructions for how to proceed.
+Here you can enter instructions for how to proceed.
 Once upon a time, when computers were thousands of times slower and
 \LaTeX{} took that much longer to re-run, this was more useful.
-Today, we likely just want to quit and try again once we've fixed our document.
-You do so by typing \texttt{X}, then pressing Enter.
+Today, we probably just want to quit,
+then try again once we've fixed our document.
+To exit the prompt, type \texttt{X}, then press Enter.
 Better yet, you can tell \LaTeX{} to give up as soon as it finds trouble
 by running your engine with the \monobox{-halt-on-error} flag:
 \begin{leftfigure}

@@ -2,10 +2,11 @@
 
 \section{Justification and alignment}
 
-\LaTeX{} justifies text outstandingly well.
-Instead of considering lines individually---as most word processors and
-web browsers do---it examines all possible line breaks in a given paragraph,
-then picks those that give the best overall
+\LaTeX{} justifies text remarkably well.
+Instead of considering lines individually---as most word processors,
+web browsers, and e-readers do---it examines all possible line breaks
+in a given paragraph,
+then picks the ones that give the best overall
 spacing.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
 \textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
 Combined with its ability to automatically hyphenate words,
@@ -27,8 +28,8 @@ use a \texttt{flushright} environment or \verb|\raggedleft|.
 \begin{leftfigure}
 \begin{lstlisting}
 \begin{flushleft}
-This text is flush left with a ragged right edge.
-Some prefer this layout since inter-word spacing
+This text is flush left, with a ragged right edge.
+Some prefer this layout since the space between words
 is more consistent than it is in justified text.
 \end{flushleft}
 
@@ -47,8 +48,8 @@ sets
 \begin{minipage}{0.7\textwidth}
 \lm%
 \begin{flushleft}
-This text is flush left with a ragged right edge.
-Some prefer this layout since inter-word spacing
+This text is flush left, with a ragged right edge.
+Some prefer this layout since the space between words
 is more consistent than it is in justified text.
 \end{flushleft}
 
@@ -65,7 +66,7 @@ And this text is flush right.
 
 \section{Lists}
 
-\LaTeX{} provides three list environments:
+\LaTeX{} provides multiple environments for creating lists:
 \texttt{itemize}, \texttt{enumerate}, and \texttt{description}.
 In all three, items starts with \verb|\item| commands.
 The \texttt{itemize} environment uses bullets.
@@ -90,7 +91,7 @@ you get
 \end{leftfigure}
 
 \bigskip
-\noindent The \texttt{enumerate} environment numbers your list:
+\noindent \texttt{enumerate} numbers its lists:
 \begin{leftfigure}
 \begin{lstlisting}
 \begin{enumerate}
@@ -155,10 +156,10 @@ We often split layouts into several columns, especially when printing on
 \textsc{a4} or \acronym{us}~\textsc{l}etter paper,
 since it allows more comfortable line widths at standard
 8--12\,pt text sizes.\punckern\footnote{You'll see different advice depending
-on where you look, but a rule of thumb is to design layouts to have
+on where you look, but as a rule of thumb, design layouts to have
 fewer than 90 characters (including spaces) per line.
 Shorter lines keep readers from needing to scan very far to find the start of
-the next line.
+the next one.
 This produces a more comfortable experience.}
 You can either add the \texttt{twocolumn} option to your document class,
 which splits everything in two, or you can use the \texttt{multicols}
@@ -201,7 +202,7 @@ printing, you can break to the front of the next page with
 Footnotes can be used to insert remarks which readers might
 find useful, but aren't crucial to the main text.
 The \verb|\footnote| command places a marker at its location in the
-body text, then sets its argument as a footnote at the bottom of the current
+body text, then sets its argument at the bottom of the current
 page:
 \begin{leftfigure}
 \begin{lstlisting}

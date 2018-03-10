@@ -1,4 +1,5 @@
 \chapter{Hello, \texorpdfstring{\LaTeX}{LaTeX}!}
+\label{hello}
 
 Now that you have a \LaTeX{} distribution installed,
 let's try it out.
@@ -18,9 +19,9 @@ or \LaTeX{} the flamethrower. The kids love this stuff!}
 to get our document.
 The installation placed several different versions---or
 \introduce{engines}---on your machine,
-but for this entire book, we'll always use \LuaLaTeX{} or \XeLaTeX.
-These are the newest engines available---see Appendix~\ref{history} for an
-explanation of how they differ from the others.
+but throughout this book, we'll always use the newest ones:
+\LuaLaTeX{} and \XeLaTeX.\punckern\footnote{See Appendix~\ref{history} for a
+comparison of all current \LaTeX{} engines.}
 
 If you are using a \LaTeX{}-specific editor, it probably contains a drop-down
 menu or some other means to select the engine you'd like to use,
@@ -59,7 +60,7 @@ which picks a base ``style'' to use.
 Many classes are available---and you can even create your own---but common
 ones include \texttt{article}, \texttt{report}, \texttt{book},
 and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
-The name is the German term for a projector.}
+The name is a German term for a projector.}
 \texttt{article} is probably a good choice for the average document.
 The next line, \verb|% Say hello|,
 is a \introduce{comment}---anything placed after a percent symbol on a line
@@ -76,7 +77,7 @@ Let's cover some more basics.
 \section{Spacing}
 
 \LaTeX{} generally handles inter-word spacing for you, regardless of how many
-times you hit the space bar.\punckern\footnote{Or the tab key}
+times you mash the space bar or tab key.
 For example,
 \begin{leftfigure}
 \begin{lstlisting}
@@ -139,8 +140,7 @@ such as ones that skip to the start of the next odd page.
 It also allows you to have different margins for even and odd pages,
 which is useful for texts like this book.}
 in 11~point
-type.\punckern\footnote{We'll discuss font sizes and much more in
-\chapref{formatting}.}
+type.\punckern\footnote{We'll discuss font sizes in \chapref{formatting}.}
 This is done with optional arguments to \verb|\documentclass|:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -148,8 +148,8 @@ This is done with optional arguments to \verb|\documentclass|:
 \end{lstlisting}
 \end{leftfigure}
 
-Other commands take no arguments at all, such as \verb|\LaTeX|,
-which prints the \LaTeX{} logo.
+Other commands take no arguments at all---\verb|\LaTeX|,
+which prints the \LaTeX{} logo, is one example.
 These commands consume any space that follows them.
 For example,
 \begin{leftfigure}
@@ -193,7 +193,7 @@ to print it in your document:
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 \end{lstlisting}
 \end{leftfigure}
-will produce
+produces
 \begin{leftfigure}
 \lm \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 \end{leftfigure}
@@ -211,7 +211,7 @@ We'll talk much more about non-English languages and Unicode fun
 in \chapref{i18n}.}
 
 If you're wondering why we print \texttt{\textbackslash} with
-\verb|\textbackslash| instead of \verb|\\|,
+\verb|\textbackslash| instead of \verb|\\|\,,
 it's because the latter is the command to force a line break.
 \begin{leftfigure}
 \begin{lstlisting}
@@ -273,7 +273,7 @@ becomes
 \lm {\itshape Sometimes we want italics}, but only sometimes.
 \end{leftfigure}
 The text within the braces forms a \introduce{group},
-and commands issued inside the group only take effect until it ends.
+and commands placed inside that group only take effect until it ends.
 Environments also form implicit groups:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -284,7 +284,7 @@ use upright type again.
 See? Back to normal.
 \end{lstlisting}
 \end{leftfigure}
-produces
+typesets
 \begin{leftfigure}
 \lm
 \begin{quote}
