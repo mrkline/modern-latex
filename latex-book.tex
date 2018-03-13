@@ -71,21 +71,26 @@
 
 \setmonofont[
     Numbers=SlashedZero,
-    % Scaling Fira to the lowercase size of body text makes it a _touch_
-    % too thin. That scale is about 0.74, so bump it a few percent and try that.
+    Scale=MatchLowercase,
     UprightFeatures={
         SizeFeatures={
-            {Size={-10}, Scale=MatchLowercase, Font=FiraMono-Medium},
-            {Size={10-}, Scale=0.76, Font=FiraMono-Regular},
+            {Size={-10}, Font=TRY_DriveMono-Book},
+            {Size={10-}, Font=TRY_DriveMono-Regular},
+        },
+    },
+    ItalicFeatures={
+        SizeFeatures={
+            {Size={-10}, Font=TRY_DriveMono-BookItalic},
+            {Size={10-}, Font=TRY_DriveMono-Italic},
         },
     },
     BoldFeatures={
-        SizeFeatures={
-            {Size={-10}, Scale=MatchLowercase, Font=FiraMono-Bold},
-            {Size={10-}, Scale=0.76, Font=FiraMono-Bold},
-        },
+        Font=TRY_DriveMono-Bold
     },
-]{Fira Mono}
+    BoldItalicFeatures={
+        Font=TRY_DriveMono-BoldItalic
+    },
+]{TRY Drive Mono}
 
 % We'll be using this quite a bit:
 \newfontfamily{\lm}[
