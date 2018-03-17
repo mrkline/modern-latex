@@ -80,19 +80,23 @@ To scale text relative to this size, use the following commands:
 \begin{flushleftfigure}
 \lm%
 \renewcommand{\arraystretch}{1.1}%
-% Use longtable so that we can stretch multiple pages.
-\begin{longtable}[l]{l l}
-\verb|\tiny| & \tiny Example Text \\
-\verb|\scriptsize| & \scriptsize Example Text \\
-\verb|\footnotesize| & \footnotesize Example Text \\
-\verb|\small| & \small Example Text \\
-\verb|\normalsize| & \normalsize Example Text \\
-\verb|\large| & \large Example Text \\
-\verb|\Large| & \Large Example Text \\
-\verb|\LARGE| & \LARGE Example Text \\
-\verb|\huge| & \huge Example Text \\
-\verb|\Huge| & \Huge Example Text \\
-\end{longtable}
+\begin{tabular}{l l}
+\texttt{\textbackslash tiny} & \tiny Example Text \\
+\texttt{\textbackslash scriptsize} & \scriptsize Example Text \\
+\texttt{\textbackslash footnotesize} & \footnotesize Example Text \\
+\texttt{\textbackslash small} & \small Example Text \\
+\texttt{\textbackslash normalsize} & \normalsize Example Text \\
+\texttt{\textbackslash large} & \large Example Text \\
+\end{tabular}
+\end{flushleftfigure}
+\clearpage
+\begin{flushleftfigure}
+\begin{tabular}{l l}
+\texttt{\textbackslash Large} & \Large Example Text \\
+\texttt{\textbackslash LARGE} & \LARGE Example Text \\
+\texttt{\textbackslash huge} & \huge Example Text \\
+\texttt{\textbackslash Huge} & \Huge Example Text \\
+\end{tabular}
 \end{flushleftfigure}
 Some subtleties are at play here.
 \LaTeX's default type family, Latin Modern,

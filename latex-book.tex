@@ -219,25 +219,23 @@
     commentstyle=\ttfamily,
 }
 
-
+% Indent code examples, etc., by double the text size.
 \newenvironment{leftfigure}
-  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{1.5em}{0pt}}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22pt}{0pt}}
   {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
 
 % Like the above, but with no adjustwidth
 \newenvironment{flushleftfigure}
-  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\noindent\ignorespacesafterend}
   {\vspace*{0.5\baselineskip minus 0.3\baselineskip}\par\noindent\ignorespacesafterend}
 
 \newenvironment{centerfigure}
-  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{1.5em}{1.5em}\centering}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22pt}{22pt}\centering}
   {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
 
 \usepackage{graphicx}
 
 \usepackage{csquotes}
-
-\usepackage{longtable}
 
 \title{Modern \texorpdfstring{\LaTeX}{LaTeX}}
 \author{Matt Kline}
@@ -388,7 +386,8 @@ his college papers.
 \tableofcontents
 
 \mainmatter
-\setlength\parindent{1em}
+% Indent by one lead, as suggested in The Elements of Typographic Style.
+\setlength\parindent{14pt}
 
 \pagenumbering{arabic}
 \setcounter{page}{1} % Restart page numbering after the ToC.
