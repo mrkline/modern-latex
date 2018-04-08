@@ -23,14 +23,14 @@ but throughout this book, we'll always use the newest ones:
 \LuaLaTeX{} and \XeLaTeX.\punckern\footnote{See Appendix~\ref{history} for a
 comparison of all current \LaTeX{} engines.}
 
-If you are using a \LaTeX{}-specific editor, it probably contains some method
+If you are using a \LaTeX{}-specific editor, it should contain some method
 (like a drop-down menu) to select the engine you'd like to use,
 along with a button to generate your document.
 Otherwise, run the following from your terminal:\footnote{%
 How to work a terminal emulator,
 make sure the newly-installed \LaTeX{} programs are in your \texttt{PATH},
 and so on are all outside the scope of this book.
-As is tradition, the leading dollar sign in examples just denotes a console
+As is tradition, the leading dollar sign in this example just denotes a console
 prompt, and shouldn't actually be typed.}
 \begin{leftfigure}
 \begin{lstlisting}
@@ -63,9 +63,9 @@ and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
 The name is a German term for a projector.}
 \texttt{article} is probably a good choice for the average document.
 The next line, \verb|% Say hello|,
-is a \introduce{comment}---anything placed after a percent symbol on a line
+is a \introduce{comment}---any text placed after \texttt{\%} on a line
 is ignored by the engine,
-so we can use \texttt{\%} to leave notes for anybody reading
+so we use it to leave notes for anybody reading
 the document's source.\punckern\footnote{Including, perhaps most importantly,
 a confused version of your future self!}
 Finally, \verb|\begin{document}| tells \LaTeX{} that what follows
@@ -104,13 +104,13 @@ space on the subsequent line, such that
 \begin{leftfigure}
 \begin{lstlisting}
 This% weird, right?
-  is strange
+  is strange.
 \end{lstlisting}
 \end{leftfigure}
 gives
 \begin{leftfigure}
 \lm This% weird, right?
-  is strange
+  is strange.
 \end{leftfigure}
 
 \section{Commands}
@@ -187,15 +187,11 @@ The full list of special characters is:
 \end{lstlisting}
 \end{leftfigure}
 Each has a corresponding command
-to print it in your document:
+to print it in your document. Respectively, they are:
 \begin{leftfigure}
 \begin{lstlisting}
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 \end{lstlisting}
-\end{leftfigure}
-produces
-\begin{leftfigure}
-\lm \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 \end{leftfigure}
 Regardless of what comes after them, you must always add braces to
 the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,).
@@ -260,9 +256,9 @@ that critical 3\%.
 \end{leftfigure}
 
 \section{Groups and command scope}
-Some commands change how \LaTeX{} typesets the following text.
+Some commands change how \LaTeX{} sets the text that follows them.
 \verb|\itshape|, for example, \textit{italicizes} everything that comes after it.
-To limit a command's influence to a certain region, we surround it with braces.
+To limit a command's influence to a certain area, we surround it with braces.
 \begin{leftfigure}
 \begin{lstlisting}
 {\itshape Sometimes we want italics}, but only sometimes.
@@ -272,7 +268,7 @@ becomes
 \begin{leftfigure}
 \lm {\itshape Sometimes we want italics}, but only sometimes.
 \end{leftfigure}
-The text within the braces forms a \introduce{group},
+The braced region is called a \introduce{group},
 and commands placed inside that group only take effect until it ends.
 Environments also form implicit groups:
 \begin{leftfigure}
@@ -293,5 +289,5 @@ use upright type again.
 \end{quote}
 See? Back to normal.
 \end{leftfigure}
-Another use of groups is to address the spacing oddities of zero-argument
+Another use of groups is to handle the spacing oddities of zero-argument
 commands: some prefer \verb|{\LaTeX}| over \verb|\LaTeX{}|.

@@ -39,15 +39,15 @@ A (mostly) complete list follows:
 \begin{tabularx}{0.9\textwidth}{l|l|l}
 {\normalfont Command} & {\normalfont Alternative} & {\normalfont Style} \\
 \hline
-\verb|\textnormal{...}| & \verb|{\normalfont ...}| & the default \\
-\verb|\emph{...}| & \verb|{\em ...}| & \emph{emphasis, typically italics} \\
-\verb|\textrm{...}| & \verb|{\rmfamily ...}| & roman (serif) type \\
-\verb|\textsf{...}| & \verb|{\sffamily ...}| & {\fontspec{Latin Modern Sans}sans serif type} \\
-\verb|\texttt{...}| & \verb|{\ttfamily ...}| & {\fontspec[Ligatures=TeX]{Latin Modern Mono}``teletype'' (monospaced)} \\
-\verb|\textit{...}| & \verb|{\itshape ...}| & \textit{italics} \\
-\verb|\textsl{...}| & \verb|{\slshape ...}| & {\fontspec{Latin Modern Roman Slanted}slanted, or oblique type} \\
-\verb|\textsc{...}| & \verb|{\scshape ...}| & \textsc{Small Capitals} \\
-\verb|\textbf{...}| & \verb|{\bfseries ...}| & \textbf{boldface} \\
+\texttt{\textbackslash textnormal\{...\}} & \texttt{\{\textbackslash normalfont ...\}} & the default \\
+\texttt{\textbackslash emph\{...\}} & \texttt{\{\textbackslash em ...\}} & \emph{emphasis, typically italics} \\
+\texttt{\textbackslash textrm\{...\}} & \texttt{\{\textbackslash rmfamily ...\}} & roman (serif) type \\
+\texttt{\textbackslash textsf\{...\}} & \texttt{\{\textbackslash sffamily ...\}} & {\fontspec{Latin Modern Sans}sans serif type} \\
+\texttt{\textbackslash texttt\{...\}} & \texttt{\{\textbackslash ttfamily ...\}} & {\fontspec{Latin Modern Mono}teletype (monospaced)} \\
+\texttt{\textbackslash textit\{...\}} & \texttt{\{\textbackslash itshape ...\}} & \textit{italics} \\
+\texttt{\textbackslash textsl\{...\}} & \texttt{\{\textbackslash slshape ...\}} & {\fontspec{Latin Modern Roman Slanted}slanted, or oblique type} \\
+\texttt{\textbackslash textsc\{...\}} & \texttt{\{\textbackslash scshape ...\}} & \textsc{Small Capitals} \\
+\texttt{\textbackslash textbf\{...\}} & \texttt{\{\textbackslash bfseries ...\}} & \textbf{boldface} \\
 \end{tabularx}
 \end{flushleftfigure}
 The first form (which takes the text to format as an argument)
@@ -70,7 +70,7 @@ It is usually ten points,\punckern\footnote{The standard digital publishing
 point, sometimes called the PostScript point, is \otffrac{1}{72} of an inch.
 \LaTeX{}, for historical reasons, defines its point (\texttt{pt})
 as \otffrac{100}{7227} of an inch
-and the former as a ``big points''\quotekern, or \texttt{bp}.}
+and the former as ``big points''\quotekern, or \texttt{bp}.}
 but this can be adjusted by passing additional arguments to
 \verb|\documentclass|.\punckern\footnote{The standard \LaTeX{} classes accept
 \texttt{10pt}, \texttt{11pt}, or \texttt{12pt}.
@@ -113,9 +113,9 @@ Optical sizes were standard in the days of metal type, but
 many digital typefaces lack them,
 given how much more work it demands from the type
 designer.\punckern\footnote{If you are fortunate enough to have
-a typeface with multiple optical sizes, \XeLaTeX{}
-and \LuaLaTeX{} can make good use of them! See \chapref{fonts}
-for more on font selection and OpenType features.}
+a typeface with multiple optical sizes, \LuaLaTeX{}
+and \XeLaTeX{} can make good use of them! See \chapref{fonts}
+for more on font selection.}
 
 But points and optical sizes don't tell the whole story.
 Each typeface has its own proportions, which make a huge difference
@@ -127,8 +127,8 @@ Shown below are some common terms:
 \includegraphics[keepaspectratio,width=0.7\textwidth]{heights.png}
 
 \captionof{figure}{Type sits on the \introduce{baseline},
-rises to the \introduce{ascender height},
-and drops to the \introduce{descender height}.
+rises to its \introduce{ascender height},
+and drops to its \introduce{descender height}.
 The \introduce{cap height} refers to the size of uppercase letters,
 and the \introduce{x-height} refers to the size of lowercase letters.}
 % For size reference:
@@ -153,8 +153,9 @@ between lines
 {\fontsize{11pt}{11pt}\selectfont
 Note that without additional spacing,
 or \introduce{leading},\punckern\footnote{This term comes from the days of
-metal type, when strips of lead were inserted
-between lines to space them out.}
+metal type, when strips of lead or brass were inserted
+between lines to space them out.\endnote{Jan Middendorp, \textit{Shaping Text}
+(Amsterdam, 2014), 71}}
 descenders from one line nearly collide with ascenders and capitals on
 the line below.
 Leading is important---without it, blocks of text become uncomfortable to

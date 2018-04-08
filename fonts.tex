@@ -8,7 +8,7 @@ As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
 including type. It remains in use today.} fonts was added.
-Today, \LuaLaTeX{} and \XeLaTeX{} support the formats you're
+Today, \LuaLaTeX{} and \XeLaTeX{} support the font formats you're
 most likely to encounter on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
 Apple's \acronym{aat}, but let's limit this discussion to
@@ -64,7 +64,7 @@ shortcuts from \chapref{punctuation} (e.g., \texttt{--} for en dashes, or
 to enter the the corresponding characters,
 which probably aren't on your keyboard.
 You often don't want these when setting monospaced type, though.
-Text that uses it---such as code---is usually meant to be displayed
+Text that uses it---such as code---is usually meant to be printed
 verbatim. \verb|"Hello!"| shouldn't turn into
 \verb|“Hello!“|.
 
@@ -186,7 +186,7 @@ OpenType groups ligatures into three categories:
 \item[Standard] ligatures remedy spacing problems a typeface might otherwise have.
     Consider the lowercase letters f and i: in many serif typefaces,
     these combine to form the ligature fi,
-    which avoids awkward spacing between f's ascender and i's dot
+    avoiding awkward spacing between f's ascender and i's dot
     {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
     Other common examples in English writing include ff,
     ffi, fl, and ffl.
@@ -234,7 +234,7 @@ you have two
 choices to make: lining versus oldstyle,
 and proportional versus tabular.
 \introduce{Lining} figures, sometimes called \introduce{titling} figures,
-have similar heights as capital letters:
+have heights similar to capital letters:
 \begin{leftfigure}
 \addfontfeature{Numbers=LowercaseOff}
 A B C D 1 2 3 4
@@ -264,7 +264,7 @@ Widgets & 18 & \$12.76 \\
 \end{tabular}
 \end{leftfigure}
 Proportional figures are the opposite---their spacing is, well\dots{}
-\emph{proportional} to the width of the figure.
+\emph{proportional} to the width of each figure.
 They are usually preferred in body text, where 1837
 looks a bit nicer than
 {\addfontfeature{Numbers=Tabular}1837}.

@@ -5,7 +5,7 @@ Every \LaTeX{} document is different,
 but all share a few common elements.
 
 \section{Packages and the preamble}
-In the last chapter, you saw:
+In the last chapter, you built your first document with:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
@@ -26,11 +26,11 @@ As mentioned in \chapref{installation},
 The ones found in your \LaTeX{} distribution come from the Comprehensive \TeX{}
 Archive Network, or \acronym{ctan},\punckern\footnote{Curious readers may
 be wondering what \TeX{} is, and how it differs from \LaTeX.
-The short version is that \TeX{} is the typesetting system that \LaTeX{}
+The short answer is that \TeX{} is the typesetting system that \LaTeX{}
 is built on top of---the latter is a framework of commands for the former.
 (For example, \texttt{\textbackslash documentclass} and friends are provided by
 \LaTeX{}, but the \TeX{} engine is what's actually laying out your document.)
-The long version is at the back of this book as Appendix~\ref{history}.
+The long answer is at the back of this book under Appendix~\ref{history}.
 We won't discuss how to use plain \TeX{} here. That's for another book---the
 \TeX book.}
 at \https{ctan.org}.
@@ -38,7 +38,7 @@ Package manuals are also found there,
 so make it your first stop when learning how to use one.
 
 To import a package, add a \verb|\usepackage| command,
-with the package's name as its argument.
+using the package's name as its argument.
 As a simple example, let's write a document with the \texttt{metalogo}
 package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX|:
 \begin{leftfigure}
@@ -65,13 +65,13 @@ For \acronym{us}~\textsc{l}etter paper with one-inch margins,
 you type:
 \begin{leftfigure}
 \begin{lstlisting}
-\usepackage[letterpaper,
-            left=1in, right=1in, top=1in, bottom=1in
-           ]{geometry}
+\usepackage[
+    letterpaper,
+    left=1in, right=1in, top=1in, bottom=1in
+]{geometry}
 \end{lstlisting}
 \end{leftfigure}
-Notice
-that command arguments can be spaced however you like,
+Command arguments can be spaced however you like,
 so long as there are no empty lines between arguments.
 
 \section{Titles, sections, and other hierarchy}
@@ -80,7 +80,8 @@ Authors often split their works into sections to help readers navigate them.
 \LaTeX{} offers seven different commands to break up your documents:
 \verb|\part|, \verb|\chapter|, \verb|\section|, \verb|\subsection|,
 \verb|\subsubsection|, \verb|\paragraph|, and \verb|\subparagraph|.
-To use one, issue the command where you want that section to start,
+Issue the command command where you want a section\footnote{By this
+I mean any level, not just \texttt{\textbackslash section}.} to start,
 providing its name as the argument.
 For example,
 \begin{leftfigure}
@@ -88,6 +89,7 @@ For example,
 \documentclass{book}
 
 \begin{document}
+
 \chapter{The Start}
 This is a very short chapter in a very short book.
 
@@ -107,9 +109,7 @@ for example, only appear in books.
 And don't go too crazy with these commands.
 Most works only benefit from a few levels of hierarchy.
 
-Sections\footnote{By this I mean all levels, not just
-\texttt{\textbackslash section}.}
-are automatically numbered---for example,
+Sections are automatically numbered---for example,
 the title of this chapter was produced with \verb|\chapter{Document Structure}|,
 and \LaTeX{} figured out that it was chapter~\ref{structure}.
 
@@ -124,13 +124,13 @@ Consider learning how to:
 \begin{itemize}
 \item Automatically start your document with its title, the author's name,
     and the date using \verb|\maketitle|.
-\item Have \LaTeX{} build you a table of contents
+\item Have \LaTeX{} build a table of contents
     with \verb|\tableofcontents|.
 \item Control section numbers with \verb|\setcounter{secnumdepth}|
 and starred section commands, e.g., \verb|\subsection*{foo}|.
 \item Create auto-updating cross-references with \verb|\label| and \verb|\ref|.
 \item Use KOMA~Script, a set of document classes and packages
-that make it easy to customize nearly every aspect of your document,
+that help you customize nearly every aspect of your document,
 from heading fonts to footnotes.
 \item Include images with the \texttt{graphicx} package.
 \item Add hyperlinks to your \acronym{pdf} with the \texttt{hyperref} package.
