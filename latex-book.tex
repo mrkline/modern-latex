@@ -17,8 +17,9 @@
             includefoot,
            ]{geometry}
 
-\usepackage{fontspec}
 \usepackage[fleqn]{amsmath}
+
+\usepackage{fontspec}
 
 \setmainfont[
     Ligatures=TeX,
@@ -85,13 +86,11 @@
             {Size={10-}, Font=TRY_DriveMono-Italic},
         },
     },
-    BoldFeatures={
-        Font=TRY_DriveMono-Bold
-    },
-    BoldItalicFeatures={
-        Font=TRY_DriveMono-BoldItalic
-    },
+    BoldFont=TRY_DriveMono-Bold,
+    BoldItalicFont=TRY_DriveMono-BoldItalic
 ]{TRY Drive Mono}
+
+\setmathrm{Latin Modern Roman}
 
 % We'll be using this quite a bit:
 \newfontfamily{\lm}[
