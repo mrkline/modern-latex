@@ -118,18 +118,19 @@ However, it comes with a few advantages:
     is it hard to fix?%\footnote{I spent far too much of my childhood
     %fighting with Word about how it wrapped text around images.}
 
-\item You can define your own rules, then tweak them to instantly adjust
-    every place they're used.
-    For instance, the \verb|\introduce| and \verb|\acronym| commands seen above
-    are my own creations. The former \introduce{italicizes} text, and
-    the latter sets words in \acronym{small caps} with a bit of extra
-    \,\textsc{\addfontfeature{LetterSpace=15}letterspacing}\, so the characters
+\item You can define your own commands, then tweak them to instantly adjust
+    wherever they're used.
+    For example, the \verb|\introduce| and \verb|\acronym| commands seen above
+    are my own creations.
+    The former \introduce{italicizes} text, and the latter sets words in
+    \acronym{small caps} with a bit of extra
+    \mbox{\textsc{\addfontfeature{LetterSpace=15}letterspacing}} so the characters
     don't look \textsc{\addfontfeature{LetterSpace=-2}too crowded}.
-    If tomorrow I decide to introduce new terms
-    \textbf{\itshape with this look} and set acronyms
+    If I decide tomorrow that I would rather introduce new terms
+    \textbf{\itshape with this look}, or that acronyms should look
     {\small\addfontfeature{LetterSpace=6} LIKE THIS},
-    I just change the two lines that define those commands,
-    and every spot in this book that uses them is immediately updated.
+    I just change the two lines that define those commands.
+    Every spot in this book that uses them is immediately updated.
 
 \item Since the document source is plain text,
     \begin{itemize}
