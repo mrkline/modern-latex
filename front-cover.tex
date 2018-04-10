@@ -1,0 +1,98 @@
+\documentclass[fontsize=11bp]{scrartcl}
+
+% Margins: see http://practicaltypography.com/page-margins.html and
+% http://practicaltypography.com/line-length.html
+% We're aiming for 80-ish characters per line.
+\usepackage[a5paper,
+            inner=0.6in,outer=0.6in,top=0.75in,bottom=0.5in,
+            footskip=3em,
+            includefoot,
+           ]{geometry}
+
+\usepackage{fontspec}
+
+\setmainfont[
+    Ligatures=TeX,
+    Numbers={Proportional,Lowercase},
+    % Coefficients for font-provided space, stretch, and shrink.
+    % Garamond Premier is a bit tighter than Adobe Garamond,
+    % but stretching it out about 20% gives about the same metrics.
+    WordSpace={1.2,1.2,1},
+    UprightFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-capt},
+            {Size={9-15},Font=garamondpremrpro},
+            {Size={15-23},Font=garamondpremrpro-subh},
+            {Size={23-},Font=garamondpremrpro-disp}
+        },
+    },
+    BoldFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-smbdcapt},
+            {Size={9-15},Font=garamondpremrpro-smbd},
+            {Size={15-23},Font=garamondpremrpro-smbdsubh},
+            {Size={23-},Font=garamondpremrpro-smbddisp}
+        },
+    },
+    ItalicFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-itcapt},
+            {Size={9-15},Font=garamondpremrpro-it},
+            {Size={15-23},Font=garamondpremrpro-itsubh},
+            {Size={23-},Font=garamondpremrpro-itdisp}
+            },
+    },
+    BoldItalicFeatures={
+        SizeFeatures={
+            {Size={-9},Font=garamondpremrpro-smbditcapt},
+            {Size={9-15},Font=garamondpremrpro-smbdit},
+            {Size={15-23},Font=garamondpremrpro-smbditsubh},
+            {Size={23-},Font=garamondpremrpro-smbditdisp}
+        },
+    },
+]{Garamond Premier Pro}
+\setsansfont[Ligatures=TeX,
+             Scale=MatchUppercase,
+             Style=Alternate, % Straight-legged R
+             UprightFont = *-55Rg,
+             ItalicFont = *-56It,
+             BoldFont = *-75Bd,
+             BoldItalicFont = *-76BdIt
+             ]{NHaasGroteskTXPro}
+
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=american]{english}
+
+\usepackage{microtype} % Font expansion, protrusion, and other goodness
+
+% Disable ligatures across grapheme boundaries
+% (see the package manual for details.)
+\usepackage[american]{selnolig}
+\nolig{Th}{T|h}
+
+\usepackage{xcolor}
+
+\title{Modern LaTeX Back Cover}
+\author{Matt Kline}
+\date{\today}
+
+% Spend a bit more time to get better word spacing.
+% See http://tex.stackexchange.com/a/52855/92465
+\emergencystretch=1ex
+
+\begin{document}
+\fontsize{11bp}{14bp}\selectfont
+\pagestyle{empty}
+\vspace*{1.5in}
+\begin{center}
+\fontsize{0.5in}{0.7in}\selectfont
+Modern
+
+\fontsize{1in}{1.1in}\selectfont
+\LaTeX
+\vfill
+\LARGE
+Matt Kline
+\end{center}
+
+\end{document}
