@@ -11,13 +11,15 @@
 % http://practicaltypography.com/line-length.html
 % We're aiming for 80-ish characters per line.
 \usepackage[a5paper,
-            inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
+            inner=0.6in,outer=0.6in,top=0.75in,bottom=0.5in,
+            footnotesep=11pt,
             footskip=3em,
             includefoot,
            ]{geometry}
 
-\usepackage{fontspec}
 \usepackage[fleqn]{amsmath}
+
+\usepackage{fontspec}
 
 \setmainfont[
     Ligatures=TeX,
@@ -71,22 +73,24 @@
 
 \setmonofont[
     Numbers=SlashedZero,
-    Scale=0.76,
-    % Scaling Fira to the lowercase size of body text makes it a _touch_
-    % too thin. That scale is about 0.74, so bump it a few percent and try that.
+    Scale=MatchLowercase,
     UprightFeatures={
         SizeFeatures={
-            {Size={-10}, Font=FiraMono-Medium},
-            {Size={10-}, Font=FiraMono-Regular},
+            {Size={-10}, Font=TRY_DriveMono-Book},
+            {Size={10-}, Font=TRY_DriveMono-Regular},
         },
     },
-    BoldFeatures={
+    ItalicFeatures={
         SizeFeatures={
-            {Size={-10}, Font=FiraMono-Bold},
-            {Size={10-}, Font=FiraMono-Bold},
+            {Size={-10}, Font=TRY_DriveMono-BookItalic},
+            {Size={10-}, Font=TRY_DriveMono-Italic},
         },
     },
-]{Fira Mono}
+    BoldFont=TRY_DriveMono-Bold,
+    BoldItalicFont=TRY_DriveMono-BoldItalic
+]{TRY Drive Mono}
+
+\setmathrm{Latin Modern Roman}
 
 % We'll be using this quite a bit:
 \newfontfamily{\lm}[
@@ -172,7 +176,7 @@
 \setkomafont{section}{\Large\itshape}
 \setkomafont{subsection}{\large\itshape}
 % Don't put big spaces before chapter headings
-\RedeclareSectionCommand[beforeskip=0.15in]{chapter}
+\renewcommand{\chapterheadstartvskip}{\vspace{0.15in}}
 
 \setcapwidth[c]{.75\textwidth}
 %\setcapmargin{0pt}
@@ -223,16 +227,16 @@
 % Indent code examples, etc., by double the text size.
 \newenvironment{leftfigure}
   {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22pt}{0pt}}
-  {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
+  {\end{adjustwidth}\vspace{0.5\baselineskip minus 0.3\baselineskip}}
 
 % Like the above, but with no adjustwidth
 \newenvironment{flushleftfigure}
   {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\noindent\ignorespacesafterend}
-  {\vspace*{0.5\baselineskip minus 0.3\baselineskip}\par\noindent\ignorespacesafterend}
+  {\vspace{0.5\baselineskip minus 0.3\baselineskip}\par\noindent\ignorespacesafterend}
 
 \newenvironment{centerfigure}
   {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22pt}{22pt}\centering}
-  {\end{adjustwidth}\vspace*{0.5\baselineskip minus 0.3\baselineskip}}
+  {\end{adjustwidth}\vspace{0.5\baselineskip minus 0.3\baselineskip}}
 
 \usepackage{graphicx}
 
@@ -335,23 +339,24 @@ Some crappy draft, typeset \today.
 
 Changes since the last proof include:
 \begin{itemize}
-\item The book is now designed for \textsc{a5} paper instead of
-    \textsc{us}~\textsc{t}rade.
-\item The top margin was increased to \otffrac{3}{4}\,in. \\
-    (Forgive this silly American for using \textsc{a5} paper with margins in inches.)
-\item The outer margin was increased by \otffrac{1}{20}\,in,
-    and the inner margin was decreased by the same amount.
-\item Monospaced code listings were grown to match the body text size
-    (11\,pt).
-\item Minor spacing tweaks were made to the table of contents.
+\item The inner and outer margin were equalized.
+    There seems like there will be enough of a gutter if we use 0.6\,in.\ on
+    both sides.
+\item Yet another read-through of minor edits.
+\item We've settled on Drive Mono.
+    (A completely random sample of my coworkers voted for it unanimously over
+    Fira Mono.)
 \end{itemize}
 \vfill
 
-The author apologizes for any typos, misattributions, and other flubs.
+The author apologizes for any typos,
+f\raisebox{-0.1ex}{o}rmatt\raisebox{0.1ex}{i}ng mistakes,
+misattributions,
+and other flubs.
 He welcomes you to point them out on this book's Github
 repository at \\
 \https{github.com/mrkline/latex-book} \\
-Questions, comments, concerns, and diatribes can also be sent to \\
+Questions, comments, concerns, and diatribes can also be emailed to \\
 \texttt{matt <at> bitbashing.io}
 
 The author does not have a checking account with the Bank of San Serriffe,
@@ -374,10 +379,6 @@ The license's full text is available at \\
 
 \vspace*{1in}
 {\itshape%
-%\noindent To Donald, Leslie, \\
-%Ellen, Erik, Jost, Matthew, \& Robert
-%\bigskip
-%
 To Max, who once told me about a cool program he used to type up
 his college papers.
 }

@@ -42,24 +42,23 @@ JULY 1969, A.~D. \\
 WE CAME IN PEACE FOR ALL MANKIND
 \end{center}
 
-If you care not only about \emph{what} you tell your readers, but \emph{how}
+If you care not only about \emph{what} you tell your readers, but also \emph{how}
 you tell them, you should try \LaTeX.\punckern\footnote{Pronounced ``lay-tech''
 or ``lah-tech''}
 It's a program\footnote{And a markup language,
 and (sort of) a programming language.
 More on that later.}
-for crafting written documents, like essays, papers, presentations,
-or even the book you're reading right now.
-And unless you give Adobe large sums
-of money for InDesign or InCopy,
+for crafting written documents, like essays, papers, and books.
+And unless you shovel money at Adobe for InDesign or InCopy,
 you won't find any equals.
 By carefully handling subtle details,
-\LaTeX{} can produce high-quality typesetting
+\LaTeX{} can produce beautiful typography
 with little effort from you, the author.
 Modern versions can also leverage recent\footnote{By recent,
 I mean ``from the mid-1990s''\quotekern, but web browsers and desktop publishing
 software are only just starting to catch up.} advances in computer typography,
-offering you the same tools used by professional designers and publishers.
+offering you the same tools used by professional graphic designers and
+publishers.
 
 \section{\texorpdfstring{\LaTeX}{LaTeX}?}
 
@@ -72,7 +71,7 @@ These other applications operate on the principle of
 as what comes out of your printer.
 \LaTeX{} is different. Here, documents are written as
 ``plain'' text files, using \introduce{markup} to specify
-how they should look.
+how the final result should look.
 If you've done any web development, this is a similar
 process---just as \acronym{html} and \acronym{css} describe
 the page you want browsers to draw, your markup describes
@@ -90,7 +89,7 @@ These other applications operate on the principle of
 as what comes out of your printer.
 \LaTeX{} is different. Here, documents are written as
 ``plain'' text files, using \introduce{markup} to specify
-how they should look.
+how the final result should look.
 If you've done any web development, this is a similar
 process---just as \acronym{html} and \acronym{css} describe
 the page you want browsers to draw, your markup describes
@@ -119,18 +118,19 @@ However, it comes with a few advantages:
     is it hard to fix?%\footnote{I spent far too much of my childhood
     %fighting with Word about how it wrapped text around images.}
 
-\item You can define your own rules, then tweak them to instantly adjust
-    every place they're used.
-    For instance, the \verb|\introduce| and \verb|\acronym| commands seen above
-    are my own creations. The former \introduce{italicizes} text, and
-    the latter sets words in \acronym{small caps} with a bit of extra
-    \,\textsc{\addfontfeature{LetterSpace=15}letterspacing}\, so the characters
+\item You can define your own commands, then tweak them to instantly adjust
+    wherever they're used.
+    For example, the \verb|\introduce| and \verb|\acronym| commands seen above
+    are my own creations.
+    The former \introduce{italicizes} text, and the latter sets words in
+    \acronym{small caps} with a bit of extra
+    \mbox{\textsc{\addfontfeature{LetterSpace=15}letterspacing}} so the characters
     don't look \textsc{\addfontfeature{LetterSpace=-2}too crowded}.
-    If tomorrow I decide to introduce new terms
-    \textbf{\itshape with this look} and set acronyms
+    If I decide tomorrow that I would rather introduce new terms
+    \textbf{\itshape with this look}, or that acronyms should look
     {\small\addfontfeature{LetterSpace=6} LIKE THIS},
-    I just change the two lines that define those commands,
-    and every spot in this book that uses them is immediately updated.
+    I just change the two lines that define those commands.
+    Every spot in this book that uses them is immediately updated.
 
 \item Since the document source is plain text,
     \begin{itemize}
@@ -147,7 +147,7 @@ However, it comes with a few advantages:
 \section{Another guide?}
 
 You might wonder why the world needs another \LaTeX{} guide.
-After all, it's been out for decades.
+After all, it's existed for decades.
 A quick Amazon search finds nearly a dozen books on the topic.
 There are plenty of great resources online.
 

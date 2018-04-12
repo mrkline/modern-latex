@@ -8,7 +8,7 @@ As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
 including type. It remains in use today.} fonts was added.
-Today, \LuaLaTeX{} and \XeLaTeX{} support the formats you're
+Today, \LuaLaTeX{} and \XeLaTeX{} support the font formats you're
 most likely to encounter on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
 Apple's \acronym{aat}, but let's limit this discussion to
@@ -58,12 +58,13 @@ open-source typefaces are freely available at
 \fontspec[Ligatures=TeX]{Source Sans Pro} Let's try sans serif! \\
 \fontspec{Source Code Pro} Let's try monospaced!
 \end{leftfigure}
-The \verb|Ligatures=TeX| option enables the standard punctuation
-shortcuts discussed in \chapref{punctuation} (e.g., creating en dashes with
-\texttt{--} or curly quotes with \texttt{``}) instead of forcing you
-to type the the corresponding characters, which probably aren't on your keyboard.
-You often don't want these for monospaced type, though,
-since the text you set in it---such as code---is meant to be displayed
+The \verb|Ligatures=TeX| option lets you use the punctuation
+shortcuts from \chapref{punctuation} (e.g., \texttt{--} for en dashes, or
+\texttt{``} and \texttt{''} for curly quotes) instead of forcing you
+to enter the the corresponding characters,
+which probably aren't on your keyboard.
+You often don't want these when setting monospaced type, though.
+Text that uses it---such as code---is usually meant to be printed
 verbatim. \verb|"Hello!"| shouldn't turn into
 \verb|“Hello!“|.
 
@@ -80,29 +81,29 @@ files.\punckern\footnote{This is
 one of the places where \XeLaTeX{} and \LuaLaTeX{}
 differ in a way that's noticeable to the casual user.
 The former uses system libraries---such as FontConfig on Linux---to
-locate files from a typeface's name.
+find the font files for the typefaces you request.
 The latter has its own font loader,
 based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
 (Version 1.0.4, February 2017), 10}
 The expected name of a font might differ between the two engines---refer
 to the \texttt{fontspec} manual for details.
-If you have trouble getting \LaTeX{} to find your fonts,
+If you have trouble getting \LaTeX{} to find \emph{any} of your fonts,
 try rebuilding your system's font cache.
 (Figuring out how to do so is left as a web search for the reader.)}
 
-However, many typefaces come in more than two weights---some cuts of Futura,
-for example, come in
+However, many typefaces come in more than two weights.
+The version of Futura used in this book, for example, comes in
 {\fontspec[Scale=MatchLowercase]{Futura-Lig}light},
 {\fontspec[Scale=MatchLowercase]{Futura-Boo}book},
 {\fontspec[Scale=MatchLowercase]{Futura-Med}medium},
 {\fontspec[Scale=MatchLowercase]{Futura-Dem}demi},
 {\fontspec[Scale=MatchLowercase]{Futura-Bol}bold}, and
 {\fontspec[Scale=MatchLowercase]{Futura-ExtBol}extra bold}.
-Sometimes
-{\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}\textsc{small caps}}
-are stored in separate files as well.\punckern\footnote{OpenType allows
-small caps to be placed in the same file(s) as the other glyphs for a given
-weight.
+Additional styles, such as
+{\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}\textsc{small capitals}},
+may be stored in separate files as well.\punckern\footnote{%
+OpenType allows these alternative styles to be placed in the same file(s) as the
+``main'' glyphs for a given weight.
 If your font supports this, you don't need to do anything---\texttt{fontspec}
 will dutifully switch to them whenever you use
 \monobox{\textbackslash textsc} or \monobox{\textbackslash scshape}.
@@ -185,7 +186,7 @@ OpenType groups ligatures into three categories:
 \item[Standard] ligatures remedy spacing problems a typeface might otherwise have.
     Consider the lowercase letters f and i: in many serif typefaces,
     these combine to form the ligature fi,
-    which avoids awkward spacing between f's ascender and i's dot
+    avoiding awkward spacing between f's ascender and i's dot
     {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
     Other common examples in English writing include ff,
     ffi, fl, and ffl.
@@ -233,7 +234,7 @@ you have two
 choices to make: lining versus oldstyle,
 and proportional versus tabular.
 \introduce{Lining} figures, sometimes called \introduce{titling} figures,
-have similar heights as capital letters:
+have heights similar to capital letters:
 \begin{leftfigure}
 \addfontfeature{Numbers=LowercaseOff}
 A B C D 1 2 3 4
@@ -263,7 +264,7 @@ Widgets & 18 & \$12.76 \\
 \end{tabular}
 \end{leftfigure}
 Proportional figures are the opposite---their spacing is, well\dots{}
-\emph{proportional} to the width of the figure.
+\emph{proportional} to the width of each figure.
 They are usually preferred in body text, where 1837
 looks a bit nicer than
 {\addfontfeature{Numbers=Tabular}1837}.
