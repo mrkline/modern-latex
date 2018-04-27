@@ -5,7 +5,7 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11pt, numbers=endperiod, draft=off]{scrbook}
+\documentclass[fontsize=11pt, numbers=endperiod, draft=false]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
@@ -319,7 +319,6 @@
 
 % Custom title instead of \maketitle
 \pagenumbering{gobble}
-{\raggedright%For the page
 \vspace*{1.5in}
 \begin{center}
 \fontsize{0.5in}{0.7in}\selectfont
@@ -333,37 +332,9 @@ Matt Kline
 \end{center}
 \clearpage
 
+{\raggedright%For the page
 \null
 \vfill
-Some crappy draft, typeset \today.
-
-Changes since the last proof include:
-\begin{itemize}
-\item The inner and outer margin were equalized.
-    There seems like there will be enough of a gutter if we use 0.6\,in.\ on
-    both sides.
-\item Yet another read-through of minor edits.
-\item We've settled on Drive Mono.
-    (A completely random sample of my coworkers voted for it unanimously over
-    Fira Mono.)
-\end{itemize}
-\vfill
-
-The author apologizes for any typos,
-f\raisebox{-0.1ex}{o}rmatt\raisebox{0.1ex}{i}ng mistakes,
-misattributions,
-and other flubs.
-He welcomes you to point them out on this book's Github
-repository at \\
-\https{github.com/mrkline/latex-book} \\
-Questions, comments, concerns, and diatribes can also be emailed to \\
-\texttt{matt <at> bitbashing.io}
-
-The author does not have a checking account with the Bank of San Serriffe,
-but will happily compensate your feedback with a beverage of your choice the
-next time we meet.
-
-\vspace*{0.5in}
 {\addfontfeature{Numbers={Proportional,Uppercase}}
 Copyright © 2018 \\
 by \runauthor
@@ -371,9 +342,32 @@ by \runauthor
 
 This book is licensed under the \\
 Creative Commons Attribution-ShareAlike~4.0 International License. \\
+In short, you are free to share, translate, adapt, or improve this book
+so long as you give proper credit and provide your contributions under
+the same license. \\
 The license's full text is available at \\
 \https{creativecommons.org/licenses/by-sa/4.0/legalcode}
 }
+\vfill
+
+The author apologizes for any typos,
+f\raisebox{-0.1ex}{o}rmatt\raisebox{0.1ex}{i}ng mistakes,
+misattributions,
+and other flubs.
+He welcomes you to point them out via this book's Git repository at \\
+\https{github.com/mrkline/latex-book}
+
+\vspace{\baselineskip}
+Questions, comments, concerns, and diatribes can also be emailed to \\
+\texttt{matt <at> bitbashing.io}
+
+\vspace{\baselineskip}
+The author does not have a checking account with the Bank of San Serriffe,
+but will happily compensate your feedback with a beverage of your choice
+next time we meet.
+
+\vspace{0.5in}
+First edition, typeset \today.
 } % end ragged right
 \clearpage
 
