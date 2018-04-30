@@ -5,14 +5,14 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11pt, numbers=endperiod, draft=false]{scrbook}
+\documentclass[fontsize=11bp, numbers=endperiod, draft=false]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
 % We're aiming for 80-ish characters per line.
 \usepackage[a5paper,
             inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
-            footnotesep=11pt,
+            footnotesep=11bp,
             footskip=3em,
             includefoot,
            ]{geometry}
@@ -147,14 +147,14 @@
 \deffootnotemark{\thefootnotemark}
 
 \DeclareTOCStyleEntry[%
-    beforeskip=8pt,
+    beforeskip=8bp,
     entryformat = \bfseries,
     entrynumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     pagenumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     linefill = \TOCLineLeaderFill
 ]{tocline}{chapter}
 \DeclareTOCStyleEntry[%
-    beforeskip=1pt,
+    beforeskip=1bp,
     entrynumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     pagenumberformat = \addfontfeature{Numbers={Tabular,Uppercase}},
     indent=0.4in
@@ -226,7 +226,7 @@
 
 % Indent code examples, etc., by double the text size.
 \newenvironment{leftfigure}
-  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22pt}{0pt}}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22bp}{0pt}}
   {\end{adjustwidth}\vspace{0.5\baselineskip minus 0.3\baselineskip}}
 
 % Like the above, but with no adjustwidth
@@ -235,7 +235,7 @@
   {\vspace{0.5\baselineskip minus 0.3\baselineskip}\par\noindent\ignorespacesafterend}
 
 \newenvironment{centerfigure}
-  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22pt}{22pt}\centering}
+  {\par\vspace{0.5\baselineskip minus 0.3\baselineskip}\begin{adjustwidth}{22bp}{22bp}\centering}
   {\end{adjustwidth}\vspace{0.5\baselineskip minus 0.3\baselineskip}}
 
 \usepackage{graphicx}
@@ -311,7 +311,7 @@
 \clubpenalty=10000
 
 \begin{document}
-\fontsize{11pt}{13pt}\selectfont
+\fontsize{11bp}{13bp}\selectfont
 
 \frontmatter
 \setcounter{secnumdepth}{0}
@@ -383,7 +383,7 @@ his college papers.
 
 \mainmatter
 % Indent by one lead, as suggested in The Elements of Typographic Style.
-\setlength\parindent{14pt}
+\setlength\parindent{14bp}
 
 \pagenumbering{arabic}
 \setcounter{page}{1} % Restart page numbering after the ToC.

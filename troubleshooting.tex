@@ -24,17 +24,13 @@ them---or too tight, where\! words\! are\! awkwardly\! crammed\! together.
 
 \section{Avoiding widows and orphans}
 
-Typesetters do their best to avoid \introduce{widow} lines,
-which appear separated from the rest of their paragraph at the start of the
-following page.
-They also avoid \introduce{orphan}, or \introduce{club} lines,
-which are ``left behind'' on the previous page while the rest of the paragraph
-begins the next.
-\LaTeX{} tries to avoid these, but unfortunately, its page-splitting algorithm
-is much more simplistic than the one it uses
-to split paragraphs into lines.\punckern\footnote{This is because
-1980s computers didn't have enough \acronym{ram} to do so. Seriously---Knuth
-wrote at the time,
+Typesetters try to avoid \introduce{widow} and \introduce{orphan}
+(also called \introduce{club}) lines,
+which appear separated from the rest of their paragraph by a page boundary.
+\LaTeX{} tries to avoid these, but its page-splitting algorithm
+is much more primitive than its paragraph-splitting one.\punckern\footnote{%
+This is because 1980s computers didn't have enough \acronym{ram} to do so.
+Seriously---Knuth wrote at the time,
 ``The computer doesn't have enough high-speed memory capacity to remember the
 contents of several pages,
 so \TeX{} simply chooses each page break as best it can, by a process of

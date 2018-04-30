@@ -67,7 +67,7 @@ And this text is flush right.
 \LaTeX{} provides multiple environments for creating lists:
 \texttt{itemize}, \texttt{enumerate}, and \texttt{description}.
 In all three, each item starts with an \verb|\item| command.
-The first environment, \texttt{itemize} creates bulleted lists.
+The first environment, \texttt{itemize}, creates bulleted lists.
 With:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -127,7 +127,7 @@ then indents all subsequent lines for that item:
 \item[Leslie Lamport] is an American computer scientist.
     He defined the concept of sequential consistency,
     which is used to safely communicate between tasks
-    running in parallel on multiple processors.
+    running in parallel.
 \end{description}
 \end{lstlisting}
 \end{leftfigure}
@@ -146,7 +146,7 @@ gives us
 \item[\lm Leslie Lamport] is an American computer scientist.
     He defined the concept of sequential consistency,
     which is used to safely communicate between tasks
-    running in parallel on multiple processors.
+    running in parallel.
 \end{description}
 \end{leftfigure}
 
@@ -161,7 +161,7 @@ between 45 and 80 characters (including spaces) per line.
 If a line is too long, readers have an uncomfortable time scanning for
 the start of the next one.
 If a line is too short, it doesn't have much inter-word spacing to adjust,
-creating odd gaps or excessive hyphenation.}
+which can lead to odd gaps or excessive hyphenation.}
 You can either add the \texttt{twocolumn} option to your document class,
 which splits everything in two, or you can use the \texttt{multicols}
 environment from the \texttt{multicol} package:
@@ -200,8 +200,9 @@ printing, you can break to the front of the next page with
 
 \section{Footnotes}
 
-Footnotes can be used to insert remarks which readers might
-find useful, but aren't crucial to the main text.
+Footnotes are useful for inserting references,
+or for remarks that readers might find helpful,
+but aren't crucial to the main text.
 The \verb|\footnote| command places a marker at its location in the
 body text, then sets its argument at the bottom of the current
 page:
