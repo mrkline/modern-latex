@@ -11,7 +11,7 @@
 % http://practicaltypography.com/line-length.html
 % We're aiming for 80-ish characters per line.
 \usepackage[a5paper,
-            inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
+            inner=0.6in,outer=0.6in,top=0.75in,bottom=0.5in,
             footnotesep=11bp,
             footskip=3em,
             includefoot,
@@ -200,8 +200,8 @@
 \clearpairofpagestyles
 \pagestyle{scrheadings}
 \setkomafont{pagefoot}{\upshape}
-\lefoot*{\thepage}
-\rofoot*{\thepage}
+\cefoot*{\thepage}
+\cofoot*{\thepage}
 
 \usepackage{changepage} % For adjustwidth
 
@@ -249,6 +249,11 @@
 % Custom footer
 % Hyperlinks
 \usepackage[unicode,pdfusetitle,hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true, % Use colors
+    linkcolor=black, % Intra-doc links are black, like the rest of the text.
+    urlcolor=blue % URLs are blue
+}
 
 % Use \punckern to overlap periods, commas, and footnote markers
 % for a tighter look.
@@ -292,8 +297,8 @@
 }
 
 % monospace URLs (without setting the http://...)
-\newcommand{\http}[1]{\href{http://#1}{\texttt{#1}}}
-\newcommand{\https}[1]{\href{https://#1}{\texttt{#1}}}
+\newcommand{\http}[1]{\url{http://#1}}
+\newcommand{\https}[1]{\url{https://#1}}
 
 \newcommand{\edition}{First edition}
 
@@ -355,6 +360,11 @@ the same license. \\
 The license's full text is available at \\
 \https{creativecommons.org/licenses/by-sa/4.0/legalcode}
 }
+
+\vspace{\baselineskip}
+If you would like print copies of this book,
+they can be ordered at cost from \\
+\http{www.lulu.com/shop/matt-kline/modern-latex/paperback/product-23639599.html}
 \vfill
 
 The author apologizes for any typos,
@@ -374,7 +384,7 @@ but will happily compensate your feedback with a beverage of your choice
 next time we meet.
 
 \vspace{0.5in}
-\edition, typeset \today.
+\edition{} (online \acronym{pdf}), typeset \today.
 } % end ragged right
 \clearpage
 
