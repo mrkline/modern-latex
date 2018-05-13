@@ -7,6 +7,11 @@ decades, it remains one of the best typesetting programs around. Many of its
 guides, however, haven't aged as well. This short book will get you started with
 LaTeX without bogging you down in arcana that lost its relevance back in the 90s.
 
+## Where do I get it?
+
+An up-to-date version should be available at
+https://assets.bitbashing.io/modern-latex.pdf
+
 ## How do I build it?
 
 1. Install LuaLaTeX, a modern, Unicode-aware version of LaTeX.
@@ -20,7 +25,9 @@ LaTeX without bogging you down in arcana that lost its relevance back in the 90s
    Changes include even margins, centered page numbers, a lack of blank pages
    between chapters, and so on.
 
-3. The official version of this book is built with Garamond Premier,
+3. Change the fonts as-needed.
+
+   The official version of this book is typeset with Garamond Premier,
    Neue Haas Grotesk, URW Futura, Drive Mono, Noto, and (of course) Latin Modern.
    In the likely case that you don't have all of these typefaces,
    change the `fontspec` commands (e.g., `setmainfont`, etc.) appropriately,
