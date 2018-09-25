@@ -5,7 +5,7 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11bp, numbers=endperiod, draft=false]{scrbook}
+\documentclass[fontsize=11bp, numbers=endperiod, draft=true]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
@@ -284,18 +284,16 @@
 \newcommand{\introduce}[1]{\textit{#1}}
 
 % Letterspace acronyms a bit.
-\newcommand{\acronym}[1]{\textsc{\addfontfeature{LetterSpace=6}#1}}
+\newcommand{\acronym}[1]{\textsc{\addfontfeature{LetterSpace=5}#1}}
 
 % "Chapter <num>" references
-\newcommand{\chapref}[1]{%
-    {\addfontfeature{Numbers={Proportional,Uppercase}}Chapter~\ref{#1}}%
-}
+\newcommand{\chapref}[1]{chapter~\ref{#1}}
 
 % monospace URLs (without setting the http://...)
 \newcommand{\http}[1]{\href{http://#1}{\texttt{#1}}}
 \newcommand{\https}[1]{\href{https://#1}{\texttt{#1}}}
 
-\newcommand{\edition}{First edition}
+\newcommand{\edition}{Second edition \acronym{(wip)}}
 
 % See http://tex.stackexchange.com/a/68310
 \makeatletter

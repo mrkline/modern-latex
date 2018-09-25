@@ -5,7 +5,7 @@
 
 Sometimes you need some extra punch to get your point across.
 The simplest way to emphasize text in \LaTeX{} is with the \verb|\emph| command,
-which \emph{italicizes} its argument by default:
+which \emph{italicizes} its argument:
 \begin{leftfigure}
 \begin{lstlisting}
 \emph{Oh my!}
@@ -15,13 +15,13 @@ gives us
 \begin{leftfigure}
 \lm \emph{Oh my!}
 \end{leftfigure}
-There are other tools at our disposal:
+We have more tools at our disposal:
 \begin{leftfigure}
 \begin{lstlisting}
 We can also use \textbf{boldface} or \textsc{small caps}.
 \end{lstlisting}
 \end{leftfigure}
-with
+producing
 \begin{leftfigure}
 \lm%
 We can also use \textbf{boldface} or \textsc{small caps}.
@@ -59,20 +59,20 @@ spacing corrections needed around them.\punckern\footnote{For example,
 by a slight amount of additional space, called an ``italic correction''\quotekern.}
 However, when formatting multiple paragraphs,
 or when defining the style of other commands,\punckern\footnote{%
-For example, this book's section headers are styled with
+For instance, this book's section headers are styled with
 \texttt{\textbackslash Large\allowbreak\textbackslash itshape}.}
 the second variety is the only option.
 
 \section{Sizes}
 
-The default text size is controlled by your document class.
-It is usually ten points,\punckern\footnote{The standard digital publishing
-point, sometimes called the PostScript point, is \otffrac{1}{72} of an inch.
+The font size of \introduce{body text}---that is, your main content---is
+usually ten points,\punckern\footnote{The standard digital publishing point,
+sometimes called the PostScript point, is \otffrac{1}{72} of an inch.
 \LaTeX{}, for historical reasons, defines its point (\texttt{pt})
 as \otffrac{100}{7227} of an inch
 and the former as ``big points''\quotekern, or \texttt{bp}.}
-but this can be adjusted by passing additional arguments to
-\verb|\documentclass|.\punckern\footnote{The standard \LaTeX{} classes accept
+but can be adjusted by passing arguments to
+\verb|\documentclass|.\punckern\footnote{Stock \LaTeX{} classes accept
 \texttt{10pt}, \texttt{11pt}, or \texttt{12pt}.
 KOMA~Script classes accept arbitrary sizes with
 \monobox{fontsize=<size>}.}
@@ -91,6 +91,7 @@ To scale text relative to this size, use the following commands:
 \end{flushleftfigure}
 \clearpage
 \begin{flushleftfigure}
+\lm%
 \begin{tabular}{l l}
 \texttt{\textbackslash Large} & \Large Example Text \\
 \texttt{\textbackslash LARGE} & \LARGE Example Text \\
@@ -98,7 +99,7 @@ To scale text relative to this size, use the following commands:
 \texttt{\textbackslash Huge} & \Huge Example Text \\
 \end{tabular}
 \end{flushleftfigure}
-Some subtleties are at play here.
+You'll find some subtleties at play here.
 \LaTeX's default type family, Latin Modern,
 comes in multiple \introduce{optical sizes}.
 Smaller fonts aren't just shrunken versions of their big siblings---they
