@@ -5,13 +5,17 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11bp, numbers=endperiod, draft=true]{scrbook}
+\documentclass[paper=a5,
+               fontsize=11bp,
+               numbers=endperiod,
+               usegeometry,
+               draft=true,
+              ]{scrbook}
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
 % We're aiming for 80-ish characters per line.
-\usepackage[a5paper,
-            inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
+\usepackage[inner=0.65in,outer=0.55in,top=0.75in,bottom=0.5in,
             footnotesep=11bp,
             footskip=3em,
             includefoot,
@@ -242,9 +246,13 @@
 
 \usepackage{csquotes}
 
-\title{Modern \texorpdfstring{\LaTeX}{LaTeX}}
+\title{\texorpdfstring{\fontsize{0.5in}{0.7in}\selectfont
+Modern\\
+\fontsize{1in}{0.9in}\selectfont
+\LaTeX}{Modern LaTeX}}
+\subtitle{\edition}
 \author{Matt Kline}
-\date{\today}
+\date{}
 
 % Custom footer
 % Hyperlinks
@@ -298,8 +306,6 @@
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
 \let\runauthor\@author
-\let\rundate\@date
-\let\runtitle\@title
 \makeatother
 
 % Spend a bit more time to get better word spacing.
@@ -315,32 +321,12 @@
 
 \frontmatter
 \setcounter{secnumdepth}{0}
-\setlength\parindent{0pt}
 
-% Custom title instead of \maketitle
-\pagenumbering{gobble}
+\titlehead{
 \vspace*{1in}
-\begin{center}
-\fontsize{0.5in}{0.7in}\selectfont
-Modern
+}
 
-\fontsize{1in}{0.9in}\selectfont
-\LaTeX
-
-\normalsize
-\vspace{1.5\baselineskip}
-\edition
-\vspace{2in}
-
-\LARGE
-\runauthor
-\end{center}
-\clearpage
-
-{\raggedright%For the page
-\null
-\vfill
-{\addfontfeature{Numbers={Proportional,Uppercase}}
+\uppertitleback{
 Copyright © 2018 \\
 by \runauthor
 \bigskip
@@ -353,8 +339,8 @@ the same license. \\
 The license's full text is available at \\
 \https{creativecommons.org/licenses/by-sa/4.0/legalcode}
 }
-\vfill
 
+\lowertitleback{
 The author apologizes for any typos,
 f\raisebox{-0.1ex}{o}rmatt\raisebox{0.1ex}{i}ng mistakes,
 inaccuracies,
@@ -373,26 +359,18 @@ next time we meet.
 
 \vspace{0.5in}
 \edition, typeset \today.
-} % end ragged right
-\clearpage
+}
 
-\vspace*{1in}
-{\itshape%
+\dedication{\itshape%
 To Max, who once told me about a cool program he used to type up
 his college papers.
 }
-\cleardoublepage
 
-\pagenumbering{roman}
+\maketitle
+
 \tableofcontents
 
 \mainmatter
-% Indent by one lead, as suggested in The Elements of Typographic Style.
-\setlength\parindent{14bp}
-
-\pagenumbering{arabic}
-\setcounter{page}{1} % Restart page numbering after the ToC.
-\cleardoublepage
 
 \input{why}
 
@@ -417,6 +395,8 @@ his college papers.
 \input{international}
 
 \input{troubleshooting}
+
+\backmatter
 
 \appendix
 
