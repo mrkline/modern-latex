@@ -7,7 +7,7 @@ a system designed by Donald Knuth specifically for \TeX{}.
 As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
-including type. It remains in use today.} fonts was added.
+including type. It remains in widespread use today.} fonts was added.
 Today, \LuaLaTeX{} and \XeLaTeX{} support the font formats you're
 most likely to encounter on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
@@ -114,7 +114,7 @@ weights of other fonts in our document.\punckern\footnote{Compare how
 {\fontspec[Scale=MatchLowercase]{Futura-Lig}the light,}
 {\fontspec[Scale=MatchLowercase]{Futura-Boo}book,}
 {\fontspec[Scale=MatchLowercase]{Futura-Med}and medium weights}
-of Futura look compared to surrounding type on this page.}
+of Futura look next to the rest of the type on this page.}
 Continuing to use Futura as an example,
 say we want to use the ``book'' weight as our default
 and ``demi'' for bold.
@@ -158,7 +158,7 @@ at the same point size.
 x-height or the cap height of your main font with
 \verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
 respectively.\footnote{One way to sidestep this issue is to have fewer
-typefaces in your design. Even just one or two,
+typefaces in your design. Just one or two,
 used carefully, can produce amazing results.}
 
 
@@ -183,8 +183,8 @@ Today they are making a comeback,
 thanks in no small part to their support in OpenType.}
 OpenType groups ligatures into three categories:
 \begin{description}
-\item[Standard] ligatures remedy spacing problems a typeface might otherwise have.
-    Consider the lowercase letters f and i: in many serif typefaces,
+\item[Standard] ligatures remedy spacing problems between certain characters.
+    Consider lowercase f and i: in many serif typefaces,
     these combine to form the ligature fi,
     avoiding awkward spacing between f's ascender and i's dot
     {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.

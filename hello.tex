@@ -3,7 +3,7 @@
 
 Now that you have a \LaTeX{} distribution installed,
 let's try it out.
-Open up your editor of choice and save the following as \texttt{hello.tex}:
+Open up your favorite text editor and save the following as \texttt{hello.tex}:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
@@ -23,7 +23,7 @@ but throughout this book, we'll always use the newest ones:
 \LuaLaTeX{} and \XeLaTeX.\punckern\footnote{See Appendix~\ref{history} for a
 comparison of current \LaTeX{} engines.}
 
-If you are using a \LaTeX{}-specific editor, it should contain some method
+If you are using a \LaTeX{}-specific editor, it should have some method
 (like a drop-down menu) to select the engine you'd like to use,
 along with a button to generate your document.
 Otherwise, run the following from your terminal:\footnote{%
@@ -37,7 +37,7 @@ prompt, and shouldn't actually be typed.}
 $ xelatex hello.tex
 \end{lstlisting}
 \end{leftfigure}
-Feel free to use \texttt{lualatex} instead---there are a few differences
+Feel free to try \texttt{lualatex} instead---there are a few differences
 between the two that we'll discuss later, but either is fine for now.
 With luck, you should see some output that ends in a message like:
 \begin{leftfigure}
@@ -52,8 +52,8 @@ Open it up and you should see a page with this at the top:
 \lm Hello, World!
 \end{leftfigure}
 Congrats,
-you just created your first document!
-Let's unpack what we did.
+you created your first document!
+Let's unpack what we just did.
 
 All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
 which picks a base ``style'' to use.
@@ -64,9 +64,9 @@ The name is a German term for a projector.}
 For the average document,
 \texttt{article} is probably a good choice.
 The next line, \verb|% Say hello|,
-is a \introduce{comment}---since text placed after \texttt{\%} on a line
-is ignored by the engine,
-we use it to leave notes for anybody reading
+is a \introduce{comment}.
+\LaTeX{} ignores the rest of a line once it sees a percent sign,
+so we use it to leave notes for anybody reading
 the document's source.\punckern\footnote{Including, perhaps most importantly,
 a confused version of your future self!}
 Finally, \verb|\begin{document}| tells \LaTeX{} that what follows
@@ -99,9 +99,9 @@ starts the next.
 \end{leftfigure}
 Notice that \LaTeX{} automatically follows typographic
 conventions, such as indenting new paragraphs and leaving more space after a
-period than it leaves between words.
-One quirk to be aware of is that comments ``eat'' all of the leading
-space on the subsequent line, such that
+period than between words.
+One quirk to be aware of is that comments ``eat'' any leading
+space on the following line, so
 \begin{leftfigure}
 \begin{lstlisting}
 This% weird, right?
@@ -123,16 +123,18 @@ contain only letters, and are case-sensitive.\punckern\footnote{%
 % \verb doesn't play nicely in footnotes, so...
 \texttt{\textbackslash foo}
 is different from \texttt{\textbackslash Foo}, for example.}
-Some commands require parameters, or \introduce{arguments}---\verb|\documentclass|,
+Some commands require parameters, or \introduce{arguments}:
+\verb|\documentclass|,
 for example, needs to know which class we want.
-Arguments are enclosed in subsequent pairs of braces,
+Arguments are enclosed in consecutive pairs of braces,
 so if some command needed two arguments, we would type:
 \begin{leftfigure}
 \begin{lstlisting}
 \somecommand{argument1}{argument2}
 \end{lstlisting}
 \end{leftfigure}
-Many commands also take optional arguments, which precede the mandatory ones,
+Many commands also take optional arguments.
+They precede the mandatory ones,
 are enclosed in square brackets, and are separated by commas.
 Say you want to inform \LaTeX{} that your document should be printed as double-sided
 pages\footnote{\texttt{twoside} introduces commands
@@ -142,7 +144,7 @@ It also allows you to have different margins for even and odd pages,
 which is useful for texts like this book.}
 in 11~point
 type.\punckern\footnote{We'll discuss font sizes in \chapref{formatting}.}
-This is done with optional arguments to \verb|\documentclass|:
+We give these demands as optional \verb|\documentclass| arguments:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass[11pt, twoside]{article}
@@ -162,8 +164,8 @@ will give you
 \begin{leftfigure}
 \lm \LaTeX is great, but it can be a bit odd sometimes.
 \end{leftfigure}
-You can fix this by adding an empty pair of braces to the command.
-Of course, the braces aren't needed if there is no space to preserve:
+You can fix this with an empty pair of braces following the command.
+Of course, braces aren't needed if there is no space to preserve:
 \begin{leftfigure}
 \begin{lstlisting}
 Let's learn \LaTeX! \LaTeX{} is a powerful tool,
@@ -194,14 +196,14 @@ to print it in your document. Respectively, they are:
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 \end{lstlisting}
 \end{leftfigure}
-Regardless of what comes after them, you must always add braces to
-the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,).
-This is a relic from the days when these commands were used to produce
+Regardless of whatever follows them,
+the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,) always need braces.
+This is a relic from days when these commands produced
 \introduce{diacritical marks}:
 once upon a time, users would typeset ``jalapeño'' with
 \verb|jalape\~no|.
-Today, we just type \texttt{ñ} into our source
-file.\punckern\footnote{The ease of doing so depends
+Today we just type \texttt{ñ} into our source
+file.\punckern\footnote{This can be easier or harder depending
 on your keyboard, your editor, and language settings in your \acronym{os}.
 We'll talk much more about languages and Unicode fun in \chapref{i18n}.}
 
@@ -219,8 +221,8 @@ obeys:
 \lm Give me \\
 a brand new line!
 \end{leftfigure}
-Use this power judiciously---deciding how to best break paragraphs into lines
-is one of \LaTeX{}'s greatest skills.
+Use this power judiciously---deciding how to elegantly break paragraphs into
+lines is one of \LaTeX{}'s greatest skills.
 
 \section{Environments}
 
@@ -257,7 +259,7 @@ that critical 3\%.
 \section{Groups and command scope}
 Some commands change how \LaTeX{} sets the text that follows them.
 \verb|\itshape|, for example, \textit{italicizes} everything that comes after it.
-To limit a command's influence to a certain area, we surround it with braces.
+To limit a command's influence to a certain area, surround it with braces.
 \begin{leftfigure}
 \begin{lstlisting}
 {\itshape Sometimes we want italics}, but only sometimes.
@@ -268,8 +270,8 @@ becomes
 \lm {\itshape Sometimes we want italics}, but only sometimes.
 \end{leftfigure}
 The braced region is called a \introduce{group},
-and commands placed inside that group only take effect until it ends.
-Environments also form implicit groups:
+and commands placed inside a group lose their power once it ends.
+Environments also create their own groups:
 \begin{leftfigure}
 \begin{lstlisting}
 \begin{quote}

@@ -1,11 +1,12 @@
 \chapter{Typography and You}
 \label{typography}
 
-Modern life is an onslaught of written language.
-Ads, apps, articles, essays, emails, and messages
-endlessly shove text in your face.
-And when you read, you see much more than the authors' word choice.
-Consciously or not, you notice the shapes and sizes of letters.
+Modern life is a parade of written language.
+Wherever you go,
+ads, apps, articles, essays, emails, and messages
+shove text in your face.
+But when you read that text, you see so much more than the authors' word choice.
+Consciously or not, you notice the letters' shapes and sizes.
 You notice how those letters are arranged into words,
 how those words are arranged into paragraphs,
 how those paragraphs are arranged onto pages and screens.
@@ -25,11 +26,8 @@ Do many books look this way? Why not?
 \fontspec{FuturaCon-ExtBol}\Large JUST DO IT LATER.
 \end{leftfigure}
 might remind you of a shoe company that took its name from a Greek goddess.
-With the help of typography,\punckern\endnote{Douglas Thomas,
-``Over the Moon for Futura''\quotekern,
-\textit{Never Use Futura}
-(New York, 2017)}
-two men landed on a dusty alien plain, carrying a plaque that said:
+With the help of typography, two men landed on a dusty alien plain,
+carrying a plaque that looked like this:
 \begin{center}
 \fontspec[Ligatures=TeX, Scale=MatchLowercase]{Futura-Med}
 HERE MEN FROM THE PLANET EARTH \\
@@ -38,19 +36,18 @@ JULY 1969, A.~D. \\
 WE CAME IN PEACE FOR ALL MANKIND
 \end{center}
 
-Good typography isn't mere art---it's function.
+Good typography isn't just art---it's function.
 It draws readers in,
 sets their expectations, and builds a subliminal brand for your
 work.\punckern\endnote{Erik Spiekermann, ``Type is Visible Language''
 (presented at Beyond Tellerrand, Düsseldorf, Germany, May 19--21, 2014),
 \https{www.youtube.com/watch?v=ggQpDu63kk0}}
-If you care not only about \emph{what} you tell your readers, but also \emph{how}
-you tell them, you should try \LaTeX,\punckern\footnote{Pronounced ``lay-tech''
+And if you care about all of this,
+you you should try \LaTeX,\punckern\footnote{Pronounced ``lay-tech''
 or ``lah-tech''}
-a program for crafting written documents like essays, papers, and books.
-By carefully handling subtle details,
-it can produce beautiful typography
-with little effort.
+a program for crafting written documents.
+By carefully arranging subtle details,
+it produces beautiful typography with little effort.
 Modern versions can also leverage recent\footnote{By recent,
 I mean ``from the mid-1990s''\quotekern, but web browsers and desktop publishing
 software are only just starting to catch up.} advances in digital typesetting,
@@ -92,18 +89,17 @@ process---just as \acronym{html} and \acronym{css} describe
 the page you want browsers to draw, your markup describes
 the appearance of your document to \LaTeX.
 \end{lstlisting}
-\captionof{figure}{The \LaTeX{} markup for the above paragraph}
+\captionof{figure}{The \LaTeX{} markup for the paragraph above}
 \end{leftfigure}
 \end{samepage}
 
-This might seem alien to you if you've never worked with a markup system before.
-However, it comes with a few advantages:
+This might seem strange if you haven't worked with markup before,
+but it comes with a few advantages:
 \begin{enumerate}
-\item You can handle your work's content and its presentation separately.
+\item You can handle your writing's content and its presentation separately.
     At the start of each document,
     you describe the design you want.
-    \LaTeX{} takes it from there, maintaining consistent
-    formatting across your whole text.
+    \LaTeX{} takes it from there, consistently formatting your whole text.
     Compare this to a \acronym{wysiwyg} system,
     where you constantly deal with appearances
     as you write.
@@ -115,25 +111,25 @@ However, it comes with a few advantages:
     %fighting with Word about how it wrapped text around images.}
 
 \item You can define your own commands, then tweak them to instantly adjust
-    wherever they're used.
-    For example, the \verb|\introduce| and \verb|\acronym| commands seen above
-    are my own creations.
+    every place they're used.
+    For example, the \verb|\introduce| and \verb|\acronym| commands
+    from the example paragraph are my own creations.
     The former \introduce{italicizes} text, and the latter sets words in
     \acronym{small caps} with a bit of extra
     \mbox{\textsc{\addfontfeature{LetterSpace=15}letterspacing}} so the characters
-    don't look \textsc{\addfontfeature{LetterSpace=-2}too crowded}.
+    don't look \textsc{\addfontfeature{LetterSpace=-10}too crowded}.
     If I decide tomorrow that I would rather introduce new terms
     \textbf{\itshape with this look}, or that acronyms should look
     {\small\addfontfeature{LetterSpace=6} LIKE THIS},
     I just change the two lines that define those commands.
     Every spot in this book that uses them is immediately updated.
 
-\item Since the document source is plain text,
+\item Being able to save the document as plain text also has advantages:
     \begin{itemize}
     \item It can be read and understood with any text editor.
     \item Structure is immediately visible
         and simple to replicate.\punckern\footnote{Compare this to
-        \acronym{wysiwyg} systems, where it is often unobvious
+        \acronym{wysiwyg} systems, where it's not always obvious
         how certain formatting was produced or how to replicate it.}
     \item Content is easily generated by scripts and programs.
     \item Changes can be tracked with standard version control software.
@@ -142,35 +138,32 @@ However, it comes with a few advantages:
 
 \section{Another guide?}
 
-You might wonder why the world needs another \LaTeX{} guide.
+You might wonder why the world needs another guide for \LaTeX{}.
 After all, it's existed for decades.
 A quick Amazon search finds nearly a dozen books on the topic.
 There are plenty of great resources online.
 
 Unfortunately, most of the introductions you will find have two fatal flaws:
 they are long, and they are old.
-Their length is anathema to newcomers---if somebody asks about \LaTeX{},
-throwing a 200+ page book at them isn't an encouraging start.
+Their length is anathema to newcomers---if somebody wants to learn about \LaTeX{},
+a 200+ page book at them isn't an encouraging start.
 Their age matters because of how much typesetting has changed since 1986.
 
 When \LaTeX{} was first released that year, none of the publishing technologies
 we use today existed.
-Adobe wouldn't debut their Portable Document Format for seven more years.
-Digital printing was a new field, and desktop publishing was a fledgling
-curiosity.\punckern\endnote{\textit{Graphic Means:
-A History of Graphic Design Production}, directed by Briar Levit (2017)}
+Adobe wouldn't debut their Portable Document Format for seven more years,
+and desktop publishing was a fledgling curiosity.
 This shows---badly---in most \LaTeX{} guides.
 If you look for instructions to change your document's font,
 you'll get swamped with bespoke nonsense.\punckern\footnote{%
-Take all criticisms of \LaTeX's past here with a grain of
-salt. After all, the fact that all of the technology around it became
+Take any criticisms that you find here with a grain of
+salt. After all, the fact that all of the technology around \LaTeX{} became
 obsolete---multiple times---is a testament to its staying power.}
 
 The good news is that  \LaTeX{} has improved by leaps and bounds in recent years.
 It's time for a guide that doesn't weigh you down with decades of legacy
 or try (in vain) to be a comprehensive reference.
-After all, you're a smart, resourceful individual who knows how to use a search
-engine.
+After all, you're a smart, resourceful individual who can search the web.
 This book will:
 
 \begin{enumerate}
