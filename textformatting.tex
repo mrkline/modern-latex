@@ -45,7 +45,8 @@ A (mostly) complete list follows:
 \texttt{\textbackslash textsf\{...\}} & \texttt{\{\textbackslash sffamily ...\}} & {\fontspec{Latin Modern Sans}sans serif type} \\
 \texttt{\textbackslash texttt\{...\}} & \texttt{\{\textbackslash ttfamily ...\}} & {\fontspec{Latin Modern Mono}teletype (monospaced)} \\
 \texttt{\textbackslash textit\{...\}} & \texttt{\{\textbackslash itshape ...\}} & \textit{italics} \\
-\texttt{\textbackslash textsl\{...\}} & \texttt{\{\textbackslash slshape ...\}} & {\fontspec{Latin Modern Roman Slanted}slanted, or oblique type} \\
+% WTF: LuaTeX font loading doesn't seem to know what to do with Latin Modern Roman Slant
+\texttt{\textbackslash textsl\{...\}} & \texttt{\{\textbackslash slshape ...\}} & {\fontspec{lmromanslant10-regular}slanted, or oblique type} \\
 \texttt{\textbackslash textsc\{...\}} & \texttt{\{\textbackslash scshape ...\}} & \textsc{Small Capitals} \\
 \texttt{\textbackslash textbf\{...\}} & \texttt{\{\textbackslash bfseries ...\}} & \textbf{boldface} \\
 \end{tabularx}
