@@ -21,7 +21,7 @@ The installation placed several different versions---or
 \introduce{engines}---on your machine,
 but throughout this book, we'll always use the newest ones:
 \LuaLaTeX{} and \XeLaTeX.\punckern\footnote{See Appendix~\ref{history} for a
-comparison of current \LaTeX{} engines.}
+comparison of the various \LaTeX{} engines.}
 
 If you are using a \LaTeX{}-specific editor, it should have some method
 (like a drop-down menu) to select the engine you'd like to use,
@@ -116,14 +116,14 @@ gives
 
 \section{Commands}
 
-\LaTeX{} provides various commands to issue layout instructions to
-the engine, and you can define your own as well.
+\LaTeX{} provides various commands to format your text,
+and you can define your own as well.
 Their names always begin with a backslash (\,\texttt{\textbackslash}\,),
 contain only letters, and are case-sensitive.\punckern\footnote{%
 % \verb doesn't play nicely in footnotes, so...
 \texttt{\textbackslash foo}
 is different from \texttt{\textbackslash Foo}, for example.}
-Some commands require parameters, or \introduce{arguments}:
+Some commands need more information, or \introduce{arguments}:
 \verb|\documentclass|,
 for example, needs to know which class we want.
 Arguments are enclosed in consecutive pairs of braces,
@@ -145,7 +145,7 @@ It also allows you to have different margins for even and odd pages,
 which is useful for texts like this book.}
 in 11~point
 type.\punckern\footnote{We'll discuss font sizes in \chapref{formatting}.}
-We give these demands as optional \verb|\documentclass| arguments:
+We make these demands as optional \verb|\documentclass| arguments:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass[11pt, twoside]{article}
@@ -191,7 +191,7 @@ The full list of special characters is:
 \end{lstlisting}
 \end{leftfigure}
 Each has a corresponding command
-to print it in your document. Respectively, they are:
+for actually printing it in your document. Respectively, they are:
 \begin{leftfigure}
 \begin{lstlisting}
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
