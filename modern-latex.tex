@@ -5,7 +5,10 @@
 % We're using KOMA Script to hand-tune footnotes and TOC appearance.
 % It should be available in your texlive distribution,
 % which is how most distros package LaTeX.
-\documentclass[fontsize=11bp, numbers=endperiod, draft=false]{scrbook}
+\documentclass[fontsize=11bp, numbers=endperiod, draft=true]{scrbook}
+
+% Hm: https://mailman.ntg.nl/pipermail/dev-luatex/2019-February/006186.html
+\automatichyphenmode=1
 
 % Margins: see http://practicaltypography.com/page-margins.html and
 % http://practicaltypography.com/line-length.html
@@ -289,18 +292,16 @@
 \newcommand{\introduce}[1]{\textit{#1}}
 
 % Letterspace acronyms a bit.
-\newcommand{\acronym}[1]{\textsc{\addfontfeature{LetterSpace=6}#1}}
+\newcommand{\acronym}[1]{\textsc{\addfontfeature{LetterSpace=5}#1}}
 
 % "Chapter <num>" references
-\newcommand{\chapref}[1]{%
-    {\addfontfeature{Numbers={Proportional,Uppercase}}Chapter~\ref{#1}}%
-}
+\newcommand{\chapref}[1]{chapter~\ref{#1}}
 
 % monospace URLs (without setting the http://...)
 \newcommand{\http}[1]{\url{http://#1}}
 \newcommand{\https}[1]{\url{https://#1}}
 
-\newcommand{\edition}{First edition}
+\newcommand{\edition}{Second edition \acronym{(wip)}}
 
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
@@ -351,7 +352,7 @@ Modern
 \null
 \vfill
 {\addfontfeature{Numbers={Proportional,Uppercase}}
-Copyright © 2018 \\
+Copyright © 2018--2019 \\
 by \runauthor
 \bigskip
 
@@ -410,33 +411,21 @@ his college papers.
 \cleardoublepage
 
 \input{why}
-
 \input{installation}
-
 \input{hello}
-
 \input{structure}
-
 \input{textformatting}
-
 \input{punctuation}
-
 \input{pagelayout}
-
 \input{math}
-
 \input{fonts}
-
 \input{micro}
-
 \input{international}
-
 \input{troubleshooting}
 
 \appendix
 
 \input{history}
-
 \input{back}
 
 \end{document}

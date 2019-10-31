@@ -5,7 +5,7 @@
 
 Sometimes you need some extra punch to get your point across.
 The simplest way to emphasize text in \LaTeX{} is with the \verb|\emph| command,
-which \emph{italicizes} its argument by default:
+which \emph{italicizes} its argument:
 \begin{leftfigure}
 \begin{lstlisting}
 \emph{Oh my!}
@@ -15,18 +15,18 @@ gives us
 \begin{leftfigure}
 \lm \emph{Oh my!}
 \end{leftfigure}
-There are other tools at our disposal:
+We have more tools at our disposal:
 \begin{leftfigure}
 \begin{lstlisting}
 We can also use \textbf{boldface} or \textsc{small caps}.
 \end{lstlisting}
 \end{leftfigure}
-with
+producing
 \begin{leftfigure}
 \lm%
 We can also use \textbf{boldface} or \textsc{small caps}.
 \end{leftfigure}
-Be judicious in your use of emphasis, especially boldface.
+Be judicious when you use, especially boldface.
 It excels at drawing the reader's attention away from everything around it,
 so too much is distracting.
 
@@ -45,38 +45,40 @@ A (mostly) complete list follows:
 \texttt{\textbackslash textsf\{...\}} & \texttt{\{\textbackslash sffamily ...\}} & {\fontspec{Latin Modern Sans}sans serif type} \\
 \texttt{\textbackslash texttt\{...\}} & \texttt{\{\textbackslash ttfamily ...\}} & {\fontspec{Latin Modern Mono}teletype (monospaced)} \\
 \texttt{\textbackslash textit\{...\}} & \texttt{\{\textbackslash itshape ...\}} & \textit{italics} \\
-\texttt{\textbackslash textsl\{...\}} & \texttt{\{\textbackslash slshape ...\}} & {\fontspec{Latin Modern Roman Slanted}slanted, or oblique type} \\
+% WTF: LuaTeX font loading doesn't seem to know what to do with Latin Modern Roman Slant
+\texttt{\textbackslash textsl\{...\}} & \texttt{\{\textbackslash slshape ...\}} & {\fontspec{lmromanslant10-regular}slanted, or oblique type} \\
 \texttt{\textbackslash textsc\{...\}} & \texttt{\{\textbackslash scshape ...\}} & \textsc{Small Capitals} \\
 \texttt{\textbackslash textbf\{...\}} & \texttt{\{\textbackslash bfseries ...\}} & \textbf{boldface} \\
 \end{tabularx}
 \end{flushleftfigure}
 Prefer the first form (which takes the text to format as an argument)
 over the second
-(which affect the group in which they are issued),
+(which affect the group they are issued in),
 since the former automatically handle any
 spacing corrections needed around them.\punckern\footnote{For example,
-\textit{italic type} amidst upright type should be followed
+\textit{italic type} amidst upright type needs to be followed
 by a slight amount of additional space, called an ``italic correction''\quotekern.}
 However, when formatting multiple paragraphs,
 or when defining the style of other commands,\punckern\footnote{%
-For example, this book's section headers are styled with
+For instance, this book's section headers are styled with
 \texttt{\textbackslash Large\allowbreak\textbackslash itshape}.}
 the second variety is the only option.
 
 \section{Sizes}
 
-The default text size is controlled by your document class.
-It is usually ten points,\punckern\footnote{The standard digital publishing
-point, sometimes called the PostScript point, is \otffrac{1}{72} of an inch.
+The font size of \introduce{body text}---that is, your main content---is
+usually ten points,\punckern\footnote{The standard digital publishing point,
+sometimes called the PostScript point, is \otffrac{1}{72} of an inch.
 \LaTeX{}, for historical reasons, defines its point (\texttt{pt})
 as \otffrac{100}{7227} of an inch
-and the former as ``big points''\quotekern, or \texttt{bp}.}
-but this can be adjusted by passing additional arguments to
-\verb|\documentclass|.\punckern\footnote{The standard \LaTeX{} classes accept
-\texttt{10pt}, \texttt{11pt}, or \texttt{12pt}.
+and the former as ``big points''\quotekern, or \texttt{bp}.
+Use whichever you'd like.}
+but can be adjusted by passing arguments to
+\verb|\documentclass|.\punckern\footnote{Stock \LaTeX{} classes accept
+\texttt{10pt}, \texttt{11pt}, or \texttt{12pt} as optional arguments.
 KOMA~Script classes accept arbitrary sizes with
 \monobox{fontsize=<size>}.}
-To scale text relative to this size, use the following commands:
+To scale text relative to this default size, use the following commands:
 \begin{flushleftfigure}
 \lm%
 \renewcommand{\arraystretch}{1.1}%
@@ -91,6 +93,7 @@ To scale text relative to this size, use the following commands:
 \end{flushleftfigure}
 \clearpage
 \begin{flushleftfigure}
+\lm%
 \begin{tabular}{l l}
 \texttt{\textbackslash Large} & \Large Example Text \\
 \texttt{\textbackslash LARGE} & \LARGE Example Text \\
@@ -98,19 +101,19 @@ To scale text relative to this size, use the following commands:
 \texttt{\textbackslash Huge} & \Huge Example Text \\
 \end{tabular}
 \end{flushleftfigure}
-Some subtleties are at play here.
+You'll find some subtleties at play here.
 \LaTeX's default type family, Latin Modern,
 comes in multiple \introduce{optical sizes}.
 Smaller fonts aren't just shrunken versions of their big siblings---they
 have thicker strokes, exaggerated features,
 and more generous spacing to improve legibility at their size.
 \begin{leftfigure}
-\fontspec{lmroman5-regular} If you magnify 5 point type
+\fontspec{lmroman5-regular} When I magnify 5 point type
 \lm and place the result next to 11 point type,
-the differences are immediately noticeable.
+you can instantly see the differences.
 \end{leftfigure}
-Optical sizes were standard in the days of metal type, but
-many digital typefaces lack them,
+Optical sizes were standard back when fonts were made out of metal,
+but many digital typefaces lack them,
 given how much more work it demands from the type
 designer.\punckern\footnote{If you are fortunate enough to have
 a typeface with multiple optical sizes, \LuaLaTeX{}
@@ -151,17 +154,18 @@ additional space \\
 between lines
 \end{leftfigure}
 {\fontsize{11pt}{11pt}\selectfont
-Note that without additional spacing,
+Note how without a bit of this extra space,
 or \introduce{leading},\punckern\footnote{This term comes from the days of
 metal type, when strips of lead or brass were inserted
 between lines to space them out.\endnote{Jan Middendorp, \textit{Shaping Text}
 (Amsterdam, 2014), 71}}
-descenders from one line nearly collide with ascenders and capitals on
+descenders from one line almost collide with ascenders and capitals on
 the line below.
 Leading is important---without it, blocks of text become uncomfortable to
 read, especially at normal body sizes.\par}
-Let your type breathe.\punckern\footnote{For a discussion on optimal leading,
-see \textit{Practical Typography}, listed in Appendix~\ref{resources}.}
+Let your type breathe!\footnote{For a discussion of how much leading
+to use, see \textit{Practical Typography},
+as mentioned in Appendix~\ref{resources}.}
 
 \section{What next?}
 \begin{itemize}
