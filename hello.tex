@@ -1,7 +1,7 @@
 \chapter{Hello, \texorpdfstring{\LaTeX}{LaTeX}!}
 \label{hello}
 
-Now that you have a \LaTeX{} distribution installed,
+Now that you have \LaTeX{} installed,
 let's try it out.
 Open up your favorite text editor and save the following as \texttt{hello.tex}:
 \begin{leftfigure}
@@ -19,12 +19,12 @@ or \LaTeX{} the flamethrower. The kids love this stuff!}
 to get our document.
 The installation placed several different versions---or
 \introduce{engines}---on your machine,
-but throughout this book, we'll always use the newest ones:
+but throughout this book, we'll use the newest ones:
 \LuaLaTeX{} and \XeLaTeX.\punckern\footnote{See Appendix~\ref{history} for a
 comparison of the various \LaTeX{} engines.}
 
-If you are using a \LaTeX{}-specific editor, it should have some method
-(like a drop-down menu) to select the engine you'd like to use,
+If you are using a \LaTeX{}-specific editor, it should have some menu
+to select the engine you'd like to use,
 along with a button to generate your document.
 Otherwise, run the following from your terminal:\footnote{%
 How to work a terminal emulator,
@@ -201,7 +201,7 @@ Regardless of whatever follows them,
 the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,) always need braces.
 This is a relic from days when these commands produced
 \introduce{diacritical marks}:
-once upon a time, users would typeset ``jalapeño'' with
+once upon a time, \LaTeX{} users would typeset ``jalapeño'' with
 \verb|jalape\~no|.
 Today we just type \texttt{ñ} into our source
 file.\punckern\footnote{This can be easier or harder depending
@@ -222,7 +222,7 @@ obeys:
 \lm Give me \\
 a brand new line!
 \end{leftfigure}
-Use this power judiciously---deciding how to elegantly break paragraphs into
+Use this power sparingly---deciding how to elegantly break paragraphs into
 lines is one of \LaTeX{}'s greatest skills.
 
 \section{Environments}
@@ -291,5 +291,5 @@ use upright type again.
 \end{quote}
 See? Back to normal.
 \end{leftfigure}
-Another use of groups is to handle the spacing oddities of zero-argument
+Groups can also be used to handle the spacing oddities of zero-argument
 commands: some prefer \verb|{\LaTeX}| over \verb|\LaTeX{}|.
