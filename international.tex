@@ -2,17 +2,17 @@
 \label{i18n}
 
 Surprisingly, languages besides English exist.
-You may want to use them.
+You may write with them.
 
 \section{Unicode}
 
-Digitizing human language is a complicated topic that has evolved significantly
+Digitizing written language is a complicated topic that has evolved significantly
 since \LaTeX's inception.
 Today, computers usually represent text with Unicode. Briefly,
 \begin{itemize}
-\item A Unicode text file is made from a series of \introduce{code points},
-    each of which can represent a character to be drawn,
-    an accent or other diacritical mark to combine with an adjacent
+\item A Unicode text file is a series of \introduce{code points}.
+    Each represents a character to be drawn,
+    an accent or diacritical mark to combine with an adjacent
     character,
     or formatting information,
     such as an instruction to print subsequent text right-to-left.
@@ -26,13 +26,13 @@ Today, computers usually represent text with Unicode. Briefly,
 \quad\fontspec[Ligatures=TeX]{NotoSerif-Devanagari}%
 नमस्ते
 \captionof{figure}{How many characters do you see?
-How many code points are they built from?}
+How many code points?}
 \end{centerfigure}
 \item Modern font formats contain encoding tables
     which map code points to the glyphs the file contains.
 \end{itemize}
-\LuaLaTeX{} and \XeLaTeX{} use these tools to build documents
-from Unicode input
+\LuaLaTeX{} and \XeLaTeX{} are Unicode-literate and play well with
+Unicode text
 files.\punckern\footnote{\LuaLaTeX{} accepts \mbox{\acronym{utf}-8} files,
 while \XeLaTeX{} is a bit more flexible and also
 accepts \mbox{\acronym{utf}-16} and
@@ -46,8 +46,7 @@ When your document contains languages besides English,
 consider using the \texttt{polyglossia} package.
 It will automatically:
 \begin{itemize}
-\item Load language-specific hyphenations and other typographical
-    conventions.
+\item Load language-specific hyphenations and other conventions.
 \item Switch between user-specified fonts for each language.
 \item Translate document labels,
     like ``chapter''\quotekern, ``section''\quotekern, and so on.
@@ -67,8 +66,9 @@ Some languages also take regional dialects as an optional argument:
 \setotherlanguage{french}
 \end{lstlisting}
 \end{leftfigure}
-\texttt{polyglossia} will define an environment for each language.
-These automatically apply that language's conventions to the text within.
+Once set up,
+\texttt{polyglossia} defines environments for the requested languages.
+Each automatically applies their language's conventions to the text within.
 French, for example, places extra space around punctuation, so
 \begin{leftfigure}
 \begin{lstlisting}

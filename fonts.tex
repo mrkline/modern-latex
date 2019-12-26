@@ -1,28 +1,28 @@
 \chapter{Fonts}
 \label{fonts}
 
-Digital fonts have changed almost entirely in the past thirty years.
-Originally, \LaTeX{} used \MF,
-a system designed by Donald Knuth specifically for \TeX{}.
+Digital fonts have completely changed since \LaTeX{} was created decades ago.
+\LaTeX{} originally used \MF,
+a format Donald Knuth designed for \TeX{}.
 As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
 including type. It remains in widespread use today.} fonts was added.
-Today, \LuaLaTeX{} and \XeLaTeX{} support the font formats you're
-most likely to encounter on your computer:
+Today, \LuaLaTeX{} and \XeLaTeX{} support the modern font formats you'll find
+on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
 Apple's \acronym{aat}, but let's limit this discussion to
 more ubiquitous formats.}
 
 \begin{description}
 \item[TrueType] was developed by Apple and Microsoft in the late 1980s.
-    Most of the fonts that come pre-installed on your system are likely
+    Most fonts that come pre-installed on your system are probably
     in this format.
     TrueType files generally end in a \monobox{.ttf} extension.
 \item[OpenType] was first released by Microsoft and Adobe in 1996.
     Improvements over TrueType include its ability to embed
     various ``features''\quotekern, such as alternative glyphs
-    and spacing options, into a single font file.
+    and spacing options, into a single file.
     OpenType files usually end in an \monobox{.otf} extension.
 \end{description}
 
@@ -59,11 +59,11 @@ open-source typefaces are freely available at
 \fontspec{Source Code Pro} Let's try monospaced!
 \end{leftfigure}
 The \verb|Ligatures=TeX| option lets you use the punctuation
-shortcuts from \chapref{punctuation} (e.g., \texttt{--} for en dashes, or
-\texttt{``} and \texttt{''} for curly quotes)
+shortcuts from \chapref{punctuation} (\texttt{--} for en dashes,
+\texttt{``} and \texttt{''} for curly quotes, etc.)
 instead of forcing you to enter the the corresponding characters,
 which probably aren't on your keyboard.
-You often don't want these substitutions when setting monospaced type, though.
+You often don't want these substitutions with monospaced type, though.
 Text that uses it---such as code---is usually meant to be printed
 verbatim. \verb|"Hello!"| shouldn't turn into
 \verb|“Hello!“|.
@@ -71,7 +71,7 @@ verbatim. \verb|"Hello!"| shouldn't turn into
 \section{Selecting font files}
 
 Typefaces come packaged as multiple files for their various
-weights and styles---a typical set includes upright,
+weights and styles---a basic set includes upright,
 \textit{italics},
 \textbf{bold}, and
 \textit{\textbf{bold italics}}.
@@ -152,25 +152,26 @@ Note that instead of typing out \monobox{Futura-Boo},
 \section{Scaling}
 
 Creating a cohesive design with multiple fonts is tricky,
-especially since typefaces might look completely different
+especially since they might look completely different
 at the same point size.
-\texttt{fontspec} can help here by scaling fonts to match either the
+\texttt{fontspec} can help by scaling fonts to match either the
 x-height or the cap height of your main font with
 \verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
-respectively.\footnote{One way to sidestep this issue is to have fewer
-typefaces in your design. Just one or two,
-used carefully, can produce amazing results.}
+respectively.
+But one way to sidestep this issue is to use fewer
+typefaces in the first place.
+Just one or two, used carefully, can produce amazing results.
 
 
 \section{OpenType features}
 
 As mentioned at the start of the chapter,
-OpenType fonts provide various features that can be turned on and off.
-In \LaTeX{}, these are controlled through \texttt{fontspec}
-with optional arguments to \verb|\setmainfont| and friends.
-They can also be set for the current group with
+OpenType fonts provide various features that can be switched on and off.
+In \LaTeX{}, we do this with optional arguments to
+\verb|\setmainfont| and friends.
+Features can also be set for the current group with
 \verb|\addfontfeature|.
-Let's examine a few common ones.
+Let's examine some common ones.
 
 \subsection{Ligatures}
 
@@ -181,7 +182,7 @@ century due to limitations of printing technology and the increased popularity
 of sans serif typefaces, which often lack them.
 Today they are making a comeback,
 thanks in no small part to their support in OpenType.}
-OpenType groups ligatures into three categories:
+OpenType groups them into three categories:
 \begin{description}
 \item[Standard] ligatures remedy spacing problems between certain characters.
     Consider lowercase f and i: in many serif typefaces,
@@ -194,8 +195,7 @@ OpenType groups ligatures into three categories:
 \item[Discretionary] ligatures, such as
     {\addfontfeature{Ligatures=Discretionary}ct},
     are offered by some fonts.
-    They are disabled by default
-    but can be enabled with
+    They're disabled by default but enabled with
     \verb|Ligatures=Discretionary|.
 \item[Historical] ligatures are ones which have fallen out of common use,
     such as those with a \introduce{long~s} (e.g., ſt).
@@ -216,22 +216,21 @@ options. If you want to stop using discretionary ligatures for some passage,
 \end{leftfigure}
 does the trick.
 
-Some words are arguably typeset better without ligatures---a classic example
+Some words arguably look better without ligatures---a classic example
 is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
 (Addison-Wesley, 1986), 19}
 You can manually prevent ligatures with a zero-width
 space, e.g., \verb|shelf\hspace{0pt}ful|.
-You can also use the \texttt{selnolig} package to handle most of these cases
-automatically.
+Or, since life is too short, you can let the \texttt{selnolig} package
+do this for you.
 
 \subsection{Figures}
 
-When setting figures,\punckern\footnote{\introduce{Figure}
-here refers to what some might call a \introduce{numeral} or
-\introduce{digit}---i.e., 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
-Typographers generally prefer the first term over the other two.}
+When setting figures,\punckern\footnote{%
+We use the term \introduce{figures} in typographical contexts for the symbols
+we might otherwise call \introduce{digits} (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).}
 you have two
-choices to make: lining versus oldstyle,
+choices to make: lining versus text,
 and proportional versus tabular.
 \introduce{Lining} figures, sometimes called \introduce{titling} figures,
 have heights similar to capital letters:
@@ -239,21 +238,21 @@ have heights similar to capital letters:
 \addfontfeature{Numbers=LowercaseOff}
 A B C D 1 2 3 4
 \end{leftfigure}
-\introduce{Oldstyle}, or \introduce{text} figures,
+\introduce{Text}, or \introduce{oldstyle} figures,
 share more similarities with lowercase letters:
 \begin{leftfigure}
 Sitting cross-legged on the floor\dots{} 25 or 6 to 4?
 \end{leftfigure}
-For body text, either choice is fine, but oldstyle figures shouldn't
-be combined with capital letters.
+Either choice is fine for body text, but don't mix capital letters with
+text figures.
 ``F-15C'' looks odd, as does ``V2.3 Release''\quotekern.
 
 {\addfontfeature{Numbers=LowercaseOff}
 The terms \introduce{proportional} and \introduce{tabular} refer to spacing.
-Tabular figures are set with a uniform width, such that 1 takes up
+Tabular figures are set with a uniform width, so that 1 takes up
 the same space as 8.
 As their name suggests, this is great for tables and other scenarios
-where figures must line up in columns:}
+where figures line up in columns:}
 \begin{leftfigure}
 \addfontfeature{Numbers={Tabular,LowercaseOff}}
 \begin{tabular}{l|c r}
@@ -265,9 +264,9 @@ Widgets & 18 & \$12.76 \\
 \end{leftfigure}
 Proportional figures are the opposite---their spacing is, well\dots{}
 \emph{proportional} to the width of each figure.
-They are usually preferred in body text, where 1837
-looks a bit nicer than
-{\addfontfeature{Numbers=Tabular}1837}.
+They look a bit nicer in body text: 1837
+looks more natural here than
+{\addfontfeature{Numbers=Tabular}1837} does.
 
 You select figures with the following options:
 \begin{leftfigure}
@@ -278,18 +277,17 @@ You select figures with the following options:
  & \texttt{Tabular / Monospaced}
 \end{tabular}
 \end{leftfigure}
-As with ligature options, these can be combined:
+Like ligature options, these can be combined:
 proportional lining figures are set
 with \texttt{Numbers=\allowbreak\{Proportional,\allowbreak Lining\}},
 and tabular oldstyle figures are set with
 \texttt{Numbers=\allowbreak\{Tabular,\allowbreak OldStyle\}}.
 Each option also has a corresponding \verb|*Off|
-variant.\punckern\footnote{This is especially useful since fonts
-select figures in different ways.
-In some, \texttt{Numbers=\allowbreak Lining} doesn't work,
-so you enable oldstyle figures with \monobox{Numbers=OldStyle}
-and return to lining figures (the default) with
-\texttt{Numbers=\allowbreak OldStyleOff}.}
+variant.\punckern\footnote{This is especially useful since different fonts
+have different defaults.
+Some fonts use lining figures by default and enable text figures
+with \monobox{Numbers=OldStyle}.
+Others default to text figures and require \monobox{Numbers=Lining}.}
 
 Finally, some fonts provide \introduce{superior and inferior} figures,
 which are used to set ordinals

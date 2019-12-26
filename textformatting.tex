@@ -15,7 +15,7 @@ gives us
 \begin{leftfigure}
 \lm \emph{Oh my!}
 \end{leftfigure}
-We have more tools at our disposal:
+We have other tools at our disposal:
 \begin{leftfigure}
 \begin{lstlisting}
 We can also use \textbf{boldface} or \textsc{small caps}.
@@ -26,13 +26,13 @@ producing
 \lm%
 We can also use \textbf{boldface} or \textsc{small caps}.
 \end{leftfigure}
-Be judicious when you use, especially boldface.
-It excels at drawing the reader's attention away from everything around it,
-so too much is distracting.
+Be judicious when you use emphasis, especially boldface,
+which excels at drawing the reader's attention away from everything around it.
+\textbf{Too much is distracting.}
 
 \section{Meeting the whole (type) family}
 
-The styles shown above are just a few of the many available to you.
+These are just a few of the many styles you can use.
 A (mostly) complete list follows:
 \begin{flushleftfigure}
 \lm%
@@ -54,15 +54,15 @@ A (mostly) complete list follows:
 Prefer the first form (which takes the text to format as an argument)
 over the second
 (which affect the group they are issued in),
-since the former automatically handle any
-spacing corrections needed around them.\punckern\footnote{For example,
+since the former automatically fix up the spacing around
+them.\punckern\footnote{For example,
 \textit{italic type} amidst upright type needs to be followed
 by a slight amount of additional space, called an ``italic correction''\quotekern.}
 However, when formatting multiple paragraphs,
 or when defining the style of other commands,\punckern\footnote{%
 For instance, this book's section headers are styled with
 \texttt{\textbackslash Large\allowbreak\textbackslash itshape}.}
-the second variety is the only option.
+the second variety is your only option.
 
 \section{Sizes}
 
@@ -103,7 +103,7 @@ To scale text relative to this default size, use the following commands:
 \end{flushleftfigure}
 You'll find some subtleties at play here.
 \LaTeX's default type family, Latin Modern,
-comes in multiple \introduce{optical sizes}.
+comes in several \introduce{optical sizes}.
 Smaller fonts aren't just shrunken versions of their big siblings---they
 have thicker strokes, exaggerated features,
 and more generous spacing to improve legibility at their size.
@@ -112,17 +112,15 @@ and more generous spacing to improve legibility at their size.
 \lm and place the result next to 11 point type,
 you can instantly see the differences.
 \end{leftfigure}
-Optical sizes were standard back when fonts were made out of metal,
-but many digital typefaces lack them,
-given how much more work it demands from the type
-designer.\punckern\footnote{If you are fortunate enough to have
-a typeface with multiple optical sizes, \LuaLaTeX{}
-and \XeLaTeX{} can make good use of them! See \chapref{fonts}
-for more on font selection.}
+Multiple optical sizes were standard back when fonts were made out of metal.
+But many digital fonts only have one,
+since each requires a great deal of design work.\punckern\footnote{If
+you have typefaces with multiple optical sizes,
+\LuaLaTeX{} and \XeLaTeX{} can make good use of them!
+See \chapref{fonts} for more on font selection.}
 
-But points and optical sizes don't tell the whole story.
-Each typeface has its own proportions, which make a huge difference
-in perceived size.
+Points and optical sizes don't tell the whole story.
+Each typeface has different proportions which affect its perceived size.
 (Compare Garamond, {\fontspec{Latin Modern Roman} Latin Modern},
 and {\fontspec{NHaasGroteskDSPro-45Lt}\addfontfeature{LetterSpace=3}Helvetica}, all at 11 points.)
 Shown below are some common terms:
@@ -154,13 +152,13 @@ additional space \\
 between lines
 \end{leftfigure}
 {\fontsize{11pt}{11pt}\selectfont
-Note how without a bit of this extra space,
+Note how without some extra space,
 or \introduce{leading},\punckern\footnote{This term comes from the days of
 metal type, when strips of lead or brass were inserted
 between lines to space them out.\endnote{Jan Middendorp, \textit{Shaping Text}
 (Amsterdam, 2014), 71}}
 descenders from one line almost collide with ascenders and capitals on
-the line below.
+the next.
 Leading is important---without it, blocks of text become uncomfortable to
 read, especially at normal body sizes.\par}
 Let your type breathe!\footnote{For a discussion of how much leading
