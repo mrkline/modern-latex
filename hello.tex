@@ -55,7 +55,7 @@ Congrats,
 you created your first document!
 Let's unpack what we just did.
 
-All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
+All \LaTeX{} documents begin with a \verb|\documentclass| command,
 which picks a base ``style'' to use.
 Many classes are available---and you can even create your own---but common
 ones include \texttt{article}, \texttt{report}, \texttt{book},
@@ -97,9 +97,9 @@ The same is true for space between sentences.
 An empty line ends the previous paragraph and
 starts the next.
 \end{leftfigure}
-Notice that \LaTeX{} automatically follows typographic
-conventions, such as indenting new paragraphs and leaving more space after a
-period than between words.
+Notice how \LaTeX{} automatically follows typographic
+conventions, such as indenting new paragraphs and leaving a little
+more space between sentences than it leaves between words.
 One quirk to be aware of is that comments ``eat'' any leading
 space on the following line, so
 \begin{leftfigure}
@@ -137,7 +137,7 @@ so if some command needed two arguments, we would type:
 Many commands also take optional arguments.
 They precede the mandatory ones,
 are enclosed in square brackets, and are separated by commas.
-Say you want to inform \LaTeX{} that your document should be printed as double-sided
+Say you want to print your document as double-sided
 pages\footnote{\texttt{twoside} introduces commands
 that only make sense for double-sided printing,
 such as ones that skip to the start of the next odd page.
@@ -182,7 +182,7 @@ but a few of its rules are a little weird.
 \section{Special characters and line breaks}
 
 Some characters have special meanings in \LaTeX.
-We saw above, for example, that \verb|%| starts a comment
+We just saw, for example, that \verb|%| starts a comment
 and \verb|\| starts a command.
 The full list of special characters is:
 \begin{leftfigure}
@@ -199,8 +199,7 @@ for actually printing it in your document. Respectively, they are:
 \end{leftfigure}
 Regardless of whatever follows them,
 the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,) always need braces.
-This is a relic from days when these commands produced
-\introduce{diacritical marks}:
+This is a relic from days when they produced \introduce{diacritical marks}:
 once upon a time, \LaTeX{} users would typeset ``jalapeño'' with
 \verb|jalape\~no|.
 Today we just type \texttt{ñ} into our source
@@ -271,7 +270,7 @@ becomes
 \lm {\itshape Sometimes we want italics}, but only sometimes.
 \end{leftfigure}
 The braced region is called a \introduce{group},
-and commands placed inside a group lose their power once it ends.
+and commands issued inside a group lose their power once it ends.
 Environments also create their own groups:
 \begin{leftfigure}
 \begin{lstlisting}
