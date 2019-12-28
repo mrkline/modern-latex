@@ -13,7 +13,7 @@ which permits line breaks in the middle of words,\punckern\endnote{%
 Franklin Mark Liang,
 \textit{Word Hy-phen-a-tion by Com-put-er} (Stanford, 1983),
 \http{www.tug.org/docs/liang/}}
-this approach produces better paragraph layouts than almost any other software.
+it can produce better paragraph layouts than almost any other software.
 
 But sometimes we don't want justified text.
 If you would like it to be flush left,
@@ -63,10 +63,10 @@ And this text is flush right.
 
 \section{Lists}
 
-\LaTeX{} provides multiple environments for creating lists:
+\LaTeX{} provides several environments for creating lists:
 \texttt{itemize}, \texttt{enumerate}, and \texttt{description}.
 In all three, each item starts with an \verb|\item| command.
-The first environment, \texttt{itemize}, creates bulleted lists.
+To create bulleted lists, use the \texttt{itemize} environment.
 With:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -111,7 +111,7 @@ becomes
 \bigskip
 \noindent The \texttt{description} environment starts each item with some
 emphasized label,
-then indents all subsequent lines for that item:
+then indents subsequent lines for that item:
 \begin{leftfigure}
 \begin{lstlisting}
 \begin{description}
@@ -174,7 +174,7 @@ inside it so that each column is about the same height.
 \end{multicols}
 \end{lstlisting}
 \end{leftfigure}
-is split into
+arranges
 \begin{leftfigure}
 \lm%
 One nice feature of the {\lt multicol} package
