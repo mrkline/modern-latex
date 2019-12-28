@@ -63,54 +63,44 @@ shortcuts from \chapref{punctuation} (\texttt{--} for en dashes,
 \texttt{``} and \texttt{''} for curly quotes, etc.)
 instead of forcing you to enter the the corresponding characters,
 which probably aren't on your keyboard.
-You often don't want these substitutions with monospaced type, though.
-Text that uses it---such as code---is usually meant to be printed
+You usually don't want these substitutions with monospaced type, though.
+Text that uses it---such as code---is often meant to be printed
 verbatim. \verb|"Hello!"| shouldn't turn into
 \verb|“Hello!“|.
 
 \section{Selecting font files}
 
-Typefaces come packaged as multiple files for their various
-weights and styles---a basic set includes upright,
-\textit{italics},
+\texttt{fontspec} usually does a good job of finding
+the files you need for a given typeface,
+especially if you just want the basic set of
+upright,
+\textit{italic},
 \textbf{bold}, and
-\textit{\textbf{bold italics}}.
-Given a typeface's name,
-\texttt{fontspec} can usually deduce the names of its
-files.\punckern\footnote{This is
-one of the places where \XeLaTeX{} and \LuaLaTeX{}
-differ in a way that's noticeable to the casual user.
-The former uses system libraries---such as FontConfig on Linux---to
-find the font files for the typefaces you request.
-The latter has its own font loader,
-based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
-(Version 1.0.4, February 2017), 10}
-The expected name of a font might differ between the two engines---refer
-to the \texttt{fontspec} manual for details.
-If you have trouble getting \LaTeX{} to find \emph{any} of your fonts,
-try rebuilding your system's font cache.
-(Figuring out how to do so is left as a web search for the reader.)}
-
-However, many typefaces come in more than two weights.
+\textit{\textbf{bold italic}} fonts.
+But typefaces can have many more than that.
 The version of Futura used in this book, for example, comes in
 {\fontspec[Scale=MatchLowercase]{Futura-Lig}light},
 {\fontspec[Scale=MatchLowercase]{Futura-Boo}book},
 {\fontspec[Scale=MatchLowercase]{Futura-Med}medium},
 {\fontspec[Scale=MatchLowercase]{Futura-Dem}demi},
 {\fontspec[Scale=MatchLowercase]{Futura-Bol}bold}, and
-{\fontspec[Scale=MatchLowercase]{Futura-ExtBol}extra bold}.
-Additional styles, such as
-{\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}small capitals},
-may be stored in separate files as well.\punckern\footnote{%
-OpenType allows these alternative styles to be placed in the same file(s) as the
-``main'' glyphs for a given weight.
-If your font supports this, you don't need to do anything---\texttt{fontspec}
-will dutifully switch to them whenever you use
+{\fontspec[Scale=MatchLowercase]{Futura-ExtBol}extra bold} weights.
+Each of these weights has an upright and an oblique font.
+A typeface could come in multiple optical sizes (see chapter \ref{formatting})
+or have other variations, like
+{\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}small capitals}.\punckern\footnote{%
+OpenType allows some styles, like small caps, to be placed in the same file(s)
+as the ``main'' glyphs for a given weight.
+If your font supports this, \texttt{fontspec}
+will automatically switch to them whenever you use
 \monobox{\textbackslash textsc} or \monobox{\textbackslash scshape}.
-But for TrueType, and for OpenType fonts that don't take advantage of this
-feature, you'll have to load a separate file as shown here.}
-We might want to hand-pick weights to achieve a certain look or better match the
-weights of other fonts in our document.\punckern\footnote{Compare how
+But for TrueType fonts,
+and for OpenType fonts that don't leverage this feature,
+you'll have to specify separate files.}
+
+We might want to hand-pick weights to achieve a certain look,
+or to better match the
+other fonts in our document.\punckern\footnote{Compare how
 {\fontspec[Scale=MatchLowercase]{Futura-Lig}the light,}
 {\fontspec[Scale=MatchLowercase]{Futura-Boo}book,}
 {\fontspec[Scale=MatchLowercase]{Futura-Med}and medium weights}
@@ -147,7 +137,18 @@ Assuming the font files are named:
 \end{lstlisting}
 \end{leftfigure}
 Note that instead of typing out \monobox{Futura-Boo},
-\monobox{Futura-BooObl}, and so on, we can use \texttt{*} to insert the base name.
+\monobox{Futura-BooObl}, and so on, we can use \texttt{*} to insert the base
+name.\punckern\footnote{This is
+a place where \XeLaTeX{} and \LuaLaTeX{}
+differ in a way that's noticeable to the casual user.
+The former uses system libraries---such as FontConfig on Linux---to
+find font files.
+The latter has its own font loader,
+based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
+(Version 1.0.4, February 2017), 10}
+Because the two look for files in different ways,
+the expected name of a font might differ between the two engines.
+See the \texttt{fontspec} manual for details.}
 
 \section{Scaling}
 
@@ -185,9 +186,9 @@ thanks in no small part to their support in OpenType.}
 OpenType groups them into three categories:
 \begin{description}
 \item[Standard] ligatures remedy spacing problems between certain characters.
-    Consider lowercase f and i: in many serif typefaces,
-    these combine to form the ligature fi,
-    avoiding awkward spacing between f's ascender and i's dot
+    Consider lowercase f and i: in many typefaces,
+    these combine to form the ligature fi to avoid
+    awkward spacing between f's ascender and i's dot
     {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
     Other common examples in English writing include ff,
     ffi, fl, and ffl.
