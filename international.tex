@@ -2,7 +2,7 @@
 \label{i18n}
 
 Surprisingly, languages besides English exist.
-You may write with them.
+You may want to write with them.
 
 \section{Unicode}
 
@@ -33,10 +33,8 @@ How many code points?}
 \end{itemize}
 \LuaLaTeX{} and \XeLaTeX{} are Unicode-literate and play well with
 Unicode text
-files.\punckern\footnote{\LuaLaTeX{} accepts \mbox{\acronym{utf}-8} files,
-while \XeLaTeX{} is a bit more flexible and also
-accepts \mbox{\acronym{utf}-16} and
-\mbox{\acronym{utf}-32}.}
+files.\punckern\footnote{\LuaLaTeX{} accepts \mbox{\acronym{utf}-8} files.
+\XeLaTeX{} also accepts \mbox{\acronym{utf}-16} and \mbox{\acronym{utf}-32}.}
 Make sure that the fonts you select contain the glyphs you need---many
 only support Latin languages.
 
@@ -56,8 +54,8 @@ It will automatically:
     right to left.
 \item Set the script and language tags of OpenType fonts that have them.
 \end{itemize}
-To use \texttt{polyglossia}, specify the main language of your document,
-along with any other languages you use.
+To use \texttt{polyglossia}, specify your document's main language,
+along with any others it uses.
 Some languages also take regional dialects as an optional argument:
 \begin{leftfigure}
 \begin{lstlisting}

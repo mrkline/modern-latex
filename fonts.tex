@@ -3,7 +3,7 @@
 
 Digital fonts have completely changed since \LaTeX{} was created decades ago.
 \LaTeX{} originally used \MF,
-a format Donald Knuth designed for \TeX{}.
+a format Donald Knuth designed specifically for \TeX{}.
 As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
@@ -86,9 +86,8 @@ The version of Futura used in this book, for example, comes in
 {\fontspec[Scale=MatchLowercase]{Futura-Bol}bold}, and
 {\fontspec[Scale=MatchLowercase]{Futura-ExtBol}extra bold} weights.
 Each of these weights has an upright and an oblique font.
-A typeface could come in multiple optical sizes (see chapter \ref{formatting})
-or have other variations, like
-{\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}small capitals}.\punckern\footnote{%
+A typeface could have other variations,
+like {\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}small capitals}\footnote{%
 OpenType allows some styles, like small caps, to be placed in the same file(s)
 as the ``main'' glyphs for a given weight.
 If your font supports this, \texttt{fontspec}
@@ -97,6 +96,7 @@ will automatically switch to them whenever you use
 But for TrueType fonts,
 and for OpenType fonts that don't leverage this feature,
 you'll have to specify separate files.}
+or multiple optical sizes (see chapter \ref{formatting}).
 
 We might want to hand-pick weights to achieve a certain look,
 or to better match the
@@ -217,11 +217,11 @@ options. If you want to stop using discretionary ligatures for some passage,
 \end{leftfigure}
 does the trick.
 
-Some words arguably look better without ligatures---a classic example
-is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
+Some words arguably look better without ligatures---\mbox{shelfful}
+is a classic example.\punckern\endnote{Knuth, \textit{The \TeX book},
 (Addison-Wesley, 1986), 19}
-You can manually prevent ligatures with a zero-width
-space, e.g., \verb|shelf\hspace{0pt}ful|.
+You can manually prevent a ligature by inserting a zero-width space, e.g.,
+\verb|shelf\hspace{0pt}ful|.
 Or, since life is too short, you can let the \texttt{selnolig} package
 do this for you.
 
