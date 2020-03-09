@@ -3,20 +3,19 @@
 \section{Justification and alignment}
 
 \LaTeX{} justifies text remarkably well.
-Instead of considering lines individually---as most word processors,
-web browsers, and e-readers do---it examines all possible line breaks
-in a given paragraph,
-then picks whichever ones give the best overall
+Instead of arranging it one line at a time---like most word processors,
+web browsers, and e-readers do---it considers every possible line break
+in a paragraph, then picks the ones that give the best overall
 spacing.\punckern\endnote{Donald E.~Knuth and Michael F.~Plass,
 \textit{Breaking Paragraphs Into Lines} (Stanford, 1981)}
-Combined with its ability to automatically hyphenate words,
-which permits line breaks in many more places,\punckern\endnote{%
+Combined with automatic hyphenation,
+which permits line breaks in the middle of words,\punckern\endnote{%
 Franklin Mark Liang,
 \textit{Word Hy-phen-a-tion by Com-put-er} (Stanford, 1983),
 \http{www.tug.org/docs/liang/}}
-this approach produces better paragraph layouts than almost any other software.
+it can produce better paragraph layouts than almost any other software.
 
-But sometimes we don't want our text justified.
+But sometimes we don't want justified text.
 If you would like it to be flush left,
 place it in a \texttt{flushleft} environment
 or add \verb|\raggedright| to the current group.
@@ -64,10 +63,10 @@ And this text is flush right.
 
 \section{Lists}
 
-\LaTeX{} provides multiple environments for creating lists:
+\LaTeX{} provides several environments for creating lists:
 \texttt{itemize}, \texttt{enumerate}, and \texttt{description}.
 In all three, each item starts with an \verb|\item| command.
-The first environment, \texttt{itemize}, creates bulleted lists.
+To create bulleted lists, use the \texttt{itemize} environment.
 With:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -99,7 +98,7 @@ you get
 \end{enumerate}
 \end{lstlisting}
 \end{leftfigure}
-produces
+becomes
 \begin{leftfigure}
 \lm%
 \begin{enumerate}[leftmargin=*]
@@ -111,8 +110,8 @@ produces
 
 \bigskip
 \noindent The \texttt{description} environment starts each item with some
-emphasized \introduce{label},
-then indents all subsequent lines for that item:
+emphasized label,
+then indents subsequent lines for that item:
 \begin{leftfigure}
 \begin{lstlisting}
 \begin{description}
@@ -133,7 +132,7 @@ then indents all subsequent lines for that item:
 gives us
 \begin{leftfigure}
 \lm%
-\begin{description}[leftmargin=*]
+\begin{description}
 \item[\lm Alan Turing] was a British mathematician who
     laid much of the groundwork for computer science.
     He is perhaps most remembered for his model of computation,
@@ -150,9 +149,9 @@ gives us
 
 \section{Columns}
 
-We often split layouts into several columns, especially when printing on
+We often split pages into several columns, especially when printing on
 \textsc{a4} or \acronym{us}~\textsc{l}etter paper,
-since it allows more comfortable line widths at standard
+since it provides more comfortable line widths with standard
 8--12\,pt text sizes.\punckern\footnote{You'll see different advice depending
 on where you look, but as a rule of thumb,
 aim for 45 to 80 characters (including spaces) per line.
@@ -165,8 +164,8 @@ which splits everything in two, or you can use the \texttt{multicols}
 environment from the \texttt{multicol} package:
 \begin{leftfigure}
 \begin{lstlisting}
-One nice feature of \texttt{multicol} is that you can
-combine arbitrary layouts.
+One nice feature of the \texttt{multicol} package
+is that you can combine arbitrary layouts.
 \begin{multicols}{2}
 This example starts with one column,
 then sets the following section as two.
@@ -175,11 +174,11 @@ inside it so that each column is about the same height.
 \end{multicols}
 \end{lstlisting}
 \end{leftfigure}
-is split into
+arranges
 \begin{leftfigure}
 \lm%
-One nice feature of {\lt multicol} is that you can
-combine arbitrary layouts.
+One nice feature of the {\lt multicol} package
+is that you can combine arbitrary layouts.
 \begin{multicols}{2}
 This example starts with one column,
 then sets the following section as two.
@@ -190,16 +189,16 @@ inside it so that each column is about the same height.
 
 \section{Page breaks}
 
-Some commands, like a book's \verb|\chapter|, insert page breaks.
+Some commands, like \verb|\chapter|, insert page breaks.
 You can add your own with \verb|\clearpage|.
-If you are using the \texttt{twoside} document class option for double-sided
+When using the \texttt{twoside} document class option for double-sided
 printing, you can break to the front of the next page with
 \verb|\cleardoublepage|.
 
 \section{Footnotes}
 
-Footnotes are useful for inserting references,
-or for remarks that readers might find helpful,
+Footnotes are useful for references,
+or for remarks that readers might find helpful
 but aren't crucial to the main text.
 The \verb|\footnote| command places a marker at its location in the
 body text, then sets its argument at the bottom of the current
@@ -217,15 +216,14 @@ I love footnotes!\footnote{Perhaps a bit too much\dots}
 
 \section{What next?}
 \begin{itemize}
-\item Control paragraph spacing, either with
-KOMA~Script options, or with the \texttt{parskip} package.
+\item Control paragraph spacing with KOMA~Script or the \texttt{parskip} package.
 \item Set the page size and margins with the \texttt{geometry} package.
 \item Customize list formatting with the \texttt{enumitem} package.
 \item Create tables with the \texttt{tabular} environment.
 \item Align text with tab stops using the \texttt{tabbing} environment.
-\item Customize footnote symbols and layout with the
-    \texttt{footmisc} package and KOMA~Script.
-\item Create horizontal and vertical space with commands such as
+\item Customize footnote symbols and layout with KOMA~Script and the
+    \texttt{footmisc} package.
+\item Insert horizontal and vertical space with commands like
     \verb|\vspace|, \verb|\hspace|, \verb|\vfill|, and \verb|\hfill|.
 \item Learn what units \LaTeX{} provides for specifying spacing. \\
     (We've already mentioned a few here, like

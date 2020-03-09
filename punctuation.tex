@@ -25,11 +25,11 @@ will get you
 Instead, use \texttt{\bfseries `} for opening quotes and \texttt{\bfseries '} for closing
 quotes.\punckern\footnote{If your keyboard happens to have keys for
 ``curly'' quotes (\,\texttt{“}\,\texttt{”}\,), feel free to use those instead!
-Also, don't use \texttt{"} for closing double quotes.
+And don't use \texttt{"} for closing double quotes.
 Not only does \texttt{``example"} look a bit unbalanced,
-but \texttt{"} is used as a formatting command when typesetting certain
-languages, like German. (See \chapref{i18n} for more on international
-typesetting.)}
+but \texttt{"} is used as a formatting command for some languages,
+like German.
+(See \chapref{i18n} for more on international typesetting.)}
 \begin{leftfigure}
 \begin{lstlisting}
 ``It depends on what the meaning of the word `is' is.''
@@ -53,35 +53,36 @@ serve different purposes.
     \textit{Practical Typography},
     \https{practicaltypography.com/hyphens-and-dashes.html}}
     \begin{itemize}[leftmargin=*]
-    \item They allow a word to be split between the end of one line and the
+    \item They allow words to be split across the end of one line and the
         start of the next.
-        \LaTeX{} usually handles this automatically.
-    \item Some compound words use hyphens, like \emph{long-range}
-        and \emph{field-effect}.
+        \LaTeX{} does this automatically.
+    \item Compound words like \emph{long-range} and \emph{field-effect}
+        use hyphens.
     \item They are used in phrasal adjectives.
         If I ask for ``five dollar bills''\punckern,
         do I want five \$1 bills, or several \$5 bills?
         It's clearer that I want the latter when typeset as
         \emph{five-dollar bills}.
     \end{itemize}
-    Unsurprisingly, they are produced with the hyphen character (\,\texttt{-}\,).
+    Unsurprisingly, you get one by typing the hyphen character (\,\texttt{-}\,).
 
 \item[En dashes] are for ranges such as ``pages 4--12''\quotekern,
     and connected words, like ``the \mbox{US--Canada} border''\quotekern.
     \LaTeX{} places one wherever it sees two adjacent hyphens
     (\,\texttt{--}\,).
 
-\item[Em dashes] are used to separate clauses of a sentence.
+\item[Em dashes] separate clauses of a sentence.
     Other punctuation---like parenthesis and commas---play a similar
     role.
     Em dashes are typeset with three hyphens (\,\texttt{---}\,).
 
-\item[Minus signs] are used for negative quantities and
+\item[Minus signs] are for negative quantities and
     mathematical expressions.
     They are similar in length to an en dash,
     but sit at a different height.
-    Minus signs are set with \verb|\textminus|, or with the hyphen character
-    when in a math environment (see \chapref{math}).
+    Minus signs are set with \verb|\textminus|,
+    or with the hyphen character
+    when in math environments (see \chapref{math}).
 \end{description}
 
 \section{Ellipses}
@@ -99,7 +100,7 @@ becomes
 \lm%
 I'm\dots{} not sure.
 \end{leftfigure}
-Ellipses are spaced differently than consecutive periods.
+Ellipses have different spacing than consecutive periods.
 Don't use the latter as a poor substitute for the former.
 
 \section{Spacing}
@@ -109,7 +110,7 @@ As we discovered in \chapref{hello},
 follows them---presumably the start of the next sentence.
 This isn't always what we want!
 Consider honorifics like Mr.\ and Ms., for example.
-In situations like these, we also need to prevent \LaTeX{} from starting a
+In these situations, we also need to prevent \LaTeX{} from starting a
 new line after the period.
 This calls for a \introduce{non-breaking space}, which we set with a tilde.
 \begin{leftfigure}
@@ -123,7 +124,7 @@ produces proper spacing:
 Please call Ms.~Shrdlu.
 \end{leftfigure}
 
-In other occasions, such as when we abbreviate units of
+In other occasions, like when we abbreviate units of
 measurement,\punckern\footnote{There are also dedicated packages for doing so,
 like \texttt{siunitx}.}
 we want thinner spaces than our usual inter-word ones.
@@ -141,11 +142,11 @@ Launch in 2\,h 10\,m.
 
 \section{What next?}
 \begin{itemize}
-\item Learn other commands for spacing, such as \verb|\:|, \verb|\;|,
+\item Learn more commands for spacing, such as \verb|\:|, \verb|\;|,
     \verb|\enspace|, and \verb|\quad|.
-\item Use the \texttt{csquotes} package's \verb|\enquote| to simplify
-    nested quotations, e.g., \\
+\item Nest quotations, e.g.,
     \enquote{She exclaimed, \enquote{I can't believe it!}}
+    more easily with  \texttt{csquotes} package's \verb|\enquote| command.
 \item Discover the typographical origins of terms like \introduce{en},
     \introduce{em}, and \introduce{quad}.
 \item Familiarize yourself with the difference between \texttt{/} and
@@ -153,5 +154,5 @@ Launch in 2\,h 10\,m.
 \item Add hyphenations for uncommon words using \verb|\hyphenate|
     or \verb|\-|\,.\punckern\footnote{\LaTeX{} usually does a good
     job of automatically hyphenating words, based on a dictionary of patterns
-    stored for each language. You should rarely need to use these commands.}
+    stored for each language. You should rarely need these commands.}
 \end{itemize}

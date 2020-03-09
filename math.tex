@@ -1,15 +1,15 @@
 \chapter{Mathematics}
 \label{math}
 
-\LaTeX{} excels at typesetting mathematics, both in body text,
-e.g., $x_n^2+y_n^2=r^2$, and as standalone formulas:
+\LaTeX{} excels at typesetting mathematics, both inside body text
+($x_n^2+y_n^2=r^2$) and on their own lines:
 \[\sum_{n=0}^{\infty} \frac{f^{(n)} (a)}{n!} (x - a)^n\]
 The former is typed inside \verb|$...$| or \verb|\(...\)|,
 and the latter within \verb|\[...\]|.
 In these math environments, the rules of \LaTeX{} change:
 \begin{itemize}
-\item Most spaces and line breaks are ignored,
-    and spacing decisions are made for you based on
+\item Most spaces and line breaks are ignored.
+    Spacing decisions are made for you based on
     typographical conventions for mathematics.
     \verb|$x+y+z$| and \verb|$x + y + z$| both give you $x+y+z$.
 \item Empty lines are not allowed---each formula occupies a single
@@ -17,7 +17,7 @@ In these math environments, the rules of \LaTeX{} change:
 \item Letters are automatically italicized, as they are assumed to be variables.
 \end{itemize}
 To return to normal ``text mode'' inside a formula, use the \verb|\text| command.
-Other formatting commands mentioned in \chapref{formatting} work as well.
+Standard formatting commands work in these blocks.
 From
 \begin{leftfigure}
 \begin{lstlisting}
@@ -30,14 +30,13 @@ we get
 \section{Examples}
 
 Typesetting mathematics is arguably the raison d'être of
-\LaTeX,\punckern\footnote{Well, \TeX} but the topic is so broad that we could
-take dozens of pages covering just the basics.
+\LaTeX,\punckern\footnote{Well, \TeX} but we could
+take dozens of pages to just cover the basics.
 Given the breadth of modern mathematics,
 there are \emph{many} different commands and environments.
-Here, more so than any other topic,
-you owe it to yourself to find some real references and learn what \LaTeX{}
+You owe it to yourself to find some real references and learn what \LaTeX{}
 is capable of.
-Before moving on, though, let's show some examples of what it can do.
+Before moving on, though, let's see some examples of what it can do.
 \newpage
 
 \begin{enumerate}

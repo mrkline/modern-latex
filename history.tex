@@ -3,37 +3,34 @@
 \label{history}
 
 Donald Knuth is celebrated among programmers as
-the man who coined the term \emph{analysis of algorithms}
-and pioneered many computer science fundamentals we use today.
+a pioneer in computer science.
+The man who coined the term \emph{analysis of algorithms},
 Knuth is perhaps most famous for his ongoing magnum opus,
 \textit{The~Art of Computer Programming}.
 
 When the first volume of \acronym{taocp} was released in 1968,
-it was printed the same way most books had been since the turn of the century:
+it was printed the way most books had been since the turn of the century:
 with \introduce{hot metal} type.
 Letters were cast from molten lead,
 then arranged into lines.
 These lines were clamped together to form pages,
 which were inked and pressed against paper.
 
-By March of 1977, Knuth was ready for a second run of \acronym{taocp}, volume~2,
-but he was horrified when he received the proofs.
-Hot metal typesetting was expensive, complicated, and time-consuming,
-so publishers had replaced it with phototypesetting,
-which works by projecting images of characters onto film.
-The new technology, while much cheaper and faster,
+In March of 1977, Knuth was ready for a second run of \acronym{taocp}, volume~2,
+but he was horrified when he saw the proofs.
+Hot metal typesetting is expensive, complicated, and time-consuming,
+so Knuth's publisher had replaced it with phototypesetting,
+a process that projects characters' images onto film.
+The new technology, while cheaper and faster,
 didn't provide the quality Knuth
 expected.\punckern\endnote{Knuth, \textit{Digital Typography} (Stanford, 1999), 3--5}
 
 The average author would have resigned themselves to this change and moved on,
 but Knuth took great pride in his books' appearances,
-especially for their mathematics.
-Around this time, he also discovered the growing field of digital typesetting,
-where glyphs are built from tiny dots,
-packed together at over 1,000 per inch.
-Inspired,
+especially when it came to their mathematics.
+Inspired by his recent discovery of the growing field of digital typesetting,
 Knuth set off on one of the greatest yak shaves\footnote{Programmers
-call seemingly unrelated work needed to solve their main problem
+call seemingly-unrelated work needed to solve their main problem
 ``yak shaving''\quotekern. The phrase is thought to originate from an episode
 of \textit{The Ren~\&~Stimpy Show}.\punckern\endnote{``yak shaving''\quotekern,
 \textit{The Jargon File},
@@ -49,10 +46,10 @@ meaning \introduce{art} or \introduce{craft}.\punckern\endnote{Knuth,
 \textit{The \TeX book}, 1}}
 
 It's hard to appreciate how much of a revolution \TeX{} was,
-especially looking back from a time where anybody with a copy
-of Word can be their own desktop publisher.
+especially looking back from modern times, where anybody with a web browser
+can be their own desktop publisher.
 Adobe's \acronym{pdf} wouldn't exist for another decade, so Knuth
-and his graduate students devised their own device-independent format,
+and his graduate students devised their own device-independent (document) format,
 \acronym{dvi}.
 Scalable fonts were uncommon, so he created \MF{} to rasterize glyphs
 into dots on the page.
@@ -64,16 +61,17 @@ Several sources (\http{www.tug.org/whatis.html},
 \https{tug.org/interviews/thanh.html},
 \http{www.typophile.com/node/34620})
 mention \TeX's influence on the \textit{hz}-program by Peter Karow
-and Hermann Zapf, thanks to via Knuth's collaborations with Zapf.
+and Hermann Zapf, thanks to Knuth's collaborations with Zapf.
 \textit{hz} was later acquired by Adobe and used
 when creating InDesign's paragraph formatting systems.}}
 
-\LaTeX{}, short for Lamport~\TeX{}, was later developed by Leslie Lamport
-as a set of commands for common document layouts.
-It was introduced in 1986 with his guide,
-\textit{\LaTeX: A~Document Preparation System}.
+\LaTeX{}, short for Lamport~\TeX{}, was developed by Leslie Lamport in the
+early 1980s as a set of commands for common document layouts.
+He introduced it with his guide,
+\textit{\LaTeX: A~Document Preparation System},
+in 1986.
 Other typesetting systems based on \TeX{} also exist,
-the other most popular today being Con\TeX{}t.
+such as Con\TeX{}t.
 
 Development continues today,
 both in the form of user-provided packages for \TeX{} and \LaTeX{},
@@ -116,8 +114,9 @@ The most recent version, 3.14159265, came out in January~2014.
 
 Building \TeX{} today is an\dots{} interesting endeavor.
 When it was written in the late 1970s,
-there were no large, well-documented, open-source projects for students to study,
-so Knuth set out to make \TeX{} into one.
+there were no large, well-documented, open-source projects for computer science
+students to study,
+so Knuth set out to make one.
 As part of this effort, \TeX{} was written in a style he calls
 \introduce{literate programming}: opposite most programs---where
 documentation is interspersed throughout the code---Knuth wrote \TeX{} as a book,

@@ -1,7 +1,7 @@
 \chapter{Microtypography}
 \label{microtype}
 
-\introduce{Microtypography} is the craft of improving a document's legibility
+\introduce{Microtypography} is the craft of improving text's legibility
 with small, subliminal tweaks.
 In other words, it is
 \begin{quote}
@@ -28,14 +28,13 @@ Its use is automatic---for the vast majority of documents, you should add
 \usepackage{microtype}
 \end{lstlisting}
 \end{leftfigure}
-to your preamble and carry on---but let's take a brief look at what the package
-does.
+to your preamble and move on.
+But let's take a quick look at what the package actually does.
 
 \section{Character protrusion}
 
-By default, \LaTeX{} justifies lines between perfectly straight
-left and right margins.
-This is the obvious choice,
+By default, \LaTeX{} justifies lines between perfectly straight margins.
+This is an obvious default,
 but falls victim to an annoying optical illusion:
 lines ending in small glyphs---like periods, commas,
 or hyphens---seem shorter than lines that
@@ -44,20 +43,19 @@ For example, if a circle, a square, and a triangle
 of equal heights are placed next to each other,
 the circle and triangle look smaller than the square.
 For this reason, round or pointed characters (like O and A) must
-be made slightly taller than ``flat'' ones (such as H and T) for all
+be slightly taller than ``flat'' ones (such as H and T) for all
 to appear the same height.\punckern\endnote{%
 Jost Hochuli, \textit{Detail in typography}
 (Éditions~\textsc{b}42, 2015),
 18--19}}
-\texttt{microtype} compensates by \introduce{protruding} these smaller glyphs
+\texttt{microtype} compensates by \introduce{protruding} these glyphs
 into the margins.
 
 \section{Font expansion}
 
-In order to to help \LaTeX's justification algorithm build paragraphs with
-more even spacing and fewer hyphenated lines,
+To give paragraphs more even spacing and fewer hyphenated lines,
 \texttt{microtype} can stretch characters horizontally.
-You might think that distorting the type this way would be immediately
+You might think that distorting type like this would be immediately
 noticeable,
 but you're reading a book that does so on every page!
 This effect, called \introduce{font expansion},
@@ -67,12 +65,12 @@ Of course, you can use package options to change this limit,
 or disable the feature entirely.}
 
 This feature isn't currently available for \XeLaTeX{}.
-You'll need to use \LuaLaTeX{} if you'd like to take advantage of it.
+If you want to use it, you'll need \LuaLaTeX{}.
 
 \section{What next?}
 
 As always, see the package manual for ways to tweak these features.
-\texttt{microtype} is capable of a few other tricks,
+\texttt{microtype} has a few other tricks,
 but several only work on older \LaTeX{} engines.\punckern\footnote{i.e., pdf\TeX}
 Those we care about---such as letterspacing---can be handled with
 \texttt{fontspec} or other packages.

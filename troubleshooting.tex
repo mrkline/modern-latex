@@ -1,22 +1,22 @@
-\chapter{When Good Typesetting Goes Bad}
+\chapter{When Good Type Goes Bad}
 
-With luck, you're off to a good start with \LaTeX.
+With luck, you're off to a solid start with \LaTeX.
 But as with any complicated tool, you'll eventually run into trouble.
-Here are some common problems and what you can try to fix them.
+Here are some common problems and things you can try to fix them.
 
 \section{Fixing overflow}
 
-\mbox{When \LaTeX{} can't fit a line into a paragraph with good spacing,
-it gives up, overflowing} the line into the margin.
+\mbox{When \LaTeX{} can't break a paragraph into well-spaced lines,
+it gives up and overflows} into the margin.
 You can sometimes remedy this with some ``emergency stretch''\quotekern.
-When you add \texttt{\textbackslash emergencystretch=\allowbreak<width>}
-to the document's preamble,
+If you add \texttt{\textbackslash emergencystretch=\allowbreak<width>}
+to the preamble,
 \LaTeX{} will try to set troublesome paragraphs a second time,
-stretching or shrinking the space in each line by up to the provided
-width.\punckern\footnote{\LaTeX{} has pretty sane default limits to how much
-it stretches and shrinks spacing in a paragraph.
+stretching or shrinking the total space in each line by up to the provided
+width.\punckern\footnote{\LaTeX{} has pretty sane defaults for how much
+it stretches and shrinks spacing.
 You probably don't want to make \texttt{<width>} larger than an em or two.}
-If that still doesn't help, try tweaking the wording of guilty paragraphs.
+If that still doesn't help, tweak the wording of problematic paragraphs.
 This can be frustrating, but the alternative is for \LaTeX{} to create spacing
 that is too loose---where\quad
 words\quad have\quad large\quad gaps\quad between\quad
@@ -24,10 +24,10 @@ them---or too tight, where\! words\! are\! awkwardly\! crammed\! together.
 
 \section{Avoiding widows and orphans}
 
-Typesetters try to avoid \introduce{widow} and \introduce{orphan}
-(also called \introduce{club}) lines,
-which appear separated from the rest of their paragraph by a page boundary.
-\LaTeX{} tries to avoid these, but its page-splitting algorithm
+Good layouts avoid \introduce{widow} and \introduce{orphan}
+(also called \introduce{club}) lines:
+ones that get separated from the rest of their paragraph by a page boundary.
+\LaTeX{} tries to prevent these, but its page-splitting algorithm
 is much more primitive than its paragraph-splitting one.\punckern\footnote{%
 This is because 1980s computers didn't have enough \acronym{ram} to do so.
 Seriously---Knuth wrote at the time,
@@ -50,7 +50,7 @@ at \emph{any} cost.\punckern\footnote{When considering a given layout,
 \LaTeX{} assigns penalties, or ``badness''\quotekern,
 to anything that arguably makes a document look worse.
 It chooses whichever layout it can find with the least badness.}
-This may cause odd layouts to be chosen,
+This can produce some really odd layouts,
 so be sure to review your pages if you choose large penalties.
 
 \section{Handling syntax errors}
@@ -60,7 +60,7 @@ error message,\punckern\footnote{Usually this contains a succinct summary of
 the problem and the number of the line(s) it occurred on. Occasionally,
 \LaTeX{} gets \emph{really} confused and emits something so cryptic it gives
 \cpp{} template errors a run for their money.
-As you continue to use \LaTeX, you'll start to get a feel for what sorts of
+As you use \LaTeX, you'll start to get a feel for what sorts of
 mistakes cause these rare, but enigmatic messages.}
 then display an interactive prompt starting with \texttt{?}\,.
 Here you can enter instructions for how to proceed.

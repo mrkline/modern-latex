@@ -4,7 +4,7 @@
 Every \LaTeX{} document is different,
 but all share a few common elements.
 
-\section{Packages and the preamble}
+\section{The preamble and packages}
 In the last chapter, you built your first document with:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -15,30 +15,25 @@ Hello, World!
 \end{document}
 \end{lstlisting}
 \end{leftfigure}
-The area between the \verb|\documentclass| command and the start of the
+The space between \verb|\documentclass| and the start of the
 \texttt{document} environment is called the \introduce{preamble}.
-Here, we perform any setup we need---such as importing packages
-and defining commands---to control how our document
-will look.
-
-As mentioned in \chapref{installation},
-\introduce{packages} contain code to modify your document in interesting ways.
-The ones found in your \LaTeX{} distribution come from the Comprehensive \TeX{}
-Archive Network, or \acronym{ctan},\punckern\footnote{Curious readers might
-be wondering what \TeX{} is, and how it differs from \LaTeX.
-The short answer is that \TeX{} is the typesetting system that \LaTeX{}
-is built on top of---the latter is a framework of commands designed for the former.
+Here we handle whatever setup we need, including importing packages.
+These add new commands, or modify the document in interesting ways.
+The ones in your \LaTeX{} distribution come from the Comprehensive \TeX{}
+Archive Network---or \acronym{ctan}---at \https{ctan.org}.\punckern\footnote{%
+Curious readers might wonder what \TeX{} is, and how it differs from \LaTeX.
+The short answer is that \TeX{} is the system that \LaTeX{}
+is built on top of---the latter is a framework of commands for the former.
 (\texttt{\textbackslash documentclass} and friends come from
-\LaTeX{}, for example, but \TeX{} is what's ultimately laying out your document.)
-The long answer is at the back of this book under Appendix~\ref{history}.
-We won't discuss how to use plain \TeX{} here. That's for another book---the
+\LaTeX{}, for example, but \TeX{} is what ultimately lays out a document.)
+A longer answer is at the end of this guide under Appendix~\ref{history}.
+We won't discuss how to use plain \TeX{} here. That's for another book---The
 \TeX book.}
-at \https{ctan.org}.
-Package manuals are also found there,
+You'll also find packages' manuals there,
 so make it your first stop when learning how to use one.
 
-To import a package, add a \verb|\usepackage| command,
-using its name as the argument.
+To import a package, add a \verb|\usepackage| command
+with its name as the argument.
 As a simple example, let's write a document with the \texttt{metalogo}
 package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX|:
 \begin{leftfigure}
@@ -58,8 +53,8 @@ should get you a \textsc{pdf} that reads
 \lm \XeLaTeX{} and \LuaLaTeX{} are neat.
 \end{leftfigure}
 \end{samepage}
-\verb|\usepackage| accepts optional arguments,
-which it passes to the package you're importing.
+\verb|\usepackage| accepts optional arguments
+and passes them to whatever code you're importing.
 The \texttt{geometry} package, for instance,
 takes your desired paper size and margins.
 For \acronym{us}~\textsc{l}etter paper with one-inch margins,
@@ -72,18 +67,16 @@ type:
 ]{geometry}
 \end{lstlisting}
 \end{leftfigure}
-Command arguments can be spaced however you like,
-so long as there are no empty lines between arguments.
+Arguments can be spaced however you like,
+so long as there are no empty lines between them.
 
-\section{Titles, sections, and other hierarchy}
+\section{Hierarchy}
 
-Authors often split their work into sections to help readers navigate them.
+Authors often split their writing into sections to help readers navigate it.
 \LaTeX{} offers seven different commands to break up your documents:
 \verb|\part|, \verb|\chapter|, \verb|\section|, \verb|\subsection|,
 \verb|\subsubsection|, \verb|\paragraph|, and \verb|\subparagraph|.
-Issue the command where you want a section\footnote{By this
-I mean any of those seven commands, not just \texttt{\textbackslash section}.}
-to start,
+Issue the command where you want an area to start,
 providing its name as the argument.
 For example,
 \begin{leftfigure}
@@ -109,15 +102,15 @@ Goodbye!
 Some levels are only available in certain document classes---chapters,
 for example, only appear in books.
 And don't go too crazy with these commands.
-Most works only benefit from a few levels of hierarchy.
+Most works just need a few levels to organize them.
 
-Sections are automatically numbered---for instance,
-the title of this chapter was produced with \verb|\chapter{Document Structure}|,
+These bits of structure are automatically numbered.
+The title of this chapter was produced with \verb|\chapter{Document Structure}|,
 and \LaTeX{} figured out that it was chapter~\ref{structure}.
 
 \section{What next?}
 
-As promised, this book isn't a comprehensive reference,
+As promised, this book isn't meant as a comprehensive reference,
 but it \emph{will} point you to places where you can learn more.
 We'll wrap up most chapters with some related topics that you can
 explore on your own.
@@ -128,13 +121,13 @@ Consider learning how to:
     and the date using \verb|\maketitle|.
 \item Build a table of contents
     with \verb|\tableofcontents|.
-\item Control section numbers with \verb|\setcounter{secnumdepth}|
-and starred section commands, e.g., \verb|\subsection*{foo}|.
+\item Control section numbering with \verb|\setcounter{secnumdepth}|
+or starred commands like \verb|\subsection*{foo}|.
 \item Create cross-references with \verb|\label| and \verb|\ref|.
 \item Use KOMA~Script, a set of document classes and packages
-that help you customize nearly every aspect of your document,
+to customize nearly every aspect of your document,
 from heading fonts to footnotes.
 \item Include images with the \texttt{graphicx} package.
-\item Add hyperlinks to your \acronym{pdf} with the \texttt{hyperref} package.
-\item Split large documents into multiple files using \verb|\input|.
+\item Add hyperlinks with the \texttt{hyperref} package.
+\item Split large documents into multiple source files using \verb|\input|.
 \end{itemize}
