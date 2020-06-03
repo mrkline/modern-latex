@@ -13,18 +13,18 @@ Hello, World!
 \end{document}
 \end{lstlisting}
 \end{leftfigure}
-Next, we'll run this file through \LaTeX{} (the program)\footnote{Not to be
+Next, we run this file through \LaTeX{} (the program)\footnote{Not to be
 confused with \LaTeX{} the lunchbox, \LaTeX{} the breakfast cereal,
 or \LaTeX{} the flamethrower. The kids love this stuff!}
 to get our document.
 The installation placed several different versions---or
 \introduce{engines}---on your machine,
-but throughout this book, we'll use the newest ones:
+but throughout this book, we use the newest ones:
 \LuaLaTeX{} and \XeLaTeX.\punckern\footnote{See Appendix~\ref{history} for a
 comparison of the various \LaTeX{} engines.}
 
 If you are using a \LaTeX{}-specific editor, it should have some menu
-to select the engine you'd like to use,
+to select the engine you would like to use,
 along with a button to generate your document.
 Otherwise, run the following from your terminal:\footnote{%
 How to work a terminal emulator,
@@ -38,7 +38,7 @@ $ xelatex hello.tex
 \end{lstlisting}
 \end{leftfigure}
 Feel free to try \texttt{lualatex} instead---there are a few differences
-between the two that we'll discuss later, but either is fine for now.
+between the two that we will discuss later, but either is fine for now.
 With luck, you should see some output that ends in a message like:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -79,7 +79,7 @@ Let's cover some more basics.
 
 \LaTeX{} generally handles inter-word spacing for you, regardless of how many
 times you mash the space bar or tab key.
-For example,
+For example, typing the following into your editor
 \begin{leftfigure}
 \begin{lstlisting}
 The number  of   spaces    between words doesn't   matter.
@@ -118,7 +118,7 @@ gives
 
 \LaTeX{} provides various commands to format your text,
 and you can also define your own.
-Their names always begin with a backslash (\,\texttt{\textbackslash}\,),
+Command names always begin with a backslash (\,\texttt{\textbackslash}\,),
 contain only letters, and are case-sensitive.\punckern\footnote{%
 % \verb doesn't play nicely in footnotes, so...
 \texttt{\textbackslash foo}
@@ -143,8 +143,7 @@ that only make sense for double-sided printing,
 such as ones that skip to the start of the next odd page.
 It also allows you to have different margins for even and odd pages,
 which is useful for texts like this book.}
-in 11~point
-type.\punckern\footnote{We'll discuss font sizes in \chapref{formatting}.}
+in 11~point type.
 We make these demands as optional \verb|\documentclass| arguments:
 \begin{leftfigure}
 \begin{lstlisting}
@@ -166,7 +165,7 @@ will give you
 \lm \LaTeX is great, but it can be a bit odd sometimes.
 \end{leftfigure}
 You can fix this with an empty pair of braces following the command.
-Of course, braces aren't needed if there is no space to preserve:
+Of course, you don't need braces if there is no space to preserve:
 \begin{leftfigure}
 \begin{lstlisting}
 Let's learn \LaTeX! \LaTeX{} is a powerful tool,
@@ -205,11 +204,11 @@ once upon a time, \LaTeX{} users would typeset ``jalapeño'' with
 Today we just type \texttt{ñ} into our source
 file.\punckern\footnote{This can be easier or harder depending
 on your keyboard, your editor, and your language settings in your \acronym{os}.
-We'll talk more about languages and Unicode fun in \chapref{i18n}.}
+We will talk more about languages and Unicode fun in \chapref{i18n}.}
 
 If you're wondering why we print \texttt{\textbackslash} with
 \verb|\textbackslash| instead of \verb|\\|\,,
-it's because the latter is the command to force a line break.
+it is because the latter is the command to force a line break.
 \begin{leftfigure}
 \begin{lstlisting}
 Give me \\
