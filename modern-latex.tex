@@ -175,8 +175,6 @@
 % Set size and style of section and subsections
 \setkomafont{section}{\Large\itshape}
 \setkomafont{subsection}{\large\itshape}
-% Don't put big spaces before chapter headings
-\renewcommand{\chapterheadstartvskip}{\vspace{0.15in}}
 
 \setcapwidth[c]{.75\textwidth}
 %\setcapmargin{0pt}
@@ -263,7 +261,7 @@
 % For placing commas close to, or under, quotes they follow.
 % We're programmers, and we blatantly disregard American typographical norms
 % to put the quotes inside, but we can at least make it look a bit nicer.
-\newcommand{\quotekern}{\kern-0.5ex}
+\newcommand{\quotekern}{\kern-0.6ex}
 
 
 % Create an unbreakable string of text in a monospaced font.
@@ -299,6 +297,8 @@
 \newcommand{\https}[1]{\url{https://#1}}
 
 \newcommand{\edition}{Second edition \acronym{(wip)}}
+
+\newcommand{\exercises}{\section{On your own}}
 
 % See http://tex.stackexchange.com/a/68310
 \makeatletter
@@ -360,6 +360,9 @@ so long as you give proper credit and provide your contributions under
 the same license. \\
 The license's full text is available at \\
 \https{creativecommons.org/licenses/by-sa/4.0/legalcode}
+\vspace{\baselineskip}
+
+ISBN 978-1-387-80513-6
 }
 
 \vspace{\baselineskip}
@@ -421,6 +424,8 @@ his college papers.
 \input{troubleshooting}
 
 \appendix
+% Don't put big spaces before appendices
+\renewcommand{\chapterheadstartvskip}{\vspace{0.15in}}
 
 \input{history}
 \input{back}

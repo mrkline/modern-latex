@@ -8,7 +8,7 @@ As time went on, support for PostScript\footnote{One of
 Adobe's original claims to fame,
 PostScript is a language for defining and drawing computer graphics,
 including type. It remains in widespread use today.} fonts was added.
-Today, \LuaLaTeX{} and \XeLaTeX{} support the modern font formats you'll find
+Today, \LuaLaTeX{} and \XeLaTeX{} support the modern font formats you will find
 on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
 Apple's \acronym{aat}, but let's limit this discussion to
@@ -31,8 +31,8 @@ more ubiquitous formats.}
 By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
 an OpenType rendition of \LaTeX's original type family, Computer Modern.
 While these are high-quality fonts,
-they're probably not the only ones you ever want to use.
-For others, we turn to the \texttt{fontspec} package:
+they are probably not the only ones you will ever want to use.
+For other fonts, we turn to the \texttt{fontspec} package:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
@@ -65,13 +65,11 @@ instead of forcing you to enter the the corresponding characters,
 which probably aren't on your keyboard.
 You usually don't want these substitutions with monospaced type, though.
 Text that uses it---such as code---is often meant to be printed
-verbatim. \verb|"Hello!"| shouldn't turn into
-\verb|“Hello!“|.
+verbatim. \verb|"Hello!"| should not become \verb|“Hello!“|.
 
 \section{Selecting font files}
 
-\texttt{fontspec} usually does a good job of finding
-the files you need for a given typeface,
+\texttt{fontspec} usually finds the files you need for a given typeface,
 especially if you just want the basic set of
 upright,
 \textit{italic},
@@ -95,7 +93,7 @@ will automatically switch to them whenever you use
 \monobox{\textbackslash textsc} or \monobox{\textbackslash scshape}.
 But for TrueType fonts,
 and for OpenType fonts that don't leverage this feature,
-you'll have to specify separate files.}
+you will have to specify separate files.}
 or multiple optical sizes (see chapter \ref{formatting}).
 
 We might want to hand-pick weights to achieve a certain look,
@@ -148,7 +146,7 @@ based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
 (Version 1.0.4, February 2017), 10}
 Because the two look for files in different ways,
 the expected name of a font might differ between the two engines.
-See the \texttt{fontspec} manual for details.}
+See the \texttt{fontspec} package manual for details.}
 
 \section{Scaling}
 
@@ -156,7 +154,8 @@ Creating a cohesive design with multiple fonts is tricky,
 especially since they might look completely different
 at the same point size.
 \texttt{fontspec} can help by scaling fonts to match either the
-x-height or the cap height of your main font with
+x-height or the cap height\footnote{Refer back to \chapref{formatting}
+for an explanation of these heights.} of your main font with
 \verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
 respectively.
 But one way to sidestep this issue is to use fewer
@@ -310,7 +309,7 @@ Superior figures are typeset with
 \texttt{VerticalPosition=\allowbreak Superior},
 and inferiors are set with \texttt{VerticalPosition=\allowbreak Inferior}.
 
-\section{What next?}
+\exercises{}
 \begin{itemize}
 \item Learn how \texttt{fontspec} can choose optical sizes based on
     point size, either automatically from ranges embedded in OpenType fonts,

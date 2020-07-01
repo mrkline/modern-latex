@@ -27,9 +27,9 @@ is built on top of---the latter is a framework of commands for the former.
 (\texttt{\textbackslash documentclass} and friends come from
 \LaTeX{}, for example, but \TeX{} is what ultimately lays out a document.)
 A longer answer is at the end of this guide under Appendix~\ref{history}.
-We won't discuss how to use plain \TeX{} here. That's for another book---The
+We won't discuss how to use plain \TeX{} here. That is for another book---The
 \TeX book.}
-You'll also find packages' manuals there,
+You will also find package manuals there,
 so make it your first stop when learning how to use one.
 
 To import a package, add a \verb|\usepackage| command
@@ -39,9 +39,7 @@ package, which adds \verb|\LuaLaTeX| and \verb|\XeLaTeX|:
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
-
 \usepackage{metalogo}
-
 \begin{document}
 \XeLaTeX{} and \LuaLaTeX{} are neat.
 \end{document}
@@ -54,7 +52,7 @@ should get you a \textsc{pdf} that reads
 \end{leftfigure}
 \end{samepage}
 \verb|\usepackage| accepts optional arguments
-and passes them to whatever code you're importing.
+and passes them to whatever code you are importing.
 The \texttt{geometry} package, for instance,
 takes your desired paper size and margins.
 For \acronym{us}~\textsc{l}etter paper with one-inch margins,
@@ -108,12 +106,12 @@ These bits of structure are automatically numbered.
 The title of this chapter was produced with \verb|\chapter{Document Structure}|,
 and \LaTeX{} figured out that it was chapter~\ref{structure}.
 
-\section{What next?}
+\exercises{}
 
 As promised, this book isn't meant as a comprehensive reference,
 but it \emph{will} point you to places where you can learn more.
 We'll wrap up most chapters with some related topics that you can
-explore on your own.
+explore yourself.
 
 Consider learning how to:
 \begin{itemize}
