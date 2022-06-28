@@ -12,7 +12,7 @@ Today, \LuaLaTeX{} and \XeLaTeX{} support the modern font formats you will find
 on your computer:
 TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
 Apple's \acronym{aat}, but let's limit this discussion to
-more ubiquitous formats.}
+more common formats.}
 
 \begin{description}
 \item[TrueType] was developed by Apple and Microsoft in the late 1980s.
@@ -31,8 +31,9 @@ more ubiquitous formats.}
 By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
 an OpenType rendition of \LaTeX's original type family, Computer Modern.
 While these are high-quality fonts,
-they are probably not the only ones you will ever want to use.
+they are not the only ones you ever want to use.
 For other fonts, we turn to the \texttt{fontspec} package:
+
 \begin{leftfigure}
 \begin{lstlisting}
 \documentclass{article}
@@ -54,7 +55,8 @@ that you have Adobe's open-source fonts installed.\punckern\endnote{Adobe's
 open-source typefaces are freely available at
 \https{github.com/adobe-fonts}}}
 \begin{leftfigure}
-\fontspec[Ligatures=TeX]{Source Serif Pro} Hello, Source type family! Neat---no? \\
+% lol it's bugged currently
+\fontspec[Ligatures=TeX]{Source Serif Pro} Hello, Source type family! Neat—no? \\
 \fontspec[Ligatures=TeX]{Source Sans Pro} Let's try sans serif! \\
 \fontspec{Source Code Pro} Let's try monospaced!
 \end{leftfigure}
@@ -186,7 +188,7 @@ OpenType groups them into three categories:
 \begin{description}
 \item[Standard] ligatures remedy spacing problems between certain characters.
     Consider lowercase f and i: in many typefaces,
-    these combine to form the ligature fi to avoid
+    these combine to form the ligature fi---this avoids
     awkward spacing between f's ascender and i's dot
     {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
     Other common examples in English writing include ff,
@@ -222,12 +224,12 @@ is a classic example.\punckern\endnote{Knuth, \textit{The \TeX book},
 You can manually prevent a ligature by inserting a zero-width space, e.g.,
 \verb|shelf\hspace{0pt}ful|.
 Or, since life is too short, you can let the \texttt{selnolig} package
-do this for you.
+handle these cases for you.
 
 \subsection{Figures}
 
 When setting figures,\punckern\footnote{%
-We use the term \introduce{figures} in typographical contexts for the symbols
+We use the term \introduce{figures} when talking typography for the symbols
 we might otherwise call \introduce{digits} (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).}
 you have two
 choices to make: lining versus text,

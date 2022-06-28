@@ -2,10 +2,9 @@
 \label{typography}
 
 Life is a parade of written language.
-Wherever you go,
-ads, apps, articles, essays, emails, and messages
-shove text in your face.
-But when you read that text, you see so much more than the author's
+Ads, apps, articles, essays, emails, menus, messages, and more
+constantly shove text in your face.
+And when you read that text, you see so much more than the author's
 verbiage.
 Consciously or not, you notice the shapes and sizes of letters.
 You notice how those letters are arranged into words,
@@ -16,7 +15,7 @@ You notice \introduce{typography}.
 %\\ abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
 \begin{leftfigure}
 \fontspec{TeX Gyre Termes}\fontsize{12bp}{24bp}\selectfont\raggedright
-Typography is why these lines evoke memories of awful essays
+Typography is why these two lines remind you of awful essays
 you wrote in school.
 Do many books look this way? Why not?
 \end{leftfigure}
@@ -33,27 +32,19 @@ Not like this:
 \begin{leftfigure}
 \fontspec{Pinyon Script}\Large CM/SM Sep
 \end{leftfigure}
-
-Effective written communication is about the look and layout of words,
-not just which ones you choose.
-Good typography isn't just art---it's function---and
-\LaTeX\footnote{Pronounced ``lay-tech'' or ``lah-tech''}
-enables the everyday person to craft beautifully typeset documents
-with little effort.
-By carefully handling subtle details,
-it produces beautiful typography with little effort.
-Modern versions can also leverage recent\footnote{By recent,
-I mean ``from the mid-1990s''\quotekern, but web browsers and desktop publishing
-software are only just starting to catch up.} advances in digital typesetting,
-offering the same tools used by professional graphic designers and
-publishers.
+Effective writing isn't just about the words you choose,
+it's also about their look and layout.
+Good typography isn't just art---it's a tool to help people understand you
+better, faster.
+And if you would like to leverage that tool, you should try \LaTeX!
+\clearpage
 
 \section{What is \texorpdfstring{\LaTeX}{LaTeX}?}
 
-\LaTeX{} is an alternative to ``word processors'' like
-Microsoft Word, Apple Pages, Google Docs,
-and LibreOffice Writer.
-These other applications operate on the principle of
+\LaTeX{} (pronounced ``lay-tech'' or ``lah-tech'') is an
+alternative to word processors like Microsoft Word,
+Apple Pages, Google Docs, and LibreOffice.
+These other applications follow the principle of
 \introduce{What You See Is What You Get}
 \acronym{(wysiwyg)}, where what is on screen is the same
 as what comes out of your printer.
@@ -68,10 +59,10 @@ markup describes the appearance of your document to \LaTeX.
 \begin{samepage}
 \begin{leftfigure}
 \begin{lstlisting}
-\LaTeX{} is an alternative to ``word processors'' like
-Microsoft Word, Apple Pages, Google Docs,
-and LibreOffice Writer.
-These other applications operate on the principle of
+\LaTeX{} (pronounced ``lay-tech'' or ``lah-tech'') is an
+alternative to word processors like Microsoft Word,
+Apple Pages, Google Docs, and LibreOffice.
+These other applications follow the principle of
 \introduce{What You See Is What You Get}
 \acronym{(wysiwyg)}, where what is on screen is the same
 as what comes out of your printer.
@@ -94,40 +85,40 @@ but it comes with a few advantages:
     At the start of each document,
     you describe the design you want.
     \LaTeX{} takes it from there, consistently formatting your whole text
-    the way you asked.
+    just the way you asked.
     Compare this to a \acronym{wysiwyg} system,
     where you constantly deal with appearances
     as you write.
     If you changed the look of a caption,
     were you sure to find all the other captions and do the
     same?
-    If the program formats something in a way you don't like,
+    If the program arranges something in a way you don't like,
     is it hard to fix?%\footnote{I spent far too much of my childhood
     %fighting with Word about how it wrapped text around images.}
 
 \item You can define your own commands, then tweak them to instantly adjust
     every place they're used.
     For example, the \verb|\introduce| and \verb|\acronym| commands
-    from the example paragraph are my own creations.
-    The former \introduce{italicizes} text, and the latter sets words in
+    in the example above are my own creations.
+    One \introduce{italicizes} text, and the other sets words in
     \acronym{small caps} with a bit of extra
     \mbox{\textsc{\addfontfeature{LetterSpace=15}letterspacing}} so the characters
     don't look \textsc{\addfontfeature{LetterSpace=-10}too crowded}.
-    If I decide that I'd rather introduce new terms
-    \textbf{\itshape with this look}, or that acronyms should be displayed
+    If I decide that I'd prefer new terms to
+    \textbf{\itshape have this look}, or that acronyms should be formatted
     {\small\addfontfeature{LetterSpace=6} LIKE THIS},
     I just change the two lines that define those commands,
-    and every instance immediately takes on the new look.
+    and every instance in this book immediately takes on the new look.
 
 \item Being able to save the document as plain text has its own benefits:
     \begin{itemize}
-    \item It can be read and understood with any text editor.
+    \item You can edit it with any basic text editor.
     \item Structure is immediately visible
         and simple to replicate.\punckern\footnote{Compare this to
         \acronym{wysiwyg} systems, where it's not always obvious
         how certain formatting was produced or how to match it.}
-    \item Content is easily generated by scripts and programs.
-    \item Changes can be tracked with standard version control software,
+    \item You can easily create content using scripts and programs.
+    \item You can track your changes with standard version control software,
         like Git or Mercurial.
     \end{itemize}
 \end{enumerate}
@@ -136,7 +127,7 @@ but it comes with a few advantages:
 
 You might wonder why the world needs another guide for \LaTeX{}.
 After all, it has been around for decades.
-A quick Amazon search finds nearly a dozen books on the topic.
+A quick search finds nearly a dozen books on the topic.
 There are plenty of resources online.
 
 Unfortunately, most \LaTeX{} guides have two fatal flaws:
@@ -150,9 +141,10 @@ and desktop publishing was a fledgling curiosity.
 This shows---badly---in many \LaTeX{} guides.
 If you look for instructions to change your document's font,
 you get swamped with bespoke nonsense.\punckern\footnote{%
-Take the criticisms here with a grain of
-salt. After all, the fact that all of the technology around \LaTeX{} became
+Take criticisms here with a grain of
+salt. The fact that \LaTeX{} is still here after of the technology around it became
 obsolete---multiple times---is a testament to its staying power.}
+\clearpage
 
 The good news is that  \LaTeX{} has improved by leaps and bounds in recent years.
 It's time for a guide that doesn't weigh you down with decades of legacy
@@ -164,7 +156,10 @@ This book will:
 \begin{enumerate}
 \item Teach you the fundamentals of \LaTeX.
 \item Point you to places where you can learn more.
-\item Show you how to take advantage of modern typesetting technologies.
+\item Show you how to take advantage of modern typesetting technologies.%
+    \footnote{By modern, I mean ``from the mid-1990s''\quotekern,
+    but most web browsers and desktop publishing software are only just starting
+    to catch up.}
 \item End promptly thereafter.
 \end{enumerate}
 \vspace{\baselineskip}

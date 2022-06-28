@@ -22,10 +22,8 @@ These add new commands, or modify the document in interesting ways.
 The ones in your \LaTeX{} distribution come from the Comprehensive \TeX{}
 Archive Network---or \acronym{ctan}---at \https{ctan.org}.\punckern\footnote{%
 Curious readers might wonder what \TeX{} is, and how it differs from \LaTeX.
-The short answer is that \TeX{} is the system that \LaTeX{}
-is built on top of---the latter is a framework of commands for the former.
-(\texttt{\textbackslash documentclass} and friends come from
-\LaTeX{}, for example, but \TeX{} is what ultimately lays out a document.)
+The short answer is that \TeX{} is the original program, and \LaTeX{}
+is a set of common commands that were later built on top of it.
 A longer answer is at the end of this guide under Appendix~\ref{history}.
 We won't discuss how to use plain \TeX{} here. That is for another book---The
 \TeX book.}
@@ -122,9 +120,8 @@ Consider learning how to:
 \item Control section numbering with \verb|\setcounter{secnumdepth}|
 or starred commands like \verb|\subsection*{foo}|.
 \item Create cross-references with \verb|\label| and \verb|\ref|.
-\item Use KOMA~Script, a set of document classes and packages
-to customize nearly every aspect of your document,
-from heading fonts to footnotes.
+\item Use KOMA~Script, a set of packages that let you customize nearly every
+    aspect of your document, from heading fonts to footnotes.
 \item Include images with the \texttt{graphicx} package.
 \item Add hyperlinks with the \texttt{hyperref} package.
 \item Split large documents into multiple source files using \verb|\input|.
