@@ -59,8 +59,8 @@ All \LaTeX{} documents begin with a \verb|\documentclass| command,
 which picks a base ``style'' to use.
 Many classes are available---and you can even create your own---but common
 ones include \texttt{article}, \texttt{report}, \texttt{book},
-and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
-The name is a German term for a projector.}
+and \texttt{beamer}.\punckern\footnote{This last one is for slideshows,
+named after a German term for a projector.}
 For the average document,
 \texttt{article} is probably a good choice.
 The next line, \verb|% Say hello|,
@@ -99,7 +99,7 @@ starts the next.
 \end{leftfigure}
 Notice how \LaTeX{} automatically follows typographic
 conventions, such as indenting new paragraphs and leaving a little
-more space between sentences than it leaves between words.
+more space between sentences than the space between words.
 One quirk to be aware of is that comments ``eat'' any leading
 space on the following line, so
 \begin{leftfigure}
@@ -116,9 +116,9 @@ gives
 
 \section{Commands}
 
-\LaTeX{} provides various commands to format your text,
-and you can also define your own.
-Command names always begin with a backslash (\,\texttt{\textbackslash}\,),
+\LaTeX{} provides many commands to format your text,
+and you can also define your own!
+Commands always begin with a backslash (\,\texttt{\textbackslash}\,),
 contain only letters, and are case-sensitive.\punckern\footnote{%
 % \verb doesn't play nicely in footnotes, so...
 \texttt{\textbackslash foo}
@@ -140,8 +140,8 @@ are enclosed in square brackets, and are separated by commas.
 Say you want to print your document as double-sided
 pages\footnote{\texttt{twoside} introduces commands
 that only make sense for double-sided printing,
-such as ones that skip to the start of the next odd page.
-It also allows you to have different margins for even and odd pages,
+like one that skips to the start of the next odd page.
+It also lets you have different margins for even and odd pages,
 which is useful for texts like this book.}
 in 11~point type.
 We make these demands as optional \verb|\documentclass| arguments:
@@ -202,7 +202,7 @@ This is a relic from days when they produced \introduce{diacritical marks}:
 once upon a time, \LaTeX{} users would typeset ``jalapeño'' with
 \verb|jalape\~no|.
 Today we just type \texttt{ñ} into our source
-file.\punckern\footnote{This can be easier or harder depending
+file.\punckern\footnote{Of course, this depends
 on your keyboard, your editor, and your language settings in your \acronym{os}.
 We will talk more about languages and Unicode fun in \chapref{i18n}.}
 

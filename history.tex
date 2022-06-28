@@ -2,14 +2,13 @@
 
 \label{history}
 
-Donald Knuth is celebrated among programmers as
-a pioneer in computer science.
-The man who coined the term \emph{analysis of algorithms},
-Knuth is perhaps most famous for his ongoing magnum opus,
+Donald Knuth is a father of computer science,
+famous for pioneering the \emph{analysis of algorithms}
+and for his ongoing magnum opus,
 \textit{The~Art of Computer Programming}.
 
 When the first volume of \acronym{taocp} was released in 1968,
-it was printed the way most books had been since the turn of the century:
+it was printed the way books had been since the turn of the century:
 with \introduce{hot metal} type.
 Letters were cast from molten lead,
 then arranged into lines.
@@ -17,18 +16,18 @@ These lines were clamped together to form pages,
 which were inked and pressed against paper.
 
 In March of 1977, Knuth was ready for a second run of \acronym{taocp}, volume~2,
-but he was horrified when he saw the proofs.
-Hot metal typesetting is expensive, complicated, and time-consuming,
-so Knuth's publisher had replaced it with phototypesetting,
-a process that projects characters' images onto film.
+but he was horrified when he received proofs.
+Working with hot metal was expensive, complicated, and time-consuming,
+so publishers---including Knuth's---switched to phototypesetting,
+a process that projects characters onto film instead.
 The new technology, while cheaper and faster,
 didn't provide the quality Knuth
 expected.\punckern\endnote{Knuth, \textit{Digital Typography} (Stanford, 1999), 3--5}
 
 The average author would have resigned themselves to this change and moved on,
-but Knuth took great pride in his books' appearances,
+but Knuth took great pride in his books' typography,
 especially when it came to their mathematics.
-Inspired by his recent discovery of the growing field of digital typesetting,
+Inspired by his recent introduction to the growing field of digital typesetting,
 Knuth set off on one of the greatest yak shaves\footnote{Programmers
 call seemingly-unrelated work needed to solve their main problem
 ``yak shaving''\quotekern. The phrase is thought to originate from an episode
@@ -37,16 +36,15 @@ of \textit{The Ren~\&~Stimpy Show}.\punckern\endnote{``yak shaving''\quotekern,
 \href{http://www.catb.org/~esr/jargon/html/Y/yak-shaving.html}%
 {\texttt{www.catb.org/\~{}esr/jargon/html/Y/yak-shaving.html}}}}
 of all time.
-For years, he paused work on his books to create his own
-typesetting system.
-When the dust settled in 1978, he had the first version of
+Setting aside his other work, he hammered on this problem for more than a year.
+When the dust settled in 1978, Knuth introduced the world to
 \TeX.\punckern\footnote{The name ``\TeX{}'' comes from the Greek
 {\fontspec[Scale=MatchLowercase]{NotoSerif-Medium}τέχνη},
 meaning \introduce{art} or \introduce{craft}.\punckern\endnote{Knuth,
 \textit{The \TeX book}, 1}}
 
 It's hard to appreciate how much of a revolution \TeX{} was,
-especially looking back from modern times, where anybody with a web browser
+especially looking back from today, where anybody with a web browser
 can be their own desktop publisher.
 Adobe's \acronym{pdf} wouldn't exist for another decade, so Knuth
 and his graduate students devised their own device-independent (document) format,
@@ -70,23 +68,20 @@ early 1980s as a set of commands for common document layouts.
 He introduced it with his guide,
 \textit{\LaTeX: A~Document Preparation System},
 in 1986.
-Other typesetting systems based on \TeX{} also exist,
-such as Con\TeX{}t.
-
 Development continues today,
 both in the form of user-provided packages for \TeX{} and \LaTeX{},
 and as improvements to the \TeX{} typesetting program itself.
 There are four versions, or \introduce{engines}:
 \begin{description}
 \item[\TeX] is the original system by Donald Knuth.
-Knuth stopped adding features after version 3.0 in March~1990,
-and all subsequent releases have contained only bug fixes.
+Knuth stopped adding features after version 3.0 in March~1990---%
+subsequent releases contain only bug fixes.
 With each release, the version number asymptotically approaches $\pi$
 by adding an additional digit.
-The most recent version, 3.14159265, came out in January~2014.
+The most recent version, 3.141592653, came out in 2021.
 
 \item[pdf\TeX] is an extension of \TeX{} that provides direct \acronym{pdf}
-    output (instead of \TeX's \acronym{dvi}),
+    output,
     native support for PostScript
     and TrueType fonts,
     and micro-typographic features discussed in \chapref{microtype}.
@@ -107,7 +102,7 @@ The most recent version, 3.14159265, came out in January~2014.
 \item[\LuaTeX] is similar to \XeTeX{} in its native Unicode and modern font support.
     It also embeds the Lua scripting language into the engine,
     exposing an interface for package and document authors.
-    It first appeared in 2007 and is developed by a core team of
+    It first appeared in 2007, developed by a core team of
     Hans Hagen, Hartmut Henkel, Taco Hoekwater,
     and Luigi Scarso.\punckern\endnote{\http{www.luatex.org}}
 \end{description}
@@ -127,13 +122,13 @@ also released a pair of companion programs named
 The former extracts the book---as \TeX, of course---and the latter
 produces \TeX's Pascal source code.}
 
-Unsurprisingly, most modern systems don't have good tooling for the late 1970s
+Unfortunately, modern systems don't have good tooling for the 1970s
 dialect of Pascal that \TeX{} was written in,
 so present-day distributions use another program,
 \texttt{web2c}, to convert its \texttt{WEB} source into C code.
 pdf\TeX{} and \XeTeX{} are built by combining the result with other C
 and \cpp{} sources.
-Instead of taking this complicated approach,
+As an alternative to this complicated approach,
 the \LuaTeX{} authors hand-translated Knuth's Pascal into C.
 They have used the resulting code since 2009.\punckern\endnote{%
 Taco Hoekwater, \textit{\LuaTeX{} says goodbye to Pascal}
